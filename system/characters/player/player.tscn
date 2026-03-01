@@ -33,10 +33,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.15, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [1, 1]
+"values": [1, 1, 1]
 }
 
 [sub_resource type="Animation" id="Animation_tuyoq"]
@@ -50,10 +50,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.15, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [7, 7]
+"values": [7, 7, 7]
 }
 
 [sub_resource type="Animation" id="Animation_qlg0r"]
@@ -67,10 +67,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.15, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [4, 4]
+"values": [4, 4, 4]
 }
 
 [sub_resource type="Animation" id="Animation_dqkch"]
@@ -84,10 +84,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.15, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [11, 11]
+"values": [11, 11, 11]
 }
 
 [sub_resource type="Animation" id="Animation_fjrip"]
@@ -278,9 +278,10 @@ states/Idle/position = Vector2(362, 100)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_tuyoq")
 states/Walk/position = Vector2(362, -1)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_i4ail"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_g2els"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_qhqgy")]
-graph_offset = Vector2(-21, -115)
+graph_offset = Vector2(-111, -39)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ur7pv"]
+graph_offset = Vector2(-377, 94)
 nodes/output/position = Vector2(300, 140)
 nodes/MoveStateMachine/node = SubResource("AnimationNodeStateMachine_smehm")
 nodes/MoveStateMachine/position = Vector2(-40, 140)
@@ -310,7 +311,7 @@ autoplay = "idle_down"
 tree_root = SubResource("AnimationNodeBlendTree_ur7pv")
 anim_player = NodePath("../AnimationPlayer")
 parameters/MoveStateMachine/Idle/blend_position = Vector2(0, 0)
-parameters/MoveStateMachine/Walk/blend_position = Vector2(0, -0.025)
+parameters/MoveStateMachine/Walk/blend_position = Vector2(0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)

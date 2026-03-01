@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://dclafa87ojaa3"]
+
+[ext_resource type="Script" uid="uid://dpsxd0nmaaym8" path="res://system/ui/dialog/dialog_interaction.gd" id="1_d5vh1"]
+[ext_resource type="Texture2D" uid="uid://7d43cqv51ut0" path="res://assets/ui/dialog/DialogInfo.png" id="2_cj4i4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gngry"]
+size = Vector2(30, 30)
+
+[sub_resource type="Animation" id="Animation_13o6g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_wpteg"]
+resource_name = "show"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4mmub"]
+_data = {
+&"RESET": SubResource("Animation_13o6g"),
+&"show": SubResource("Animation_wpteg")
+}
+
+[node name="DialogInteraction" type="Area2D"]
+collision_layer = 0
+collision_mask = 8
+monitorable = false
+script = ExtResource("1_d5vh1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gngry")
+debug_color = Color(0, 0.6, 0.69803923, 0.19607843)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -18)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_cj4i4")
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_4mmub")
+}
