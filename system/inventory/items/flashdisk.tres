@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cggsbxsyb5ilf"]
+
+[ext_resource type="Script" uid="uid://j6vyfgfggbp6" path="res://system/inventory/items/item_data.gd" id="1_5gpwg"]
+[ext_resource type="Texture2D" uid="uid://ba6oeycytomol" path="res://assets/inventory/Flashdisk.png" id="2_2682v"]
+
+[resource]
+script = ExtResource("1_5gpwg")
+name = "Flashdisk"
+description = "Flashdisk berisi file penting"
+texture = ExtResource("2_2682v")
+metadata/_custom_type_script = "uid://j6vyfgfggbp6"

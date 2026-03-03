@@ -12,7 +12,7 @@ func _physics_process(_delta) -> void:
 	handle_animation()
 
 func handle_movement():
-	direction = Input.get_vector("left", "right", "up", "down")
+	direction = Vector2(Input.get_vector("left", "right", "up", "down")).normalized()
 	
 	if direction != Vector2.ZERO:
 		last_direction = direction

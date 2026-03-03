@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cmavlu5bsmga8"
-path="res://.godot/imported/Outdoor Tiles.png-7f175df68fa0d1b680d3d653db872c56.ctex"
+path="res://.godot/imported/Outdoor Tiles.png-8dad1077d97e05e08188ff148858e8eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/environtment/tilesets/Outdoor Tiles.png"
-dest_files=["res://.godot/imported/Outdoor Tiles.png-7f175df68fa0d1b680d3d653db872c56.ctex"]
+source_file="res://assets/environment/tilesets/Outdoor Tiles.png"
+dest_files=["res://.godot/imported/Outdoor Tiles.png-8dad1077d97e05e08188ff148858e8eb.ctex"]
 
 [params]
 

@@ -1,6 +1,78 @@
-[gd_scene load_steps=2 format=3 uid="uid://fop4wxvjqltl"]
+[gd_scene load_steps=13 format=3 uid="uid://fop4wxvjqltl"]
 
 [ext_resource type="Script" uid="uid://bw30v4toyrinn" path="res://system/ui/pause_menu/pause_menu.gd" id="1_po5kq"]
+[ext_resource type="Texture2D" uid="uid://duh8hxa7jmwo1" path="res://assets/ui/menu/nine_path_panel_3.png" id="2_7rec7"]
+[ext_resource type="Texture2D" uid="uid://djiqdt3kmrprq" path="res://assets/ui/menu/button_normal.png" id="3_o8dfa"]
+[ext_resource type="Texture2D" uid="uid://8uglib0r7bed" path="res://assets/ui/menu/button_pressed.png" id="4_4dfc7"]
+[ext_resource type="Texture2D" uid="uid://cj48vypqfgbpl" path="res://assets/ui/menu/button_hover.png" id="5_qjdi8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nhiyj"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+texture = ExtResource("2_7rec7")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1nnk0"]
+content_margin_top = 2.0
+content_margin_right = 5.0
+texture = ExtResource("3_o8dfa")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bhsa8"]
+content_margin_top = 2.0
+content_margin_right = 5.0
+texture = ExtResource("4_4dfc7")
+texture_margin_left = 5.0
+texture_margin_top = 4.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_84pfv"]
+content_margin_top = 2.0
+content_margin_right = 5.0
+texture = ExtResource("5_qjdi8")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o8dfa"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+texture = ExtResource("3_o8dfa")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4dfc7"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+texture = ExtResource("4_4dfc7")
+texture_margin_left = 5.0
+texture_margin_top = 4.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qjdi8"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+texture = ExtResource("5_qjdi8")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
@@ -14,55 +86,90 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.3137255)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchors_preset = 8
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.46500003
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -66.0
-offset_right = 200.0
-offset_bottom = 66.0
+anchor_bottom = 0.46500003
+offset_left = -425.0
+offset_top = -249.80002
+offset_right = -255.0
+offset_bottom = -139.79999
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(5, 5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_nhiyj")
 
-[node name="SaveButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Save"
-
-[node name="LoadButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Load"
-
-[node name="InventoryButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Inventory"
-
-[node name="MainMenuButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Main Menu"
-
-[node name="ExitButton" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "Exit"
-
-[node name="Label" type="Label" parent="."]
-anchors_preset = -1
-anchor_left = 0.409
-anchor_top = 0.208
-anchor_right = 0.409
-anchor_bottom = 0.208
-offset_left = 83.47998
-offset_top = 0.23999023
-offset_right = 149.47998
-offset_bottom = 22.23999
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -23.5
+offset_top = 5.0
+offset_right = 23.5
+offset_bottom = 20.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 50
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 10
 text = "Paused"
 uppercase = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.873
+anchor_top = 0.734
+anchor_right = 0.873
+anchor_bottom = 0.734
+offset_left = -93.41
+offset_top = -60.74003
+offset_right = 26.589996
+offset_bottom = 101.25997
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+theme_override_constants/separation = 2
+
+[node name="ContinueButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_1nnk0")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bhsa8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_84pfv")
+text = "Continue"
+
+[node name="SaveButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_o8dfa")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4dfc7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qjdi8")
+text = "Save"
+
+[node name="LoadButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_o8dfa")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4dfc7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qjdi8")
+text = "Load"
+
+[node name="InventoryButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_o8dfa")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4dfc7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qjdi8")
+text = "Inventory"
+
+[node name="MainMenuButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_o8dfa")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4dfc7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qjdi8")
+text = "Main Menu"
+
+[node name="ExitButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_o8dfa")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_4dfc7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qjdi8")
+text = "Exit"

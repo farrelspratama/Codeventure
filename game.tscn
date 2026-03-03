@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://bkiue41ycgdqq"]
 
-[ext_resource type="Texture2D" uid="uid://cmavlu5bsmga8" path="res://assets/environtment/tilesets/Outdoor Tiles.png" id="1_e2o6t"]
+[ext_resource type="Texture2D" uid="uid://cmavlu5bsmga8" path="res://assets/environment/tilesets/Outdoor Tiles.png" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://cdjt38hfhgqh2" path="res://system/characters/kakek/kakek.tscn" id="2_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://c2e36uws8nxt7" path="res://system/characters/player/player.tscn" id="2_feb5d"]
 

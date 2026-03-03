@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bk12rwi3hrxw3"]
+
+[ext_resource type="Script" uid="uid://j6vyfgfggbp6" path="res://system/inventory/items/item_data.gd" id="1_byg33"]
+[ext_resource type="Texture2D" uid="uid://dsxwfqdhhflkk" path="res://assets/inventory/Buku.png" id="2_bmh55"]
+
+[resource]
+script = ExtResource("1_byg33")
+name = "Buku"
+description = "Sumber pembelajaran"
+texture = ExtResource("2_bmh55")
+metadata/_custom_type_script = "uid://j6vyfgfggbp6"
