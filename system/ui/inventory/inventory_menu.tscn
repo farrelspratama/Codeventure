@@ -1,0 +1,221 @@
+[gd_scene load_steps=16 format=3 uid="uid://bb8x0t2y0f36t"]
+
+[ext_resource type="Script" uid="uid://jn1g7myt1ieq" path="res://system/ui/inventory/inventory_menu.gd" id="1_05mvq"]
+[ext_resource type="Texture2D" uid="uid://duh8hxa7jmwo1" path="res://assets/ui/menu/nine_path_panel_3.png" id="2_26okg"]
+[ext_resource type="Resource" uid="uid://b0m8f1p7jyve1" path="res://system/inventory/player_inventory.tres" id="2_85aw6"]
+[ext_resource type="PackedScene" uid="uid://bg5srwe2vvaux" path="res://system/ui/inventory/inventory_slot.tscn" id="3_wllg6"]
+[ext_resource type="Texture2D" uid="uid://djiqdt3kmrprq" path="res://assets/ui/menu/button_normal.png" id="4_rmd3n"]
+[ext_resource type="Texture2D" uid="uid://8uglib0r7bed" path="res://assets/ui/menu/button_pressed.png" id="5_85aw6"]
+[ext_resource type="Texture2D" uid="uid://cj48vypqfgbpl" path="res://assets/ui/menu/button_hover.png" id="6_c1g87"]
+[ext_resource type="Texture2D" uid="uid://chhvpgnqif5eh" path="res://assets/ui/menu/cancel.png" id="7_uw6wx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_78gc6"]
+content_margin_left = 17.0
+content_margin_top = 22.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+texture = ExtResource("2_26okg")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3cngb"]
+texture = ExtResource("4_rmd3n")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ks8b"]
+texture = ExtResource("5_85aw6")
+texture_margin_left = 5.0
+texture_margin_top = 4.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_323o7"]
+texture = ExtResource("6_c1g87")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_85aw6"]
+texture = ExtResource("4_rmd3n")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c1g87"]
+texture = ExtResource("5_85aw6")
+texture_margin_left = 5.0
+texture_margin_top = 4.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uw6wx"]
+texture = ExtResource("6_c1g87")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[node name="InventoryMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_05mvq")
+data = ExtResource("2_85aw6")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.3137255)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.46500003
+anchor_right = 0.5
+anchor_bottom = 0.46500003
+offset_left = -425.0
+offset_top = -249.80002
+offset_right = -255.0
+offset_bottom = -139.79999
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_78gc6")
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 7
+
+[node name="InventorySlot" parent="PanelContainer/GridContainer" instance=ExtResource("3_wllg6")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="PanelContainer/GridContainer" instance=ExtResource("3_wllg6")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="PanelContainer/GridContainer" instance=ExtResource("3_wllg6")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="PanelContainer/GridContainer" instance=ExtResource("3_wllg6")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="PanelContainer/GridContainer" instance=ExtResource("3_wllg6")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="PanelContainer/GridContainer" instance=ExtResource("3_wllg6")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="PanelContainer/GridContainer" instance=ExtResource("3_wllg6")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="PanelContainer/GridContainer" instance=ExtResource("3_wllg6")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="PanelContainer/GridContainer" instance=ExtResource("3_wllg6")]
+layout_mode = 2
+
+[node name="InventorySlot10" parent="PanelContainer/GridContainer" instance=ExtResource("3_wllg6")]
+layout_mode = 2
+
+[node name="InventorySlot11" parent="PanelContainer/GridContainer" instance=ExtResource("3_wllg6")]
+layout_mode = 2
+
+[node name="InventorySlot12" parent="PanelContainer/GridContainer" instance=ExtResource("3_wllg6")]
+layout_mode = 2
+
+[node name="InventorySlot13" parent="PanelContainer/GridContainer" instance=ExtResource("3_wllg6")]
+layout_mode = 2
+
+[node name="InventorySlot14" parent="PanelContainer/GridContainer" instance=ExtResource("3_wllg6")]
+layout_mode = 2
+
+[node name="InventorySlot15" parent="PanelContainer/GridContainer" instance=ExtResource("3_wllg6")]
+layout_mode = 2
+
+[node name="InventorySlot16" parent="PanelContainer/GridContainer" instance=ExtResource("3_wllg6")]
+layout_mode = 2
+
+[node name="InventorySlot17" parent="PanelContainer/GridContainer" instance=ExtResource("3_wllg6")]
+layout_mode = 2
+
+[node name="InventorySlot18" parent="PanelContainer/GridContainer" instance=ExtResource("3_wllg6")]
+layout_mode = 2
+
+[node name="InventorySlot19" parent="PanelContainer/GridContainer" instance=ExtResource("3_wllg6")]
+layout_mode = 2
+
+[node name="InventorySlot20" parent="PanelContainer/GridContainer" instance=ExtResource("3_wllg6")]
+layout_mode = 2
+
+[node name="InventorySlot21" parent="PanelContainer/GridContainer" instance=ExtResource("3_wllg6")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="."]
+offset_left = 515.0
+offset_top = 120.0
+offset_right = 564.0
+offset_bottom = 132.0
+scale = Vector2(5, 5)
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
+text = "Inventory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ItemDescriptionLabel" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.712
+anchor_right = 0.5
+anchor_bottom = 0.712
+offset_left = -375.0
+offset_top = -17.640015
+offset_right = -125.0
+offset_bottom = -5.6400146
+scale = Vector2(3, 3)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
+text = "Buku Algoritma Sortingggggggggggggggggggg"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 957.0
+offset_top = 125.0
+offset_right = 978.0
+offset_bottom = 142.0
+scale = Vector2(3, 3)
+theme_override_styles/normal = SubResource("StyleBoxTexture_3cngb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5ks8b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_323o7")
+icon = ExtResource("7_uw6wx")
+
+[node name="UseButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.80100006
+anchor_right = 0.5
+anchor_bottom = 0.80100006
+offset_left = -67.5
+offset_top = -26.720032
+offset_right = -22.5
+offset_bottom = -8.720032
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxTexture_85aw6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_c1g87")
+theme_override_styles/hover = SubResource("StyleBoxTexture_uw6wx")
+text = "Pakai"

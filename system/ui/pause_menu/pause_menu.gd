@@ -3,7 +3,6 @@ extends CanvasLayer
 @onready var continue_button: Button = $Panel/VBoxContainer/ContinueButton
 @onready var save_button: Button = $Panel/VBoxContainer/SaveButton
 @onready var load_button: Button = $Panel/VBoxContainer/LoadButton
-@onready var inventory_button: Button = $Panel/VBoxContainer/InventoryButton
 @onready var main_menu_button: Button = $Panel/VBoxContainer/MainMenuButton
 @onready var exit_button: Button = $Panel/VBoxContainer/ExitButton
 
