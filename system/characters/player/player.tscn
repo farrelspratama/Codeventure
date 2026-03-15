@@ -1,7 +1,8 @@
-[gd_scene load_steps=39 format=3 uid="uid://c2e36uws8nxt7"]
+[gd_scene load_steps=41 format=3 uid="uid://c2e36uws8nxt7"]
 
 [ext_resource type="Script" uid="uid://bhafg2suclxih" path="res://system/characters/player/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://de4mrjji1a3gi" path="res://assets/characters/player/Player.png" id="2_g2els"]
+[ext_resource type="Script" uid="uid://b060k2x0mpkuv" path="res://system/characters/player/player_interaction.gd" id="3_ycmwt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
 radius = 4.0
@@ -287,9 +288,12 @@ nodes/MoveStateMachine/node = SubResource("AnimationNodeStateMachine_smehm")
 nodes/MoveStateMachine/position = Vector2(-40, 140)
 node_connections = [&"output", 0, &"MoveStateMachine"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ri8db"]
+size = Vector2(12, 10)
+
 [node name="Player" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 5
+collision_layer = 16
+collision_mask = 257
 motion_mode = 1
 script = ExtResource("1_g2els")
 
@@ -317,3 +321,15 @@ parameters/MoveStateMachine/Walk/blend_position = Vector2(0, 0)
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
+
+[node name="Interactions" type="Node2D" parent="."]
+script = ExtResource("3_ycmwt")
+
+[node name="Area2D" type="Area2D" parent="Interactions"]
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactions/Area2D"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_ri8db")
+debug_color = Color(0, 0.6375832, 0.3942864, 0.41960785)

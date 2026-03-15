@@ -1,0 +1,182 @@
+[gd_scene load_steps=15 format=3 uid="uid://sjq58tgr7scr"]
+
+[ext_resource type="Texture2D" uid="uid://duh8hxa7jmwo1" path="res://assets/ui/menu/nine_path_panel_3.png" id="1_fq53b"]
+[ext_resource type="PackedScene" uid="uid://bg5srwe2vvaux" path="res://system/ui/inventory/inventory_slot.tscn" id="2_6mpld"]
+[ext_resource type="FontFile" uid="uid://csvpcd3mam4pu" path="res://assets/ui/font/PixelifySans-Regular.ttf" id="3_1bjo0"]
+[ext_resource type="Texture2D" uid="uid://djiqdt3kmrprq" path="res://assets/ui/menu/button_normal.png" id="4_klwh3"]
+[ext_resource type="Texture2D" uid="uid://8uglib0r7bed" path="res://assets/ui/menu/button_pressed.png" id="5_cipmv"]
+[ext_resource type="Texture2D" uid="uid://cj48vypqfgbpl" path="res://assets/ui/menu/button_hover.png" id="6_1l0v8"]
+[ext_resource type="Texture2D" uid="uid://chhvpgnqif5eh" path="res://assets/ui/menu/cancel.png" id="7_cp8yw"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_svjv6"]
+content_margin_left = 17.0
+content_margin_top = 22.0
+content_margin_right = 15.0
+content_margin_bottom = 10.0
+texture = ExtResource("1_fq53b")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jiry8"]
+texture = ExtResource("4_klwh3")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f4fg3"]
+texture = ExtResource("5_cipmv")
+texture_margin_left = 5.0
+texture_margin_top = 4.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c44es"]
+texture = ExtResource("6_1l0v8")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2kftk"]
+texture = ExtResource("4_klwh3")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sqiwj"]
+texture = ExtResource("5_cipmv")
+texture_margin_left = 5.0
+texture_margin_top = 4.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mnpeo"]
+texture = ExtResource("6_1l0v8")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[node name="PopupItem" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.3137255)
+
+[node name="PanelContainer" type="Panel" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.46500003
+anchor_right = 0.5
+anchor_bottom = 0.46500003
+offset_left = -425.0
+offset_top = -249.80002
+offset_right = -255.0
+offset_bottom = -139.79999
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(5, 5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_svjv6")
+
+[node name="InventorySlot" parent="PanelContainer" instance=ExtResource("2_6mpld")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.800003
+offset_top = -16.200012
+offset_right = -7.800003
+offset_bottom = -16.200012
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+offset_left = 515.0
+offset_top = 120.0
+offset_right = 932.0
+offset_bottom = 240.0
+scale = Vector2(0.6, 0.6)
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_1bjo0")
+theme_override_font_sizes/font_size = 99
+text = "Selamat!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -254.99997
+offset_top = -164.99998
+offset_right = 1195.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_1bjo0")
+theme_override_font_sizes/font_size = 99
+text = "Kamu Mendapatkan Item Baru"
+
+[node name="Label3" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.00006
+offset_top = 25.00003
+offset_right = 608.0
+offset_bottom = 145.00003
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_1bjo0")
+theme_override_font_sizes/font_size = 99
+text = "Buku Pelajaran"
+
+[node name="ExitButton" type="Button" parent="."]
+offset_left = 957.0
+offset_top = 125.0
+offset_right = 978.0
+offset_bottom = 142.0
+scale = Vector2(3, 3)
+theme_override_styles/normal = SubResource("StyleBoxTexture_jiry8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_f4fg3")
+theme_override_styles/hover = SubResource("StyleBoxTexture_c44es")
+icon = ExtResource("7_cp8yw")
+
+[node name="UseButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.80100006
+anchor_right = 0.5
+anchor_bottom = 0.80100006
+offset_left = -67.5
+offset_top = -26.720032
+offset_right = -22.5
+offset_bottom = -8.720032
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+theme_override_font_sizes/font_size = 9
+theme_override_styles/normal = SubResource("StyleBoxTexture_2kftk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_sqiwj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mnpeo")
+text = "Pakai"

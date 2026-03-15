@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://bkiue41ycgdqq"]
+[gd_scene load_steps=7 format=4 uid="uid://bkiue41ycgdqq"]
 
 [ext_resource type="Texture2D" uid="uid://cmavlu5bsmga8" path="res://assets/environment/tilesets/Outdoor Tiles.png" id="1_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://cdjt38hfhgqh2" path="res://system/characters/kakek/kakek.tscn" id="2_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://c2e36uws8nxt7" path="res://system/characters/player/player.tscn" id="2_feb5d"]
+[ext_resource type="PackedScene" uid="uid://dv0tn3ypx7ppw" path="res://system/objects/treasure_chest.tscn" id="4_fc0e3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqjtg"]
 texture = ExtResource("1_e2o6t")
@@ -136,3 +137,11 @@ y_sort_enabled = true
 z_index = 1
 y_sort_enabled = true
 position = Vector2(40, -37)
+
+[node name="Objects" type="Node2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+
+[node name="TreasureChest" parent="Objects" instance=ExtResource("4_fc0e3")]
+position = Vector2(-52, -51)
+scale = Vector2(0.5, 0.5)
