@@ -1,6 +1,8 @@
 @tool
-class_name TreasureChest
-extends Node2D
+class_name TreasureChest extends Node2D
+
+@export var item_data : ItemData : set = _set_item_data
+@export var data : InventoryData
 
 var is_open: bool = false
 var player_in_range: bool = false
@@ -29,7 +31,10 @@ func player_interact() -> void:
 	is_open = true
 	print("Chest opened")
 	animation_player.play("open_chest")
+	data.add_item()
 
+func _set_item_data(value : ItemData) -> void:
+	item_data = value
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.get_parent().get_parent() is Player:

@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://sjq58tgr7scr"]
+[gd_scene load_steps=16 format=3 uid="uid://sjq58tgr7scr"]
 
+[ext_resource type="Script" uid="uid://iswx5fmahnng" path="res://system/ui/popup/popup_item.gd" id="1_6mpld"]
 [ext_resource type="Texture2D" uid="uid://duh8hxa7jmwo1" path="res://assets/ui/menu/nine_path_panel_3.png" id="1_fq53b"]
 [ext_resource type="PackedScene" uid="uid://bg5srwe2vvaux" path="res://system/ui/inventory/inventory_slot.tscn" id="2_6mpld"]
 [ext_resource type="FontFile" uid="uid://csvpcd3mam4pu" path="res://assets/ui/font/PixelifySans-Regular.ttf" id="3_1bjo0"]
@@ -62,6 +63,7 @@ texture_margin_right = 5.0
 texture_margin_bottom = 3.0
 
 [node name="PopupItem" type="CanvasLayer"]
+script = ExtResource("1_6mpld")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -133,7 +135,7 @@ theme_override_fonts/font = ExtResource("3_1bjo0")
 theme_override_font_sizes/font_size = 99
 text = "Kamu Mendapatkan Item Baru"
 
-[node name="Label3" type="Label" parent="."]
+[node name="ItemNameLabel" type="Label" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
