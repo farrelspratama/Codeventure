@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=3 format=3 uid="uid://bmbeuehdox8yn"]
+
+[ext_resource type="Script" uid="uid://cxpsbmfn7qk1h" path="res://system/characters/npc/npc_resource.gd" id="1_muplt"]
+[ext_resource type="Texture2D" uid="uid://bvivjielcpeky" path="res://assets/characters/Kak Seno.png" id="2_40nm7"]
+
+[resource]
+script = ExtResource("1_muplt")
+npc_name = "Kak Seno"
+sprite = ExtResource("2_40nm7")
+metadata/_custom_type_script = "uid://cxpsbmfn7qk1h"

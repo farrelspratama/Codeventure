@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ct0hqkac5axdu"]
+
+[ext_resource type="Script" uid="uid://d2epo0ultih7o" path="res://system/quest_system/quest_activated_switch.gd" id="1_m1jty"]
+
+[node name="QuestActivatedSwitch" type="Node2D"]
+script = ExtResource("1_m1jty")

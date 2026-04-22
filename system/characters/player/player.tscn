@@ -1,7 +1,8 @@
-[gd_scene load_steps=41 format=3 uid="uid://c2e36uws8nxt7"]
+[gd_scene load_steps=42 format=3 uid="uid://c2e36uws8nxt7"]
 
 [ext_resource type="Script" uid="uid://bhafg2suclxih" path="res://system/characters/player/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://de4mrjji1a3gi" path="res://assets/characters/player/Player.png" id="2_g2els"]
+[ext_resource type="Texture2D" uid="uid://w3bm0i2e6wx" path="res://assets/Shadow.png" id="3_ri8db"]
 [ext_resource type="Script" uid="uid://b060k2x0mpkuv" path="res://system/characters/player/player_interaction.gd" id="3_ycmwt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qhqgy"]
@@ -292,6 +293,7 @@ node_connections = [&"output", 0, &"MoveStateMachine"]
 size = Vector2(12, 10)
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
 collision_layer = 16
 collision_mask = 257
 motion_mode = 1
@@ -301,6 +303,13 @@ script = ExtResource("1_g2els")
 texture = ExtResource("2_g2els")
 hframes = 3
 vframes = 4
+
+[node name="DropShadow" type="Sprite2D" parent="Sprite2D"]
+modulate = Color(0, 0, 0, 0.47058824)
+show_behind_parent = true
+position = Vector2(-1, 12)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_ri8db")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 5)

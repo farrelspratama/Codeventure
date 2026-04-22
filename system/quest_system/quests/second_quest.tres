@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=5 format=3 uid="uid://cgwyglf2ugh2i"]
+
+[ext_resource type="Script" uid="uid://df0jn0tbhct03" path="res://system/quest_system/quest_resource.gd" id="1_4246r"]
+[ext_resource type="Resource" uid="uid://cggsbxsyb5ilf" path="res://system/inventory/items/flashdisk.tres" id="1_stksk"]
+[ext_resource type="Script" uid="uid://6osa3re2n1f1" path="res://system/quest_system/quest_reward_item.gd" id="2_6fs3o"]
+
+[sub_resource type="Resource" id="Resource_qnts8"]
+script = ExtResource("2_6fs3o")
+item = ExtResource("1_stksk")
+metadata/_custom_type_script = "uid://6osa3re2n1f1"
+
+[resource]
+script = ExtResource("1_4246r")
+title = "Second Quest"
+description = "BANG MISTER BIS"
+steps = Array[String](["Step 1", "Step 2", "Step 3", "Step 4", "Step 5"])
+reward_items = Array[ExtResource("2_6fs3o")]([SubResource("Resource_qnts8")])
+metadata/_custom_type_script = "uid://df0jn0tbhct03"

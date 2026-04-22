@@ -5,6 +5,9 @@ signal direction_changed( new_direction: Vector2 )
 var direction: Vector2 = Vector2.ZERO
 var cardinal_direction: Vector2 = Vector2.DOWN
 var current_state: String = "Idle"
+var nama : String = "Ersa Meilia"
+var kelas : String = "X PPLG 2"
+var score : int = 0
 
 const MOVE_SPEED : float = 50.0
 const DIR_4 := [

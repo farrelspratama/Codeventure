@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=3 format=3 uid="uid://c7cwx4ukvhhu5"]
+
+[ext_resource type="Script" uid="uid://cxpsbmfn7qk1h" path="res://system/characters/npc/npc_resource.gd" id="1_n8gkd"]
+[ext_resource type="Texture2D" uid="uid://b7h1nalu2x2hw" path="res://assets/characters/kakek/Kakek.png" id="2_gpmix"]
+
+[resource]
+script = ExtResource("1_n8gkd")
+npc_name = "Kakek"
+sprite = ExtResource("2_gpmix")
+metadata/_custom_type_script = "uid://cxpsbmfn7qk1h"

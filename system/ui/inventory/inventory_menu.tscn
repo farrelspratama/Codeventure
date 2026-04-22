@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bb8x0t2y0f36t"]
+[gd_scene load_steps=17 format=3 uid="uid://bb8x0t2y0f36t"]
 
 [ext_resource type="Script" uid="uid://jn1g7myt1ieq" path="res://system/ui/inventory/inventory_menu.gd" id="1_05mvq"]
 [ext_resource type="Texture2D" uid="uid://duh8hxa7jmwo1" path="res://assets/ui/menu/nine_path_panel_3.png" id="2_26okg"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bg5srwe2vvaux" path="res://system/ui/inventory/inventory_slot.tscn" id="3_wllg6"]
 [ext_resource type="Texture2D" uid="uid://djiqdt3kmrprq" path="res://assets/ui/menu/button_normal.png" id="4_rmd3n"]
 [ext_resource type="Texture2D" uid="uid://8uglib0r7bed" path="res://assets/ui/menu/button_pressed.png" id="5_85aw6"]
+[ext_resource type="FontFile" uid="uid://bctx62yq874s8" path="res://assets/ui/font/m6x11.ttf" id="5_c1g87"]
 [ext_resource type="Texture2D" uid="uid://cj48vypqfgbpl" path="res://assets/ui/menu/button_hover.png" id="6_c1g87"]
 [ext_resource type="Texture2D" uid="uid://chhvpgnqif5eh" path="res://assets/ui/menu/cancel.png" id="7_uw6wx"]
 
@@ -15,8 +16,8 @@ content_margin_top = 22.0
 content_margin_right = 15.0
 content_margin_bottom = 10.0
 texture = ExtResource("2_26okg")
-texture_margin_left = 6.0
-texture_margin_top = 6.0
+texture_margin_left = 7.0
+texture_margin_top = 7.0
 texture_margin_right = 6.0
 texture_margin_bottom = 6.0
 
@@ -64,6 +65,7 @@ texture_margin_bottom = 3.0
 
 [node name="InventoryMenu" type="CanvasLayer"]
 process_mode = 3
+layer = 2
 script = ExtResource("1_05mvq")
 data = ExtResource("2_85aw6")
 
@@ -160,15 +162,17 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Label" type="Label" parent="."]
-offset_left = 515.0
-offset_top = 120.0
-offset_right = 564.0
-offset_bottom = 132.0
-scale = Vector2(5, 5)
+offset_left = 546.0
+offset_top = 132.0
+offset_right = 609.0
+offset_bottom = 146.0
+scale = Vector2(3, 3)
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 9
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.19607843)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_c1g87")
 text = "Inventory"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -179,13 +183,11 @@ anchor_left = 0.5
 anchor_top = 0.712
 anchor_right = 0.5
 anchor_bottom = 0.712
-offset_left = -375.0
+offset_left = -250.0
 offset_top = -17.640015
-offset_right = -125.0
-offset_bottom = -5.6400146
-scale = Vector2(3, 3)
+offset_bottom = -4.6400146
+scale = Vector2(2, 2)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 9
 text = "Buku Algoritma Sortingggggggggggggggggggg"
 horizontal_alignment = 1
 autowrap_mode = 3
@@ -202,19 +204,11 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_323o7")
 icon = ExtResource("7_uw6wx")
 
 [node name="UseButton" type="Button" parent="."]
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.80100006
-anchor_right = 0.5
-anchor_bottom = 0.80100006
-offset_left = -67.5
-offset_top = -26.720032
-offset_right = -22.5
-offset_bottom = -8.720032
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 575.0
+offset_top = 540.0
+offset_right = 620.0
+offset_bottom = 559.0
 scale = Vector2(3, 3)
-theme_override_font_sizes/font_size = 9
 theme_override_styles/normal = SubResource("StyleBoxTexture_85aw6")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_c1g87")
 theme_override_styles/hover = SubResource("StyleBoxTexture_uw6wx")

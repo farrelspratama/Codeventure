@@ -19,5 +19,8 @@ func show_item(item_data: ItemData):
 	get_tree().paused = true
 
 func close_popup():
+	if current_item:
+		PlayerManager.INVENTORY_DATA.add_item(current_item)
+	
 	hide()
 	get_tree().paused = false
