@@ -1,0 +1,157 @@
+[gd_scene load_steps=15 format=3 uid="uid://btxajxeepmyv2"]
+
+[ext_resource type="Texture2D" uid="uid://duh8hxa7jmwo1" path="res://assets/ui/menu/nine_path_panel_3.png" id="1_8d2gy"]
+[ext_resource type="Script" uid="uid://ds3m8fr3h4a08" path="res://system/ui/content/materi/materi_ui.gd" id="1_r6lt5"]
+[ext_resource type="Texture2D" uid="uid://djiqdt3kmrprq" path="res://assets/ui/menu/button_normal.png" id="2_1fenb"]
+[ext_resource type="FontFile" uid="uid://bctx62yq874s8" path="res://assets/ui/font/m6x11.ttf" id="2_r6lt5"]
+[ext_resource type="Texture2D" uid="uid://8uglib0r7bed" path="res://assets/ui/menu/button_pressed.png" id="3_r6lt5"]
+[ext_resource type="Texture2D" uid="uid://cj48vypqfgbpl" path="res://assets/ui/menu/button_hover.png" id="4_u08mf"]
+[ext_resource type="Texture2D" uid="uid://chhvpgnqif5eh" path="res://assets/ui/menu/cancel.png" id="5_mowik"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_06veb"]
+content_margin_left = 10.0
+content_margin_top = 20.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = ExtResource("1_8d2gy")
+texture_margin_left = 7.0
+texture_margin_top = 7.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1fenb"]
+texture = ExtResource("2_1fenb")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r6lt5"]
+texture = ExtResource("3_r6lt5")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u08mf"]
+texture = ExtResource("4_u08mf")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c1dfj"]
+texture = ExtResource("2_1fenb")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pqrth"]
+content_margin_bottom = 0.0
+texture = ExtResource("3_r6lt5")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kjv6y"]
+texture = ExtResource("4_u08mf")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[node name="MateriUI" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_r6lt5")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_06veb")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="TitleLabel" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_r6lt5")
+theme_override_font_sizes/font_size = 52
+text = "Tipe Data"
+horizontal_alignment = 1
+
+[node name="ContentContainer" type="VBoxContainer" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="PrevButton" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_1fenb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_r6lt5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_u08mf")
+text = "< Prev"
+
+[node name="PageLabel" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "1 / 2"
+
+[node name="NextButton" type="Button" parent="Control/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_1fenb")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_r6lt5")
+theme_override_styles/hover = SubResource("StyleBoxTexture_u08mf")
+text = "Next >"
+
+[node name="CloseButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1207.0
+offset_top = 10.0
+offset_right = 1228.0
+offset_bottom = 27.0
+scale = Vector2(3, 3)
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_c1dfj")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pqrth")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kjv6y")
+icon = ExtResource("5_mowik")

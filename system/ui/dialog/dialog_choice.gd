@@ -1,4 +1,5 @@
 @tool
+@icon("res://assets/icons/question_bubble.svg")
 class_name DialogChoice extends DialogItem
 
 var dialog_branches : Array[ DialogBranch ]

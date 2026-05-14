@@ -6,6 +6,7 @@ signal finished
 var is_active : bool = false
 var text_in_progress : bool = false
 var waiting_for_choice : bool = false
+var minigame_in_progress : bool = false
 
 var text_speed : float = 0.05
 var text_length : int = 0
@@ -31,7 +32,7 @@ func _ready() -> void:
 	hide_dialog()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if is_active == false:
+	if is_active == false or minigame_in_progress == true: 
 		return
 	if (event.is_action_pressed("interact")):
 		if text_in_progress == true:
@@ -84,6 +85,8 @@ func start_dialog() -> void:
 		set_dialog_text( _d as DialogText )
 	elif _d is DialogChoice:
 		set_dialog_choice( _d as DialogChoice )
+	elif _d is DialogMinigame:
+		set_dialog_minigame( _d as DialogMinigame )
 
 func set_dialog_text( _d : DialogItem ) -> void:
 	if _d is DialogText:
@@ -119,6 +122,57 @@ func _dialog_choice_selected( _d : DialogBranch ) -> void:
 	_d.selected.emit()
 	show_dialog( _d.dialog_items )
 	pass
+
+func set_dialog_minigame(_d: DialogMinigame) -> void:
+	# Sembunyikan UI dialog sementara minigame berjalan
+	dialog_ui.visible = false 
+	
+	var q_data = _d.question_data
+	if q_data == null:
+		advance_dialog()
+		return
+		
+	# --- KONEKSI SINYAL AMAN ---
+	if q_data.game_type == QuestionData.GameType.DRAG_AND_DROP:
+		_connect_minigame_signals(DragNDrop)
+		DragNDrop.show_minigame(q_data, true)
+		
+	elif q_data.game_type == QuestionData.GameType.TEXT_INPUT:
+		_connect_minigame_signals(TextInput)
+		TextInput.show_minigame(q_data, true)
+		
+	elif q_data.game_type == QuestionData.GameType.TRUE_FALSE:
+		_connect_minigame_signals(TrueOrFalse)
+		TrueOrFalse.show_minigame(q_data, true)
+
+func _connect_minigame_signals(minigame_node: Node) -> void:
+	if not minigame_node.minigame_finished.is_connected(_on_minigame_finished):
+		minigame_node.minigame_finished.connect(_on_minigame_finished)
+		
+	if not minigame_node.minigame_cancelled.is_connected(_on_minigame_cancelled):
+		minigame_node.minigame_cancelled.connect(_on_minigame_cancelled)
+
+func _disconnect_all_minigame_signals() -> void:
+	var minigames = [DragNDrop, TextInput, TrueOrFalse]
+	for m in minigames:
+		if m.minigame_finished.is_connected(_on_minigame_finished):
+			m.minigame_finished.disconnect(_on_minigame_finished)
+		if m.minigame_cancelled.is_connected(_on_minigame_cancelled):
+			m.minigame_cancelled.disconnect(_on_minigame_cancelled)
+
+func _on_minigame_finished() -> void:
+	_disconnect_all_minigame_signals()
+	
+	# Munculkan kembali UI percakapan dan lanjut ke baris dialog berikutnya
+	dialog_ui.visible = true 
+	advance_dialog()
+
+func _on_minigame_cancelled() -> void:
+	_disconnect_all_minigame_signals()
+	
+	print("Minigame di dialog dibatalkan. Menutup percakapan NPC...")
+	# Langsung tutup total percakapan agar status is_active dan pause di-reset!
+	hide_dialog()
 
 func _on_timer_timeout() -> void:
 	content.visible_characters += 1

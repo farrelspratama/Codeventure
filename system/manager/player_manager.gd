@@ -10,22 +10,29 @@ var player : Player
 var player_spawned : bool = false
 
 func _ready() -> void:
-	add_player_instance()
-	await get_tree().create_timer(0.2).timeout
 	player_spawned = true
 
 func add_player_instance() -> void:
 	player = PLAYER.instantiate()
 	add_child(player)
+	
+	player.visible = true
+
+func _ensure_player_exists() -> void:
+	# Jika player bernilai null ATAU fisiknya sudah terhapus (freed), buat baru!
+	if player == null or not is_instance_valid(player):
+		add_player_instance()
 
 func reward_score( _score : int ) -> void:
 	player.score += _score
 	print("Score: ", str(player.score))
 
 func set_player_position( _new_pos : Vector2 ) -> void:
+	_ensure_player_exists()
 	player.global_position = _new_pos
 
 func set_as_parent( _p : Node2D ) -> void:
+	_ensure_player_exists()
 	if player.get_parent():
 		player.get_parent().remove_child(player)
 	_p.add_child(player)

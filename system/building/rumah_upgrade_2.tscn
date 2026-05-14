@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://binlhgrit4f7b"]
+
+[ext_resource type="Texture2D" uid="uid://dx4f2481phjp8" path="res://assets/environment/building/rumah upgrade 2.png" id="1_tm7ew"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tm7ew"]
+size = Vector2(124, 142)
+
+[node name="RumahUpgrade2" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="RumahUpgrade2" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_tm7ew")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_tm7ew")

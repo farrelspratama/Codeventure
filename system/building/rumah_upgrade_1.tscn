@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0dcfcv4ywi55"]
+
+[ext_resource type="Texture2D" uid="uid://cexq3kbu1vkyu" path="res://assets/environment/building/rumah upgrade 1.png" id="1_ls6e3"]
+
+[node name="RumahUpgrade1" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="RumahUpgrade1" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_ls6e3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-8, 60, -62, 60, -62, -37, 62, -37, 62, 60, 12, 60, 12, 27, -8, 27)

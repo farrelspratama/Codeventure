@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://wviqf7ctx128"]
+
+[ext_resource type="Script" uid="uid://bd6ab51rmrwdm" path="res://system/ui/content/dragndrop/draggable_button.gd" id="1_w8mdo"]
+
+[node name="DraggableButton" type="Button"]
+custom_minimum_size = Vector2(180, 34)
+offset_right = 140.0
+offset_bottom = 34.0
+theme_override_font_sizes/font_size = 32
+text = "Placeholder"
+script = ExtResource("1_w8mdo")

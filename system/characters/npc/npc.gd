@@ -1,4 +1,5 @@
 @tool
+@icon("res://assets/icons/npc.svg")
 class_name NPC extends CharacterBody2D
 
 signal do_behavior_enabled
@@ -56,6 +57,7 @@ func update_animation() -> void:
 	
 	if animation_player.has_animation(anim_name):
 		animation_player.play(anim_name)
+		animation_player.advance(0)
 	else:
 		print("Animasi tidak ditemukan:", anim_name)
 

@@ -3,20 +3,20 @@
 [ext_resource type="Script" uid="uid://iswx5fmahnng" path="res://system/ui/popup/popup_item.gd" id="1_6mpld"]
 [ext_resource type="Texture2D" uid="uid://duh8hxa7jmwo1" path="res://assets/ui/menu/nine_path_panel_3.png" id="1_fq53b"]
 [ext_resource type="PackedScene" uid="uid://bg5srwe2vvaux" path="res://system/ui/inventory/inventory_slot.tscn" id="2_6mpld"]
-[ext_resource type="FontFile" uid="uid://csvpcd3mam4pu" path="res://assets/ui/font/PixelifySans-Regular.ttf" id="3_1bjo0"]
+[ext_resource type="FontFile" uid="uid://bctx62yq874s8" path="res://assets/ui/font/m6x11.ttf" id="3_6mpld"]
 [ext_resource type="Texture2D" uid="uid://djiqdt3kmrprq" path="res://assets/ui/menu/button_normal.png" id="4_klwh3"]
 [ext_resource type="Texture2D" uid="uid://8uglib0r7bed" path="res://assets/ui/menu/button_pressed.png" id="5_cipmv"]
 [ext_resource type="Texture2D" uid="uid://cj48vypqfgbpl" path="res://assets/ui/menu/button_hover.png" id="6_1l0v8"]
 [ext_resource type="Texture2D" uid="uid://chhvpgnqif5eh" path="res://assets/ui/menu/cancel.png" id="7_cp8yw"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_svjv6"]
-content_margin_left = 17.0
-content_margin_top = 22.0
-content_margin_right = 15.0
-content_margin_bottom = 10.0
+content_margin_left = 50.0
+content_margin_top = 20.0
+content_margin_right = 50.0
+content_margin_bottom = 20.0
 texture = ExtResource("1_fq53b")
-texture_margin_left = 6.0
-texture_margin_top = 6.0
+texture_margin_left = 7.0
+texture_margin_top = 7.0
 texture_margin_right = 6.0
 texture_margin_bottom = 6.0
 
@@ -64,6 +64,7 @@ texture_margin_bottom = 3.0
 
 [node name="PopupItem" type="CanvasLayer"]
 process_mode = 3
+layer = 2
 script = ExtResource("1_6mpld")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -72,113 +73,105 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.3137255)
+color = Color(0, 0, 0, 0.39215687)
 
-[node name="PanelContainer" type="Panel" parent="."]
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.46500003
-anchor_right = 0.5
-anchor_bottom = 0.46500003
-offset_left = -425.0
-offset_top = -249.80002
-offset_right = -255.0
-offset_bottom = -139.79999
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(5, 5)
-theme_override_styles/panel = SubResource("StyleBoxTexture_svjv6")
-
-[node name="InventorySlot" parent="PanelContainer" instance=ExtResource("2_6mpld")]
-layout_mode = 1
+[node name="PanelContainer" type="PanelContainer" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -7.800003
-offset_top = -16.200012
-offset_right = -7.800003
-offset_bottom = -16.200012
+offset_left = -284.0
+offset_top = -164.0
+offset_right = 284.0
+offset_bottom = 164.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_svjv6")
 
-[node name="Label" type="Label" parent="."]
-offset_left = 515.0
-offset_top = 120.0
-offset_right = 932.0
-offset_bottom = 240.0
-scale = Vector2(0.6, 0.6)
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_1bjo0")
-theme_override_font_sizes/font_size = 99
+theme_override_fonts/font = ExtResource("3_6mpld")
+theme_override_font_sizes/font_size = 64
 text = "Selamat!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -254.99997
-offset_top = -164.99998
-offset_right = 1195.0
-offset_bottom = -45.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.35, 0.35)
+[node name="Label2" type="Label" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_1bjo0")
-theme_override_font_sizes/font_size = 99
+theme_override_font_sizes/font_size = 48
 text = "Kamu Mendapatkan Item Baru"
 
-[node name="ItemNameLabel" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -129.00006
-offset_top = 25.00003
-offset_right = 608.0
-offset_bottom = 145.00003
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.35, 0.35)
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_bottom = 70
+
+[node name="ItemNameLabel" type="Label" parent="PanelContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_1bjo0")
-theme_override_font_sizes/font_size = 99
+theme_override_font_sizes/font_size = 48
 text = "Buku Pelajaran"
 
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
 [node name="ExitButton" type="Button" parent="."]
-offset_left = 957.0
-offset_top = 125.0
-offset_right = 978.0
-offset_bottom = 142.0
-scale = Vector2(3, 3)
+offset_left = 871.0
+offset_top = 187.0
+offset_right = 892.0
+offset_bottom = 204.0
+scale = Vector2(2, 2)
 theme_override_styles/normal = SubResource("StyleBoxTexture_jiry8")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_f4fg3")
 theme_override_styles/hover = SubResource("StyleBoxTexture_c44es")
 icon = ExtResource("7_cp8yw")
 
-[node name="UseButton" type="Button" parent="."]
-anchors_preset = -1
+[node name="InventorySlot" parent="." instance=ExtResource("2_6mpld")]
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 0.80100006
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.80100006
-offset_left = -67.5
-offset_top = -26.720032
-offset_right = -22.5
-offset_bottom = -8.720032
+anchor_bottom = 0.5
+offset_left = -43.0
+offset_top = -30.99997
+offset_right = -43.0
+offset_bottom = -30.99997
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3, 3)
-theme_override_font_sizes/font_size = 9
+scale = Vector2(5, 5)
+size_flags_horizontal = 4
+
+[node name="UseButton" type="Button" parent="."]
+offset_left = 605.0
+offset_top = 495.0
+offset_right = 675.0
+offset_bottom = 527.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxTexture_2kftk")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_sqiwj")
 theme_override_styles/hover = SubResource("StyleBoxTexture_mnpeo")

@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://henyuro8t3yc"]
+
+[ext_resource type="Texture2D" uid="uid://buq7or166y7ub" path="res://assets/environment/building/SD_belakang.png" id="1_ljpqv"]
+[ext_resource type="Texture2D" uid="uid://8inu7a5bmxup" path="res://assets/environment/building/SD_depan.png" id="2_ryn0s"]
+
+[node name="Sekolah" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="SdBelakang" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_ljpqv")
+
+[node name="SdDepan" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(43.5, 15)
+texture = ExtResource("2_ryn0s")
+
+[node name="SdDepan2" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(43.5, 33)
+texture = ExtResource("2_ryn0s")
+
+[node name="SdDepan3" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(43.5, 51)
+texture = ExtResource("2_ryn0s")
+
+[node name="SdDepan4" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(43.5, 69)
+texture = ExtResource("2_ryn0s")
+
+[node name="SdDepan5" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(43.5, 87)
+texture = ExtResource("2_ryn0s")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-74, 33, -74, -24, 71, -24, 71, 126, 17, 126, 17, 33)

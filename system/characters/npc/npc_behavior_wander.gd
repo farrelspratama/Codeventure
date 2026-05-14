@@ -1,4 +1,5 @@
 @tool
+@icon("res://assets/icons/npc_behavior.svg")
 extends NPCBehavior
 
 const DIRECTIONS = [ Vector2.UP, Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT ]

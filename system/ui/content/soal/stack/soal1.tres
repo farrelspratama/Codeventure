@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://c0oj42wcnxg0b"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_44nag"]
+
+[resource]
+script = ExtResource("1_44nag")
+game_type = 1
+question_text = "IF password_benar
+	[SLOT] kartu_aktif
+		akses = TRUE
+	[SLOT]
+		akses = FALSE"
+options = Array[String](["AND", "ELSE", "OR", "THEN"])
+correct_answers = Array[String](["AND", "ELSE"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"

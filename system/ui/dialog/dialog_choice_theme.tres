@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://8uglib0r7bed" path="res://assets/ui/menu/button_pressed.png" id="3_j1bf4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0pet8"]
+content_margin_left = 30.0
+content_margin_right = 30.0
+content_margin_bottom = 10.0
 texture = ExtResource("1_fsx8o")
 texture_margin_left = 5.0
 texture_margin_top = 3.0
@@ -12,8 +15,9 @@ texture_margin_right = 5.0
 texture_margin_bottom = 3.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vsl3q"]
-content_margin_top = 0.0
-content_margin_bottom = 5.0
+content_margin_left = 30.0
+content_margin_right = 30.0
+content_margin_bottom = 10.0
 texture = ExtResource("2_46ctv")
 texture_margin_left = 5.0
 texture_margin_top = 3.0
@@ -21,6 +25,9 @@ texture_margin_right = 5.0
 texture_margin_bottom = 3.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_muvtv"]
+content_margin_left = 30.0
+content_margin_right = 30.0
+content_margin_bottom = 10.0
 texture = ExtResource("3_j1bf4")
 texture_margin_left = 5.0
 texture_margin_top = 4.0

@@ -25,8 +25,28 @@ func register_ui(_pause, _inventory, _character, _dialog):
 	character_menu = _character
 	dialog = _dialog
 
-func open_ui(type : UIType):
+# --- FUNGSI BANTUAN BARU ---
+# Mengecek apakah ada event penting yang sedang menghalangi UI utama
+func _is_system_busy() -> bool:
 	if dialog != null and dialog.is_active:
+		return true
+	if DragNDrop != null and DragNDrop.is_active:
+		return true
+	if TextInput != null and TextInput.is_active:
+		return true
+	if TrueOrFalse != null and TrueOrFalse.is_active:
+		return true
+	if MateriUI != null and MateriUI.control.visible:
+		return true
+	if PopupItem != null and PopupItem.visible:
+		return true
+	
+	return false
+# ---------------------------
+
+func open_ui(type : UIType):
+	# Ganti pengecekan lama dengan fungsi bantuan
+	if _is_system_busy():
 		return
 	
 	if current_ui != UIType.NONE:
@@ -57,24 +77,27 @@ func close_current_ui():
 	_update_pause_state()
 
 func toggle_ui(type : UIType):
-	if dialog != null and dialog.is_active:
+	if _is_system_busy():
 		return
+		
 	if current_ui == type:
 		close_current_ui()
 	else:
 		open_ui(type)
 
 func handle_cancel():
-	if dialog != null and dialog.is_active:
+	if _is_system_busy():
 		return
+		
 	if current_ui != UIType.NONE:
 		close_current_ui()
 	else:
 		open_ui(UIType.PAUSE)
 
 func _input(event):
-	if dialog != null and dialog.is_active:
+	if _is_system_busy():
 		return
+		
 	if event.is_action_pressed("pause"):
 		handle_cancel()
 	elif event.is_action_pressed("tab"):

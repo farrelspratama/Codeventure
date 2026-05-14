@@ -56,14 +56,18 @@ func load_game() -> void:
 	var save_dict : Dictionary = json.get_data()
 	current_save = save_dict
 	
-	PlayerManager.set_player_position(Vector2(current_save.player.pos_x, current_save.player.pos_y))
-	
+	# 1. LOAD DATA INVENTORY & QUEST DULU
 	PlayerManager.INVENTORY_DATA.parse_save_data(current_save.items)
-	
 	QuestManager.current_quests = current_save.quests
 	
+	# 2. LOAD SCENE LEVELNYA
 	if current_save.scene_path != "":
+		# Gunakan 'await' jika LevelManager Anda memuat scene secara asinkron/membutuhkan waktu
 		LevelManager.load_new_level(current_save.scene_path, "", Vector2.ZERO)
+	
+	# 3. SET POSISI PEMAIN SETELAH LEVEL DIMUAT
+	# (Pastikan memanggil ini setelah node Player berhasil dibuat oleh LevelManager)
+	PlayerManager.set_player_position(Vector2(current_save.player.pos_x, current_save.player.pos_y))
 	
 	game_loaded.emit()
 	print("Game Loaded")

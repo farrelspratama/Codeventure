@@ -5,11 +5,11 @@ signal direction_changed( new_direction: Vector2 )
 var direction: Vector2 = Vector2.ZERO
 var cardinal_direction: Vector2 = Vector2.DOWN
 var current_state: String = "Idle"
-var nama : String = "Ersa Meilia"
+var nama : String = "Farrel Setia Pratama"
 var kelas : String = "X PPLG 2"
 var score : int = 0
 
-const MOVE_SPEED : float = 50.0
+const MOVE_SPEED : float = 70.0
 const DIR_4 := [
 	Vector2.RIGHT,
 	Vector2.DOWN,
@@ -25,9 +25,9 @@ func _physics_process(_delta) -> void:
 	handle_animation()
 
 func handle_movement():
-	var input_dir := Input.get_vector("left", "right", "up", "down")
+	# get_vector sudah otomatis membatasi panjang maksimal vektor menjadi 1
+	direction = Input.get_vector("left", "right", "up", "down")
 	
-	direction = input_dir.normalized()
 	velocity = direction * MOVE_SPEED
 	move_and_slide()
 

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgxfl33622bl4"]
+
+[ext_resource type="Texture2D" uid="uid://q17thj212wb2" path="res://assets/environment/building/balaiDesa_belakang.png" id="1_ynpgr"]
+[ext_resource type="Texture2D" uid="uid://cpxt0o57q8iom" path="res://assets/environment/building/balaiDesa_depan.png" id="2_cw38t"]
+
+[node name="BalaiDesa" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="BalaiDesaBelakang" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_ynpgr")
+
+[node name="BalaiDesaDepan" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(0, 20)
+texture = ExtResource("2_cw38t")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-31, 50, -31, 35, -78, 35, -78, -22, 78, -22, 78, 35, 31, 35, 31, 50)

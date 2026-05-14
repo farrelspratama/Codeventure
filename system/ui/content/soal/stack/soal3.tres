@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://blh4iut3yyyy8"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_8ebdl"]
+
+[resource]
+script = ExtResource("1_8ebdl")
+question_text = "Data hanya diproses jika valid.
+
+IF data_valid = TRUE THEN
+   [SLOT]
+END IF"
+options = Array[String](["process_data", "reset_data", "ignore_data"])
+correct_answers = Array[String](["process_data"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"

@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce7boom3ssm6x"]
+
+[ext_resource type="Script" uid="uid://b5g3jmkngrdw7" path="res://system/ui/content/dragndrop/drop_slot.gd" id="1_cb465"]
+
+[node name="DropSlot" type="Panel"]
+custom_minimum_size = Vector2(150, 40)
+script = ExtResource("1_cb465")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 53.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 32
+text = "Test"
+
+[node name="ResultIcon" type="Label" parent="."]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 6.0
+offset_right = 195.0
+offset_bottom = 44.0
+theme_override_font_sizes/font_size = 32

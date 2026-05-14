@@ -1,4 +1,5 @@
 @tool
+@icon("res://assets/icons/answer_bubble.svg")
 class_name DialogBranch extends DialogItem
 
 signal selected

@@ -80,13 +80,13 @@ theme_override_styles/tab_unselected = SubResource("StyleBoxTexture_5krdo")
 theme_override_styles/tab_hovered = SubResource("StyleBoxTexture_6ybru")
 theme_override_styles/tab_selected = SubResource("StyleBoxTexture_b3wer")
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 
 [node name="Info" parent="Control/TabContainer" instance=ExtResource("6_sifnw")]
-visible = false
 layout_mode = 2
 
 [node name="Quests" type="Control" parent="Control/TabContainer"]
+visible = false
 layout_mode = 2
 script = ExtResource("2_4344w")
 metadata/_tab_index = 1

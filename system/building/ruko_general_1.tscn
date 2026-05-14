@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://psl0y7svt0ar"]
+
+[ext_resource type="Texture2D" uid="uid://dep7c8yn200h1" path="res://assets/environment/building/ruko general 1.png" id="1_vlum4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vlum4"]
+size = Vector2(70, 82)
+
+[node name="RukoGeneral1" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="RukoGeneral1" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_vlum4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_vlum4")

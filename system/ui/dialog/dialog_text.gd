@@ -1,4 +1,5 @@
 @tool
+@icon("res://assets/icons/text_bubble.svg")
 class_name DialogText extends DialogItem
 
 @export_multiline var text : String = "Placeholder Text"

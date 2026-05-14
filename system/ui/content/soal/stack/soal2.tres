@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://r2jnr2k8wjq1"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_cxb6s"]
+
+[resource]
+script = ExtResource("1_cxb6s")
+game_type = 2
+question_text = "jumlah_data = 0
+IF jumlah_data > 0 THEN
+    proses_data
+END IF
+Apakah logika ini benar?"
+options = Array[String](["True", "False"])
+correct_answers = Array[String](["True"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"

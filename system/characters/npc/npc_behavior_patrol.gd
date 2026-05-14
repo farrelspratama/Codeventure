@@ -1,4 +1,5 @@
 @tool
+@icon("res://assets/icons/npc_behavior.svg")
 extends NPCBehavior
 
 @export var walk_speed : float = 30.0

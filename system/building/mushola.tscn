@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1c4u84e3eo5c"]
+
+[ext_resource type="Texture2D" uid="uid://cbip8n4qe7anb" path="res://assets/environment/building/mushola.png" id="1_ihyay"]
+
+[node name="Mushola" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Mushola" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_ihyay")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-12, 53, -12, 86, -22, 86, -22, 81, -90, 81, -90, -48, 89, -48, 88, 80, 22, 81, 22, 86, 12, 86, 12, 53)

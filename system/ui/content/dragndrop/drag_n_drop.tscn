@@ -1,0 +1,186 @@
+[gd_scene load_steps=16 format=3 uid="uid://bo3c6cufw12aj"]
+
+[ext_resource type="Texture2D" uid="uid://duh8hxa7jmwo1" path="res://assets/ui/menu/nine_path_panel_3.png" id="1_08l3o"]
+[ext_resource type="Script" uid="uid://dcqrneibykacy" path="res://system/ui/content/dragndrop/drag_n_drop_system.gd" id="1_gmc3a"]
+[ext_resource type="PackedScene" uid="uid://wviqf7ctx128" path="res://system/ui/content/dragndrop/draggable_button.tscn" id="3_2ct4h"]
+[ext_resource type="PackedScene" uid="uid://ce7boom3ssm6x" path="res://system/ui/content/dragndrop/drop_slot.tscn" id="3_gmc3a"]
+[ext_resource type="Texture2D" uid="uid://djiqdt3kmrprq" path="res://assets/ui/menu/button_normal.png" id="4_sl2qe"]
+[ext_resource type="Texture2D" uid="uid://8uglib0r7bed" path="res://assets/ui/menu/button_pressed.png" id="5_88v3q"]
+[ext_resource type="Texture2D" uid="uid://cj48vypqfgbpl" path="res://assets/ui/menu/button_hover.png" id="6_88v3q"]
+[ext_resource type="Texture2D" uid="uid://chhvpgnqif5eh" path="res://assets/ui/menu/cancel.png" id="8_80t42"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_866bh"]
+content_margin_left = 20.0
+content_margin_top = 15.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+texture = ExtResource("1_08l3o")
+texture_margin_left = 7.0
+texture_margin_top = 7.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gmc3a"]
+content_margin_left = 10.0
+content_margin_top = 0.0
+content_margin_right = 10.0
+content_margin_bottom = 5.0
+texture = ExtResource("4_sl2qe")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_80t42"]
+texture = ExtResource("5_88v3q")
+texture_margin_left = 5.0
+texture_margin_top = 4.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_evr1k"]
+texture = ExtResource("6_88v3q")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xv4un"]
+texture = ExtResource("4_sl2qe")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jkppc"]
+content_margin_bottom = 0.0
+texture = ExtResource("5_88v3q")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jog12"]
+texture = ExtResource("6_88v3q")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[node name="DragNDrop" type="CanvasLayer"]
+process_mode = 3
+layer = 2
+script = ExtResource("1_gmc3a")
+draggable_button_scene = ExtResource("3_2ct4h")
+drop_slot_scene = ExtResource("3_gmc3a")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -379.0
+offset_top = -161.5
+offset_right = 379.0
+offset_bottom = 161.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_866bh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "Stack"
+horizontal_alignment = 1
+
+[node name="QuestionContainer" type="VBoxContainer" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Line1" type="Label" parent="Control/PanelContainer/VBoxContainer/QuestionContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "IF kartu_valid = TRUE AND level >= 3 THEN"
+
+[node name="Line2" type="Label" parent="Control/PanelContainer/VBoxContainer/QuestionContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "   buka_pintu"
+
+[node name="Line3" type="Label" parent="Control/PanelContainer/VBoxContainer/QuestionContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "ELSE"
+
+[node name="DropSlot" parent="Control/PanelContainer/VBoxContainer/QuestionContainer" instance=ExtResource("3_gmc3a")]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Label2" type="Label" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "Manakah jawaban yang benar?"
+horizontal_alignment = 1
+
+[node name="OptionsContainer" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="DraggableButton" parent="Control/PanelContainer/VBoxContainer/OptionsContainer" instance=ExtResource("3_2ct4h")]
+layout_mode = 2
+text = "buka_pintu"
+
+[node name="DraggableButton2" parent="Control/PanelContainer/VBoxContainer/OptionsContainer" instance=ExtResource("3_2ct4h")]
+layout_mode = 2
+text = "tutup_pintu"
+
+[node name="DraggableButton3" parent="Control/PanelContainer/VBoxContainer/OptionsContainer" instance=ExtResource("3_2ct4h")]
+layout_mode = 2
+text = "lihat_pintu"
+
+[node name="Submit" type="Button" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_gmc3a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_80t42")
+theme_override_styles/hover = SubResource("StyleBoxTexture_evr1k")
+text = "Submit"
+
+[node name="CloseButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 1207.0
+offset_top = 10.0
+offset_right = 1228.0
+offset_bottom = 27.0
+scale = Vector2(3, 3)
+theme_override_styles/normal = SubResource("StyleBoxTexture_xv4un")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_jkppc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_jog12")
+icon = ExtResource("8_80t42")

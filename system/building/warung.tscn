@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://rsrbagfcy1ur"]
+
+[ext_resource type="Texture2D" uid="uid://dgurjyol2lqjn" path="res://assets/environment/building/warung.png" id="1_otpc0"]
+
+[node name="Warung" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Warung" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_otpc0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(8, 51, -65, 51, -65, -25, 55, -25, 69, 2, 69, 42, 8, 42)

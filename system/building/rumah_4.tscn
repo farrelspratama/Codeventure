@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1t68rt0pjn6k"]
+
+[ext_resource type="Texture2D" uid="uid://dw8g56vxq18wy" path="res://assets/environment/building/rumah kita.png" id="1_ou4uk"]
+
+[node name="Rumah4" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="RumahKita" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_ou4uk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(8, 60, -92, 60, -92, -18, -87, -18, -87, -41, 75, -41, 75, -25, 86, -25, 86, -18, 91, -18, 91, 60, 79, 60, 79, 35, 8, 35)

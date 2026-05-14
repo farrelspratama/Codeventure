@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://btd3b7u62h4oc"]
+
+[ext_resource type="Texture2D" uid="uid://crmd0vtpfxg1k" path="res://assets/environment/building/rumah general 2.png" id="1_fknb3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fknb3"]
+size = Vector2(72, 59)
+
+[node name="RumahGeneral2" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="RumahGeneral2" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_fknb3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_fknb3")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpqbmmqniybnb"]
+
+[ext_resource type="Texture2D" uid="uid://cxv5dbi4mdcok" path="res://assets/environment/building/kios - Copy.png" id="1_pevso"]
+
+[node name="Kios" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="KiosCopy" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_pevso")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-64, 76, -64, -36, 0, -36, 65, -36, 65, 76, 54, 76, 54, 80, 39, 80, 39, 78, -28, 78, -28, 82, -53, 82, -53, 76)

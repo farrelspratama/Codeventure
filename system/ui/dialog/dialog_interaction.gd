@@ -1,4 +1,5 @@
 @tool
+@icon("res://assets/icons/chat_bubbles.svg")
 class_name DialogInteraction extends Area2D
 
 signal player_interacted

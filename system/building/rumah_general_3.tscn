@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://crtidxk87vvo3"]
+
+[ext_resource type="Texture2D" uid="uid://dnv87r3oq70h0" path="res://assets/environment/building/rumah general 3.png" id="1_o7yme"]
+
+[node name="RumahGeneral3" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="RumahGeneral3" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_o7yme")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-37, 34, -37, -26, 23, -26, 35, -1, 35, 34)

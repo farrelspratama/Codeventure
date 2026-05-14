@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4maaymior5kd"]
+
+[ext_resource type="Texture2D" uid="uid://bg0xydf0sx73i" path="res://assets/environment/building/kosn normal.png" id="1_ofriv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ofriv"]
+size = Vector2(121, 80)
+
+[node name="Rumah1" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="KosnNormal" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_ofriv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1.5, 11)
+shape = SubResource("RectangleShape2D_ofriv")

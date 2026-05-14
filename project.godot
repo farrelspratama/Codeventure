@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Codeventure"
-run/main_scene="uid://bkiue41ycgdqq"
+run/main_scene="uid://byg7h6rhgrcsm"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -29,11 +29,19 @@ PopupItem="*res://system/ui/popup/popup_item.tscn"
 SceneTransition="*res://system/ui/transition/scene_transition.tscn"
 QuestManager="*res://system/manager/quest_manager.gd"
 CharacterMenu="*res://system/ui/character_menu/character_menu.tscn"
+DragNDrop="*res://system/ui/content/dragndrop/drag_n_drop.tscn"
+TextInput="*res://system/ui/content/text_input/text_input.tscn"
+TrueOrFalse="*res://system/ui/content/true_or_false/true_or_false.tscn"
+MateriUI="*res://system/ui/content/materi/materi_ui.tscn"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/drag_and_drop/plugin.cfg")
 
 [gui]
 
@@ -88,6 +96,11 @@ test={
 tab={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194306,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+draggable_click={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
 
