@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://v8btopncqvbb"]
+
+[ext_resource type="Texture2D" uid="uid://cxov7d6e8osy" path="res://assets/objects/05A_GEROBAK CILOK KIRI.png" id="1_32tes"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32tes"]
+size = Vector2(29, 11)
+
+[node name="GerobakCilok" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="05aGerobakCilokKiri" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_32tes")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1.5, 4.5)
+shape = SubResource("RectangleShape2D_32tes")

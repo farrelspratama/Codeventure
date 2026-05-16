@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpqvj6l8xhstp"]
+
+[ext_resource type="Texture2D" uid="uid://bgyy4l65nacsx" path="res://assets/objects/papan.png" id="1_r4mcx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4mcx"]
+size = Vector2(44, 21)
+
+[node name="Papan" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Papan" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_r4mcx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_r4mcx")

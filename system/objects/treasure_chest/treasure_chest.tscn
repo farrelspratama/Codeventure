@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dv0tn3ypx7ppw"]
 
-[ext_resource type="Script" uid="uid://byrdh60ibqyhy" path="res://system/objects/treasure_chest.gd" id="1_45sy6"]
+[ext_resource type="Script" uid="uid://byrdh60ibqyhy" path="res://system/objects/treasure_chest/treasure_chest.gd" id="1_45sy6"]
 [ext_resource type="Texture2D" uid="uid://dfbmshd2yyr5f" path="res://assets/objects/treasure-chest.png" id="1_xwwoc"]
 [ext_resource type="PackedScene" uid="uid://cuv621iowy2pq" path="res://system/general_nodes/persistent_data_handler/persistent_data_handler.tscn" id="3_vbuwg"]
 

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://yj5ny85323e"]
+
+[ext_resource type="Texture2D" uid="uid://cnmrs4gvatg4s" path="res://assets/objects/pertamini.png" id="1_j6yho"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j6yho"]
+size = Vector2(16, 15)
+
+[node name="Pertamini" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Pertamini" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_j6yho")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_j6yho")

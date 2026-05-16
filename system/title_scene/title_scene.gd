@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 # Default level jika pemain memilih New Game
-const START_LEVEL_PATH = "res://game.tscn"
+const START_LEVEL_PATH = "res://system/levels/world/game.tscn"
 
 @onready var new_game_button: Button = $Control/VBoxContainer/NewGameButton
 @onready var continue_button: Button = $Control/VBoxContainer/ContinueButton

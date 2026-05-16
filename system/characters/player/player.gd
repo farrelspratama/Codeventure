@@ -9,7 +9,7 @@ var nama : String = "Farrel Setia Pratama"
 var kelas : String = "X PPLG 2"
 var score : int = 0
 
-const MOVE_SPEED : float = 70.0
+const MOVE_SPEED : float = 100.0
 const DIR_4 := [
 	Vector2.RIGHT,
 	Vector2.DOWN,

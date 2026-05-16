@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwgyqf1ygmxbv"]
+
+[ext_resource type="Texture2D" uid="uid://bd185afe1uds3" path="res://assets/objects/mobil_biasa.png" id="1_y2s4a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y2s4a"]
+size = Vector2(32, 49)
+
+[node name="MobilBiasa" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="MobilBiasa" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_y2s4a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_y2s4a")

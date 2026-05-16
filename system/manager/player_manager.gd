@@ -10,13 +10,14 @@ var player : Player
 var player_spawned : bool = false
 
 func _ready() -> void:
-	player_spawned = true
+	player_spawned = false
 
 func add_player_instance() -> void:
 	player = PLAYER.instantiate()
 	add_child(player)
 	
 	player.visible = true
+	player_spawned = true
 
 func _ensure_player_exists() -> void:
 	# Jika player bernilai null ATAU fisiknya sudah terhapus (freed), buat baru!

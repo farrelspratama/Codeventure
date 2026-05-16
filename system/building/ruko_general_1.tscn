@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dep7c8yn200h1" path="res://assets/environment/building/ruko general 1.png" id="1_vlum4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vlum4"]
-size = Vector2(70, 82)
+size = Vector2(70, 62)
 
 [node name="RukoGeneral1" type="Node2D"]
 
@@ -13,5 +13,5 @@ size = Vector2(70, 82)
 texture = ExtResource("1_vlum4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-1, 0)
+position = Vector2(-1, 10)
 shape = SubResource("RectangleShape2D_vlum4")

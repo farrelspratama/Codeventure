@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdp6mftmavwwt"]
+
+[ext_resource type="Texture2D" uid="uid://cxqio6xsgufoa" path="res://assets/environment/building/kandang ayam.png" id="1_x5jf8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5jf8"]
+size = Vector2(23, 33)
+
+[node name="KandangAyam" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="KandangAyam" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_x5jf8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_x5jf8")

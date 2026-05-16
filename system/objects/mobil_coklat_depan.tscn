@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxot70ka6icf2"]
+
+[ext_resource type="Texture2D" uid="uid://bls0ngsif1l01" path="res://assets/objects/mobilCoklat_depan.png" id="1_6gr8x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6gr8x"]
+size = Vector2(33, 58)
+
+[node name="MobilCoklatDepan" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="MobilCoklatDepan" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_6gr8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_6gr8x")

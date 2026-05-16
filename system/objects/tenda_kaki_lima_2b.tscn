@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv1wen7o8tmk"]
+
+[ext_resource type="Texture2D" uid="uid://c6olgu7nhel1s" path="res://assets/objects/kaki lima 2b.png" id="1_jmg63"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmg63"]
+size = Vector2(29, 11)
+
+[node name="TendaKakiLima2b" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="KakiLima2b" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_jmg63")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0.5, 10.5)
+shape = SubResource("RectangleShape2D_jmg63")
