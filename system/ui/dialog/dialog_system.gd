@@ -6,6 +6,7 @@ signal finished
 var is_active : bool = false
 var text_in_progress : bool = false
 var waiting_for_choice : bool = false
+var watching_cutstcene : bool = false
 var minigame_in_progress : bool = false
 
 var text_speed : float = 0.05
