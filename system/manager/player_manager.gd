@@ -49,3 +49,23 @@ func _input(event):
 func interact() -> void:
 	interact_handled = false
 	interact_pressed.emit()
+
+func reset_camera_on_player( tween_duration : float = 0.5 ) -> void:
+	# --- TAMBAHKAN DUA BARIS PENGAMAN INI ---
+	# Jika player belum di-spawn (masih null), batalkan fungsi ini agar tidak error!
+	if player == null or not is_instance_valid(player):
+		return 
+	# ----------------------------------------
+	
+	var camera : Camera2D = get_viewport().get_camera_2d()
+	if camera:
+		if camera.get_parent() == player:
+			print("Camera already on player")
+			return
+		camera.reparent( player )
+		
+		var tween : Tween = create_tween()
+		tween.set_ease( Tween.EASE_OUT )
+		tween.set_trans( Tween.TRANS_QUAD )
+		tween.tween_property( camera, "position", Vector2.ZERO, tween_duration )
+	pass

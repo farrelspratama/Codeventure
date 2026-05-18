@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 # Default level jika pemain memilih New Game
-const START_LEVEL_PATH = "res://system/levels/world/game.tscn"
+const START_LEVEL_PATH = "res://system/ui/form/form_info.tscn"
 
 @onready var new_game_button: Button = $Control/VBoxContainer/NewGameButton
 @onready var continue_button: Button = $Control/VBoxContainer/ContinueButton
@@ -29,12 +29,12 @@ func _check_save_data() -> void:
 	var save_file_path = SaveManager.SAVE_PATH + "save.sav"
 	
 	if FileAccess.file_exists(save_file_path):
-		continue_button.disabled = false
-		# Opsional: Fokuskan tombol Continue jika file save ada
+		# MUNCULKAN tombol Continue jika file save ada
+		continue_button.visible = true
 		continue_button.grab_focus() 
 	else:
-		# Matikan tombol Continue jika belum pernah main / tidak ada save
-		continue_button.disabled = true
+		# HILANGKAN tombol Continue jika belum pernah main / tidak ada save
+		continue_button.visible = false
 		new_game_button.grab_focus()
 
 func _on_new_game_pressed() -> void:
@@ -55,10 +55,7 @@ func _on_new_game_pressed() -> void:
 		empty_saves.fill({ "item": "" })
 		PlayerManager.INVENTORY_DATA.parse_save_data(empty_saves)
 	
-	if Hud:
-		Hud.visible = true
-	
-	# 3. Pindah ke level awal
+	# 3. Pindah ke level awal (Form Info)
 	get_tree().change_scene_to_file(START_LEVEL_PATH)
 
 func _on_continue_pressed() -> void:

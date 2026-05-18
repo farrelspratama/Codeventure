@@ -1,0 +1,89 @@
+[gd_scene load_steps=3 format=3 uid="uid://d114fxxtv6j1s"]
+
+[ext_resource type="Script" uid="uid://cn0lb02aqvr1u" path="res://system/ui/form/form_info.gd" id="1_6lj2r"]
+[ext_resource type="Theme" uid="uid://c4gpybm58jvxd" path="res://system/ui/dialog/dialog_choice_theme.tres" id="2_fyysd"]
+
+[node name="FormInfo" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_6lj2r")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -22.5
+offset_right = 20.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NamaLengkap" type="LineEdit" parent="Control/VBoxContainer"]
+custom_minimum_size = Vector2(565, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+placeholder_text = "Masukkan Nama Lengkap Anda...."
+alignment = 1
+max_length = 30
+clear_button_enabled = true
+
+[node name="Kelas" type="OptionButton" parent="Control/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+alignment = 1
+selected = 0
+item_count = 3
+popup/item_0/text = "Pilih Kelas..."
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_1/text = "X PPLG 1"
+popup/item_1/id = 1
+popup/item_2/text = "X PPLG 2"
+popup/item_2/id = 2
+
+[node name="SubmitButton" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -59.0
+offset_top = -95.0
+offset_right = 59.0
+offset_bottom = -51.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_fyysd")
+theme_override_font_sizes/font_size = 48
+text = "Submit"
+
+[node name="BackButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 122.0
+offset_bottom = 74.0
+theme = ExtResource("2_fyysd")
+theme_override_font_sizes/font_size = 48
+text = "Back"

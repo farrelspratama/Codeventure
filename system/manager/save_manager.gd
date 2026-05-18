@@ -19,9 +19,17 @@ var current_save : Dictionary = {
 	quests = []
 }
 
-func save_game() -> void:
+# Tambahkan parameter opsional 'override_scene_path'
+func save_game(override_scene_path : String = "") -> void:
 	update_player_data()
-	update_scene_path()
+	
+	# Jika kita memberikan jalur paksa (saat pindah level), gunakan jalur tersebut.
+	# Jika tidak, deteksi otomatis menggunakan update_scene_path()
+	if override_scene_path != "":
+		current_save.scene_path = override_scene_path
+	else:
+		update_scene_path()
+		
 	update_item_data()
 	update_quest_data()
 	
@@ -34,7 +42,7 @@ func save_game() -> void:
 	file.store_line(save_json)
 	
 	game_saved.emit()
-	print("Save Game")
+	print("Save Game berhasil disimpan!")
 
 func load_game() -> void:
 	if not FileAccess.file_exists(SAVE_PATH + "save.sav"):
@@ -73,16 +81,17 @@ func load_game() -> void:
 	print("Game Loaded")
 
 func update_player_data() -> void:
-	var p : Player = PlayerManager.player
-	current_save.player.pos_x = p.global_position.x
-	current_save.player.pos_y = p.global_position.y
+	# Cek dulu apakah player sudah benar-benar ada
+	if PlayerManager.player != null and is_instance_valid(PlayerManager.player):
+		var p : Player = PlayerManager.player
+		current_save.player.pos_x = p.global_position.x
+		current_save.player.pos_y = p.global_position.y
 
 func update_scene_path() -> void:
-	var p : String = ""
-	for c in get_tree().root.get_children():
-		if c is Level:
-			p = c.scene_file_path
-	current_save.scene_path = p
+	# Cara Godot yang paling bersih untuk mengambil path scene utama yang sedang aktif
+	var current = get_tree().current_scene
+	if current != null and current.scene_file_path != "":
+		current_save.scene_path = current.scene_file_path
 
 func update_item_data() -> void:
 	current_save.items = PlayerManager.INVENTORY_DATA.get_save_data()

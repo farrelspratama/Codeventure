@@ -1,0 +1,407 @@
+[gd_scene load_steps=20 format=3 uid="uid://bgpsj8mn0fhxm"]
+
+[ext_resource type="Script" uid="uid://bq4gbvr2pegyx" path="res://system/levels/world/world_01_intro.gd" id="1_yj4xp"]
+[ext_resource type="PackedScene" uid="uid://nld40rw12c0e" path="res://system/levels/world/desa_environtment.tscn" id="2_xdw62"]
+[ext_resource type="PackedScene" uid="uid://cxqcha3ibg8r2" path="res://system/characters/player/player_spawn.tscn" id="3_bcsh5"]
+[ext_resource type="PackedScene" uid="uid://drg863i16hbqj" path="res://system/characters/npc/npc.tscn" id="4_b6dnt"]
+[ext_resource type="PackedScene" uid="uid://dclafa87ojaa3" path="res://system/ui/dialog/dialog_interaction.tscn" id="5_jdngw"]
+[ext_resource type="Resource" uid="uid://c3jxtxb1jtc4t" path="res://system/characters/npc/resource/temen.tres" id="6_cvbe6"]
+[ext_resource type="Script" uid="uid://cdx54srqhmplq" path="res://system/ui/dialog/dialog_cutscene.gd" id="6_o1q0s"]
+[ext_resource type="Resource" uid="uid://c7cwx4ukvhhu5" path="res://system/characters/npc/resource/kakek.tres" id="7_bbiq2"]
+[ext_resource type="PackedScene" uid="uid://5uiivlo4q0wq" path="res://system/objects/mobil_4.tscn" id="8_5mo4o"]
+[ext_resource type="Script" uid="uid://baqjcmwvhkv1j" path="res://system/ui/dialog/cutscene_action_move.gd" id="8_s4m0r"]
+[ext_resource type="Script" uid="uid://sf0f8kd4y58p" path="res://system/ui/dialog/cutscene_action_animation.gd" id="10_cvbe6"]
+[ext_resource type="Resource" uid="uid://c68j4aibkx563" path="res://system/characters/npc/resource/player.tres" id="11_0ndb5"]
+[ext_resource type="Script" uid="uid://b2gbmxj3vikwc" path="res://system/ui/dialog/dialog_text.gd" id="12_0ndb5"]
+[ext_resource type="Script" uid="uid://bnb2lbg2ro1g0" path="res://system/ui/dialog/cutscene_action_player_move.gd" id="12_cvbe6"]
+
+[sub_resource type="Animation" id="Animation_yj4xp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionalLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_0ndb5"]
+resource_name = "fade_in_out"
+length = 3.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionalLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_5mo4o"]
+resource_name = "fade_to_black"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionalLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_s4m0r"]
+resource_name = "fade_to_normal"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DirectionalLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s4m0r"]
+_data = {
+&"RESET": SubResource("Animation_yj4xp"),
+&"fade_in_out": SubResource("Animation_0ndb5"),
+&"fade_to_black": SubResource("Animation_5mo4o"),
+&"fade_to_normal": SubResource("Animation_s4m0r")
+}
+
+[node name="Intro" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_yj4xp")
+
+[node name="EnvirontmentDesa" parent="." instance=ExtResource("2_xdw62")]
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("3_bcsh5")]
+z_index = 1
+position = Vector2(500, -41)
+
+[node name="Mobil4" parent="." instance=ExtResource("8_5mo4o")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-114, -15)
+
+[node name="Camera2D" type="Camera2D" parent="Mobil4"]
+zoom = Vector2(4, 4)
+
+[node name="Temen" parent="." instance=ExtResource("4_b6dnt")]
+z_index = 1
+position = Vector2(500, -246)
+npc_resource = ExtResource("6_cvbe6")
+
+[node name="Kakek" parent="." instance=ExtResource("4_b6dnt")]
+z_index = 1
+position = Vector2(390, -249)
+npc_resource = ExtResource("7_bbiq2")
+
+[node name="DialogInteraction" parent="." instance=ExtResource("5_jdngw")]
+visible = false
+
+[node name="DialogCutscene" type="Node" parent="DialogInteraction"]
+script = ExtResource("6_o1q0s")
+metadata/_custom_type_script = "uid://cdx54srqhmplq"
+
+[node name="CutsceneActionMove" type="Node2D" parent="DialogInteraction/DialogCutscene" node_paths=PackedStringArray("object_to_move")]
+position = Vector2(500, -15)
+script = ExtResource("8_s4m0r")
+timing_method = 1
+object_to_move = NodePath("../../../Mobil4")
+transition_type = 4
+easing_method = 1
+move_speed = 80.0
+metadata/_custom_type_script = "uid://baqjcmwvhkv1j"
+
+[node name="CutsceneActionAnimation" type="Node2D" parent="DialogInteraction/DialogCutscene" node_paths=PackedStringArray("animation_player")]
+script = ExtResource("10_cvbe6")
+animation_player = NodePath("../../../AnimationPlayer")
+animation_name = "fade_in_out"
+metadata/_custom_type_script = "uid://sf0f8kd4y58p"
+
+[node name="DialogText" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Wah... akhirnya sampai juga."
+npc_info = ExtResource("11_0ndb5")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText2" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Perjalanannya lumayan panjang juga."
+npc_info = ExtResource("11_0ndb5")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText3" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Tapi rasanya langsung beda begitu sampai sini."
+npc_info = ExtResource("11_0ndb5")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText4" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Udaranya sejuk banget..."
+npc_info = ExtResource("11_0ndb5")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText5" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Dan suasananya masih sama seperti dulu."
+npc_info = ExtResource("11_0ndb5")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogCutscene2" type="Node" parent="DialogInteraction"]
+script = ExtResource("6_o1q0s")
+metadata/_custom_type_script = "uid://cdx54srqhmplq"
+
+[node name="CutsceneActionPlayerMove" type="Node2D" parent="DialogInteraction/DialogCutscene2"]
+position = Vector2(500, -125)
+script = ExtResource("12_cvbe6")
+timing_method = 1
+move_speed = 70.0
+metadata/_custom_type_script = "uid://bnb2lbg2ro1g0"
+
+[node name="DialogText6" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Banyak yang berubah... tapi beberapa tempat masih kelihatan familiar."
+npc_info = ExtResource("11_0ndb5")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText7" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Itu warung Pak Rudi masih ada ternyata."
+npc_info = ExtResource("11_0ndb5")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText8" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Dan lapangan itu... dulu tempat aku main tiap sore."
+npc_info = ExtResource("11_0ndb5")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogCutscene3" type="Node" parent="DialogInteraction"]
+script = ExtResource("6_o1q0s")
+metadata/_custom_type_script = "uid://cdx54srqhmplq"
+
+[node name="CutsceneActionMove2" type="Node2D" parent="DialogInteraction/DialogCutscene3" node_paths=PackedStringArray("object_to_move")]
+position = Vector2(499, -143)
+script = ExtResource("8_s4m0r")
+timing_method = 1
+object_to_move = NodePath("../../../Temen")
+move_speed = 50.0
+metadata/_custom_type_script = "uid://baqjcmwvhkv1j"
+
+[node name="DialogText9" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Eh?! Itu kamu, kan?"
+npc_info = ExtResource("6_cvbe6")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText10" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Hah? Oh!"
+npc_info = ExtResource("11_0ndb5")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText11" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Seriusan kamu balik ke desa?"
+npc_info = ExtResource("6_cvbe6")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText12" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "iya, baru sampai tadi."
+npc_info = ExtResource("11_0ndb5")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText13" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Udah lama banget nggak ketemu!"
+npc_info = ExtResource("6_cvbe6")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText14" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Kamu juga masih sama aja."
+npc_info = ExtResource("11_0ndb5")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText15" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Haha. Jadi sekarang liburan di sini?"
+npc_info = ExtResource("6_cvbe6")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText16" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "iya. Aku mau nginep beberapa hari di rumah Kakek dan Nenek."
+npc_info = ExtResource("11_0ndb5")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText17" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Ayah dan Ibu nggak bisa ikut karena masih sibuk kerja."
+npc_info = ExtResource("11_0ndb5")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText18" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Oh begitu."
+npc_info = ExtResource("6_cvbe6")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText19" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Tapi sekalian juga pengen istirahat dari suasana kota."
+npc_info = ExtResource("11_0ndb5")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText20" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Sepertinya Kakek dan Nenekmu udah nunggu dari tadi."
+npc_info = ExtResource("6_cvbe6")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText21" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Tadi aku lihat mereka bersih-bersih halaman."
+npc_info = ExtResource("6_cvbe6")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText22" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Wah, jadi nggak enak kalau bikin mereka nunggu lama."
+npc_info = ExtResource("11_0ndb5")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText23" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Nanti kalau ada waktu kita main lagi seperti dulu."
+npc_info = ExtResource("6_cvbe6")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText24" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Pasti."
+npc_info = ExtResource("11_0ndb5")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogCutscene4" type="Node" parent="DialogInteraction"]
+script = ExtResource("6_o1q0s")
+metadata/_custom_type_script = "uid://cdx54srqhmplq"
+
+[node name="CutsceneActionMove" type="Node2D" parent="DialogInteraction/DialogCutscene4" node_paths=PackedStringArray("object_to_move")]
+position = Vector2(499, -314)
+script = ExtResource("8_s4m0r")
+timing_method = 1
+object_to_move = NodePath("../../../Temen")
+move_speed = 50.0
+metadata/_custom_type_script = "uid://baqjcmwvhkv1j"
+
+[node name="CutsceneActionMove2" type="Node2D" parent="DialogInteraction/DialogCutscene4"]
+position = Vector2(648, -314)
+script = ExtResource("8_s4m0r")
+metadata/_custom_type_script = "uid://baqjcmwvhkv1j"
+
+[node name="DialogCutscene5" type="Node" parent="DialogInteraction"]
+script = ExtResource("6_o1q0s")
+metadata/_custom_type_script = "uid://cdx54srqhmplq"
+
+[node name="CutsceneActionPlayerMove" type="Node2D" parent="DialogInteraction/DialogCutscene5"]
+position = Vector2(500, -210)
+script = ExtResource("12_cvbe6")
+timing_method = 1
+move_speed = 70.0
+metadata/_custom_type_script = "uid://bnb2lbg2ro1g0"
+
+[node name="CutsceneActionPlayerMove2" type="Node2D" parent="DialogInteraction/DialogCutscene5"]
+position = Vector2(390, -210)
+script = ExtResource("12_cvbe6")
+timing_method = 1
+move_speed = 70.0
+metadata/_custom_type_script = "uid://bnb2lbg2ro1g0"
+
+[node name="CutsceneActionPlayerMove3" type="Node2D" parent="DialogInteraction/DialogCutscene5"]
+position = Vector2(390, -228)
+script = ExtResource("12_cvbe6")
+timing_method = 1
+move_speed = 70.0
+metadata/_custom_type_script = "uid://bnb2lbg2ro1g0"
+
+[node name="DialogText25" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Alhamdulillah akhirnya cucu Kakek datang juga."
+npc_info = ExtResource("7_bbiq2")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText26" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Perjalanan jauh capek, ya?"
+npc_info = ExtResource("7_bbiq2")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText27" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Lumayan... tapi senang akhirnya sampai."
+npc_info = ExtResource("11_0ndb5")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText28" type="Node" parent="DialogInteraction"]
+script = ExtResource("12_0ndb5")
+text = "Sudah istirahat dulu, ayo masuk."
+npc_info = ExtResource("7_bbiq2")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogCutscene6" type="Node" parent="DialogInteraction"]
+script = ExtResource("6_o1q0s")
+playback_mode = 0
+metadata/_custom_type_script = "uid://cdx54srqhmplq"
+
+[node name="CutsceneActionMove" type="Node2D" parent="DialogInteraction/DialogCutscene6" node_paths=PackedStringArray("object_to_move")]
+position = Vector2(390, -293)
+script = ExtResource("8_s4m0r")
+timing_method = 1
+object_to_move = NodePath("../../../Kakek")
+move_speed = 50.0
+metadata/_custom_type_script = "uid://baqjcmwvhkv1j"
+
+[node name="CutsceneActionPlayerMove" type="Node2D" parent="DialogInteraction/DialogCutscene6"]
+position = Vector2(390, -296)
+script = ExtResource("12_cvbe6")
+timing_method = 1
+move_speed = 50.0
+metadata/_custom_type_script = "uid://bnb2lbg2ro1g0"
+
+[node name="CutsceneActionAnimation" type="Node2D" parent="DialogInteraction/DialogCutscene6" node_paths=PackedStringArray("animation_player")]
+script = ExtResource("10_cvbe6")
+animation_player = NodePath("../../../AnimationPlayer")
+animation_name = "fade_to_black"
+metadata/_custom_type_script = "uid://sf0f8kd4y58p"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_s4m0r")
+}
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 0.0
+blend_mode = 1

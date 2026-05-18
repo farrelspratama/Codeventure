@@ -45,7 +45,6 @@ func _is_system_busy() -> bool:
 # ---------------------------
 
 func open_ui(type : UIType):
-	# Ganti pengecekan lama dengan fungsi bantuan
 	if _is_system_busy():
 		return
 	
@@ -56,22 +55,28 @@ func open_ui(type : UIType):
 	
 	match type:
 		UIType.PAUSE:
-			pause_menu.show_menu()
+			if pause_menu != null: # <-- Tambahkan pengaman ini
+				pause_menu.show_menu()
 		UIType.INVENTORY:
-			inventory_menu.show_menu()
+			if inventory_menu != null:
+				inventory_menu.show_menu()
 		UIType.CHARACTER:
-			character_menu.show_menu()
+			if character_menu != null:
+				character_menu.show_menu()
 	
 	_update_pause_state()
 
 func close_current_ui():
 	match current_ui:
 		UIType.PAUSE:
-			pause_menu.hide_menu()
+			if pause_menu != null:
+				pause_menu.hide_menu()
 		UIType.INVENTORY:
-			inventory_menu.hide_menu()
+			if inventory_menu != null:
+				inventory_menu.hide_menu()
 		UIType.CHARACTER:
-			character_menu.hide_menu()
+			if character_menu != null:
+				character_menu.hide_menu()
 	
 	current_ui = UIType.NONE
 	_update_pause_state()
@@ -94,7 +99,7 @@ func handle_cancel():
 	else:
 		open_ui(UIType.PAUSE)
 
-func _input(event):
+func _unhandled_input(event):
 	if _is_system_busy():
 		return
 		

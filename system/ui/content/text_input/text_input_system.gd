@@ -68,6 +68,7 @@ func load_question(q_data: QuestionData) -> void:
 			if i < parts.size() - 1:
 				# 1. BUAT KOLOM INPUT
 				var input_field = LineEdit.new()
+				input_field.add_theme_font_size_override("font_size", 48)
 				input_field.custom_minimum_size = Vector2(100, 30)
 				input_field.placeholder_text = "ketik..."
 				line_container.add_child(input_field)

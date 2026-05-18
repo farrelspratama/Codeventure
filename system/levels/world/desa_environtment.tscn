@@ -1,6 +1,5 @@
-[gd_scene load_steps=67 format=4 uid="uid://nld40rw12c0e"]
+[gd_scene load_steps=65 format=4 uid="uid://nld40rw12c0e"]
 
-[ext_resource type="Script" uid="uid://dxpqq0fy4vutb" path="res://system/levels/level.gd" id="1_bamwk"]
 [ext_resource type="Texture2D" uid="uid://cmavlu5bsmga8" path="res://assets/environment/tilesets/Outdoor Tiles.png" id="2_wn4sd"]
 [ext_resource type="Script" uid="uid://cyunb4ors3jvv" path="res://system/tile_maps/level_tile_map_layer.gd" id="3_7wr3v"]
 [ext_resource type="Texture2D" uid="uid://b4m3xth1ub224" path="res://assets/environment/tilesets/Decals.png" id="4_o8cd1"]
@@ -32,7 +31,6 @@
 [ext_resource type="PackedScene" uid="uid://binlhgrit4f7b" path="res://system/building/rumah_upgrade_2.tscn" id="25_6vpke"]
 [ext_resource type="PackedScene" uid="uid://dwhucepiey0kf" path="res://system/building/rumah_general_2b.tscn" id="26_i2yxe"]
 [ext_resource type="PackedScene" uid="uid://rsrbagfcy1ur" path="res://system/building/warung.tscn" id="27_wuqd3"]
-[ext_resource type="PackedScene" uid="uid://cxqcha3ibg8r2" path="res://system/characters/player/player_spawn.tscn" id="28_wn4sd"]
 [ext_resource type="PackedScene" uid="uid://bdp6mftmavwwt" path="res://system/building/kandang_ayam.tscn" id="29_o8cd1"]
 [ext_resource type="PackedScene" uid="uid://v8btopncqvbb" path="res://system/objects/gerobak_cilok.tscn" id="30_n1adq"]
 [ext_resource type="PackedScene" uid="uid://vuumftxcwoso" path="res://system/objects/tenda_kaki_lima.tscn" id="31_mqtgd"]
@@ -45,7 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://bwgyqf1ygmxbv" path="res://system/objects/mobil_biasa.tscn" id="39_jc4lx"]
 [ext_resource type="PackedScene" uid="uid://ckkbnt2d13kah" path="res://system/objects/odong_2.tscn" id="39_n1adq"]
 [ext_resource type="PackedScene" uid="uid://yj5ny85323e" path="res://system/objects/pertamini.tscn" id="41_qpk0d"]
-[ext_resource type="PackedScene" uid="uid://ctx3qqex6qch8" path="res://system/levels/world/tiang_bendera.tscn" id="42_10v5y"]
+[ext_resource type="PackedScene" uid="uid://ctx3qqex6qch8" path="res://system/building/tiang_bendera.tscn" id="42_10v5y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yqjtg"]
 texture = ExtResource("2_wn4sd")
@@ -407,9 +405,8 @@ distance = -725.0
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_v7vtf"]
 distance = -150.0
 
-[node name="Game" type="Node2D"]
+[node name="EnvirontmentDesa" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_bamwk")
 
 [node name="Tilemap" type="Node2D" parent="."]
 
@@ -577,9 +574,6 @@ position = Vector2(154, -58)
 
 [node name="TiangBendera" parent="Object" instance=ExtResource("42_10v5y")]
 position = Vector2(663, -235)
-
-[node name="PlayerSpawn" parent="." instance=ExtResource("28_wn4sd")]
-z_index = 1
 
 [node name="WorldBoundaries" type="StaticBody2D" parent="."]
 

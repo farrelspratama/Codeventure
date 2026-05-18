@@ -1,0 +1,326 @@
+[gd_scene load_steps=29 format=3 uid="uid://bkiue41ycgdqq"]
+
+[ext_resource type="Script" uid="uid://dxpqq0fy4vutb" path="res://system/levels/level.gd" id="1_q14ut"]
+[ext_resource type="PackedScene" uid="uid://nld40rw12c0e" path="res://system/levels/world/desa_environtment.tscn" id="2_lp7ko"]
+[ext_resource type="PackedScene" uid="uid://cxqcha3ibg8r2" path="res://system/characters/player/player_spawn.tscn" id="6_72rcc"]
+[ext_resource type="PackedScene" uid="uid://cdjt38hfhgqh2" path="res://system/characters/npc/kakek/kakek.tscn" id="7_t7lyp"]
+[ext_resource type="PackedScene" uid="uid://drg863i16hbqj" path="res://system/characters/npc/npc.tscn" id="8_3ojl6"]
+[ext_resource type="Resource" uid="uid://c25o5yhdygaui" path="res://system/characters/npc/resource/pak_nopandi.tres" id="9_cillt"]
+[ext_resource type="PackedScene" uid="uid://b2lmwyq5ghxtm" path="res://system/characters/npc/npc_behavior_wander.tscn" id="10_qcmtv"]
+[ext_resource type="PackedScene" uid="uid://ct0hqkac5axdu" path="res://system/quest_system/quest_activated_switch.tscn" id="11_y7q8k"]
+[ext_resource type="Resource" uid="uid://bw4gmqvkresnc" path="res://system/quest_system/quests/first_quest.tres" id="12_rw8rx"]
+[ext_resource type="PackedScene" uid="uid://dclafa87ojaa3" path="res://system/ui/dialog/dialog_interaction.tscn" id="13_08tpw"]
+[ext_resource type="Script" uid="uid://b2gbmxj3vikwc" path="res://system/ui/dialog/dialog_text.gd" id="14_xijt8"]
+[ext_resource type="Resource" uid="uid://c68j4aibkx563" path="res://system/characters/npc/resource/player.tres" id="15_umk0s"]
+[ext_resource type="Script" uid="uid://dicew2gcami5a" path="res://system/ui/dialog/dialog_choice.gd" id="16_hnxqq"]
+[ext_resource type="Script" uid="uid://cn7unf8c1h61s" path="res://system/ui/dialog/dialog_branch.gd" id="17_4krog"]
+[ext_resource type="PackedScene" uid="uid://ba5gqj7mahmym" path="res://system/quest_system/quest_advance_trigger.tscn" id="18_4ho82"]
+[ext_resource type="Resource" uid="uid://bmbeuehdox8yn" path="res://system/characters/npc/resource/kak_seno.tres" id="19_oxmdp"]
+[ext_resource type="Script" uid="uid://d2epo0ultih7o" path="res://system/quest_system/quest_activated_switch.gd" id="20_0bqyp"]
+[ext_resource type="Script" uid="uid://cfspk0ixjj2av" path="res://system/quest_system/quest_advance_trigger.gd" id="21_sgs4g"]
+[ext_resource type="Resource" uid="uid://c7cwx4ukvhhu5" path="res://system/characters/npc/resource/kakek.tres" id="22_4c50y"]
+[ext_resource type="PackedScene" uid="uid://dvtgjuby6ab1f" path="res://system/characters/npc/npc_behavior_patrol.tscn" id="23_f7m6f"]
+[ext_resource type="PackedScene" uid="uid://ch1mjraonqe7a" path="res://system/characters/npc/patrol_location.tscn" id="24_k6ykw"]
+[ext_resource type="Script" uid="uid://c5m6454bkinwe" path="res://system/ui/dialog/dialog_minigame.gd" id="27_k2ssb"]
+[ext_resource type="Resource" uid="uid://c0oj42wcnxg0b" path="res://system/ui/content/soal/stack/soal1.tres" id="28_dckdi"]
+[ext_resource type="PackedScene" uid="uid://dv0tn3ypx7ppw" path="res://system/objects/treasure_chest/treasure_chest.tscn" id="52_qhku5"]
+[ext_resource type="Resource" uid="uid://bk12rwi3hrxw3" path="res://system/inventory/items/buku.tres" id="53_58t5m"]
+[ext_resource type="Resource" uid="uid://blh4iut3yyyy8" path="res://system/ui/content/soal/stack/soal3.tres" id="54_8togo"]
+[ext_resource type="Resource" uid="uid://cggsbxsyb5ilf" path="res://system/inventory/items/flashdisk.tres" id="55_jy6w1"]
+[ext_resource type="Resource" uid="uid://r2jnr2k8wjq1" path="res://system/ui/content/soal/stack/soal2.tres" id="56_5yu55"]
+
+[node name="Game" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_q14ut")
+
+[node name="EnvirontmentDesa" parent="." instance=ExtResource("2_lp7ko")]
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("6_72rcc")]
+z_index = 1
+position = Vector2(391, -277)
+
+[node name="Entities" type="Node2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+
+[node name="Kakek" parent="Entities" instance=ExtResource("7_t7lyp")]
+position = Vector2(158, -50)
+
+[node name="Pak Nopandi" parent="Entities" instance=ExtResource("8_3ojl6")]
+position = Vector2(690.4591, -170)
+npc_resource = ExtResource("9_cillt")
+
+[node name="NpcBehaviorWander" parent="Entities/Pak Nopandi" instance=ExtResource("10_qcmtv")]
+wander_range = 3
+
+[node name="QuestActivatedSwitch" parent="Entities/Pak Nopandi" instance=ExtResource("11_y7q8k")]
+remove_when_activated = true
+react_to_global_signal = true
+linked_quest = ExtResource("12_rw8rx")
+settings_summary = "UPDATE QUEST:
+Quest: Flashdisk Pak Nopandi
+Checking if player has quest"
+
+[node name="DialogInteraction" parent="Entities/Pak Nopandi/QuestActivatedSwitch" instance=ExtResource("13_08tpw")]
+
+[node name="DialogText" type="Node" parent="Entities/Pak Nopandi/QuestActivatedSwitch/DialogInteraction"]
+script = ExtResource("14_xijt8")
+text = "Ehh, baru pulang kampung mas?"
+npc_info = ExtResource("9_cillt")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText2" type="Node" parent="Entities/Pak Nopandi/QuestActivatedSwitch/DialogInteraction"]
+script = ExtResource("14_xijt8")
+text = "Hehehehe Iya Pak"
+npc_info = ExtResource("15_umk0s")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText3" type="Node" parent="Entities/Pak Nopandi/QuestActivatedSwitch/DialogInteraction"]
+script = ExtResource("14_xijt8")
+text = "Wah Alhamdulillah Mas"
+npc_info = ExtResource("9_cillt")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText4" type="Node" parent="Entities/Pak Nopandi/QuestActivatedSwitch/DialogInteraction"]
+script = ExtResource("14_xijt8")
+text = "Mas, bisa bantuin saya kembalikan flashdisk dari Kak Seno ga?"
+npc_info = ExtResource("9_cillt")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogChoice" type="Node" parent="Entities/Pak Nopandi/QuestActivatedSwitch/DialogInteraction"]
+script = ExtResource("16_hnxqq")
+metadata/_custom_type_script = "uid://dicew2gcami5a"
+
+[node name="DialogBranch" type="Node" parent="Entities/Pak Nopandi/QuestActivatedSwitch/DialogInteraction/DialogChoice"]
+script = ExtResource("17_4krog")
+text = "Boleh Pak!"
+metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="QuestAdvanceTrigger" parent="Entities/Pak Nopandi/QuestActivatedSwitch/DialogInteraction/DialogChoice/DialogBranch" instance=ExtResource("18_4ho82")]
+signal_name = "selected"
+linked_quest = ExtResource("12_rw8rx")
+settings_summary = "UPDATE QUEST:
+Quest: Flashdisk Pak Nopandi
+Step: 0 - N/A
+Complete: false"
+
+[node name="DialogText" type="Node" parent="Entities/Pak Nopandi/QuestActivatedSwitch/DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("14_xijt8")
+text = "Boleh pak saya coba bantu"
+npc_info = ExtResource("15_umk0s")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText2" type="Node" parent="Entities/Pak Nopandi/QuestActivatedSwitch/DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("14_xijt8")
+text = "Wah terima kasih banyak mas"
+npc_info = ExtResource("19_oxmdp")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogBranch2" type="Node" parent="Entities/Pak Nopandi/QuestActivatedSwitch/DialogInteraction/DialogChoice"]
+script = ExtResource("17_4krog")
+text = "Maaf pak saya gabisa"
+metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogText" type="Node" parent="Entities/Pak Nopandi/QuestActivatedSwitch/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("14_xijt8")
+text = "Maaf pak saya lagi gabisa"
+npc_info = ExtResource("15_umk0s")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="QuestActivatedSwitch3" type="Node2D" parent="Entities/Pak Nopandi"]
+script = ExtResource("20_0bqyp")
+check_type = 3
+remove_when_activated = true
+react_to_global_signal = true
+linked_quest = ExtResource("12_rw8rx")
+quest_complete = true
+settings_summary = "UPDATE QUEST:
+Quest: Flashdisk Pak Nopandi
+Checking if quest is complete"
+metadata/_custom_type_script = "uid://d2epo0ultih7o"
+
+[node name="QuestActivatedSwitch2" type="Node2D" parent="Entities/Pak Nopandi/QuestActivatedSwitch3"]
+script = ExtResource("20_0bqyp")
+react_to_global_signal = true
+linked_quest = ExtResource("12_rw8rx")
+settings_summary = "UPDATE QUEST:
+Quest: Flashdisk Pak Nopandi
+Checking if player has quest"
+metadata/_custom_type_script = "uid://d2epo0ultih7o"
+
+[node name="QuestActivatedSwitch" type="Node2D" parent="Entities/Pak Nopandi/QuestActivatedSwitch3/QuestActivatedSwitch2"]
+script = ExtResource("20_0bqyp")
+check_type = 2
+remove_when_activated = true
+react_to_global_signal = true
+linked_quest = ExtResource("12_rw8rx")
+quest_step = 2
+settings_summary = "UPDATE QUEST:
+Quest: Flashdisk Pak Nopandi
+Check if player is on step: mengembalikan flashdisk"
+metadata/_custom_type_script = "uid://d2epo0ultih7o"
+
+[node name="DialogInteraction" parent="Entities/Pak Nopandi/QuestActivatedSwitch3/QuestActivatedSwitch2/QuestActivatedSwitch" instance=ExtResource("13_08tpw")]
+
+[node name="DialogText" type="Node" parent="Entities/Pak Nopandi/QuestActivatedSwitch3/QuestActivatedSwitch2/QuestActivatedSwitch/DialogInteraction"]
+script = ExtResource("14_xijt8")
+text = "Terima kasih mas, flashdisk nya ada di Kak Seno"
+npc_info = ExtResource("9_cillt")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="QuestActivatedSwitch2" type="Node2D" parent="Entities/Pak Nopandi/QuestActivatedSwitch3/QuestActivatedSwitch2"]
+script = ExtResource("20_0bqyp")
+check_type = 2
+react_to_global_signal = true
+linked_quest = ExtResource("12_rw8rx")
+quest_step = 2
+settings_summary = "UPDATE QUEST:
+Quest: Flashdisk Pak Nopandi
+Check if player is on step: mengembalikan flashdisk"
+metadata/_custom_type_script = "uid://d2epo0ultih7o"
+
+[node name="DialogInteraction" parent="Entities/Pak Nopandi/QuestActivatedSwitch3/QuestActivatedSwitch2/QuestActivatedSwitch2" instance=ExtResource("13_08tpw")]
+
+[node name="DialogText" type="Node" parent="Entities/Pak Nopandi/QuestActivatedSwitch3/QuestActivatedSwitch2/QuestActivatedSwitch2/DialogInteraction"]
+script = ExtResource("14_xijt8")
+text = "Terima kasih mas, ini ada sedikit hadiah buat kamu"
+npc_info = ExtResource("9_cillt")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="QuestAdvanceTrigger" type="Node2D" parent="Entities/Pak Nopandi/QuestActivatedSwitch3/QuestActivatedSwitch2/QuestActivatedSwitch2/DialogInteraction"]
+script = ExtResource("21_sgs4g")
+signal_name = "finished"
+linked_quest = ExtResource("12_rw8rx")
+quest_step = 2
+quest_complete = true
+settings_summary = "UPDATE QUEST:
+Quest: Flashdisk Pak Nopandi
+Step: 2 - mengembalikan flashdisk
+Complete: true"
+metadata/_custom_type_script = "uid://cfspk0ixjj2av"
+
+[node name="Pak Ustad" parent="Entities" instance=ExtResource("8_3ojl6")]
+position = Vector2(-178.05833, -269.05673)
+npc_resource = ExtResource("22_4c50y")
+
+[node name="NpcBehaviorPatrol" parent="Entities/Pak Ustad" instance=ExtResource("23_f7m6f")]
+
+[node name="PatrolLocation" parent="Entities/Pak Ustad/NpcBehaviorPatrol" instance=ExtResource("24_k6ykw")]
+wait_time = 1.0
+
+[node name="PatrolLocation2" parent="Entities/Pak Ustad/NpcBehaviorPatrol" instance=ExtResource("24_k6ykw")]
+position = Vector2(52, 0)
+wait_time = 1.0
+
+[node name="PatrolLocation3" parent="Entities/Pak Ustad/NpcBehaviorPatrol" instance=ExtResource("24_k6ykw")]
+position = Vector2(52, 41)
+wait_time = 1.0
+
+[node name="PatrolLocation4" parent="Entities/Pak Ustad/NpcBehaviorPatrol" instance=ExtResource("24_k6ykw")]
+position = Vector2(0, 41)
+wait_time = 1.0
+
+[node name="DialogInteraction" parent="Entities/Pak Ustad" instance=ExtResource("13_08tpw")]
+
+[node name="DialogText" type="Node" parent="Entities/Pak Ustad/DialogInteraction"]
+script = ExtResource("14_xijt8")
+text = "Halo mas bisa bantu kakek engga?"
+npc_info = ExtResource("22_4c50y")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogChoice" type="Node" parent="Entities/Pak Ustad/DialogInteraction"]
+script = ExtResource("16_hnxqq")
+metadata/_custom_type_script = "uid://dicew2gcami5a"
+
+[node name="DialogBranch" type="Node" parent="Entities/Pak Ustad/DialogInteraction/DialogChoice"]
+script = ExtResource("17_4krog")
+text = "Bisa "
+metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogText2" type="Node" parent="Entities/Pak Ustad/DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("14_xijt8")
+text = "Tolong selesaikan ini yaa"
+npc_info = ExtResource("22_4c50y")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogMinigame" type="Node" parent="Entities/Pak Ustad/DialogInteraction/DialogChoice/DialogBranch"]
+script = ExtResource("27_k2ssb")
+question_data = ExtResource("28_dckdi")
+npc_info = ExtResource("22_4c50y")
+metadata/_custom_type_script = "uid://c5m6454bkinwe"
+
+[node name="DialogBranch2" type="Node" parent="Entities/Pak Ustad/DialogInteraction/DialogChoice"]
+script = ExtResource("17_4krog")
+text = "Gak bisa"
+metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogText" type="Node" parent="Entities/Pak Ustad/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("14_xijt8")
+text = "Ok"
+npc_info = ExtResource("22_4c50y")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="Kak Seno" parent="Entities" instance=ExtResource("8_3ojl6")]
+position = Vector2(-212.60458, -2.3231344)
+npc_resource = ExtResource("19_oxmdp")
+
+[node name="QuestActivatedSwitch" type="Node2D" parent="Entities/Kak Seno"]
+script = ExtResource("20_0bqyp")
+check_type = 2
+react_to_global_signal = true
+linked_quest = ExtResource("12_rw8rx")
+quest_step = 1
+settings_summary = "UPDATE QUEST:
+Quest: Flashdisk Pak Nopandi
+Check if player is on step: mencari flashdisk"
+metadata/_custom_type_script = "uid://d2epo0ultih7o"
+
+[node name="DialogInteraction" parent="Entities/Kak Seno/QuestActivatedSwitch" instance=ExtResource("13_08tpw")]
+
+[node name="QuestAdvanceTrigger" type="Node2D" parent="Entities/Kak Seno/QuestActivatedSwitch/DialogInteraction"]
+script = ExtResource("21_sgs4g")
+signal_name = "player_interacted"
+linked_quest = ExtResource("12_rw8rx")
+quest_step = 1
+settings_summary = "UPDATE QUEST:
+Quest: Flashdisk Pak Nopandi
+Step: 1 - mencari flashdisk
+Complete: false"
+metadata/_custom_type_script = "uid://cfspk0ixjj2av"
+
+[node name="DialogText" type="Node" parent="Entities/Kak Seno/QuestActivatedSwitch/DialogInteraction"]
+script = ExtResource("14_xijt8")
+text = "Haloo Kak Seno, Flashdisk Pak Nopandi"
+npc_info = ExtResource("15_umk0s")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText2" type="Node" parent="Entities/Kak Seno/QuestActivatedSwitch/DialogInteraction"]
+script = ExtResource("14_xijt8")
+text = "Ohh iya ini ya saya kembalikan"
+npc_info = ExtResource("15_umk0s")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="NpcBehaviorPatrol" parent="Entities/Kak Seno" instance=ExtResource("23_f7m6f")]
+
+[node name="PatrolLocation" parent="Entities/Kak Seno/NpcBehaviorPatrol" instance=ExtResource("24_k6ykw")]
+wait_time = 1.0
+
+[node name="PatrolLocation2" parent="Entities/Kak Seno/NpcBehaviorPatrol" instance=ExtResource("24_k6ykw")]
+position = Vector2(50, 0)
+wait_time = 1.0
+
+[node name="Objects" type="Node2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+
+[node name="TreasureChest" parent="Objects" instance=ExtResource("52_qhku5")]
+position = Vector2(342, -248)
+scale = Vector2(0.5, 0.5)
+item_data = ExtResource("53_58t5m")
+question_data = ExtResource("54_8togo")
+
+[node name="TreasureChest2" parent="Objects" instance=ExtResource("52_qhku5")]
+position = Vector2(366, -248)
+scale = Vector2(0.5, 0.5)
+item_data = ExtResource("55_jy6w1")
+question_data = ExtResource("56_5yu55")

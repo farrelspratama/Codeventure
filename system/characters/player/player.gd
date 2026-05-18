@@ -5,8 +5,8 @@ signal direction_changed( new_direction: Vector2 )
 var direction: Vector2 = Vector2.ZERO
 var cardinal_direction: Vector2 = Vector2.DOWN
 var current_state: String = "Idle"
-var nama : String = "Farrel Setia Pratama"
-var kelas : String = "X PPLG 2"
+var nama : String = SaveManager.current_save.player.nama
+var kelas : String = SaveManager.current_save.player.kelas
 var score : int = 0
 
 const MOVE_SPEED : float = 100.0

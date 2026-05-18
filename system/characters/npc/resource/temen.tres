@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=3 format=3 uid="uid://c3jxtxb1jtc4t"]
+
+[ext_resource type="Script" uid="uid://cxpsbmfn7qk1h" path="res://system/characters/npc/npc_resource.gd" id="1_i1sc2"]
+[ext_resource type="Texture2D" uid="uid://dqnpqp3kyw40f" path="res://assets/characters/Teman.png" id="2_p13ra"]
+
+[resource]
+script = ExtResource("1_i1sc2")
+npc_name = "Temen"
+sprite = ExtResource("2_p13ra")
+metadata/_custom_type_script = "uid://cxpsbmfn7qk1h"
