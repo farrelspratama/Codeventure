@@ -37,6 +37,8 @@ func _ready() -> void:
 		get_node("/root/CharacterMenu"),
 		get_node("/root/Dialog")
 	)
+	
+	await SceneTransition.fade_in()
 
 func _free_level() -> void:
 	UIManager.close_current_ui()

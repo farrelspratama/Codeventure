@@ -132,12 +132,6 @@ easing_method = 1
 move_speed = 80.0
 metadata/_custom_type_script = "uid://baqjcmwvhkv1j"
 
-[node name="CutsceneActionAnimation" type="Node2D" parent="DialogInteraction/DialogCutscene" node_paths=PackedStringArray("animation_player")]
-script = ExtResource("10_cvbe6")
-animation_player = NodePath("../../../AnimationPlayer")
-animation_name = "fade_in_out"
-metadata/_custom_type_script = "uid://sf0f8kd4y58p"
-
 [node name="DialogText" type="Node" parent="DialogInteraction"]
 script = ExtResource("12_0ndb5")
 text = "Wah... akhirnya sampai juga."

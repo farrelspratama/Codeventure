@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://ca4lsd537w08n"]
+
+[ext_resource type="Script" uid="uid://7i0er7lfpwut" path="res://system/levels/world/monolog_02.gd" id="1_sobi2"]
+[ext_resource type="PackedScene" uid="uid://dclafa87ojaa3" path="res://system/ui/dialog/dialog_interaction.tscn" id="2_nsmrv"]
+[ext_resource type="Script" uid="uid://b2gbmxj3vikwc" path="res://system/ui/dialog/dialog_text.gd" id="3_bxiiw"]
+[ext_resource type="Resource" uid="uid://c68j4aibkx563" path="res://system/characters/npc/resource/player.tres" id="4_yx4am"]
+
+[node name="Monolog" type="Node2D"]
+script = ExtResource("1_sobi2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="DialogInteraction" parent="." instance=ExtResource("2_nsmrv")]
+visible = false
+
+[node name="DialogText" type="Node" parent="DialogInteraction"]
+script = ExtResource("3_bxiiw")
+text = "Akhirnya sampai juga..."
+npc_info = ExtResource("4_yx4am")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText2" type="Node" parent="DialogInteraction"]
+script = ExtResource("3_bxiiw")
+text = "Sudah lama rasanya nggak menghabiskan waktu di desa."
+npc_info = ExtResource("4_yx4am")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText3" type="Node" parent="DialogInteraction"]
+script = ExtResource("3_bxiiw")
+text = "Hmm... sebelum istirahat mungkin aku bisa jalan-jalan sebentar keliling desa."
+npc_info = ExtResource("4_yx4am")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText4" type="Node" parent="DialogInteraction"]
+script = ExtResource("3_bxiiw")
+text = "Pasti banyak hal yang berubah sejak terakhir kali aku ke sini."
+npc_info = ExtResource("4_yx4am")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText5" type="Node" parent="DialogInteraction"]
+script = ExtResource("3_bxiiw")
+text = "Dan mungkin aku juga bisa menemui beberapa orang yang dulu kukenal."
+npc_info = ExtResource("4_yx4am")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText6" type="Node" parent="DialogInteraction"]
+script = ExtResource("3_bxiiw")
+text = "Baiklah, coba keliling desa dan bicara dengan warga sekitar."
+npc_info = ExtResource("4_yx4am")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"

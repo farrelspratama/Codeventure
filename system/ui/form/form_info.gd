@@ -41,7 +41,7 @@ func _on_submit_pressed() -> void:
 	print("Data Disimpan: Nama = ", SaveManager.current_save.player.nama, " | Kelas = ", SaveManager.current_save.player.kelas)
 	
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://system/levels/world/world_01_intro.tscn")
+	SceneTransition.change_scene("res://system/levels/world/monolog_01.tscn")
 
 func _on_back_pressed() -> void:
 	print("Dibatalkan! Mengosongkan form dan kembali ke Menu...")
@@ -53,5 +53,4 @@ func _on_back_pressed() -> void:
 	# 2. Lepaskan pause agar game bisa berjalan normal lagi
 	get_tree().paused = false
 	
-	# 3. Pindah kembali ke Main Menu (Sesuaikan path ini dengan scene Main Menu Anda!)
-	get_tree().change_scene_to_file("res://system/title_scene/title_scene.tscn")
+	SceneTransition.change_scene("res://system/title_scene/title_scene.tscn")

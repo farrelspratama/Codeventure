@@ -25,10 +25,12 @@ func _ready() -> void:
 		dialog_interaction.player_interact()
 
 func _on_mobil_sampai() -> void:
+	await SceneTransition.fade_out()
 	if PlayerManager.player:
 		# Munculkan player (efek turun mobil)
 		PlayerManager.player.visible = true
 		
+		await SceneTransition.fade_in()
 		# Pindahkan kamera ke player
 		var camera = mobil.get_node_or_null("Camera2D")
 		if camera:
@@ -39,10 +41,10 @@ func _on_intro_cutscene_finished() -> void:
 	print("Intro Selesai! Memulai efek ganti hari...")
 	
 	# Tentukan level selanjutnya
-	var next_level_path = "res://system/levels/world/world_01_game.tscn"
+	var next_level_path = "res://system/levels/world/monolog_02.tscn"
 	
 	# Simpan game dan beri tahu SaveManager bahwa pemain "sudah" berada di level selanjutnya
 	SaveManager.save_game(next_level_path)
 	
 	# Pindah scene
-	get_tree().change_scene_to_file(next_level_path)
+	SceneTransition.change_scene(next_level_path)

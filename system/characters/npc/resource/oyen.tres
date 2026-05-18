@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=3 format=3 uid="uid://byykgcx2ehstl"]
+
+[ext_resource type="Script" uid="uid://cxpsbmfn7qk1h" path="res://system/characters/npc/npc_resource.gd" id="1_tm4p1"]
+[ext_resource type="Texture2D" uid="uid://cmrwsvo8whoqo" path="res://assets/characters/Oyen.png" id="2_0t01n"]
+
+[resource]
+script = ExtResource("1_tm4p1")
+npc_name = "Oyen"
+sprite = ExtResource("2_0t01n")
+metadata/_custom_type_script = "uid://cxpsbmfn7qk1h"

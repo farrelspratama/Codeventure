@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=3 format=3 uid="uid://b2fmd63nntcuv"]
+
+[ext_resource type="Script" uid="uid://6osa3re2n1f1" path="res://system/quest_system/quest_reward_item.gd" id="1_qfyuw"]
+[ext_resource type="Script" uid="uid://df0jn0tbhct03" path="res://system/quest_system/quest_resource.gd" id="2_0v3tj"]
+
+[resource]
+script = ExtResource("2_0v3tj")
+title = "Keliling Desa"
+description = "Bicara dengan 3 warga desa"
+steps = Array[String](["Pak Tatang", "Zidan", "Kak Seno"])
+metadata/_custom_type_script = "uid://df0jn0tbhct03"

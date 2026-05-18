@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://klrs4sp7ff46"]
+
+[ext_resource type="Script" uid="uid://fpixkcujbelv" path="res://system/levels/world/monolog_01.gd" id="1_4x2rd"]
+[ext_resource type="PackedScene" uid="uid://dclafa87ojaa3" path="res://system/ui/dialog/dialog_interaction.tscn" id="2_8tdr0"]
+[ext_resource type="Script" uid="uid://b2gbmxj3vikwc" path="res://system/ui/dialog/dialog_text.gd" id="3_wdter"]
+[ext_resource type="Resource" uid="uid://c68j4aibkx563" path="res://system/characters/npc/resource/player.tres" id="4_tbolx"]
+
+[node name="Monolog" type="Node2D"]
+script = ExtResource("1_4x2rd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="DialogInteraction" parent="." instance=ExtResource("2_8tdr0")]
+visible = false
+
+[node name="DialogText" type="Node" parent="DialogInteraction"]
+script = ExtResource("3_wdter")
+text = "Akhirnya liburan juga..."
+npc_info = ExtResource("4_tbolx")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText2" type="Node" parent="DialogInteraction"]
+script = ExtResource("3_wdter")
+text = "Sudah lama rasanya nggak pulang ke desa."
+npc_info = ExtResource("4_tbolx")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText3" type="Node" parent="DialogInteraction"]
+script = ExtResource("3_wdter")
+text = "Aku jadi kangen suasana kampung... jalan kecil, sawah, dan udara pagi di sana."
+npc_info = ExtResource("4_tbolx")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText4" type="Node" parent="DialogInteraction"]
+script = ExtResource("3_wdter")
+text = "Sayangnya Ayah dan Ibu nggak bisa ikut kali ini."
+npc_info = ExtResource("4_tbolx")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText5" type="Node" parent="DialogInteraction"]
+script = ExtResource("3_wdter")
+text = "Mereka masih sibuk kerja dan ada urusan yang belum selesai."
+npc_info = ExtResource("4_tbolx")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText6" type="Node" parent="DialogInteraction"]
+script = ExtResource("3_wdter")
+text = "Tapi nggak apa-apa. Lagipula aku juga ingin mencoba pergi sendiri untuk pertama kalinya."
+npc_info = ExtResource("4_tbolx")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText7" type="Node" parent="DialogInteraction"]
+script = ExtResource("3_wdter")
+text = "Dan semoga liburan kali ini seru."
+npc_info = ExtResource("4_tbolx")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"

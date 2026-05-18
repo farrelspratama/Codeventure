@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="NPCResource" load_steps=3 format=3 uid="uid://dypkbtyntpix7"]
+
+[ext_resource type="Script" uid="uid://cxpsbmfn7qk1h" path="res://system/characters/npc/npc_resource.gd" id="1_m4a8w"]
+[ext_resource type="Texture2D" uid="uid://bdyd4p557wnks" path="res://assets/characters/Pak Tatang.png" id="2_lbpuy"]
+
+[resource]
+script = ExtResource("1_m4a8w")
+npc_name = "Pak Tatang"
+sprite = ExtResource("2_lbpuy")
+metadata/_custom_type_script = "uid://cxpsbmfn7qk1h"
