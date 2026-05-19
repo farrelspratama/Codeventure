@@ -5,6 +5,8 @@ const SAVE_PATH = "user://"
 signal game_loaded
 signal game_saved
 
+var is_loading : bool = false
+
 var current_save : Dictionary = {
 	scene_path = "",
 	player = {
@@ -64,18 +66,21 @@ func load_game() -> void:
 	var save_dict : Dictionary = json.get_data()
 	current_save = save_dict
 	
+	is_loading = true
+	
 	# 1. LOAD DATA INVENTORY & QUEST DULU
 	PlayerManager.INVENTORY_DATA.parse_save_data(current_save.items)
 	QuestManager.current_quests = current_save.quests
 	
 	# 2. LOAD SCENE LEVELNYA
 	if current_save.scene_path != "":
-		# Gunakan 'await' jika LevelManager Anda memuat scene secara asinkron/membutuhkan waktu
 		LevelManager.load_new_level(current_save.scene_path, "", Vector2.ZERO)
+		await LevelManager.level_loaded
 	
 	# 3. SET POSISI PEMAIN SETELAH LEVEL DIMUAT
-	# (Pastikan memanggil ini setelah node Player berhasil dibuat oleh LevelManager)
 	PlayerManager.set_player_position(Vector2(current_save.player.pos_x, current_save.player.pos_y))
+	
+	is_loading = false
 	
 	game_loaded.emit()
 	print("Game Loaded")

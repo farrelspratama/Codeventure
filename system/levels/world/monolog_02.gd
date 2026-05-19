@@ -23,5 +23,5 @@ func _ready() -> void:
 func _on_monolog_finished() -> void:
 	print("Monolog Selesai. Pindah ke Intro...")
 	
-	# Setelah layar monolog hitam selesai, lempar pemain untuk mengisi nama!
-	SceneTransition.change_scene("res://system/levels/world/world_01_game.tscn")
+	var gameplay_level = "res://system/levels/world/world_01_game.tscn"
+	LevelManager.load_new_level(gameplay_level, "", Vector2.ZERO)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://bkiue41ycgdqq"]
+[gd_scene load_steps=33 format=3 uid="uid://bkiue41ycgdqq"]
 
 [ext_resource type="Script" uid="uid://dxpqq0fy4vutb" path="res://system/levels/level.gd" id="1_q14ut"]
 [ext_resource type="PackedScene" uid="uid://nld40rw12c0e" path="res://system/levels/world/desa_environtment.tscn" id="2_lp7ko"]
@@ -26,6 +26,7 @@
 [ext_resource type="Resource" uid="uid://b2fmd63nntcuv" path="res://system/quest_system/quests/keliling_desa.tres" id="26_lp7ko"]
 [ext_resource type="Script" uid="uid://c5m6454bkinwe" path="res://system/ui/dialog/dialog_minigame.gd" id="27_k2ssb"]
 [ext_resource type="Resource" uid="uid://c0oj42wcnxg0b" path="res://system/ui/content/soal/stack/soal1.tres" id="28_dckdi"]
+[ext_resource type="PackedScene" uid="uid://d2j6svnvl8o7e" path="res://system/levels/level_transition.tscn" id="32_hfnwl"]
 [ext_resource type="PackedScene" uid="uid://dv0tn3ypx7ppw" path="res://system/objects/treasure_chest/treasure_chest.tscn" id="52_qhku5"]
 [ext_resource type="Resource" uid="uid://bk12rwi3hrxw3" path="res://system/inventory/items/buku.tres" id="53_58t5m"]
 [ext_resource type="Resource" uid="uid://blh4iut3yyyy8" path="res://system/ui/content/soal/stack/soal3.tres" id="54_8togo"]
@@ -554,3 +555,10 @@ position = Vector2(299, -576)
 scale = Vector2(0.5, 0.5)
 item_data = ExtResource("55_jy6w1")
 question_data = ExtResource("56_5yu55")
+
+[node name="LevelTransition" parent="." instance=ExtResource("32_hfnwl")]
+z_index = 1
+position = Vector2(816, -186)
+level = "uid://d0k2qddo55qqw"
+center_player = null
+side = 2

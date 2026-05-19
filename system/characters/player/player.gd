@@ -9,7 +9,7 @@ var nama : String = SaveManager.current_save.player.nama
 var kelas : String = SaveManager.current_save.player.kelas
 var score : int = 0
 
-const MOVE_SPEED : float = 200.0
+const MOVE_SPEED : float = 80.0
 const DIR_4 := [
 	Vector2.RIGHT,
 	Vector2.DOWN,

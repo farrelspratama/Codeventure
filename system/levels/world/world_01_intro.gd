@@ -47,4 +47,4 @@ func _on_intro_cutscene_finished() -> void:
 	SaveManager.save_game(next_level_path)
 	
 	# Pindah scene
-	SceneTransition.change_scene(next_level_path)
+	LevelManager.load_new_level(next_level_path, "", Vector2.ZERO)
