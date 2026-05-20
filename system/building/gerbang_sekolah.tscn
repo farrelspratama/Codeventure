@@ -23,3 +23,11 @@ shape = SubResource("RectangleShape2D_5p5wr")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(31.5, 18)
 shape = SubResource("RectangleShape2D_ws6hg")
+
+[node name="Label" type="Label" parent="StaticBody2D"]
+offset_left = -21.0
+offset_top = -18.0
+offset_right = 21.0
+offset_bottom = -5.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Sekolah"

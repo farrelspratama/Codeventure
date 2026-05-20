@@ -1,7 +1,5 @@
 class_name PlayerCamera extends Camera2D
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	LevelManager.tilemap_bounds_changed.connect( _update_limits )
 	_update_limits( LevelManager.current_tilemap_bounds )
@@ -13,4 +11,11 @@ func _update_limits( bounds : Array[ Vector2 ] ) -> void:
 	limit_top = int( bounds[0].y )
 	limit_right = int( bounds[1].x )
 	limit_bottom = int( bounds[1].y )
-	pass
+	
+	# Begitu batas peta baru diterima, paksa kamera untuk beradaptasi!
+	force_snap()
+
+# --- FUNGSI BARU UNTUK MENGATASI BUG TERTINGGAL ---
+func force_snap() -> void:
+	reset_smoothing()
+	force_update_scroll()

@@ -11,7 +11,7 @@ func _ready() -> void:
 		Hud.visible = false
 	
 	# Sambungkan sinyal jika dialog selesai, arahkan ke Form Info
-	Dialog.finished.connect(_on_monolog_finished, CONNECT_ONE_SHOT)
+	Dialog.finished.connect(_on_monolog_finished)
 	
 	# Beri jeda dramatis 1 detik sebelum teks pertama muncul
 	await get_tree().create_timer(1.0).timeout
@@ -23,5 +23,6 @@ func _ready() -> void:
 func _on_monolog_finished() -> void:
 	print("Monolog Selesai. Pindah ke Intro...")
 	
-	# Setelah layar monolog hitam selesai, lempar pemain untuk mengisi nama!
-	SceneTransition.change_scene("res://system/levels/world/world_01_intro.tscn")
+	var intro_level = "res://system/levels/world/world_01_intro.tscn"
+	
+	LevelManager.load_new_level(intro_level, "", Vector2.ZERO)

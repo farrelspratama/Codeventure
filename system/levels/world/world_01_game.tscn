@@ -48,6 +48,7 @@ z_index = 1
 y_sort_enabled = true
 
 [node name="Pak Sofyan" parent="Entities" instance=ExtResource("8_3ojl6")]
+visible = false
 position = Vector2(690.4591, -170)
 npc_resource = ExtResource("9_cillt")
 
@@ -560,5 +561,4 @@ question_data = ExtResource("56_5yu55")
 z_index = 1
 position = Vector2(816, -186)
 level = "uid://d0k2qddo55qqw"
-center_player = null
 side = 2

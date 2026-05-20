@@ -30,12 +30,13 @@ func _on_mobil_sampai() -> void:
 		# Munculkan player (efek turun mobil)
 		PlayerManager.player.visible = true
 		
-		await SceneTransition.fade_in()
 		# Pindahkan kamera ke player
 		var camera = mobil.get_node_or_null("Camera2D")
 		if camera:
 			camera.reparent(PlayerManager.player)
 			camera.position = Vector2.ZERO 
+		
+		await SceneTransition.fade_in()
 
 func _on_intro_cutscene_finished() -> void:
 	print("Intro Selesai! Memulai efek ganti hari...")

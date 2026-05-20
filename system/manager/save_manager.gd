@@ -68,22 +68,22 @@ func load_game() -> void:
 	
 	is_loading = true
 	
-	# 1. LOAD DATA INVENTORY & QUEST DULU
+	# 1. LOAD DATA INVENTORY & QUEST
 	PlayerManager.INVENTORY_DATA.parse_save_data(current_save.items)
 	QuestManager.current_quests = current_save.quests
 	
 	# 2. LOAD SCENE LEVELNYA
 	if current_save.scene_path != "":
-		LevelManager.load_new_level(current_save.scene_path, "", Vector2.ZERO)
+		# --- PERBAIKAN: Berikan kata kunci "LOAD_GAME" sebagai target_transition ---
+		LevelManager.load_new_level(current_save.scene_path, "LOAD_GAME", Vector2.ZERO)
 		await LevelManager.level_loaded
 	
-	# 3. SET POSISI PEMAIN SETELAH LEVEL DIMUAT
-	PlayerManager.set_player_position(Vector2(current_save.player.pos_x, current_save.player.pos_y))
+	LevelManager.target_transition = ""
 	
 	is_loading = false
 	
 	game_loaded.emit()
-	print("Game Loaded")
+	print("Game Loaded - Player diposisikan pada koordinat save terakhir.")
 
 func update_player_data() -> void:
 	# Cek dulu apakah player sudah benar-benar ada

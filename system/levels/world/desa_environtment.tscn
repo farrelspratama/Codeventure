@@ -431,6 +431,7 @@ z_index = 1
 y_sort_enabled = true
 
 [node name="GerbangSekolah" parent="Building" instance=ExtResource("10_7wr3v")]
+z_index = 2
 position = Vector2(762, -106)
 
 [node name="Sekolah" parent="Building" instance=ExtResource("7_1kkpv")]
