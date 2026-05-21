@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://b8nk1ftascnps"]
+
+[ext_resource type="Script" uid="uid://d1qp8bj73phl6" path="res://system/levels/world/monolog_03.gd" id="1_jpaaq"]
+[ext_resource type="PackedScene" uid="uid://dclafa87ojaa3" path="res://system/ui/dialog/dialog_interaction.tscn" id="2_2a1rp"]
+[ext_resource type="Script" uid="uid://b2gbmxj3vikwc" path="res://system/ui/dialog/dialog_text.gd" id="3_1s0hq"]
+[ext_resource type="Resource" uid="uid://c68j4aibkx563" path="res://system/characters/npc/resource/player.tres" id="4_4wbd1"]
+
+[node name="Monolog" type="Node2D"]
+script = ExtResource("1_jpaaq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="DialogInteraction" parent="." instance=ExtResource("2_2a1rp")]
+visible = false
+
+[node name="DialogText" type="Node" parent="DialogInteraction"]
+script = ExtResource("3_1s0hq")
+text = "Aduh!!!"
+npc_info = ExtResource("4_4wbd1")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText2" type="Node" parent="DialogInteraction"]
+script = ExtResource("3_1s0hq")
+text = "Aku... di mana ini?"
+npc_info = ExtResource("4_4wbd1")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText3" type="Node" parent="DialogInteraction"]
+script = ExtResource("3_1s0hq")
+text = "Tempat ini seperti ruang penyimpanan berkas..."
+npc_info = ExtResource("4_4wbd1")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText4" type="Node" parent="DialogInteraction"]
+script = ExtResource("3_1s0hq")
+text = "Sepertinya ada yang tidak beres..."
+npc_info = ExtResource("4_4wbd1")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"

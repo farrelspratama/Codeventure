@@ -196,7 +196,7 @@ metadata/_custom_type_script = "uid://cfspk0ixjj2av"
 collision_layer = 0
 collision_mask = 16
 script = ExtResource("15_h5h4s")
-target_level = "uid://brd082txkduf2"
+target_level = "uid://b8nk1ftascnps"
 
 [node name="MejaPc" type="Sprite2D" parent="Meja Komputer/StaticBody2D"]
 position = Vector2(-101, -74)
