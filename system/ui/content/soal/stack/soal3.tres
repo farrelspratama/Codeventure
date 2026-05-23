@@ -4,11 +4,14 @@
 
 [resource]
 script = ExtResource("1_8ebdl")
-question_text = "Data hanya diproses jika valid.
-
-IF data_valid = TRUE THEN
-   [SLOT]
-END IF"
-options = Array[String](["process_data", "reset_data", "ignore_data"])
-correct_answers = Array[String](["process_data"])
+question_text = "Jika langkah memiliki urutan:
+LOGIN
+SCAN
+DELETE
+Urutkan langkah yang keluar dari daftar.
+[SLOT]
+[SLOT]
+[SLOT]"
+options = Array[String](["LOGIN", "SCAN", "DELETE"])
+correct_answers = Array[String](["DELETE", "SCAN", "LOGIN"])
 metadata/_custom_type_script = "uid://bg8k6b86gev0i"

@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://cdi3rhub74r6l"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_auhse"]
+
+[resource]
+script = ExtResource("1_auhse")
+question_text = "Jika cache yang masuk memiliki urutan:
+Cache_05
+Cache_01
+Cache_09
+Urutkan cache yang keluar dari recovery stack.
+[SLOT]
+[SLOT]
+[SLOT]"
+options = Array[String](["Cache_05", "Cache_01", "Cache_09"])
+correct_answers = Array[String](["Cache_09", "Cache_01", "Cache_05"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"

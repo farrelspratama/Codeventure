@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://l0067awa55fx"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_1be11"]
+
+[resource]
+script = ExtResource("1_1be11")
+question_text = "Jika file yang masuk memiliki urutan:
+Music.mp3
+Photo.png
+Video.mp4
+Urutkan file yang keluar dari recovery stack.
+[SLOT]
+[SLOT]
+[SLOT]"
+options = Array[String](["Video.mp4", "Music.mp3", "Photo.png"])
+correct_answers = Array[String](["Video.mp4", "Photo.png", "Music.mp3"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"

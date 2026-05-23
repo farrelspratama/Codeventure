@@ -44,8 +44,5 @@ func _on_intro_cutscene_finished() -> void:
 	# Tentukan level selanjutnya
 	var next_level_path = "res://system/levels/world/monolog_02.tscn"
 	
-	# Simpan game dan beri tahu SaveManager bahwa pemain "sudah" berada di level selanjutnya
-	SaveManager.save_game(next_level_path)
-	
 	# Pindah scene
 	LevelManager.load_new_level(next_level_path, "", Vector2.ZERO)

@@ -4,12 +4,16 @@
 
 [resource]
 script = ExtResource("1_44nag")
-game_type = 1
-question_text = "IF password_benar
-	[SLOT] kartu_aktif
-		akses = TRUE
-	[SLOT]
-		akses = FALSE"
-options = Array[String](["AND", "ELSE", "OR", "THEN"])
-correct_answers = Array[String](["AND", "ELSE"])
+question_text = "Jika data yang masuk memiliki urutan:
+Backup_1
+Backup_2
+Backup_3
+Backup_4
+Urutkan file yang keluar dari recovery stack.
+[SLOT]
+[SLOT]
+[SLOT]
+[SLOT]"
+options = Array[String](["Backup_3", "Backup_1", "Backup_2", "Backup_4"])
+correct_answers = Array[String](["Backup_4", "Backup_3", "Backup_2", "Backup_1"])
 metadata/_custom_type_script = "uid://bg8k6b86gev0i"

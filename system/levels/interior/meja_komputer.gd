@@ -1,6 +1,8 @@
-extends Area2D
+extends Node2D
 
 @export_file("*.tscn") var target_level : String 
+
+@onready var area_2d: Area2D = $Area2D
 
 var player_in_range : bool = false
 
@@ -9,31 +11,26 @@ func _ready() -> void:
 	print("--- DEBUG KOMPUTER ---")
 	print("1. Script Komputer aktif! Target level: ", target_level)
 	
-	body_entered.connect(_on_body_entered)
-	body_exited.connect(_on_body_exited)
+	area_2d.area_entered.connect(_on_area_entered)
+	area_2d.area_exited.connect(_on_area_exited)
+	
 	PlayerManager.interact_pressed.connect(_on_interact_pressed)
 
-func _on_body_entered(body: Node2D) -> void:
-	# DEBUG 2: Cek apakah Area2D mendeteksi sentuhan
-	print("2. [Komputer] Ada benda menyentuh area: ", body.name)
-	
-	if body == PlayerManager.player:
+func _on_area_entered(area: Area2D) -> void:
+	if area.get_parent().get_parent() is Player:
 		player_in_range = true
-		print("3. [Komputer] Yang menyentuh adalah Player! Siap menerima interaksi.")
-	else:
-		print("   -> Benda yang menyentuh BUKAN PlayerManager.player!")
+		print("masuk")
 
-func _on_body_exited(body: Node2D) -> void:
-	if body == PlayerManager.player:
+func _on_area_exited(area: Area2D) -> void:
+	if area.get_parent().get_parent() is Player:
 		player_in_range = false
-		print("X. [Komputer] Player menjauh dari komputer.")
 
 func _on_interact_pressed() -> void:
 	# DEBUG 3: Cek apakah sinyal tombol dari PlayerManager sampai ke sini
 	print("4. [Komputer] Mendengar sinyal tombol interaksi ditekan!")
 	
 	if player_in_range:
-		player_in_range = false 
+		player_in_range = true 
 		print("5. [Komputer] Player ada di dekat komputer. Memulai portal...")
 		masuk_dunia_komputer()
 	else:

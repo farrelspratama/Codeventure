@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://d0k2qddo55qqw"]
+[gd_scene load_steps=21 format=4 uid="uid://d0k2qddo55qqw"]
 
 [ext_resource type="Texture2D" uid="uid://cc2fqqq73ci4i" path="res://assets/environment/tilesets/Interior.png" id="1_r25sy"]
 [ext_resource type="Script" uid="uid://dxpqq0fy4vutb" path="res://system/levels/level.gd" id="1_tlx2i"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://d224s6di1knyv" path="res://assets/environment/tilesets/Lantai Kayu.png" id="4_grwso"]
 [ext_resource type="PackedScene" uid="uid://cxqcha3ibg8r2" path="res://system/characters/player/player_spawn.tscn" id="4_m4eb7"]
 [ext_resource type="PackedScene" uid="uid://drg863i16hbqj" path="res://system/characters/npc/npc.tscn" id="6_bjbwb"]
-[ext_resource type="Texture2D" uid="uid://7qaeay1h50oh" path="res://assets/objects/meja pc.png" id="7_8cd82"]
 [ext_resource type="Resource" uid="uid://c25o5yhdygaui" path="res://system/characters/npc/resource/pak_nopandi.tres" id="7_psujb"]
 [ext_resource type="PackedScene" uid="uid://b2lmwyq5ghxtm" path="res://system/characters/npc/npc_behavior_wander.tscn" id="8_psujb"]
 [ext_resource type="PackedScene" uid="uid://ct0hqkac5axdu" path="res://system/quest_system/quest_activated_switch.tscn" id="9_odkif"]
@@ -16,7 +15,7 @@
 [ext_resource type="Script" uid="uid://b2gbmxj3vikwc" path="res://system/ui/dialog/dialog_text.gd" id="12_h5h4s"]
 [ext_resource type="Resource" uid="uid://c68j4aibkx563" path="res://system/characters/npc/resource/player.tres" id="13_mfto6"]
 [ext_resource type="Script" uid="uid://cfspk0ixjj2av" path="res://system/quest_system/quest_advance_trigger.gd" id="14_0l0so"]
-[ext_resource type="Script" uid="uid://c61wrr3dbpby5" path="res://system/levels/interior/meja_komputer.gd" id="15_h5h4s"]
+[ext_resource type="PackedScene" uid="uid://b5215letiwrkt" path="res://system/objects/meja_komputer.tscn" id="15_0l0so"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hlxcw"]
 texture = ExtResource("1_r25sy")
@@ -61,9 +60,6 @@ texture_region_size = Vector2i(25, 25)
 tile_size = Vector2i(25, 25)
 physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_q38hx")
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_psujb"]
-size = Vector2(49, 17)
 
 [node name="Sekolah" type="Node2D"]
 y_sort_enabled = true
@@ -190,21 +186,10 @@ Step: 1 - mencari pak sofyan
 Complete: false"
 metadata/_custom_type_script = "uid://cfspk0ixjj2av"
 
-[node name="Meja Komputer" type="Node2D" parent="."]
-
-[node name="StaticBody2D" type="Area2D" parent="Meja Komputer"]
-collision_layer = 0
-collision_mask = 16
-script = ExtResource("15_h5h4s")
-target_level = "uid://b8nk1ftascnps"
-
-[node name="MejaPc" type="Sprite2D" parent="Meja Komputer/StaticBody2D"]
+[node name="Meja Komputer" parent="." instance=ExtResource("15_0l0so")]
+z_index = 1
 position = Vector2(-101, -74)
-texture = ExtResource("7_8cd82")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Meja Komputer/StaticBody2D"]
-position = Vector2(-100.5, -71.5)
-shape = SubResource("RectangleShape2D_psujb")
+target_level = "uid://b8nk1ftascnps"
 
 [node name="LevelTransition" parent="." instance=ExtResource("3_m4eb7")]
 position = Vector2(0, 80)

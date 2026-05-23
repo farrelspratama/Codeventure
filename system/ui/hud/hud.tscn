@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d188lhf2kihlf"]
+[gd_scene load_steps=20 format=3 uid="uid://d188lhf2kihlf"]
 
 [ext_resource type="Texture2D" uid="uid://djiqdt3kmrprq" path="res://assets/ui/menu/button_normal.png" id="1_1i6ky"]
 [ext_resource type="Script" uid="uid://de8nbl3smyvyd" path="res://system/ui/hud/hud.gd" id="1_jr3o3"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b6eyae2himsb2" path="res://assets/ui/hud/Character Icon 2.png" id="6_51mgr"]
 [ext_resource type="Script" uid="uid://bw84nv0xhpl10" path="res://system/ui/hud/notification.gd" id="7_bijye"]
 [ext_resource type="Texture2D" uid="uid://dokbc5bqq4mrj" path="res://assets/ui/hud/nine_path_panel.png" id="7_upt0f"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="9_y7i8j"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_51mgr"]
 content_margin_left = 1.0
@@ -261,3 +262,13 @@ autowrap_mode = 2
 libraries = {
 &"": SubResource("AnimationLibrary_g3r2v")
 }
+
+[node name="Virtual Joystick" parent="Control" instance=ExtResource("9_y7i8j")]
+layout_mode = 1
+offset_top = -300.0
+offset_bottom = 0.00036621094
+joystick_mode = 1
+action_left = "left"
+action_right = "right"
+action_up = "up"
+action_down = "down"

@@ -1,0 +1,180 @@
+[gd_scene load_steps=10 format=3 uid="uid://bugvea72p80b8"]
+
+[ext_resource type="Script" uid="uid://bm8hpiwso4ylv" path="res://system/ui/tutorial/controls_menu.gd" id="1_tmjr5"]
+[ext_resource type="Texture2D" uid="uid://duh8hxa7jmwo1" path="res://assets/ui/menu/nine_path_panel_3.png" id="1_xpx0d"]
+[ext_resource type="FontFile" uid="uid://bctx62yq874s8" path="res://assets/ui/font/m6x11.ttf" id="2_grlim"]
+[ext_resource type="Theme" uid="uid://c4gpybm58jvxd" path="res://system/ui/dialog/dialog_choice_theme.tres" id="3_ww537"]
+[ext_resource type="Texture2D" uid="uid://b6irnfvocvbyy" path="res://assets/ui/Frame 99.png" id="4_sekfw"]
+[ext_resource type="Texture2D" uid="uid://dsje26h0l3j10" path="res://assets/ui/KeyE.png" id="5_tmjr5"]
+[ext_resource type="Texture2D" uid="uid://bdmo77p4thf44" path="res://assets/ui/KeyTab.png" id="6_srdng"]
+[ext_resource type="Texture2D" uid="uid://dy1un2xbveyfx" path="res://assets/ui/KeyF.png" id="7_xx8km"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tbxgq"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+texture = ExtResource("1_xpx0d")
+texture_margin_left = 7.0
+texture_margin_top = 7.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[node name="ControlsMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 2
+script = ExtResource("1_tmjr5")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -249.0
+offset_top = -267.0
+offset_right = 249.0
+offset_bottom = 267.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_tbxgq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_grlim")
+theme_override_font_sizes/font_size = 48
+text = "Cara Bermain / Kontrol"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 10
+
+[node name="Placeholder" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "Bergerak"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 10
+
+[node name="Placeholder2" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "Interaksi"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 10
+
+[node name="Placeholder2" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "Inventori"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+
+[node name="Placeholder3" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(250, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "Info Pemain"
+
+[node name="OkButton" type="Button" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_ww537")
+theme_override_font_sizes/font_size = 32
+text = "Mengerti / Mulai Bermain"
+
+[node name="Move" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 435.0
+offset_top = 185.0
+offset_right = 535.0
+offset_bottom = 214.0
+scale = Vector2(2, 2)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_sekfw")
+
+[node name="Interact" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 515.0
+offset_top = 297.0
+offset_right = 528.0
+offset_bottom = 310.0
+scale = Vector2(3, 3)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_xx8km")
+
+[node name="Inventory" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 515.0
+offset_top = 399.0
+offset_right = 528.0
+offset_bottom = 412.0
+scale = Vector2(3, 3)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_tmjr5")
+
+[node name="CharacterInfo" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 500.0
+offset_right = 527.0
+offset_bottom = 513.0
+scale = Vector2(3, 3)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_srdng")

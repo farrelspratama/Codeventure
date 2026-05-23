@@ -31,7 +31,7 @@ func _on_submit_pressed() -> void:
 	
 	# --- SINKRONISASI SAVE MANAGER ---
 	# Kita masukkan nama dan kelas ke dalam struktur kamus data (Dictionary)
-	SaveManager.current_save.player.nama = nama_siswa
+	SaveManager.current_save.player.nama = nama_siswa.capitalize()
 	SaveManager.current_save.player.kelas = kelas_siswa
 	
 	# Simpan ke file fisik (save.sav)
@@ -40,7 +40,12 @@ func _on_submit_pressed() -> void:
 	
 	print("Data Disimpan: Nama = ", SaveManager.current_save.player.nama, " | Kelas = ", SaveManager.current_save.player.kelas)
 	
-	get_tree().paused = false
+	# --- TAMPILKAN TUTORIAL KONTROL ---
+	ControlsMenu.show_controls()
+	
+	# Kode akan "membeku" di baris ini dan menunggu sampai pemain menekan tombol OK di layar kontrol
+	await ControlsMenu.controls_closed
+	
 	SceneTransition.change_scene("res://system/levels/world/monolog_01.tscn")
 
 func _on_back_pressed() -> void:

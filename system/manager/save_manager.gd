@@ -13,8 +13,8 @@ var current_save : Dictionary = {
 		nama = "",
 		kelas = "",
 		score = 0,
-		pos_x = 0,
-		pos_y = 0
+		pos_x = 392,
+		pos_y = -270
 	},
 	items = [],
 	persistence = [],

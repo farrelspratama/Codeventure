@@ -10,6 +10,7 @@ func _ready() -> void:
 		PlayerManager.player.visible = true
 		PlayerManager.player.set_physics_process(true)
 		PlayerManager.player.process_mode = Node.PROCESS_MODE_INHERIT
+		var camera = PlayerManager.player.get_node_or_null("Camera2D")
 		
 		# --- PERBAIKAN: Cukup cek string kosong saja ---
 		# Jika target_transition berisi "LOAD_GAME", blok ini otomatis dilewati!
@@ -17,13 +18,13 @@ func _ready() -> void:
 			var spawn_point = find_child("PlayerSpawn", true, false)
 			if spawn_point and spawn_point is Node2D:
 				PlayerManager.set_player_position(spawn_point.global_position)
+				camera.force_snap()
 				
 		# KONDISI B: Pemain masuk dari Load Game
 		elif LevelManager.target_transition == "LOAD_GAME":
 			# Tarik koordinat save dan pindahkan pemain SEKARANG, selagi layar masih hitam!
 			var saved_pos = Vector2(SaveManager.current_save.player.pos_x, SaveManager.current_save.player.pos_y)
 			PlayerManager.set_player_position(saved_pos)
-			var camera = PlayerManager.player.get_node_or_null("Camera2D")
 			camera.force_snap()
 			print("Player di-spawn langsung ke titik Save: ", saved_pos)
 

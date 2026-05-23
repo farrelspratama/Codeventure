@@ -10,7 +10,34 @@
 size = Vector2(26, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_njg0v"]
-size = Vector2(26, 18)
+size = Vector2(26, 30)
+
+[sub_resource type="Animation" id="Animation_uihg6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("InteractableIcon/Emote21:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("InteractableIcon/Emote22:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_krg88"]
 resource_name = "show"
@@ -19,7 +46,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Animasi/Emote21:visible")
+tracks/0/path = NodePath("InteractableIcon/Emote21:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -31,7 +58,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Animasi/Emote22:visible")
+tracks/1/path = NodePath("InteractableIcon/Emote22:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -39,33 +66,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
-}
-
-[sub_resource type="Animation" id="Animation_uihg6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Animasi/Emote21:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Animasi/Emote22:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4kcjt"]
@@ -87,27 +87,29 @@ position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_5yqvy")
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 7)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_njg0v")
 debug_color = Color(0.8590368, 0.0007046342, 0.8794612, 0.41960785)
 
-[node name="Animasi" type="Node2D" parent="."]
+[node name="InteractableIcon" type="Node2D" parent="."]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Animasi"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InteractableIcon"]
 root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_4kcjt")
 }
 
-[node name="Emote21" type="Sprite2D" parent="Animasi"]
+[node name="Emote21" type="Sprite2D" parent="InteractableIcon"]
 visible = false
 position = Vector2(0, -26)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("3_krg88")
 
-[node name="Emote22" type="Sprite2D" parent="Animasi"]
+[node name="Emote22" type="Sprite2D" parent="InteractableIcon"]
 visible = false
 position = Vector2(0, -26)
 scale = Vector2(0.7, 0.7)

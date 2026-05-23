@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://bm2jslj2h4yg8"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_pwags"]
+
+[resource]
+script = ExtResource("1_pwags")
+question_text = "Jika menumpuk buku dengan urutan:
+Buku Matematika
+Buku IPA
+Buku Bahasa
+Urutkan pengambilan buku.
+[SLOT]
+[SLOT]
+[SLOT]"
+options = Array[String](["Buku Bahasa", "Buku Matematika", "Buku IPA"])
+correct_answers = Array[String](["Buku Bahasa", "Buku IPA", "Buku Matematika"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"

@@ -2,14 +2,19 @@
 class_name InteractableItem extends Node2D
 
 @export var item_data : ItemData : set = _set_item_data
-@export var question_data: QuestionData
+
+# UBAH DI SINI 1: Menjadi Array agar bisa menampung banyak soal
+@export var questions: Array[QuestionData]
 
 var is_interacted: bool = false
 var player_in_range: bool = false
 var minigame_in_progress: bool = false
 
+# Variabel baru untuk melacak urutan soal yang sedang dikerjakan
+var current_question_index: int = 0
+
 @onready var area_2d: Area2D = $Area2D
-@onready var animation_player: AnimationPlayer = $Animasi/AnimationPlayer
+@onready var animation_player: AnimationPlayer = $InteractableIcon/AnimationPlayer
 @onready var is_interacted_data: PersistentDataHandler = $IsInteractable
 
 func _ready() -> void:
@@ -32,49 +37,67 @@ func player_interact() -> void:
 	if is_interacted:
 		return
 	
-	if question_data != null:
+	# UBAH DI SINI 2: Cek apakah array soal memiliki isi dan indeks belum melewati batas
+	if questions.size() > 0 and current_question_index < questions.size():
 		minigame_in_progress = true
 		
-		# Tentukan script autoload mana yang akan digunakan
+		# Ambil data soal sesuai urutan saat ini
+		var current_question = questions[current_question_index]
 		var target_minigame = null
 		
-		if question_data.game_type == QuestionData.GameType.DRAG_AND_DROP:
+		if current_question.game_type == QuestionData.GameType.DRAG_AND_DROP:
 			target_minigame = DragNDrop
-		elif question_data.game_type == QuestionData.GameType.TEXT_INPUT:
+		elif current_question.game_type == QuestionData.GameType.TEXT_INPUT:
 			target_minigame = TextInput
-		elif question_data.game_type == QuestionData.GameType.TRUE_FALSE:
+		elif current_question.game_type == QuestionData.GameType.TRUE_FALSE:
 			target_minigame = TrueOrFalse
 		
 		# Jalankan fungsi koneksi aman
 		if target_minigame != null:
 			_connect_minigame(target_minigame)
-			target_minigame.show_minigame(question_data, true)
+			target_minigame.show_minigame(current_question, true)
 	else:
+		# Jika array kosong atau semua soal sudah terjawab, buka peti!
 		open_chest()
 
+
 func _connect_minigame(minigame_node: Node) -> void:
-	# Cek finished signal
 	if not minigame_node.minigame_finished.is_connected(_on_minigame_finished):
 		minigame_node.minigame_finished.connect(_on_minigame_finished)
 		
-	# Cek cancelled signal
 	if not minigame_node.minigame_cancelled.is_connected(_on_minigame_cancelled):
 		minigame_node.minigame_cancelled.connect(_on_minigame_cancelled)
 
-# Fungsi ini hanya akan terpanggil jika minigame berhasil diselesaikan (jawaban benar semua)
+
+# UBAH DI SINI 3: Logika saat 1 soal berhasil dijawab
 func _on_minigame_finished() -> void:
 	minigame_in_progress = false
 	_disconnect_all_signals()
-	open_chest()
+	
+	# Naikkan urutan ke soal berikutnya
+	current_question_index += 1
+	
+	# Cek apakah masih ada soal tersisa
+	if current_question_index < questions.size():
+		# Gunakan call_deferred untuk memberi jeda 1 frame dengan aman 
+		# sebelum UI soal berikutnya dipanggil (mencegah bug tumpang tindih UI)
+		call_deferred("player_interact")
+	else:
+		# Jika semua soal di dalam array sudah habis terjawab
+		open_chest()
 
-# --- FUNGSI BARU UNTUK MENANGANI PENUTUPAN / PEMBATALAN ---
+
 func _on_minigame_cancelled() -> void:
 	minigame_in_progress = false
 	_disconnect_all_signals()
+	
+	# UBAH DI SINI 4: Reset indeks ke 0 agar jika pemain membatalkan minigame, 
+	# mereka harus mengulang menjawab rentetan soal dari awal.
+	current_question_index = 0
+	
 	print("Minigame dibatalkan. Peti siap diklik kembali.")
-# ----------------------------------------------------------
 
-# Fungsi bantuan untuk membersihkan semua koneksi sinyal agar rapi dan tidak bocor
+
 func _disconnect_all_signals() -> void:
 	var list = [DragNDrop, TextInput, TrueOrFalse]
 	for m in list:
@@ -83,26 +106,30 @@ func _disconnect_all_signals() -> void:
 		if m.minigame_cancelled.is_connected(_on_minigame_cancelled):
 			m.minigame_cancelled.disconnect(_on_minigame_cancelled)
 
-# Logika membuka peti dan memberikan item
+
 func open_chest() -> void:
 	is_interacted = true
 	is_interacted_data.set_value()
 	print("Chest opened")
 	
+	# Matikan hint setelah interaksi tuntas
+	animation_player.play("RESET")
+	
 	if item_data != null:
 		PopupItem.show_item(item_data)
+
 
 func _set_item_data(value : ItemData) -> void:
 	item_data = value
 
+
 func _on_area_entered(area: Area2D) -> void:
 	if area.get_parent().get_parent() is Player:
 		player_in_range = true
-		if is_interacted == true:
-			animation_player.play("RESET")
-		else:
+		if is_interacted == false:
 			animation_player.play("show")
 		print("Player near item")
+
 
 func _on_area_exited(area: Area2D) -> void:
 	if area.get_parent().get_parent() is Player:
@@ -110,7 +137,7 @@ func _on_area_exited(area: Area2D) -> void:
 		animation_player.play("RESET")
 		print("Player left item")
 
+
 func set_item_state() -> void:
 	is_interacted = is_interacted_data.value
-	
 	animation_player.play("RESET")

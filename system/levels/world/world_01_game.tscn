@@ -41,7 +41,7 @@ script = ExtResource("1_q14ut")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("6_72rcc")]
 z_index = 1
-position = Vector2(392, -251)
+position = Vector2(392, -270)
 
 [node name="Entities" type="Node2D" parent="."]
 z_index = 1

@@ -4,12 +4,14 @@
 
 [resource]
 script = ExtResource("1_cxb6s")
-game_type = 2
-question_text = "jumlah_data = 0
-IF jumlah_data > 0 THEN
-    proses_data
-END IF
-Apakah logika ini benar?"
-options = Array[String](["True", "False"])
-correct_answers = Array[String](["True"])
+question_text = "Jika data yang masuk memiliki urutan:
+File_A
+File_B
+File_C
+Urutkan file yang keluar dari recovery stack.
+[SLOT]
+[SLOT]
+[SLOT]"
+options = Array[String](["File_B", "File_A", "File_C"])
+correct_answers = Array[String](["File_C", "File_B", "File_A"])
 metadata/_custom_type_script = "uid://bg8k6b86gev0i"

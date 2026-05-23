@@ -25,4 +25,6 @@ func _on_monolog_finished() -> void:
 	
 	var gameplay_level = "res://system/levels/world/world_01_game.tscn"
 	
+	SaveManager.save_game(gameplay_level)
+	
 	LevelManager.load_new_level(gameplay_level, "", Vector2.ZERO)

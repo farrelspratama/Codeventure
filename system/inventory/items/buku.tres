@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://bk12rwi3hrxw3"]
 
 [ext_resource type="Script" uid="uid://j6vyfgfggbp6" path="res://system/inventory/items/item_data.gd" id="1_byg33"]
-[ext_resource type="PackedScene" uid="uid://dt140m0ho15ol" path="res://system/ui/content/materi/materi_data/materi_tipe_data.tscn" id="1_p5rqr"]
+[ext_resource type="PackedScene" uid="uid://dt140m0ho15ol" path="res://system/ui/content/materi/materi_data/materi_pengertian_stack.tscn" id="1_p5rqr"]
 [ext_resource type="Texture2D" uid="uid://dsxwfqdhhflkk" path="res://assets/inventory/Buku.png" id="2_bmh55"]
 
 [resource]

@@ -33,6 +33,8 @@ DragNDrop="*res://system/ui/content/dragndrop/drag_n_drop.tscn"
 TextInput="*res://system/ui/content/text_input/text_input.tscn"
 TrueOrFalse="*res://system/ui/content/true_or_false/true_or_false.tscn"
 MateriUI="*res://system/ui/content/materi/materi_ui.tscn"
+PasscodeMenu="*res://system/ui/passcode/passcode_menu.tscn"
+ControlsMenu="*res://system/ui/tutorial/controls_menu.tscn"
 
 [display]
 
@@ -103,6 +105,11 @@ draggable_click={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+pointing/emulate_mouse_from_touch=false
 
 [layer_names]
 

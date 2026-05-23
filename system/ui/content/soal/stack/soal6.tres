@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://bln4fmn17ijks"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_okdqx"]
+
+[resource]
+script = ExtResource("1_okdqx")
+question_text = "Jika menumpuk piring dengan urutan:
+Piring Merah
+Piring Biru
+Piring Hijau
+Urutkan pengambilan piring.
+[SLOT]
+[SLOT]
+[SLOT]"
+options = Array[String](["Piring Biru", "Piring Hijau", "Piring Merah"])
+correct_answers = Array[String](["Piring Hijau", "Piring Biru", "Piring Merah"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"

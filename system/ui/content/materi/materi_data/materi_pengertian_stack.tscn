@@ -1,0 +1,191 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt140m0ho15ol"]
+
+[ext_resource type="Texture2D" uid="uid://cnubn685hngh1" path="res://assets/ui/menu/nine_path_bg.png" id="1_am0ig"]
+[ext_resource type="FontFile" uid="uid://bctx62yq874s8" path="res://assets/ui/font/m6x11.ttf" id="2_b8n70"]
+[ext_resource type="Texture2D" uid="uid://c2mr7rnhih8v6" path="res://assets/Frame 59.png" id="3_jeww3"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1urf6"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = ExtResource("1_am0ig")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[node name="TabContainer" type="TabContainer"]
+theme_override_styles/panel = SubResource("StyleBoxTexture_1urf6")
+tab_alignment = 1
+current_tab = 4
+tabs_visible = false
+
+[node name="Pengertian" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pengertian"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Pengertian/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_b8n70")
+theme_override_font_sizes/font_size = 48
+text = "Pengertian"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pengertian/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label2" type="Label" parent="Pengertian/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Stack (Tumpukan) adalah salah satu konsep struktur data yang digunakan untuk menyimpan data secara bertumpuk."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="Pengertian/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Dalam ilmu komputer dan pemrograman, stack digunakan untuk membantu pengelolaan data sementara yang membutuhkan urutan tertentu."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="Pengertian/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Stack termasuk struktur data yang sederhana namun sangat penting karena mampu mengatur data secara terstruktur dan efisien sesuai urutan penggunaannya."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Analogi" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Label" type="Label" parent="Analogi"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_b8n70")
+theme_override_font_sizes/font_size = 48
+text = "Analogi"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Analogi"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="Analogi/VBoxContainer"]
+texture_filter = 2
+layout_mode = 2
+texture = ExtResource("3_jeww3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+metadata/_tab_index = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_b8n70")
+theme_override_font_sizes/font_size = 48
+text = "Tujuan"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(780, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Stack digunakan untuk membantu pengelolaan data yang membutuhkan urutan tertentu. Tujuan utama penggunaan stack adalah agar proses penyimpanan dan pengambilan data menjadi lebih teratur dan mudah dikendalikan."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(780, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Beberapa tujuan penggunaan stack antara lain:"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(780, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "- Mengatur data berdasarkan urutan masuk dan keluar.
+- Mempermudah proses penyimpanan data sementara.
+- Membantu proses pemanggilan fungsi dalam program.
+- Digunakan untuk fitur undo dan redo pada aplikasi.
+- Membantu proses pengecekan tanda kurung atau sintaks.
+- Digunakan dalam navigasi halaman web seperti tombol back pada browser."
+autowrap_mode = 2
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 10
+metadata/_tab_index = 3
+
+[node name="Label" type="Label" parent="VBoxContainer4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_b8n70")
+theme_override_font_sizes/font_size = 48
+text = "Kelebihan"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer4"]
+custom_minimum_size = Vector2(780, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Stack memiliki beberapa kelebihan, antara lain:"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer4"]
+custom_minimum_size = Vector2(780, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "- Struktur sederhana dan mudah dipahami.
+- Proses penambahan dan penghapusan data cepat.
+- Efisien untuk pengelolaan data sementara.
+- Cocok untuk proses yang membutuhkan urutan terbalik.
+- Banyak digunakan dalam sistem komputer dan aplikasi."
+autowrap_mode = 2
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 10
+metadata/_tab_index = 4
+
+[node name="Label" type="Label" parent="VBoxContainer5"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_b8n70")
+theme_override_font_sizes/font_size = 48
+text = "Kekurangan"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer5"]
+custom_minimum_size = Vector2(780, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Selain memiliki kelebihan, stack juga memiliki beberapa kekurangan:"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label3" type="Label" parent="VBoxContainer5"]
+custom_minimum_size = Vector2(780, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "- Akses data terbatas hanya pada bagian atas.
+- Tidak dapat mengakses data secara langsung di tengah stack.
+- Kapasitas stack dapat terbatas.
+- Jika stack penuh akan terjadi overflow.
+- Jika stack kosong tetapi dilakukan pop akan terjadi underflow."
+autowrap_mode = 2
