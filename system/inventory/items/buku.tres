@@ -6,8 +6,8 @@
 
 [resource]
 script = ExtResource("1_byg33")
-name = "Buku Tipe Data"
-description = "Pengenalan Tipe Data"
+name = "Buku Stack"
+description = "Pengenalan Awal Stack"
 texture = ExtResource("2_bmh55")
 materi_scene = ExtResource("1_p5rqr")
 metadata/_custom_type_script = "uid://j6vyfgfggbp6"

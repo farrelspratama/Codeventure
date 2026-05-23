@@ -32,7 +32,8 @@ func player_interact() -> void:
 	player_interacted.emit()
 	await get_tree().process_frame
 	await get_tree().process_frame
-	Dialog.finished.connect( _on_dialog_finished )
+	if not Dialog.finished.is_connected(_on_dialog_finished):
+		Dialog.finished.connect(_on_dialog_finished)
 	Dialog.show_dialog( dialog_items )
 	pass
 
@@ -46,7 +47,8 @@ func _on_area_exited(_a: Area2D) -> void:
 	PlayerManager.interact_pressed.disconnect( player_interact )
 
 func _on_dialog_finished() -> void:
-	Dialog.finished.disconnect( _on_dialog_finished )
+	if Dialog.finished.is_connected(_on_dialog_finished):
+		Dialog.finished.disconnect(_on_dialog_finished)
 	finished.emit()
 
 func _get_configuration_warnings() -> PackedStringArray:

@@ -25,13 +25,13 @@
 [ext_resource type="Resource" uid="uid://dypkbtyntpix7" path="res://system/characters/npc/resource/pak_tatang.tres" id="25_7g0gs"]
 [ext_resource type="Resource" uid="uid://b2fmd63nntcuv" path="res://system/quest_system/quests/keliling_desa.tres" id="26_lp7ko"]
 [ext_resource type="Script" uid="uid://c5m6454bkinwe" path="res://system/ui/dialog/dialog_minigame.gd" id="27_k2ssb"]
-[ext_resource type="Resource" uid="uid://c0oj42wcnxg0b" path="res://system/ui/content/soal/stack/soal1.tres" id="28_dckdi"]
+[ext_resource type="Resource" uid="uid://c0oj42wcnxg0b" path="res://system/ui/content/soal/stack/LIFO/soal1.tres" id="28_dckdi"]
 [ext_resource type="PackedScene" uid="uid://d2j6svnvl8o7e" path="res://system/levels/level_transition.tscn" id="32_hfnwl"]
 [ext_resource type="PackedScene" uid="uid://dv0tn3ypx7ppw" path="res://system/objects/treasure_chest/treasure_chest.tscn" id="52_qhku5"]
 [ext_resource type="Resource" uid="uid://bk12rwi3hrxw3" path="res://system/inventory/items/buku.tres" id="53_58t5m"]
-[ext_resource type="Resource" uid="uid://blh4iut3yyyy8" path="res://system/ui/content/soal/stack/soal3.tres" id="54_8togo"]
+[ext_resource type="Resource" uid="uid://blh4iut3yyyy8" path="res://system/ui/content/soal/stack/LIFO/soal3.tres" id="54_8togo"]
 [ext_resource type="Resource" uid="uid://cggsbxsyb5ilf" path="res://system/inventory/items/flashdisk.tres" id="55_jy6w1"]
-[ext_resource type="Resource" uid="uid://r2jnr2k8wjq1" path="res://system/ui/content/soal/stack/soal2.tres" id="56_5yu55"]
+[ext_resource type="Resource" uid="uid://r2jnr2k8wjq1" path="res://system/ui/content/soal/stack/LIFO/soal2.tres" id="56_5yu55"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -48,7 +48,6 @@ z_index = 1
 y_sort_enabled = true
 
 [node name="Pak Sofyan" parent="Entities" instance=ExtResource("8_3ojl6")]
-visible = false
 position = Vector2(690.4591, -170)
 npc_resource = ExtResource("9_cillt")
 

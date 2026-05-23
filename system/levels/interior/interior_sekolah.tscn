@@ -189,16 +189,10 @@ metadata/_custom_type_script = "uid://cfspk0ixjj2av"
 [node name="Meja Komputer" parent="." instance=ExtResource("15_0l0so")]
 z_index = 1
 position = Vector2(-101, -74)
-target_level = "uid://b8nk1ftascnps"
+target_level = "uid://brd082txkduf2"
 
 [node name="LevelTransition" parent="." instance=ExtResource("3_m4eb7")]
 position = Vector2(0, 80)
 level = "uid://bkiue41ycgdqq"
 size = 3
 side = 3
-
-[node name="LevelTransition2" parent="." instance=ExtResource("3_m4eb7")]
-z_index = 1
-position = Vector2(101, -67)
-level = "uid://brd082txkduf2"
-side = 2

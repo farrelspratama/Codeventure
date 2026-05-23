@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://wq64fwrfcln3"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_t3405"]
+
+[resource]
+script = ExtResource("1_t3405")
+question_text = "Jika data dimasukkan ke dalam stack dengan urutan:
+Data_15
+Data_21
+Data_64
+Data_07
+Urutkan data yang keluar dari stack.
+[SLOT]
+[SLOT]
+[SLOT]
+[SLOT]"
+options = Array[String](["Data_15", "Data_21", "Data_64", "Data_07"])
+correct_answers = Array[String](["Data_07", "Data_64", "Data_21", "Data_15"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"

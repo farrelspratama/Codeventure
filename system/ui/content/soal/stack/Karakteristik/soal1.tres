@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://bhtqr5eq6p57g"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_pg27d"]
+
+[resource]
+script = ExtResource("1_pg27d")
+question_text = "Jika file dimasukkan ke dalam stack dengan urutan:
+File_Musik
+File_Foto
+File_Video
+Susun posisi file di dalam stack setelah seluruh file dimasukkan.
+[SLOT]
+[SLOT]
+[SLOT]"
+options = Array[String](["File_Musik", "File_Foto", "File_Video"])
+correct_answers = Array[String](["File_Video", "File_Foto", "File_Musik"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"

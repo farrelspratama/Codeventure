@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://8gin4kordrol"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_k75ea"]
+
+[resource]
+script = ExtResource("1_k75ea")
+game_type = 2
+question_text = "“Data yang berada di tengah stack dapat diambil langsung.”
+
+Apakah pernyataan diatas benar atau salah?"
+options = Array[String](["Benar", "Salah"])
+correct_answers = Array[String](["Salah"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"

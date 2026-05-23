@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://dpmlg72irvigq"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_4n244"]
+
+[resource]
+script = ExtResource("1_4n244")
+question_text = "Jika proses stack dilakukan dengan urutan:
+Push File_A
+Push File_B
+Pop
+Push File_C
+Push File_D
+Susun isi akhir stack."
+options = Array[String](["File_A", "File_B", "File_C", "File_D"])
+correct_answers = Array[String](["File_D", "File_C", "File_A"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"

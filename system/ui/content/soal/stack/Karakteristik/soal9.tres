@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://crkkpmdvu4goh"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_gaty1"]
+
+[resource]
+script = ExtResource("1_gaty1")
+game_type = 2
+question_text = "“TOP adalah posisi data paling atas pada stack.”
+
+Apakah pernyataan diatas benar atau salah?"
+options = Array[String](["Benar", "Salah"])
+correct_answers = Array[String](["Benar"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"

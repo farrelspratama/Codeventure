@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://b5hxvb2ou472a"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_yn7g2"]
+
+[resource]
+script = ExtResource("1_yn7g2")
+question_text = "Perhatikan proses berikut:
+Push A
+Push B
+Push C
+Pop
+Susun isi akhir stack.
+[SLOT]
+[SLOT]"
+options = Array[String](["A", "B", "C"])
+correct_answers = Array[String](["B", "A"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"

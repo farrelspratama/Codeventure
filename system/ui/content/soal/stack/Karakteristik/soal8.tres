@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://b6llq60w6ky23"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_1lohi"]
+
+[resource]
+script = ExtResource("1_1lohi")
+game_type = 1
+question_text = "Proses mengambil data dari stack disebut?"
+correct_answers = Array[String](["pop"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://bfcsxi4m5m6fs"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_exfmu"]
+
+[resource]
+script = ExtResource("1_exfmu")
+game_type = 2
+question_text = "“Data baru pada stack ditambahkan ke bagian bawah.”
+
+Apakah pernyataan diatas benar atau salah?"
+options = Array[String](["Benar", "Salah"])
+correct_answers = Array[String](["Salah"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"

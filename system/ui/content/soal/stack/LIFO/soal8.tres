@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://bn8uhpcfr6h5i"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_8qfgk"]
+
+[resource]
+script = ExtResource("1_8qfgk")
+question_text = "Jika menumpuk baju dengan urutan:
+Jaket
+Kaos
+Kemeja
+Urutkan pengambilan baju.
+[SLOT]
+[SLOT]
+[SLOT]"
+options = Array[String](["Kaos", "Jaket", "Kemeja"])
+correct_answers = Array[String](["Kemeja", "Kaos", "Jaket"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"
