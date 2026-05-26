@@ -1,6 +1,8 @@
 @tool
 class_name InteractableItem extends Node2D
 
+signal all_minigames_completed
+
 @export var item_data : ItemData : set = _set_item_data
 
 # UBAH DI SINI 1: Menjadi Array agar bisa menampung banyak soal
@@ -111,6 +113,8 @@ func open_chest() -> void:
 	is_interacted = true
 	is_interacted_data.set_value()
 	print("Chest opened")
+	
+	all_minigames_completed.emit()
 	
 	# Matikan hint setelah interaksi tuntas
 	animation_player.play("RESET")

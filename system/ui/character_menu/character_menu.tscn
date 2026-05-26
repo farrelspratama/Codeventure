@@ -80,13 +80,13 @@ theme_override_styles/tab_unselected = SubResource("StyleBoxTexture_5krdo")
 theme_override_styles/tab_hovered = SubResource("StyleBoxTexture_6ybru")
 theme_override_styles/tab_selected = SubResource("StyleBoxTexture_b3wer")
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 
 [node name="Info" parent="Control/TabContainer" instance=ExtResource("6_sifnw")]
+visible = false
 layout_mode = 2
 
 [node name="Quests" type="Control" parent="Control/TabContainer"]
-visible = false
 layout_mode = 2
 script = ExtResource("2_4344w")
 metadata/_tab_index = 1
@@ -126,32 +126,38 @@ layout_mode = 2
 [node name="QuestItem5" parent="Control/TabContainer/Quests/ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("3_mtsgw")]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/Quests"]
+[node name="ScrollContainer2" type="ScrollContainer" parent="Control/TabContainer/Quests"]
 layout_mode = 0
 offset_left = 220.0
 offset_top = 13.0
 offset_right = 410.0
-offset_bottom = 122.0
+offset_bottom = 199.0
 
-[node name="TitleLabel" type="Label" parent="Control/TabContainer/Quests/VBoxContainer"]
-custom_minimum_size = Vector2(190, 0)
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/TabContainer/Quests/ScrollContainer2"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="Control/TabContainer/Quests/ScrollContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_qqlr1")
 text = "Quest Title"
-autowrap_mode = 2
+autowrap_mode = 1
 
-[node name="DescriptionLabel" type="Label" parent="Control/TabContainer/Quests/VBoxContainer"]
+[node name="DescriptionLabel" type="Label" parent="Control/TabContainer/Quests/ScrollContainer2/VBoxContainer"]
 modulate = Color(0.78352344, 0.7835234, 0.7835234, 1)
-custom_minimum_size = Vector2(190, 0)
+custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 text = "Quest Description..."
 autowrap_mode = 2
 
-[node name="QuestStepItem" parent="Control/TabContainer/Quests/VBoxContainer" instance=ExtResource("6_n1k26")]
+[node name="QuestStepItem" parent="Control/TabContainer/Quests/ScrollContainer2/VBoxContainer" instance=ExtResource("6_n1k26")]
+custom_minimum_size = Vector2(180, 22)
 layout_mode = 2
 
-[node name="QuestStepItem2" parent="Control/TabContainer/Quests/VBoxContainer" instance=ExtResource("6_n1k26")]
+[node name="QuestStepItem2" parent="Control/TabContainer/Quests/ScrollContainer2/VBoxContainer" instance=ExtResource("6_n1k26")]
+custom_minimum_size = Vector2(180, 22)
 layout_mode = 2
 
-[node name="QuestStepItem3" parent="Control/TabContainer/Quests/VBoxContainer" instance=ExtResource("6_n1k26")]
+[node name="QuestStepItem3" parent="Control/TabContainer/Quests/ScrollContainer2/VBoxContainer" instance=ExtResource("6_n1k26")]
+custom_minimum_size = Vector2(180, 22)
 layout_mode = 2

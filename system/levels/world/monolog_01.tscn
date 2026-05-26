@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://klrs4sp7ff46"]
+[gd_scene load_steps=6 format=3 uid="uid://klrs4sp7ff46"]
 
 [ext_resource type="Script" uid="uid://fpixkcujbelv" path="res://system/levels/world/monolog_01.gd" id="1_4x2rd"]
 [ext_resource type="PackedScene" uid="uid://dclafa87ojaa3" path="res://system/ui/dialog/dialog_interaction.tscn" id="2_8tdr0"]
+[ext_resource type="AudioStream" uid="uid://brdr07e07fqff" path="res://assets/music/nature sketch.wav" id="2_dtrup"]
 [ext_resource type="Script" uid="uid://b2gbmxj3vikwc" path="res://system/ui/dialog/dialog_text.gd" id="3_wdter"]
 [ext_resource type="Resource" uid="uid://c68j4aibkx563" path="res://system/characters/npc/resource/player.tres" id="4_tbolx"]
 
 [node name="Monolog" type="Node2D"]
 script = ExtResource("1_4x2rd")
+music = ExtResource("2_dtrup")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1280.0

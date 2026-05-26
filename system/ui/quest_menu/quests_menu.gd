@@ -4,9 +4,9 @@ const QUEST_ITEM : PackedScene = preload("res://system/ui/quest_menu/quest_item.
 const QUEST_STEP_ITEM : PackedScene = preload("res://system/ui/quest_menu/quest_step_item.tscn")
 
 @onready var quest_item_container: VBoxContainer = $ScrollContainer/MarginContainer/VBoxContainer
-@onready var details_container: VBoxContainer = $VBoxContainer
-@onready var title_label: Label = $VBoxContainer/TitleLabel
-@onready var description_label: Label = $VBoxContainer/DescriptionLabel
+@onready var details_container: VBoxContainer = $ScrollContainer2/VBoxContainer
+@onready var title_label: Label = $ScrollContainer2/VBoxContainer/TitleLabel
+@onready var description_label: Label = $ScrollContainer2/VBoxContainer/DescriptionLabel
 
 
 # Called when the node enters the scene tree for the first time.

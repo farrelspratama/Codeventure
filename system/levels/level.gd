@@ -1,5 +1,7 @@
 class_name Level extends Node2D
 
+@export var music : AudioStream
+
 @onready var game: Level = $"."
 
 func _ready() -> void:
@@ -27,6 +29,8 @@ func _ready() -> void:
 			PlayerManager.set_player_position(saved_pos)
 			camera.force_snap()
 			print("Player di-spawn langsung ke titik Save: ", saved_pos)
+	
+	AudioManager.play_music(music)
 
 	if Hud:
 		Hud.visible = true

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=5 format=3 uid="uid://cgwyglf2ugh2i"]
+
+[ext_resource type="Script" uid="uid://6osa3re2n1f1" path="res://system/quest_system/quest_reward_item.gd" id="1_rt4tg"]
+[ext_resource type="Resource" uid="uid://cggsbxsyb5ilf" path="res://system/inventory/items/flashdisk.tres" id="2_agcqv"]
+[ext_resource type="Script" uid="uid://df0jn0tbhct03" path="res://system/quest_system/quest_resource.gd" id="3_88ihu"]
+
+[sub_resource type="Resource" id="Resource_qnts8"]
+script = ExtResource("1_rt4tg")
+item = ExtResource("2_agcqv")
+metadata/_custom_type_script = "uid://6osa3re2n1f1"
+
+[resource]
+script = ExtResource("3_88ihu")
+title = "Urutan Data Rusak"
+description = "Sistem recovery mengambil data dengan urutan yang salah sehingga urutan pengambilan data harus diperbaiki."
+steps = Array[String](["Selesaikan Semua Masalah"])
+reward_score = 100
+reward_items = Array[ExtResource("1_rt4tg")]([SubResource("Resource_qnts8")])
+metadata/_custom_type_script = "uid://df0jn0tbhct03"

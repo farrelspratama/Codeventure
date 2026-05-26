@@ -1,6 +1,8 @@
 @tool
 class_name TreasureChest extends Node2D
 
+signal opened
+
 @export var item_data : ItemData : set = _set_item_data
 @export var question_data: QuestionData
 
@@ -87,6 +89,7 @@ func _disconnect_all_signals() -> void:
 func open_chest() -> void:
 	is_open = true
 	is_open_data.set_value()
+	opened.emit()
 	print("Chest opened")
 	animation_player.play("open_chest")
 	

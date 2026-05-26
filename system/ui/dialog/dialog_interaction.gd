@@ -8,6 +8,7 @@ signal finished
 @export var enabled : bool = true
 
 var dialog_items : Array[ DialogItem ]
+var is_interacting : bool = false
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -28,28 +29,40 @@ func _ready() -> void:
 	pass
 
 func player_interact() -> void:
+	# Jika dialog/minigame sedang berjalan, abaikan tekanan tombol dari pemain
+	if is_interacting:
+		return
+		
 	print("INTERACT TRIGGERED")
+	is_interacting = true # Kunci gemboknya!
+	
 	player_interacted.emit()
 	await get_tree().process_frame
 	await get_tree().process_frame
+	
 	if not Dialog.finished.is_connected(_on_dialog_finished):
 		Dialog.finished.connect(_on_dialog_finished)
+		
+	# Menyerahkan seluruh array dialog dan minigame ke Autoload Dialog
 	Dialog.show_dialog( dialog_items )
-	pass
 
 func _on_area_entered(_a: Area2D) -> void:
 	if enabled == false || dialog_items.size() == 0:
 		return
-	PlayerManager.interact_pressed.connect( player_interact )
+	if not PlayerManager.interact_pressed.is_connected(player_interact):
+		PlayerManager.interact_pressed.connect( player_interact )
 	print("masuk")
 
 func _on_area_exited(_a: Area2D) -> void:
-	PlayerManager.interact_pressed.disconnect( player_interact )
+	if PlayerManager.interact_pressed.is_connected(player_interact):
+		PlayerManager.interact_pressed.disconnect( player_interact )
 
 func _on_dialog_finished() -> void:
 	if Dialog.finished.is_connected(_on_dialog_finished):
 		Dialog.finished.disconnect(_on_dialog_finished)
+	is_interacting = false # Buka kembali gembok interaksi!
 	finished.emit()
+	print("Dialog/Minigame Runtutan Selesai Total")
 
 func _get_configuration_warnings() -> PackedStringArray:
 	if _check_for_dialog_items() == false:

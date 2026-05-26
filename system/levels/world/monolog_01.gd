@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var music : AudioStream
+
 @onready var dialog_interaction: DialogInteraction = $DialogInteraction
 
 func _ready() -> void:
@@ -19,6 +21,9 @@ func _ready() -> void:
 	# Mulai monolog
 	if dialog_interaction.has_method("player_interact"):
 		dialog_interaction.player_interact()
+		
+	
+	AudioManager.play_music(music)
 
 func _on_monolog_finished() -> void:
 	print("Monolog Selesai. Pindah ke Intro...")

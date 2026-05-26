@@ -19,10 +19,23 @@ func gather_quest_data() -> void:
 	# Gather all quest resources and add to quests array
 	var quest_files : PackedStringArray = DirAccess.get_files_at( QUEST_DATA_LOCATION )
 	quests.clear()
+	
 	for q in quest_files:
-		quests.append( load( QUEST_DATA_LOCATION + "/" + q ) as Quest )
-		pass
-	print("Quest Count: ",quests.size())
+		# Abaikan file cache .uid yang kadang muncul di Godot 4
+		if q.ends_with(".uid"):
+			continue
+			
+		# BERSIHKAN NAMA FILE: Hapus akhiran .remap jika game dimainkan di versi .exe
+		var clean_name = q.replace(".remap", "")
+		
+		# Pastikan yang diload hanya file .tres
+		if clean_name.ends_with(".tres"):
+			var quest_resource = load( QUEST_DATA_LOCATION + "/" + clean_name ) as Quest
+			
+			if quest_resource != null:
+				quests.append( quest_resource )
+				
+	print("Quest Count: ", quests.size())
 
 func update_quest( _title : String, _completed_step : String = "", _is_complete : bool = false ) -> void:
 	var quest_index : int = get_quest_index_by_title( _title )

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=3 format=3 uid="uid://cq6httpetnsah"]
+
+[ext_resource type="Script" uid="uid://6osa3re2n1f1" path="res://system/quest_system/quest_reward_item.gd" id="1_qyd02"]
+[ext_resource type="Script" uid="uid://df0jn0tbhct03" path="res://system/quest_system/quest_resource.gd" id="2_uw7wd"]
+
+[resource]
+script = ExtResource("2_uw7wd")
+title = "Aturan Stack"
+description = "Memahami aturan dasar stack seperti push, pop, dan top untuk menstabilkan sistem penyimpanan."
+steps = Array[String](["Bicara dengan Pak Sofyan"])
+metadata/_custom_type_script = "uid://df0jn0tbhct03"

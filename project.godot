@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+AudioManager="*res://system/manager/audio_manager.gd"
 LevelManager="*res://system/manager/level_manager.gd"
 UIManager="*res://system/manager/ui_manager.gd"
 Hud="*res://system/ui/hud/hud.tscn"

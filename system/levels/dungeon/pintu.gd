@@ -1,5 +1,7 @@
 extends Node2D
 
+signal opened
+
 @export_file("*.tscn") var target_level : String 
 @export var correct_passcode: String = "1234" # Ganti kodenya lewat Inspector per pintu
 
@@ -58,7 +60,7 @@ func _on_passcode_submitted(is_correct: bool) -> void:
 		# Bersihkan sinyal dan buka pintu
 		_disconnect_signals()
 		is_ui_open = false
-		
+		opened.emit()
 		change_level()
 	else:
 		# Jika salah, UI tetap terbuka (tidak panggil _on_ui_closed).

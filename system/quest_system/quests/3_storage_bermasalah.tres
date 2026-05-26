@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=3 format=3 uid="uid://dg8rji5awnamb"]
+
+[ext_resource type="Script" uid="uid://6osa3re2n1f1" path="res://system/quest_system/quest_reward_item.gd" id="1_3276e"]
+[ext_resource type="Script" uid="uid://df0jn0tbhct03" path="res://system/quest_system/quest_resource.gd" id="2_2podw"]
+
+[resource]
+script = ExtResource("2_2podw")
+title = "Storage Bermasalah"
+description = "Sistem penyimpanan komputer rusak dan data-data di dalamnya tersusun secara tidak teratur."
+steps = Array[String](["Bertemu Pak Sofyan", "Cari Catatan Sistem", "Cari Pintu Keluar"])
+reward_score = 100
+metadata/_custom_type_script = "uid://df0jn0tbhct03"

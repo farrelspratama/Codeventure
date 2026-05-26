@@ -8,6 +8,5 @@ game_type = 2
 question_text = "“TOP adalah posisi data paling atas pada stack.”
 
 Apakah pernyataan diatas benar atau salah?"
-options = Array[String](["Benar", "Salah"])
-correct_answers = Array[String](["Benar"])
+correct_answers = Array[String](["true"])
 metadata/_custom_type_script = "uid://bg8k6b86gev0i"

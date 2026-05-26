@@ -8,6 +8,5 @@ game_type = 2
 question_text = "“Data yang berada di tengah stack dapat diambil langsung.”
 
 Apakah pernyataan diatas benar atau salah?"
-options = Array[String](["Benar", "Salah"])
-correct_answers = Array[String](["Salah"])
+correct_answers = Array[String](["false"])
 metadata/_custom_type_script = "uid://bg8k6b86gev0i"

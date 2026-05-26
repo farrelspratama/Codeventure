@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=4 uid="uid://d0k2qddo55qqw"]
+[gd_scene load_steps=22 format=4 uid="uid://d0k2qddo55qqw"]
 
 [ext_resource type="Texture2D" uid="uid://cc2fqqq73ci4i" path="res://assets/environment/tilesets/Interior.png" id="1_r25sy"]
 [ext_resource type="Script" uid="uid://dxpqq0fy4vutb" path="res://system/levels/level.gd" id="1_tlx2i"]
+[ext_resource type="AudioStream" uid="uid://e33v8qbgo1b5" path="res://assets/music/TownTheme.mp3" id="2_h5h4s"]
 [ext_resource type="Script" uid="uid://cyunb4ors3jvv" path="res://system/tile_maps/level_tile_map_layer.gd" id="3_24rff"]
 [ext_resource type="PackedScene" uid="uid://d2j6svnvl8o7e" path="res://system/levels/level_transition.tscn" id="3_m4eb7"]
 [ext_resource type="Texture2D" uid="uid://d224s6di1knyv" path="res://assets/environment/tilesets/Lantai Kayu.png" id="4_grwso"]
@@ -10,7 +11,7 @@
 [ext_resource type="Resource" uid="uid://c25o5yhdygaui" path="res://system/characters/npc/resource/pak_nopandi.tres" id="7_psujb"]
 [ext_resource type="PackedScene" uid="uid://b2lmwyq5ghxtm" path="res://system/characters/npc/npc_behavior_wander.tscn" id="8_psujb"]
 [ext_resource type="PackedScene" uid="uid://ct0hqkac5axdu" path="res://system/quest_system/quest_activated_switch.tscn" id="9_odkif"]
-[ext_resource type="Resource" uid="uid://bw4gmqvkresnc" path="res://system/quest_system/quests/mencari_pak_sofyan.tres" id="10_mfto6"]
+[ext_resource type="Resource" uid="uid://bw4gmqvkresnc" path="res://system/quest_system/quests/2_mencari_pak_sofyan.tres" id="10_mfto6"]
 [ext_resource type="PackedScene" uid="uid://dclafa87ojaa3" path="res://system/ui/dialog/dialog_interaction.tscn" id="11_0l0so"]
 [ext_resource type="Script" uid="uid://b2gbmxj3vikwc" path="res://system/ui/dialog/dialog_text.gd" id="12_h5h4s"]
 [ext_resource type="Resource" uid="uid://c68j4aibkx563" path="res://system/characters/npc/resource/player.tres" id="13_mfto6"]
@@ -64,6 +65,7 @@ sources/2 = SubResource("TileSetAtlasSource_q38hx")
 [node name="Sekolah" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_tlx2i")
+music = ExtResource("2_h5h4s")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAP//AQADAAEAAAD/////AQADAAEAAAD//wAAAQADAAEAAAAAAAAAAQADAAEAAAAAAP7/AQADAAEAAAD///7/AQADAAEAAAAAAAEAAQADAAEAAAD//wEAAQADAAEAAAD///3/AQADAAEAAAAAAP3/AQADAAEAAAABAP3/AQADAAEAAAABAP7/AQADAAEAAAABAP//AQADAAEAAAABAAAAAQADAAEAAAABAAEAAQADAAEAAAACAP3/AQADAAEAAAACAP7/AQADAAEAAAACAP//AQADAAEAAAACAAAAAQADAAEAAAACAAEAAQADAAEAAAADAP3/AQADAAEAAAADAP7/AQADAAEAAAADAP//AQADAAEAAAADAAAAAQADAAEAAAADAAEAAQADAAEAAAAEAP3/AQADAAEAAAAEAP7/AQADAAEAAAAEAP//AQADAAEAAAAEAAAAAQADAAEAAAAEAAEAAQADAAEAAAAFAP3/AQADAAEAAAAFAP7/AQADAAEAAAAFAP//AQADAAEAAAAFAAAAAQADAAEAAAAFAAEAAQADAAEAAAD6//3/AQADAAEAAAD6//7/AQADAAEAAAD6////AQADAAEAAAD6/wAAAQADAAEAAAD6/wEAAQADAAEAAAD7//3/AQADAAEAAAD7//7/AQADAAEAAAD7////AQADAAEAAAD7/wAAAQADAAEAAAD7/wEAAQADAAEAAAD8//3/AQADAAEAAAD8//7/AQADAAEAAAD8////AQADAAEAAAD8/wAAAQADAAEAAAD8/wEAAQADAAEAAAD9//3/AQADAAEAAAD9//7/AQADAAEAAAD9////AQADAAEAAAD9/wAAAQADAAEAAAD9/wEAAQADAAEAAAD+//3/AQADAAEAAAD+//7/AQADAAEAAAD+////AQADAAEAAAD+/wAAAQADAAEAAAD+/wEAAQADAAEAAAD//wIAAQADAAEAAAAAAAIAAQADAAEAAAD//wMAAQADAAEAAAAAAAMAAQADAAEAAAD6//v/AQACAAEAAAD6//z/AQACAAIAAAD7//v/AQACAAEAAAD7//z/AQACAAIAAAD8//v/AQACAAEAAAD8//z/AQACAAIAAAD9//v/AQACAAEAAAD9//z/AQACAAIAAAD+//v/AQACAAEAAAD+//z/AQACAAIAAAD///v/AQACAAEAAAD///z/AQACAAIAAAAAAPv/AQACAAEAAAAAAPz/AQACAAIAAAABAPv/AQACAAEAAAABAPz/AQACAAIAAAACAPv/AQACAAEAAAACAPz/AQACAAIAAAADAPv/AQACAAEAAAADAPz/AQACAAIAAAAEAPv/AQACAAEAAAAEAPz/AQACAAIAAAAFAPv/AQACAAEAAAAFAPz/AQACAAIAAAA=")

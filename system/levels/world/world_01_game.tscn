@@ -1,19 +1,16 @@
-[gd_scene load_steps=33 format=3 uid="uid://bkiue41ycgdqq"]
+[gd_scene load_steps=26 format=3 uid="uid://bkiue41ycgdqq"]
 
 [ext_resource type="Script" uid="uid://dxpqq0fy4vutb" path="res://system/levels/level.gd" id="1_q14ut"]
 [ext_resource type="PackedScene" uid="uid://nld40rw12c0e" path="res://system/levels/world/desa_environtment.tscn" id="2_lp7ko"]
 [ext_resource type="PackedScene" uid="uid://cxqcha3ibg8r2" path="res://system/characters/player/player_spawn.tscn" id="6_72rcc"]
 [ext_resource type="PackedScene" uid="uid://drg863i16hbqj" path="res://system/characters/npc/npc.tscn" id="8_3ojl6"]
-[ext_resource type="Resource" uid="uid://c25o5yhdygaui" path="res://system/characters/npc/resource/pak_nopandi.tres" id="9_cillt"]
 [ext_resource type="PackedScene" uid="uid://b2lmwyq5ghxtm" path="res://system/characters/npc/npc_behavior_wander.tscn" id="10_qcmtv"]
-[ext_resource type="PackedScene" uid="uid://ct0hqkac5axdu" path="res://system/quest_system/quest_activated_switch.tscn" id="11_y7q8k"]
-[ext_resource type="Resource" uid="uid://bw4gmqvkresnc" path="res://system/quest_system/quests/mencari_pak_sofyan.tres" id="12_rw8rx"]
+[ext_resource type="Resource" uid="uid://bw4gmqvkresnc" path="res://system/quest_system/quests/2_mencari_pak_sofyan.tres" id="12_rw8rx"]
 [ext_resource type="PackedScene" uid="uid://dclafa87ojaa3" path="res://system/ui/dialog/dialog_interaction.tscn" id="13_08tpw"]
 [ext_resource type="Script" uid="uid://b2gbmxj3vikwc" path="res://system/ui/dialog/dialog_text.gd" id="14_xijt8"]
 [ext_resource type="Resource" uid="uid://c68j4aibkx563" path="res://system/characters/npc/resource/player.tres" id="15_umk0s"]
 [ext_resource type="Script" uid="uid://dicew2gcami5a" path="res://system/ui/dialog/dialog_choice.gd" id="16_hnxqq"]
 [ext_resource type="Script" uid="uid://cn7unf8c1h61s" path="res://system/ui/dialog/dialog_branch.gd" id="17_4krog"]
-[ext_resource type="PackedScene" uid="uid://ba5gqj7mahmym" path="res://system/quest_system/quest_advance_trigger.tscn" id="18_4ho82"]
 [ext_resource type="Resource" uid="uid://bmbeuehdox8yn" path="res://system/characters/npc/resource/kak_seno.tres" id="19_oxmdp"]
 [ext_resource type="Script" uid="uid://d2epo0ultih7o" path="res://system/quest_system/quest_activated_switch.gd" id="20_0bqyp"]
 [ext_resource type="Script" uid="uid://cfspk0ixjj2av" path="res://system/quest_system/quest_advance_trigger.gd" id="21_sgs4g"]
@@ -23,19 +20,16 @@
 [ext_resource type="Resource" uid="uid://byykgcx2ehstl" path="res://system/characters/npc/resource/oyen.tres" id="24_dckkc"]
 [ext_resource type="PackedScene" uid="uid://ch1mjraonqe7a" path="res://system/characters/npc/patrol_location.tscn" id="24_k6ykw"]
 [ext_resource type="Resource" uid="uid://dypkbtyntpix7" path="res://system/characters/npc/resource/pak_tatang.tres" id="25_7g0gs"]
-[ext_resource type="Resource" uid="uid://b2fmd63nntcuv" path="res://system/quest_system/quests/keliling_desa.tres" id="26_lp7ko"]
+[ext_resource type="Resource" uid="uid://b2fmd63nntcuv" path="res://system/quest_system/quests/1_keliling_desa.tres" id="26_lp7ko"]
 [ext_resource type="Script" uid="uid://c5m6454bkinwe" path="res://system/ui/dialog/dialog_minigame.gd" id="27_k2ssb"]
 [ext_resource type="Resource" uid="uid://c0oj42wcnxg0b" path="res://system/ui/content/soal/stack/LIFO/soal1.tres" id="28_dckdi"]
 [ext_resource type="PackedScene" uid="uid://d2j6svnvl8o7e" path="res://system/levels/level_transition.tscn" id="32_hfnwl"]
-[ext_resource type="PackedScene" uid="uid://dv0tn3ypx7ppw" path="res://system/objects/treasure_chest/treasure_chest.tscn" id="52_qhku5"]
-[ext_resource type="Resource" uid="uid://bk12rwi3hrxw3" path="res://system/inventory/items/buku.tres" id="53_58t5m"]
-[ext_resource type="Resource" uid="uid://blh4iut3yyyy8" path="res://system/ui/content/soal/stack/LIFO/soal3.tres" id="54_8togo"]
-[ext_resource type="Resource" uid="uid://cggsbxsyb5ilf" path="res://system/inventory/items/flashdisk.tres" id="55_jy6w1"]
-[ext_resource type="Resource" uid="uid://r2jnr2k8wjq1" path="res://system/ui/content/soal/stack/LIFO/soal2.tres" id="56_5yu55"]
+[ext_resource type="AudioStream" uid="uid://e33v8qbgo1b5" path="res://assets/music/TownTheme.mp3" id="33_li24r"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_q14ut")
+music = ExtResource("33_li24r")
 
 [node name="EnvirontmentDesa" parent="." instance=ExtResource("2_lp7ko")]
 
@@ -46,160 +40,6 @@ position = Vector2(392, -270)
 [node name="Entities" type="Node2D" parent="."]
 z_index = 1
 y_sort_enabled = true
-
-[node name="Pak Sofyan" parent="Entities" instance=ExtResource("8_3ojl6")]
-position = Vector2(690.4591, -170)
-npc_resource = ExtResource("9_cillt")
-
-[node name="NpcBehaviorWander" parent="Entities/Pak Sofyan" instance=ExtResource("10_qcmtv")]
-wander_range = 3
-
-[node name="QuestActivatedSwitch" parent="Entities/Pak Sofyan" instance=ExtResource("11_y7q8k")]
-check_type = 2
-react_to_global_signal = true
-linked_quest = ExtResource("12_rw8rx")
-quest_step = 1
-settings_summary = "UPDATE QUEST:
-Quest: Mencari Pak Sofyan
-Check if player is on step: mencari pak sofyan"
-
-[node name="DialogInteraction" parent="Entities/Pak Sofyan/QuestActivatedSwitch" instance=ExtResource("13_08tpw")]
-
-[node name="DialogText" type="Node" parent="Entities/Pak Sofyan/QuestActivatedSwitch/DialogInteraction"]
-script = ExtResource("14_xijt8")
-text = "Ehh, baru pulang kampung mas?"
-npc_info = ExtResource("9_cillt")
-metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
-
-[node name="DialogText2" type="Node" parent="Entities/Pak Sofyan/QuestActivatedSwitch/DialogInteraction"]
-script = ExtResource("14_xijt8")
-text = "Hehehehe Iya Pak"
-npc_info = ExtResource("15_umk0s")
-metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
-
-[node name="DialogText3" type="Node" parent="Entities/Pak Sofyan/QuestActivatedSwitch/DialogInteraction"]
-script = ExtResource("14_xijt8")
-text = "Wah Alhamdulillah Mas"
-npc_info = ExtResource("9_cillt")
-metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
-
-[node name="DialogText4" type="Node" parent="Entities/Pak Sofyan/QuestActivatedSwitch/DialogInteraction"]
-script = ExtResource("14_xijt8")
-text = "Mas, bisa bantuin saya kembalikan flashdisk dari Kak Seno ga?"
-npc_info = ExtResource("9_cillt")
-metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
-
-[node name="DialogChoice" type="Node" parent="Entities/Pak Sofyan/QuestActivatedSwitch/DialogInteraction"]
-script = ExtResource("16_hnxqq")
-metadata/_custom_type_script = "uid://dicew2gcami5a"
-
-[node name="DialogBranch" type="Node" parent="Entities/Pak Sofyan/QuestActivatedSwitch/DialogInteraction/DialogChoice"]
-script = ExtResource("17_4krog")
-text = "Boleh Pak!"
-metadata/_custom_type_script = "uid://cn7unf8c1h61s"
-
-[node name="QuestAdvanceTrigger" parent="Entities/Pak Sofyan/QuestActivatedSwitch/DialogInteraction/DialogChoice/DialogBranch" instance=ExtResource("18_4ho82")]
-signal_name = "selected"
-linked_quest = ExtResource("12_rw8rx")
-settings_summary = "UPDATE QUEST:
-Quest: Flashdisk Pak Nopandi
-Step: 0 - N/A
-Complete: false"
-
-[node name="DialogText" type="Node" parent="Entities/Pak Sofyan/QuestActivatedSwitch/DialogInteraction/DialogChoice/DialogBranch"]
-script = ExtResource("14_xijt8")
-text = "Boleh pak saya coba bantu"
-npc_info = ExtResource("15_umk0s")
-metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
-
-[node name="DialogText2" type="Node" parent="Entities/Pak Sofyan/QuestActivatedSwitch/DialogInteraction/DialogChoice/DialogBranch"]
-script = ExtResource("14_xijt8")
-text = "Wah terima kasih banyak mas"
-npc_info = ExtResource("19_oxmdp")
-metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
-
-[node name="DialogBranch2" type="Node" parent="Entities/Pak Sofyan/QuestActivatedSwitch/DialogInteraction/DialogChoice"]
-script = ExtResource("17_4krog")
-text = "Maaf pak saya gabisa"
-metadata/_custom_type_script = "uid://cn7unf8c1h61s"
-
-[node name="DialogText" type="Node" parent="Entities/Pak Sofyan/QuestActivatedSwitch/DialogInteraction/DialogChoice/DialogBranch2"]
-script = ExtResource("14_xijt8")
-text = "Maaf pak saya lagi gabisa"
-npc_info = ExtResource("15_umk0s")
-metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
-
-[node name="QuestActivatedSwitch3" type="Node2D" parent="Entities/Pak Sofyan"]
-script = ExtResource("20_0bqyp")
-check_type = 3
-remove_when_activated = true
-react_to_global_signal = true
-linked_quest = ExtResource("12_rw8rx")
-quest_complete = true
-settings_summary = "UPDATE QUEST:
-Quest: Flashdisk Pak Nopandi
-Checking if quest is complete"
-metadata/_custom_type_script = "uid://d2epo0ultih7o"
-
-[node name="QuestActivatedSwitch2" type="Node2D" parent="Entities/Pak Sofyan/QuestActivatedSwitch3"]
-script = ExtResource("20_0bqyp")
-react_to_global_signal = true
-linked_quest = ExtResource("12_rw8rx")
-settings_summary = "UPDATE QUEST:
-Quest: Flashdisk Pak Nopandi
-Checking if player has quest"
-metadata/_custom_type_script = "uid://d2epo0ultih7o"
-
-[node name="QuestActivatedSwitch" type="Node2D" parent="Entities/Pak Sofyan/QuestActivatedSwitch3/QuestActivatedSwitch2"]
-script = ExtResource("20_0bqyp")
-check_type = 2
-remove_when_activated = true
-react_to_global_signal = true
-linked_quest = ExtResource("12_rw8rx")
-quest_step = 2
-settings_summary = "UPDATE QUEST:
-Quest: Flashdisk Pak Nopandi
-Check if player is on step: mengembalikan flashdisk"
-metadata/_custom_type_script = "uid://d2epo0ultih7o"
-
-[node name="DialogInteraction" parent="Entities/Pak Sofyan/QuestActivatedSwitch3/QuestActivatedSwitch2/QuestActivatedSwitch" instance=ExtResource("13_08tpw")]
-
-[node name="DialogText" type="Node" parent="Entities/Pak Sofyan/QuestActivatedSwitch3/QuestActivatedSwitch2/QuestActivatedSwitch/DialogInteraction"]
-script = ExtResource("14_xijt8")
-text = "Terima kasih mas, flashdisk nya ada di Kak Seno"
-npc_info = ExtResource("9_cillt")
-metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
-
-[node name="QuestActivatedSwitch2" type="Node2D" parent="Entities/Pak Sofyan/QuestActivatedSwitch3/QuestActivatedSwitch2"]
-script = ExtResource("20_0bqyp")
-check_type = 2
-react_to_global_signal = true
-linked_quest = ExtResource("12_rw8rx")
-quest_step = 2
-settings_summary = "UPDATE QUEST:
-Quest: Flashdisk Pak Nopandi
-Check if player is on step: mengembalikan flashdisk"
-metadata/_custom_type_script = "uid://d2epo0ultih7o"
-
-[node name="DialogInteraction" parent="Entities/Pak Sofyan/QuestActivatedSwitch3/QuestActivatedSwitch2/QuestActivatedSwitch2" instance=ExtResource("13_08tpw")]
-
-[node name="DialogText" type="Node" parent="Entities/Pak Sofyan/QuestActivatedSwitch3/QuestActivatedSwitch2/QuestActivatedSwitch2/DialogInteraction"]
-script = ExtResource("14_xijt8")
-text = "Terima kasih mas, ini ada sedikit hadiah buat kamu"
-npc_info = ExtResource("9_cillt")
-metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
-
-[node name="QuestAdvanceTrigger" type="Node2D" parent="Entities/Pak Sofyan/QuestActivatedSwitch3/QuestActivatedSwitch2/QuestActivatedSwitch2/DialogInteraction"]
-script = ExtResource("21_sgs4g")
-signal_name = "finished"
-linked_quest = ExtResource("12_rw8rx")
-quest_step = 2
-quest_complete = true
-settings_summary = "UPDATE QUEST:
-Quest: Flashdisk Pak Nopandi
-Step: 2 - mengembalikan flashdisk
-Complete: true"
-metadata/_custom_type_script = "uid://cfspk0ixjj2av"
 
 [node name="Kak Seno" parent="Entities" instance=ExtResource("8_3ojl6")]
 position = Vector2(30, -320)
@@ -462,7 +302,7 @@ linked_quest = ExtResource("26_lp7ko")
 quest_step = 1
 settings_summary = "UPDATE QUEST:
 Quest: Keliling Desa
-Step: 1 - zidan
+Step: 1 - pak tatang
 Complete: false"
 metadata/_custom_type_script = "uid://cfspk0ixjj2av"
 
@@ -543,18 +383,6 @@ npc_resource = ExtResource("24_dckkc")
 [node name="Objects" type="Node2D" parent="."]
 z_index = 1
 y_sort_enabled = true
-
-[node name="TreasureChest" parent="Objects" instance=ExtResource("52_qhku5")]
-position = Vector2(-144, -204)
-scale = Vector2(0.5, 0.5)
-item_data = ExtResource("53_58t5m")
-question_data = ExtResource("54_8togo")
-
-[node name="TreasureChest2" parent="Objects" instance=ExtResource("52_qhku5")]
-position = Vector2(299, -576)
-scale = Vector2(0.5, 0.5)
-item_data = ExtResource("55_jy6w1")
-question_data = ExtResource("56_5yu55")
 
 [node name="LevelTransition" parent="." instance=ExtResource("32_hfnwl")]
 z_index = 1
