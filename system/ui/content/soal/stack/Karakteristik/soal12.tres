@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://2w5axfbl440n"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_tc3m4"]
+
+[resource]
+script = ExtResource("1_tc3m4")
+question_text = "Jika dilakukan operasi stack secara berurutan sebagai berikut:
+push(12)
+push(45)
+pop()
+push(67)
+pop()
+push(89)
+Bagaimana susunan stack saat ini?
+[SLOT]
+[SLOT]"
+options = Array[String](["12", "45", "67", "89"])
+correct_answers = Array[String](["89", "12"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"

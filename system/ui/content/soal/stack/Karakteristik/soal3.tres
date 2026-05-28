@@ -9,11 +9,8 @@ Data_15
 Data_21
 Data_64
 Data_07
-Urutkan data yang keluar dari stack.
-[SLOT]
-[SLOT]
-[SLOT]
+Urutkan data yang keluar pertama dari stack.
 [SLOT]"
 options = Array[String](["Data_15", "Data_21", "Data_64", "Data_07"])
-correct_answers = Array[String](["Data_07", "Data_64", "Data_21", "Data_15"])
+correct_answers = Array[String](["Data_07"])
 metadata/_custom_type_script = "uid://bg8k6b86gev0i"

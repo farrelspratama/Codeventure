@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://dshxax8ljja78"]
+[gd_scene load_steps=47 format=4 uid="uid://dshxax8ljja78"]
 
 [ext_resource type="Script" uid="uid://dxpqq0fy4vutb" path="res://system/levels/level.gd" id="1_jbg35"]
 [ext_resource type="Texture2D" uid="uid://cc2fqqq73ci4i" path="res://assets/environment/tilesets/Interior.png" id="2_ngd46"]
@@ -26,11 +26,13 @@
 [ext_resource type="Resource" uid="uid://bln4fmn17ijks" path="res://system/ui/content/soal/stack/LIFO/soal6.tres" id="20_rntri"]
 [ext_resource type="Resource" uid="uid://bm2jslj2h4yg8" path="res://system/ui/content/soal/stack/LIFO/soal7.tres" id="21_vj2hy"]
 [ext_resource type="Resource" uid="uid://bn8uhpcfr6h5i" path="res://system/ui/content/soal/stack/LIFO/soal8.tres" id="22_c70kq"]
+[ext_resource type="Resource" uid="uid://uu1c7st51543" path="res://system/ui/content/soal/stack/Karakteristik/soal11.tres" id="23_a8dhn"]
 [ext_resource type="Script" uid="uid://c5m6454bkinwe" path="res://system/ui/dialog/dialog_minigame.gd" id="24_410yv"]
 [ext_resource type="Resource" uid="uid://bhtqr5eq6p57g" path="res://system/ui/content/soal/stack/Karakteristik/soal1.tres" id="25_rntri"]
 [ext_resource type="Resource" uid="uid://bfcsxi4m5m6fs" path="res://system/ui/content/soal/stack/Karakteristik/soal2.tres" id="26_rntri"]
 [ext_resource type="Resource" uid="uid://wq64fwrfcln3" path="res://system/ui/content/soal/stack/Karakteristik/soal3.tres" id="27_vj2hy"]
 [ext_resource type="Resource" uid="uid://bgp8b3b0qejco" path="res://system/ui/content/soal/stack/Karakteristik/soal4.tres" id="28_1d11u"]
+[ext_resource type="Resource" uid="uid://2w5axfbl440n" path="res://system/ui/content/soal/stack/Karakteristik/soal12.tres" id="28_ax3lb"]
 [ext_resource type="Resource" uid="uid://b5hxvb2ou472a" path="res://system/ui/content/soal/stack/Karakteristik/soal5.tres" id="29_edu8q"]
 [ext_resource type="Resource" uid="uid://8gin4kordrol" path="res://system/ui/content/soal/stack/Karakteristik/soal6.tres" id="30_wuvok"]
 [ext_resource type="Resource" uid="uid://dexmgvkpsn8gx" path="res://system/ui/content/soal/stack/Karakteristik/soal7.tres" id="31_rmuhj"]
@@ -262,7 +264,7 @@ metadata/_custom_type_script = "uid://d2epo0ultih7o"
 [node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("10_1d11u")
 text = "Ruangan ini..."
-npc_info = ExtResource("11_edu8q")
+npc_info = ExtResource("12_8x7r3")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
@@ -280,7 +282,7 @@ metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 [node name="DialogText4" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("10_1d11u")
 text = "Partisi penyimpanan?"
-npc_info = ExtResource("11_edu8q")
+npc_info = ExtResource("12_8x7r3")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText5" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
@@ -322,7 +324,7 @@ metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 [node name="DialogText12" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("10_1d11u")
 text = "Jadi semua lemari ini bermasalah?"
-npc_info = ExtResource("11_edu8q")
+npc_info = ExtResource("12_8x7r3")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText13" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
@@ -358,13 +360,13 @@ metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 [node name="DialogText18" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("10_1d11u")
 text = "Dan kamu harus menyelesaikannya untuk membuka akses ke partisi berikutnya."
-npc_info = ExtResource("12_8x7r3")
+npc_info = ExtResource("11_edu8q")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText19" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("10_1d11u")
 text = "Jadi pintu itu baru terbuka kalau semua lemari selesai diperbaiki?"
-npc_info = ExtResource("11_edu8q")
+npc_info = ExtResource("12_8x7r3")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText20" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
@@ -385,14 +387,15 @@ metadata/_custom_type_script = "uid://cfspk0ixjj2av"
 
 [node name="QuestActivatedSwitch2" type="Node2D" parent="Npc"]
 script = ExtResource("11_0pcr4")
-check_type = 1
+check_type = 3
+remove_when_activated = true
 react_to_global_signal = true
 linked_quest = ExtResource("9_3jrwl")
 quest_step = 1
 quest_complete = true
 settings_summary = "UPDATE QUEST:
 Quest: Urutan Data Rusak
-Checking if player has completed step: selesaikan semua masalah"
+Checking if quest is complete"
 metadata/_custom_type_script = "uid://d2epo0ultih7o"
 
 [node name="DialogInteraction" parent="Npc/QuestActivatedSwitch2" instance=ExtResource("9_c70kq")]
@@ -499,6 +502,12 @@ text = "Jadi urutan penyimpanan sangat penting."
 npc_info = ExtResource("12_8x7r3")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
+[node name="DialogText23" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
+script = ExtResource("10_1d11u")
+text = "Sangat Penting."
+npc_info = ExtResource("11_edu8q")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
 [node name="DialogMinigame3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
 script = ExtResource("24_410yv")
 question_data = ExtResource("27_vj2hy")
@@ -559,16 +568,51 @@ question_data = ExtResource("31_rmuhj")
 npc_info = ExtResource("12_8x7r3")
 metadata/_custom_type_script = "uid://c5m6454bkinwe"
 
+[node name="DialogMinigame11" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
+script = ExtResource("24_410yv")
+question_data = ExtResource("23_a8dhn")
+npc_info = ExtResource("12_8x7r3")
+metadata/_custom_type_script = "uid://c5m6454bkinwe"
+
+[node name="DialogText25" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
+script = ExtResource("10_1d11u")
+text = "Bagus! Sekarang kamu memahami bagaimana operasi push bekerja."
+npc_info = ExtResource("11_edu8q")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogMinigame12" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
+script = ExtResource("24_410yv")
+question_data = ExtResource("28_ax3lb")
+npc_info = ExtResource("12_8x7r3")
+metadata/_custom_type_script = "uid://c5m6454bkinwe"
+
 [node name="DialogMinigame8" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
 script = ExtResource("24_410yv")
 question_data = ExtResource("32_3jrwl")
 npc_info = ExtResource("12_8x7r3")
 metadata/_custom_type_script = "uid://c5m6454bkinwe"
 
+[node name="DialogText26" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
+script = ExtResource("10_1d11u")
+text = "Untuk mengeluarkan data daru stack harus menggunakan operasi pop."
+npc_info = ExtResource("12_8x7r3")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText27" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
+script = ExtResource("10_1d11u")
+text = "Sistem juga harus mengetahui data yang berada di posisi paling atas."
+npc_info = ExtResource("11_edu8q")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
 [node name="DialogMinigame9" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
 script = ExtResource("24_410yv")
 question_data = ExtResource("33_0pcr4")
 npc_info = ExtResource("12_8x7r3")
+metadata/_custom_type_script = "uid://c5m6454bkinwe"
+
+[node name="DialogMinigame13" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
+script = ExtResource("24_410yv")
+question_data = ExtResource("18_0pcr4")
 metadata/_custom_type_script = "uid://c5m6454bkinwe"
 
 [node name="DialogMinigame10" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
@@ -589,11 +633,23 @@ text = "Stack selalu bekerja dari bagian atas."
 npc_info = ExtResource("12_8x7r3")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
-[node name="DialogText23" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
+[node name="DialogText24" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
 script = ExtResource("10_1d11u")
 text = "Dan itulah yang membuat urutan data dalam stack sangat penting."
 npc_info = ExtResource("12_8x7r3")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="QuestAdvanceTrigger" type="Node2D" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
+script = ExtResource("8_rmuhj")
+signal_name = "finished"
+linked_quest = ExtResource("9_3jrwl")
+quest_step = 1
+quest_complete = true
+settings_summary = "UPDATE QUEST:
+Quest: Urutan Data Rusak
+Step: 1 - selesaikan semua masalah
+Complete: true"
+metadata/_custom_type_script = "uid://cfspk0ixjj2av"
 
 [node name="Items" type="Node2D" parent="."]
 z_index = 1

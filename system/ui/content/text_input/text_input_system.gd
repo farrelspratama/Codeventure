@@ -25,9 +25,6 @@ func show_minigame(q_data: QuestionData, auto_pause: bool = true) -> void:
 	is_active = true
 	control.visible = true
 	
-	if Hud:
-		Hud.visible = false
-	
 	should_unpause = auto_pause
 	if auto_pause:
 		get_tree().paused = true 
@@ -37,9 +34,6 @@ func show_minigame(q_data: QuestionData, auto_pause: bool = true) -> void:
 func hide_minigame() -> void:
 	is_active = false
 	control.visible = false
-	
-	if Hud:
-		Hud.visible = true
 	
 	if should_unpause:
 		get_tree().paused = false

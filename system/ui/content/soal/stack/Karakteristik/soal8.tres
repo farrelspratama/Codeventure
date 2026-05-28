@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_1lohi")
 game_type = 1
-question_text = "Proses mengambil data dari stack disebut?"
+question_text = "Proses mengambil data dari stack disebut?
+[SLOT]"
 correct_answers = Array[String](["pop"])
 metadata/_custom_type_script = "uid://bg8k6b86gev0i"

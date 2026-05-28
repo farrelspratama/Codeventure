@@ -343,7 +343,7 @@ metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 [node name="DialogText19" type="Node" parent="Npc/DialogInteraction"]
 script = ExtResource("10_omn7h")
 text = "Betul. Sekarang buka peti di sebelah."
-npc_info = ExtResource("12_2qm6h")
+npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="QuestAdvanceTrigger" type="Node2D" parent="Npc/DialogInteraction"]

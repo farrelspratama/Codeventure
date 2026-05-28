@@ -2,6 +2,7 @@
 class_name DialogSystemNode extends CanvasLayer
 
 signal finished
+signal canceled
 
 var is_active : bool = false
 var text_in_progress : bool = false
@@ -29,6 +30,7 @@ func _ready() -> void:
 			get_parent().remove_child(self)
 			return
 		return
+	
 	timer.timeout.connect( _on_timer_timeout )
 	hide_dialog()
 
@@ -91,13 +93,18 @@ func show_dialog( _items : Array[ DialogItem ] ) -> void:
 	else:
 		start_dialog()
 
-func hide_dialog() -> void:
+func hide_dialog(is_canceled: bool = false) -> void:
 	is_active = false
 	choice_options.visible = false
 	dialog_ui.visible = false
 	dialog_ui.process_mode = Node.PROCESS_MODE_DISABLED
 	get_tree().paused = false
-	finished.emit()
+	
+	if is_canceled:
+		canceled.emit()
+	else:
+		finished.emit()
+		
 	PlayerManager.reset_camera_on_player()
 	$CutsceneUI/AnimationPlayer.play("end")
 	pass
@@ -183,8 +190,11 @@ func set_dialog_minigame(_d: DialogMinigame) -> void:
 	# Sembunyikan UI dialog sementara minigame berjalan
 	dialog_ui.visible = false 
 	
+	minigame_in_progress = true
+	
 	var q_data = _d.question_data
 	if q_data == null:
+		minigame_in_progress = false
 		advance_dialog()
 		return
 		
@@ -219,6 +229,8 @@ func _disconnect_all_minigame_signals() -> void:
 func _on_minigame_finished() -> void:
 	_disconnect_all_minigame_signals()
 	
+	minigame_in_progress = false
+	
 	# Munculkan kembali UI percakapan dan lanjut ke baris dialog berikutnya
 	dialog_ui.visible = true 
 	advance_dialog()
@@ -226,9 +238,12 @@ func _on_minigame_finished() -> void:
 func _on_minigame_cancelled() -> void:
 	_disconnect_all_minigame_signals()
 	
+	minigame_in_progress = false
+	
 	print("Minigame di dialog dibatalkan. Menutup percakapan NPC...")
-	# Langsung tutup total percakapan agar status is_active dan pause di-reset!
-	hide_dialog()
+	
+	# Panggil dengan status is_canceled = true
+	hide_dialog(true)
 
 func _on_timer_timeout() -> void:
 	content.visible_characters += 1

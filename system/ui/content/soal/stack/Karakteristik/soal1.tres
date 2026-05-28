@@ -4,11 +4,11 @@
 
 [resource]
 script = ExtResource("1_pg27d")
-question_text = "Jika file dimasukkan ke dalam stack dengan urutan:
+question_text = "Jika file dimasukan ke dalam stack dengan urutan:
 File_Musik
 File_Foto
 File_Video
-Susun posisi file di dalam stack setelah seluruh file dimasukkan.
+Susun posisi file saat ini!
 [SLOT]
 [SLOT]
 [SLOT]"

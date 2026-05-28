@@ -5,10 +5,10 @@
 [resource]
 script = ExtResource("1_yn7g2")
 question_text = "Perhatikan proses berikut:
-Push A
-Push B
-Push C
-Pop
+push(A)
+push(B)
+push(C)
+pop(C)
 Susun isi akhir stack.
 [SLOT]
 [SLOT]"

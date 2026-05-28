@@ -5,6 +5,7 @@
 [resource]
 script = ExtResource("1_li5rv")
 game_type = 1
-question_text = "Proses menambahkan data ke dalam stack disebut?"
+question_text = "Proses menambahkan data ke dalam stack disebut?
+[SLOT]"
 correct_answers = Array[String](["push"])
 metadata/_custom_type_script = "uid://bg8k6b86gev0i"
