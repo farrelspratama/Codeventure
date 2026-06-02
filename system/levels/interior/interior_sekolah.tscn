@@ -102,78 +102,104 @@ Checking if player has quest"
 [node name="DialogText" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
 text = "Oh? Kamu..."
+can_fast_forward = null
+read_time_delay = null
 npc_info = ExtResource("7_psujb")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText2" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
 text = "Pak Sofyan?"
+can_fast_forward = null
+read_time_delay = null
 npc_info = ExtResource("13_mfto6")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText3" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
 text = "Wah, kamu sudah besar ternyata."
+can_fast_forward = null
+read_time_delay = null
 npc_info = ExtResource("7_psujb")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText4" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
 text = "Kebetulan sekali kamu datang."
+can_fast_forward = null
+read_time_delay = null
 npc_info = ExtResource("7_psujb")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText5" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
 text = "Memangnya kenapa, Pak?"
+can_fast_forward = null
+read_time_delay = null
 npc_info = ExtResource("13_mfto6")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText6" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
 text = "Komputer sekolah saya rusak lagi."
+can_fast_forward = null
+read_time_delay = null
 npc_info = ExtResource("7_psujb")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText7" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
 text = "Padahal ada banyak data penting di dalamnya."
+can_fast_forward = null
+read_time_delay = null
 npc_info = ExtResource("7_psujb")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText8" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
 text = "Sudah dicoba diperbaiki?"
+can_fast_forward = null
+read_time_delay = null
 npc_info = ExtResource("13_mfto6")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText9" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
 text = "Sudah... tapi makin aneh."
+can_fast_forward = null
+read_time_delay = null
 npc_info = ExtResource("7_psujb")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText10" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
 text = "Kadang layar berkedip sendiri."
+can_fast_forward = null
+read_time_delay = null
 npc_info = ExtResource("7_psujb")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText11" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
 text = "Kadang muncul simbol-simbol aneh."
+can_fast_forward = null
+read_time_delay = null
 npc_info = ExtResource("7_psujb")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText12" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
 text = "Boleh saya lihat?"
+can_fast_forward = null
+read_time_delay = null
 npc_info = ExtResource("13_mfto6")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText13" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
 text = "Tentu."
+can_fast_forward = null
+read_time_delay = null
 npc_info = ExtResource("7_psujb")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -191,7 +217,7 @@ metadata/_custom_type_script = "uid://cfspk0ixjj2av"
 [node name="Meja Komputer" parent="." instance=ExtResource("15_0l0so")]
 z_index = 1
 position = Vector2(-101, -74)
-target_level = "uid://brd082txkduf2"
+target_level = "uid://b8nk1ftascnps"
 
 [node name="LevelTransition" parent="." instance=ExtResource("3_m4eb7")]
 position = Vector2(0, 80)

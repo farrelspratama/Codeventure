@@ -3,6 +3,7 @@ extends Node
 const PLAYER = preload("res://system/characters/player/player.tscn")
 const INVENTORY_DATA : InventoryData = preload("res://system/inventory/player_inventory.tres")
 
+signal camera_shook( trauma : float )
 signal interact_pressed
 
 var interact_handled : bool = true
@@ -49,6 +50,9 @@ func _input(event):
 func interact() -> void:
 	interact_handled = false
 	interact_pressed.emit()
+
+func shake_camera( trauma : float = 1 ) -> void:
+	camera_shook.emit( clampi( trauma, 0, 3 ) )
 
 func reset_camera_on_player( tween_duration : float = 0.5 ) -> void:
 	# --- TAMBAHKAN DUA BARIS PENGAMAN INI ---

@@ -9,6 +9,8 @@ var text_in_progress : bool = false
 var waiting_for_choice : bool = false
 var watching_cutscene : bool = false
 var minigame_in_progress : bool = false
+var current_can_fast_forward: bool = true
+var is_reading_time: bool = false
 
 var text_speed : float = 0.05
 var text_length : int = 0
@@ -39,12 +41,17 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if (event.is_action_pressed("interact")):
 		if text_in_progress == true:
+			if current_can_fast_forward == false:
+				return
 			content.visible_characters = text_length
 			timer.stop()
 			text_in_progress = false
+			_start_read_delay()
 			return
 		elif waiting_for_choice == true:
 			return
+		elif is_reading_time == true:
+			return # BLOKIR! Tombol interaksi tidak akan bekerja sampai timer jeda habis
 		
 		advance_dialog()
 	pass
@@ -125,6 +132,8 @@ func start_dialog() -> void:
 func set_dialog_text( _d : DialogItem ) -> void:
 	if _d is DialogText:
 		content.text = _d.text
+		current_can_fast_forward = _d.can_fast_forward
+		is_reading_time = false
 		
 	# --- LOGIKA PENENTUAN NAMA ---
 	var speaker_name = _d.npc_info.npc_name
@@ -253,6 +262,7 @@ func _on_timer_timeout() -> void:
 		start_timer()
 	else:
 		text_in_progress = false
+		_start_read_delay()
 
 func start_timer() -> void:
 	timer.wait_time = text_speed
@@ -263,3 +273,12 @@ func start_timer() -> void:
 	elif ', '.contains( _char ):
 		timer.wait_time *= 3
 	timer.start()
+
+# --- FUNGSI JEDA WAJIB BACA ---
+func _start_read_delay() -> void:
+	var current_item = dialog_items[dialog_items_index]
+	if current_item is DialogText and current_item.read_time_delay > 0.0:
+		is_reading_time = true
+		# Kunci pemain selama X detik sesuai angka di Inspector
+		await get_tree().create_timer(current_item.read_time_delay).timeout
+		is_reading_time = false # Gembok terbuka! Pemain sekarang bisa klik Lanjut.

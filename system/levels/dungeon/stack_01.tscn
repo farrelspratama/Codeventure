@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=4 uid="uid://dshxax8ljja78"]
+[gd_scene load_steps=48 format=4 uid="uid://dshxax8ljja78"]
 
 [ext_resource type="Script" uid="uid://dxpqq0fy4vutb" path="res://system/levels/level.gd" id="1_jbg35"]
 [ext_resource type="Texture2D" uid="uid://cc2fqqq73ci4i" path="res://assets/environment/tilesets/Interior.png" id="2_ngd46"]
@@ -33,6 +33,7 @@
 [ext_resource type="Resource" uid="uid://wq64fwrfcln3" path="res://system/ui/content/soal/stack/Karakteristik/soal3.tres" id="27_vj2hy"]
 [ext_resource type="Resource" uid="uid://bgp8b3b0qejco" path="res://system/ui/content/soal/stack/Karakteristik/soal4.tres" id="28_1d11u"]
 [ext_resource type="Resource" uid="uid://2w5axfbl440n" path="res://system/ui/content/soal/stack/Karakteristik/soal12.tres" id="28_ax3lb"]
+[ext_resource type="Resource" uid="uid://ukc5xo22b86n" path="res://system/ui/content/soal/stack/Karakteristik/soal13.tres" id="28_h8o0r"]
 [ext_resource type="Resource" uid="uid://b5hxvb2ou472a" path="res://system/ui/content/soal/stack/Karakteristik/soal5.tres" id="29_edu8q"]
 [ext_resource type="Resource" uid="uid://8gin4kordrol" path="res://system/ui/content/soal/stack/Karakteristik/soal6.tres" id="30_wuvok"]
 [ext_resource type="Resource" uid="uid://dexmgvkpsn8gx" path="res://system/ui/content/soal/stack/Karakteristik/soal7.tres" id="31_rmuhj"]
@@ -612,7 +613,7 @@ metadata/_custom_type_script = "uid://c5m6454bkinwe"
 
 [node name="DialogMinigame13" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
 script = ExtResource("24_410yv")
-question_data = ExtResource("18_0pcr4")
+question_data = ExtResource("28_h8o0r")
 metadata/_custom_type_script = "uid://c5m6454bkinwe"
 
 [node name="DialogMinigame10" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]

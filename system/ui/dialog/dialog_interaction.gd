@@ -6,6 +6,7 @@ signal player_interacted
 signal finished
 
 @export var enabled : bool = true
+@export var next_minimap_target: Node2D
 
 var dialog_items : Array[ DialogItem ]
 var is_interacting : bool = false
@@ -73,6 +74,12 @@ func _on_dialog_finished() -> void:
 	is_interacting = false # Buka kembali gembok interaksi!
 	if Hud:
 		Hud.visible = true
+	if next_minimap_target != null:
+		# Suruh minimap pindah ke target berikutnya
+		get_tree().call_group("minimap_group", "change_quest_target", next_minimap_target)
+	else:
+		# Jika kosong (tidak ada target lanjutan), hapus panah dari minimap
+		get_tree().call_group("minimap_group", "change_quest_target", null)
 	finished.emit()
 	print("Dialog/Minigame Runtutan Selesai Total")
 

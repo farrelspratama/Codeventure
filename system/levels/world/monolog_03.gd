@@ -23,6 +23,6 @@ func _ready() -> void:
 func _on_monolog_finished() -> void:
 	print("Monolog Selesai. Pindah ke Intro...")
 	
-	var gameplay_level = "res://system/levels/dungeon/array_01.tscn"
+	var gameplay_level = "res://system/levels/dungeon/stack_intro.tscn"
 	
 	LevelManager.load_new_level(gameplay_level, "", Vector2.ZERO)

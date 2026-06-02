@@ -4,4 +4,13 @@
 
 [resource]
 script = ExtResource("1_mo6jc")
+game_type = 1
+question_text = "Jika dilakukan operasi secara berurutan:
+push(10)
+push(25)
+pop()
+push(5)
+Angka berapa yang menempati posisi top?
+nilai top = [SLOT]"
+correct_answers = Array[String](["5"])
 metadata/_custom_type_script = "uid://bg8k6b86gev0i"
