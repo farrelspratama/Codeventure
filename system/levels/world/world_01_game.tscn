@@ -63,64 +63,48 @@ metadata/_custom_type_script = "uid://d2epo0ultih7o"
 [node name="DialogText" type="Node" parent="Entities/Kak Seno/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Halo Kak Seno!"
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("15_umk0s")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText2" type="Node" parent="Entities/Kak Seno/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Ehh halo! Ternyata benar kamu sedang berlibur."
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("19_oxmdp")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText3" type="Node" parent="Entities/Kak Seno/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Haha, iya Kak. Mumpung sedang libur panjang."
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("19_oxmdp")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText4" type="Node" parent="Entities/Kak Seno/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Oh ya kamu ingat Pak Sofyan?"
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("19_oxmdp")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText5" type="Node" parent="Entities/Kak Seno/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Ingat Kak, guru komputer di sekolah kan."
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("19_oxmdp")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText6" type="Node" parent="Entities/Kak Seno/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Iya, dia butuh bantuan."
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("19_oxmdp")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText7" type="Node" parent="Entities/Kak Seno/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Katanya komputer di sekolah rusak."
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("19_oxmdp")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText8" type="Node" parent="Entities/Kak Seno/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Saya yakin kamu bisa bantu, dia sekarang ada di sekolah."
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("19_oxmdp")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -194,61 +178,48 @@ Quest: Keliling Desa
 Check if player is on step: zidan"
 metadata/_custom_type_script = "uid://d2epo0ultih7o"
 
-[node name="DialogInteraction" parent="Entities/Zidan/QuestActivatedSwitch" instance=ExtResource("13_08tpw")]
+[node name="DialogInteraction" parent="Entities/Zidan/QuestActivatedSwitch" node_paths=PackedStringArray("next_minimap_target") instance=ExtResource("13_08tpw")]
+next_minimap_target = NodePath("../../../Kak Seno/QuestActivatedSwitch/DialogInteraction")
 
 [node name="DialogText" type="Node" parent="Entities/Zidan/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Oh iya, kamu baru datang hari ini, kan?"
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("24_7g0gs")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText2" type="Node" parent="Entities/Zidan/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Iya, baru sampai tadi."
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("15_umk0s")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText3" type="Node" parent="Entities/Zidan/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Kalau mau jalan-jalan, sekarang desa lagi lumayan ramai."
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("24_7g0gs")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText4" type="Node" parent="Entities/Zidan/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Barusan aku ketemu Kak Seno."
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("24_7g0gs")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText6" type="Node" parent="Entities/Zidan/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Kak Seno? Guru les kita dulu?"
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("24_7g0gs")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText7" type="Node" parent="Entities/Zidan/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Iya, guru yang dulu sering ngajarin matematika."
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("24_7g0gs")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText8" type="Node" parent="Entities/Zidan/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Coba kamu temui dia sepertinya sedang berjalan jalan di belakang."
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("24_7g0gs")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -283,56 +254,48 @@ next_minimap_target = NodePath("../../../Zidan/QuestActivatedSwitch/DialogIntera
 [node name="DialogText" type="Node" parent="Entities/Pak Tatang/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Lho, bukannya ini cucunya Pak Darto?"
-read_time_delay = null
 npc_info = ExtResource("25_7g0gs")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText2" type="Node" parent="Entities/Pak Tatang/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Haha, iya Pak. Masih ingat ternyata."
-read_time_delay = null
 npc_info = ExtResource("15_umk0s")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText3" type="Node" parent="Entities/Pak Tatang/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Dulu sering jajan cilok pas sekolah di sini."
-read_time_delay = null
 npc_info = ExtResource("25_7g0gs")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText4" type="Node" parent="Entities/Pak Tatang/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Masih sama aja Pak gerobaknya."
-read_time_delay = null
 npc_info = ExtResource("15_umk0s")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText5" type="Node" parent="Entities/Pak Tatang/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Oh iya, tadi Zidan kesini dan nanyain kamu."
-read_time_delay = null
 npc_info = ExtResource("25_7g0gs")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText6" type="Node" parent="Entities/Pak Tatang/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Memangnya ada apa Pak?"
-read_time_delay = null
 npc_info = ExtResource("15_umk0s")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText7" type="Node" parent="Entities/Pak Tatang/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Wah kurang tau saya."
-read_time_delay = null
 npc_info = ExtResource("25_7g0gs")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText8" type="Node" parent="Entities/Pak Tatang/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Coba cari aja ke rumahnya diatas."
-read_time_delay = null
 npc_info = ExtResource("25_7g0gs")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -380,8 +343,6 @@ visible = false
 [node name="DialogText" type="Node" parent="Entities/Pak Ustad/DialogInteraction"]
 script = ExtResource("14_xijt8")
 text = "Halo mas bisa bantu kakek engga?"
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("22_4c50y")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -397,8 +358,6 @@ metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 [node name="DialogText2" type="Node" parent="Entities/Pak Ustad/DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("14_xijt8")
 text = "Tolong selesaikan ini yaa"
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("22_4c50y")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -416,8 +375,6 @@ metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 [node name="DialogText" type="Node" parent="Entities/Pak Ustad/DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("14_xijt8")
 text = "Ok"
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("22_4c50y")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 

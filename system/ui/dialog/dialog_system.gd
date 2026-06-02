@@ -20,7 +20,7 @@ var dialog_items : Array[DialogItem]
 var dialog_items_index : int = 0
 
 @onready var dialog_ui: Control = $DialogUI
-@onready var content: RichTextLabel = $DialogUI/PanelContainer/RichTextLabel
+@onready var content: RichTextLabel = $DialogUI/PanelContainer/ScrollContainer/RichTextLabel
 @onready var name_label: Label = $DialogUI/Label
 @onready var timer: Timer = $DialogUI/Timer
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $DialogUI/AudioStreamPlayer2D
@@ -131,7 +131,12 @@ func start_dialog() -> void:
 
 func set_dialog_text( _d : DialogItem ) -> void:
 	if _d is DialogText:
-		content.text = _d.text
+		var final_text = _d.text
+		
+		final_text = final_text.replace("[c]", "[color=#D14B34]")
+		final_text = final_text.replace("[/]", "[/color]") # Penutup Universal
+		
+		content.text = final_text
 		current_can_fast_forward = _d.can_fast_forward
 		is_reading_time = false
 		

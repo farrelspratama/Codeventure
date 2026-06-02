@@ -1,5 +1,7 @@
 class_name Level extends Node2D
 
+signal spawned
+
 @export var music : AudioStream
 
 @onready var game: Level = $"."
@@ -21,6 +23,7 @@ func _ready() -> void:
 			if spawn_point and spawn_point is Node2D:
 				PlayerManager.set_player_position(spawn_point.global_position)
 				camera.force_snap()
+				spawned.emit()
 				
 		# KONDISI B: Pemain masuk dari Load Game
 		elif LevelManager.target_transition == "LOAD_GAME":
