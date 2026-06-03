@@ -383,7 +383,7 @@ metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 [node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
 script = ExtResource("10_omn7h")
 text = "Sudah."
-npc_info = ExtResource("11_ob2nk")
+npc_info = ExtResource("12_2qm6h")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
@@ -403,7 +403,7 @@ metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 
 [node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("10_omn7h")
-text = "Pahami kembali cara kerja stack."
+text = "Salah. Coba kamu pahami kembali."
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -412,15 +412,20 @@ script = ExtResource("17_4qfoa")
 text = "Stack bekerja seperti tumpukan"
 metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 
+[node name="QuestAdvanceTrigger" type="Node2D" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("13_px22b")
+signal_name = "selected"
+linked_quest = ExtResource("14_5ow2c")
+quest_step = 3
+settings_summary = "UPDATE QUEST:
+Quest: Storage Bermasalah
+Step: 3 - memahami cara kerja stack
+Complete: false"
+metadata/_custom_type_script = "uid://cfspk0ixjj2av"
+
 [node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("10_omn7h")
-text = "Benar."
-npc_info = ExtResource("11_ob2nk")
-metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
-
-[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2"]
-script = ExtResource("10_omn7h")
-text = "Tapi memahami definisi saja belum cukup."
+text = "Benar. Tapi memahami definisi saja belum cukup."
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -438,7 +443,7 @@ metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText5" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("10_omn7h")
-text = "Ayo kita coba menggunakan simulator penyimpanan sederhana."
+text = "Mari kita coba menyelesaikan permasalahan sederhana."
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -462,10 +467,114 @@ script = ExtResource("17_4qfoa")
 text = "File_A"
 metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Sepertinya kamu masih ragu."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Mari kita lihat contoh lain."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Coba bayangkan tumpukan piring."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText4" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Piring Merah
+Piring Biru
+Piring Hijau
+Piring mana yang paling mudah diambil?"
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogChoice" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
+script = ExtResource("16_v35b1")
+metadata/_custom_type_script = "uid://dicew2gcami5a"
+
+[node name="DialogBranch" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice"]
+script = ExtResource("17_4qfoa")
+text = "Piring Merah"
+metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogBranch2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice"]
+script = ExtResource("17_4qfoa")
+text = "Piring Biru"
+metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogBranch3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice"]
+script = ExtResource("17_4qfoa")
+text = "Piring Hijau"
+metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Nah, stack bekerja dengan cara yang sama."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
 [node name="DialogBranch2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("17_4qfoa")
 text = "File_B"
 metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("10_omn7h")
+text = "Sepertinya kamu masih ragu."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("10_omn7h")
+text = "Mari kita lihat contoh lain."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("10_omn7h")
+text = "Coba bayangkan tumpukan piring."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText4" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("10_omn7h")
+text = "Piring Merah
+Piring Biru
+Piring Hijau
+Piring mana yang paling mudah diambil?"
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogChoice" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("16_v35b1")
+metadata/_custom_type_script = "uid://dicew2gcami5a"
+
+[node name="DialogBranch" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice"]
+script = ExtResource("17_4qfoa")
+text = "Piring Merah"
+metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogBranch2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice"]
+script = ExtResource("17_4qfoa")
+text = "Piring Biru"
+metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogBranch3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice"]
+script = ExtResource("17_4qfoa")
+text = "Piring Hijau"
+metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Nah, stack bekerja dengan cara yang sama."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogBranch3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("17_4qfoa")
@@ -478,9 +587,278 @@ text = "Tepat."
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
-[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+[node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
-text = "Karena File_C masuk terakhir."
+text = "Tapi. Menurutmu mengapa File_C keluar lebih dulu?"
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogChoice" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("16_v35b1")
+metadata/_custom_type_script = "uid://dicew2gcami5a"
+
+[node name="DialogBranch" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice"]
+script = ExtResource("17_4qfoa")
+text = "Karena masuk terakhir."
+metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="QuestAdvanceTrigger" type="Node2D" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("13_px22b")
+signal_name = "selected"
+linked_quest = ExtResource("14_5ow2c")
+quest_step = 4
+quest_complete = true
+settings_summary = "UPDATE QUEST:
+Quest: Storage Bermasalah
+Step: 4 - memahami cara kerja stack
+Complete: true"
+metadata/_custom_type_script = "uid://cfspk0ixjj2av"
+
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Tepat sekali."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Sekarang kamu sudah memahami cara kerja stack."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Namun hati hati."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText4" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Jika kamu salah kamu akan merusak seluruh sistem."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogBranch2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice"]
+script = ExtResource("17_4qfoa")
+text = "Karena berada paling bawah."
+metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch2"]
+script = ExtResource("10_omn7h")
+text = "Coba lihat kembali posisi File_C."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="QuestActivatedSwitch3" type="Node2D" parent="Npc"]
+script = ExtResource("15_b4117")
+check_type = 2
+react_to_global_signal = true
+linked_quest = ExtResource("14_5ow2c")
+quest_step = 4
+settings_summary = "UPDATE QUEST:
+Quest: Storage Bermasalah
+Check if player is on step: memahami cara kerja stack"
+metadata/_custom_type_script = "uid://d2epo0ultih7o"
+
+[node name="DialogText6" type="Node" parent="Npc/QuestActivatedSwitch3"]
+script = ExtResource("10_omn7h")
+text = "Perhatikan data berikut.
+File_A
+File_B
+File_C
+Data dimasukkan secara berurutan dari atas ke bawah.
+Menurutmu data mana yang akan keluar terlebih dahulu?"
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogChoice" type="Node" parent="Npc/QuestActivatedSwitch3"]
+script = ExtResource("16_v35b1")
+metadata/_custom_type_script = "uid://dicew2gcami5a"
+
+[node name="DialogBranch" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice"]
+script = ExtResource("17_4qfoa")
+text = "File_A"
+metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Sepertinya kamu masih ragu."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Mari kita lihat contoh lain."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Coba bayangkan tumpukan piring."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText4" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Piring Merah
+Piring Biru
+Piring Hijau
+Piring mana yang paling mudah diambil?"
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogChoice" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch"]
+script = ExtResource("16_v35b1")
+metadata/_custom_type_script = "uid://dicew2gcami5a"
+
+[node name="DialogBranch" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch/DialogChoice"]
+script = ExtResource("17_4qfoa")
+text = "Piring Merah"
+metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogBranch2" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch/DialogChoice"]
+script = ExtResource("17_4qfoa")
+text = "Piring Biru"
+metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogBranch3" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch/DialogChoice"]
+script = ExtResource("17_4qfoa")
+text = "Piring Hijau"
+metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Nah, stack bekerja dengan cara yang sama."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogBranch2" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice"]
+script = ExtResource("17_4qfoa")
+text = "File_B"
+metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch2"]
+script = ExtResource("10_omn7h")
+text = "Sepertinya kamu masih ragu."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch2"]
+script = ExtResource("10_omn7h")
+text = "Mari kita lihat contoh lain."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch2"]
+script = ExtResource("10_omn7h")
+text = "Coba bayangkan tumpukan piring."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText4" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch2"]
+script = ExtResource("10_omn7h")
+text = "Piring Merah
+Piring Biru
+Piring Hijau
+Piring mana yang paling mudah diambil?"
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogChoice" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch2"]
+script = ExtResource("16_v35b1")
+metadata/_custom_type_script = "uid://dicew2gcami5a"
+
+[node name="DialogBranch" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch2/DialogChoice"]
+script = ExtResource("17_4qfoa")
+text = "Piring Merah"
+metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogBranch2" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch2/DialogChoice"]
+script = ExtResource("17_4qfoa")
+text = "Piring Biru"
+metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogBranch3" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch2/DialogChoice"]
+script = ExtResource("17_4qfoa")
+text = "Piring Hijau"
+metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Nah, stack bekerja dengan cara yang sama."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogBranch3" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice"]
+script = ExtResource("17_4qfoa")
+text = "File_C"
+metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Tepat."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Tapi. Menurutmu mengapa File_C keluar lebih dulu?"
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogChoice" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch3"]
+script = ExtResource("16_v35b1")
+metadata/_custom_type_script = "uid://dicew2gcami5a"
+
+[node name="DialogBranch" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch3/DialogChoice"]
+script = ExtResource("17_4qfoa")
+text = "Karena masuk terakhir."
+metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="QuestAdvanceTrigger" type="Node2D" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("13_px22b")
+signal_name = "selected"
+linked_quest = ExtResource("14_5ow2c")
+quest_step = 4
+quest_complete = true
+settings_summary = "UPDATE QUEST:
+Quest: Storage Bermasalah
+Step: 4 - memahami cara kerja stack
+Complete: true"
+metadata/_custom_type_script = "uid://cfspk0ixjj2av"
+
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Tepat sekali."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Sekarang kamu sudah memahami cara kerja stack."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Namun hati hati."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText4" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Jika kamu salah kamu akan merusak seluruh sistem."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogBranch2" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch3/DialogChoice"]
+script = ExtResource("17_4qfoa")
+text = "Karena berada paling bawah."
+metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch3/DialogChoice/DialogBranch3/DialogChoice/DialogBranch2"]
+script = ExtResource("10_omn7h")
+text = "Coba lihat kembali posisi File_C."
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -531,3 +909,5 @@ Quest: Storage Bermasalah
 Step: 0 - N/A
 Complete: false"
 metadata/_custom_type_script = "uid://cfspk0ixjj2av"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

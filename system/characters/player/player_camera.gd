@@ -6,6 +6,7 @@ class_name PlayerCamera extends Camera2D
 var shake_trauma : float = 0.0
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	LevelManager.tilemap_bounds_changed.connect( _update_limits )
 	_update_limits( LevelManager.current_tilemap_bounds )
 	PlayerManager.camera_shook.connect( add_camera_shake )

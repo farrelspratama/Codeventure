@@ -7,6 +7,6 @@
 script = ExtResource("2_2podw")
 title = "Storage Bermasalah"
 description = "Sistem penyimpanan komputer rusak dan data-data di dalamnya tersusun secara tidak teratur."
-steps = Array[String](["Bertemu Pak Sofyan", "Cari Catatan Sistem", "Pahami Cara Kerja Stack"])
+steps = Array[String](["Bertemu Pak Sofyan", "Cari Catatan Sistem", "Memahami Definisi Stack", "Memahami Cara Kerja Stack"])
 reward_score = 100
 metadata/_custom_type_script = "uid://df0jn0tbhct03"

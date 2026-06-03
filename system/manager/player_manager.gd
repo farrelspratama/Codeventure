@@ -52,7 +52,7 @@ func interact() -> void:
 	interact_pressed.emit()
 
 func shake_camera( trauma : float = 1 ) -> void:
-	camera_shook.emit( clampi( trauma, 0, 3 ) )
+	camera_shook.emit( clampf( trauma, 0.0, 3.0 ) )
 
 func reset_camera_on_player( tween_duration : float = 0.5 ) -> void:
 	# --- TAMBAHKAN DUA BARIS PENGAMAN INI ---
