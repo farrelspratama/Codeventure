@@ -19,6 +19,8 @@ var plain_text : String
 var dialog_items : Array[DialogItem]
 var dialog_items_index : int = 0
 
+var active_branch: DialogBranch = null
+
 @onready var dialog_ui: Control = $DialogUI
 @onready var content: RichTextLabel = $DialogUI/PanelContainer/ScrollContainer/RichTextLabel
 @onready var name_label: Label = $DialogUI/Label
@@ -112,6 +114,10 @@ func hide_dialog(is_canceled: bool = false) -> void:
 	else:
 		finished.emit()
 		
+		if active_branch != null:
+			active_branch.finished.emit()
+			active_branch = null
+	
 	PlayerManager.reset_camera_on_player()
 	$CutsceneUI/AnimationPlayer.play("end")
 	pass
@@ -187,6 +193,7 @@ func set_dialog_choice( _d : DialogChoice ) -> void:
 func _dialog_choice_selected( _d : DialogBranch ) -> void:
 	choice_options.visible = false
 	_d.selected.emit()
+	active_branch = _d
 	show_dialog( _d.dialog_items )
 	pass
 

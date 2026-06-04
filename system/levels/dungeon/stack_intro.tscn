@@ -519,6 +519,48 @@ text = "Nah, stack bekerja dengan cara yang sama."
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
+[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Sekarang kamu sudah memahami cara kerja stack."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Namun hati hati."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText4" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Jika kamu salah kamu akan merusak seluruh sistem."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText5" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Selanjutnya kamu harus menyelesaikan masalah yang dimiliki seluruh partisi."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText6" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Berikut kunci untuk ke partisi selanjutnya: FXX-K"
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="QuestAdvanceTrigger" type="Node2D" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("13_px22b")
+signal_name = "finished"
+linked_quest = ExtResource("14_5ow2c")
+quest_step = 4
+quest_complete = true
+settings_summary = "UPDATE QUEST:
+Quest: Storage Bermasalah
+Step: 4 - memahami cara kerja stack
+Complete: true"
+metadata/_custom_type_script = "uid://cfspk0ixjj2av"
+
 [node name="DialogBranch2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("17_4qfoa")
 text = "File_B"
@@ -576,6 +618,48 @@ text = "Nah, stack bekerja dengan cara yang sama."
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
+[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Sekarang kamu sudah memahami cara kerja stack."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Namun hati hati."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText4" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Jika kamu salah kamu akan merusak seluruh sistem."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText5" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Selanjutnya kamu harus menyelesaikan masalah yang dimiliki seluruh partisi."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText6" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Berikut kunci untuk ke partisi selanjutnya: FXX-K"
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="QuestAdvanceTrigger" type="Node2D" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("13_px22b")
+signal_name = "finished"
+linked_quest = ExtResource("14_5ow2c")
+quest_step = 4
+quest_complete = true
+settings_summary = "UPDATE QUEST:
+Quest: Storage Bermasalah
+Step: 4 - memahami cara kerja stack
+Complete: true"
+metadata/_custom_type_script = "uid://cfspk0ixjj2av"
+
 [node name="DialogBranch3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("17_4qfoa")
 text = "File_C"
@@ -602,24 +686,6 @@ script = ExtResource("17_4qfoa")
 text = "Karena masuk terakhir."
 metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 
-[node name="QuestAdvanceTrigger" type="Node2D" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
-script = ExtResource("13_px22b")
-signal_name = "selected"
-linked_quest = ExtResource("14_5ow2c")
-quest_step = 4
-quest_complete = true
-settings_summary = "UPDATE QUEST:
-Quest: Storage Bermasalah
-Step: 4 - memahami cara kerja stack
-Complete: true"
-metadata/_custom_type_script = "uid://cfspk0ixjj2av"
-
-[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
-script = ExtResource("10_omn7h")
-text = "Tepat sekali."
-npc_info = ExtResource("11_ob2nk")
-metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
-
 [node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
 script = ExtResource("10_omn7h")
 text = "Sekarang kamu sudah memahami cara kerja stack."
@@ -637,6 +703,30 @@ script = ExtResource("10_omn7h")
 text = "Jika kamu salah kamu akan merusak seluruh sistem."
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText5" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Selanjutnya kamu harus menyelesaikan masalah yang dimiliki seluruh partisi."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText6" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Berikut kunci untuk ke partisi selanjutnya: FXX-K"
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="QuestAdvanceTrigger" type="Node2D" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("13_px22b")
+signal_name = "finished"
+linked_quest = ExtResource("14_5ow2c")
+quest_step = 4
+quest_complete = true
+settings_summary = "UPDATE QUEST:
+Quest: Storage Bermasalah
+Step: 4 - memahami cara kerja stack
+Complete: true"
+metadata/_custom_type_script = "uid://cfspk0ixjj2av"
 
 [node name="DialogBranch2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice"]
 script = ExtResource("17_4qfoa")
@@ -730,9 +820,51 @@ metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 
 [node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
-text = "Nah, stack bekerja dengan cara yang sama."
+text = "Tepat! stack bekerja dengan cara yang sama."
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Sekarang kamu sudah memahami cara kerja stack."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Namun hati hati."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText4" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Jika kamu salah kamu akan merusak seluruh sistem."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText5" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Selanjutnya kamu harus menyelesaikan masalah yang dimiliki seluruh partisi."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText6" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Berikut kunci untuk ke partisi selanjutnya: FXX-K"
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="QuestAdvanceTrigger" type="Node2D" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("13_px22b")
+signal_name = "finished"
+linked_quest = ExtResource("14_5ow2c")
+quest_step = 4
+quest_complete = true
+settings_summary = "UPDATE QUEST:
+Quest: Storage Bermasalah
+Step: 4 - memahami cara kerja stack
+Complete: true"
+metadata/_custom_type_script = "uid://cfspk0ixjj2av"
 
 [node name="DialogBranch2" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice"]
 script = ExtResource("17_4qfoa")
@@ -787,9 +919,51 @@ metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 
 [node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
-text = "Nah, stack bekerja dengan cara yang sama."
+text = "Tepat! stack bekerja dengan cara yang sama."
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Sekarang kamu sudah memahami cara kerja stack."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Namun hati hati."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText4" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Jika kamu salah kamu akan merusak seluruh sistem."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText5" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Selanjutnya kamu harus menyelesaikan masalah yang dimiliki seluruh partisi."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText6" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Berikut kunci untuk ke partisi selanjutnya: FXX-K"
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="QuestAdvanceTrigger" type="Node2D" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("13_px22b")
+signal_name = "finished"
+linked_quest = ExtResource("14_5ow2c")
+quest_step = 4
+quest_complete = true
+settings_summary = "UPDATE QUEST:
+Quest: Storage Bermasalah
+Step: 4 - memahami cara kerja stack
+Complete: true"
+metadata/_custom_type_script = "uid://cfspk0ixjj2av"
 
 [node name="DialogBranch3" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice"]
 script = ExtResource("17_4qfoa")
@@ -817,18 +991,6 @@ script = ExtResource("17_4qfoa")
 text = "Karena masuk terakhir."
 metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 
-[node name="QuestAdvanceTrigger" type="Node2D" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
-script = ExtResource("13_px22b")
-signal_name = "selected"
-linked_quest = ExtResource("14_5ow2c")
-quest_step = 4
-quest_complete = true
-settings_summary = "UPDATE QUEST:
-Quest: Storage Bermasalah
-Step: 4 - memahami cara kerja stack
-Complete: true"
-metadata/_custom_type_script = "uid://cfspk0ixjj2av"
-
 [node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
 script = ExtResource("10_omn7h")
 text = "Tepat sekali."
@@ -853,6 +1015,30 @@ text = "Jika kamu salah kamu akan merusak seluruh sistem."
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
+[node name="DialogText5" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Selanjutnya kamu harus menyelesaikan masalah yang dimiliki seluruh partisi."
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText6" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Berikut kunci untuk ke partisi selanjutnya: FXX-K"
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="QuestAdvanceTrigger" type="Node2D" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("13_px22b")
+signal_name = "finished"
+linked_quest = ExtResource("14_5ow2c")
+quest_step = 4
+quest_complete = true
+settings_summary = "UPDATE QUEST:
+Quest: Storage Bermasalah
+Step: 4 - memahami cara kerja stack
+Complete: true"
+metadata/_custom_type_script = "uid://cfspk0ixjj2av"
+
 [node name="DialogBranch2" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice"]
 script = ExtResource("17_4qfoa")
 text = "Karena berada paling bawah."
@@ -860,7 +1046,7 @@ metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 
 [node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch2"]
 script = ExtResource("10_omn7h")
-text = "Coba lihat kembali posisi File_C."
+text = "Coba cek dan lihat kembali posisi File_C."
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -913,3 +1099,5 @@ Complete: false"
 metadata/_custom_type_script = "uid://cfspk0ixjj2av"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[connection signal="finished" from="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch" to="." method="advance_quest"]

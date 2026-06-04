@@ -52,3 +52,7 @@ func _free_level() -> void:
 	UIManager.close_current_ui()
 	PlayerManager.unparent_player( self )
 	queue_free()
+
+
+func advance_quest() -> void:
+	pass # Replace with function body.

@@ -3,6 +3,7 @@
 class_name DialogBranch extends DialogItem
 
 signal selected
+signal finished
 
 @export var text : String = "ok..."
 

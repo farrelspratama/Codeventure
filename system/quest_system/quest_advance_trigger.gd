@@ -26,3 +26,7 @@ func advance_quest() -> void:
 		_step = ""
 	
 	QuestManager.update_quest( _title, _step, quest_complete )
+
+
+func _on_dialog_branch_finished() -> void:
+	pass # Replace with function body.
