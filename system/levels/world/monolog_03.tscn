@@ -19,23 +19,31 @@ visible = false
 [node name="DialogText" type="Node" parent="DialogInteraction"]
 script = ExtResource("3_1s0hq")
 text = "Aduh!!!"
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("4_4wbd1")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText2" type="Node" parent="DialogInteraction"]
 script = ExtResource("3_1s0hq")
 text = "Aku... di mana ini?"
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("4_4wbd1")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText3" type="Node" parent="DialogInteraction"]
 script = ExtResource("3_1s0hq")
-text = "Tempat ini seperti ruang penyimpanan berkas..."
+text = "Tempat ini seperti [c]ruang penyimpanan berkas[/]..."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("4_4wbd1")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText4" type="Node" parent="DialogInteraction"]
 script = ExtResource("3_1s0hq")
 text = "Sepertinya ada yang tidak beres..."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("4_4wbd1")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"

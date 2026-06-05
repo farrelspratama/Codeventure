@@ -18,7 +18,7 @@ texture_margin_bottom = 2.0
 [node name="TabContainer" type="TabContainer"]
 theme_override_styles/panel = SubResource("StyleBoxTexture_1urf6")
 tab_alignment = 1
-current_tab = 5
+current_tab = 4
 tabs_visible = false
 
 [node name="Pengertian" type="VBoxContainer" parent="."]
@@ -160,7 +160,6 @@ text = "- Struktur sederhana dan mudah dipahami.
 autowrap_mode = 2
 
 [node name="VBoxContainer5" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 10
 metadata/_tab_index = 4
@@ -189,24 +188,4 @@ text = "- Akses data terbatas hanya pada bagian atas.
 - Kapasitas stack dapat terbatas.
 - Jika stack penuh akan terjadi overflow.
 - Jika stack kosong tetapi dilakukan pop akan terjadi underflow."
-autowrap_mode = 2
-
-[node name="VBoxContainer6" type="VBoxContainer" parent="."]
-layout_mode = 2
-theme_override_constants/separation = 10
-metadata/_tab_index = 5
-
-[node name="Label" type="Label" parent="VBoxContainer6"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_b8n70")
-theme_override_font_sizes/font_size = 48
-text = "Kunci Pintu"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="VBoxContainer6"]
-custom_minimum_size = Vector2(780, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 80
-text = "FXX-K"
-horizontal_alignment = 1
 autowrap_mode = 2

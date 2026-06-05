@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://d0k2qddo55qqw"]
+[gd_scene load_steps=23 format=4 uid="uid://d0k2qddo55qqw"]
 
 [ext_resource type="Texture2D" uid="uid://cc2fqqq73ci4i" path="res://assets/environment/tilesets/Interior.png" id="1_r25sy"]
 [ext_resource type="Script" uid="uid://dxpqq0fy4vutb" path="res://system/levels/level.gd" id="1_tlx2i"]
@@ -17,6 +17,7 @@
 [ext_resource type="Resource" uid="uid://c68j4aibkx563" path="res://system/characters/npc/resource/player.tres" id="13_mfto6"]
 [ext_resource type="Script" uid="uid://cfspk0ixjj2av" path="res://system/quest_system/quest_advance_trigger.gd" id="14_0l0so"]
 [ext_resource type="PackedScene" uid="uid://b5215letiwrkt" path="res://system/objects/meja_komputer.tscn" id="15_0l0so"]
+[ext_resource type="Script" uid="uid://d2epo0ultih7o" path="res://system/quest_system/quest_activated_switch.gd" id="16_0lvhi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hlxcw"]
 texture = ExtResource("1_r25sy")
@@ -91,6 +92,7 @@ npc_resource = ExtResource("7_psujb")
 [node name="NpcBehaviorWander" parent="Entities/Npc" instance=ExtResource("8_psujb")]
 
 [node name="QuestActivatedSwitch" parent="Entities/Npc" instance=ExtResource("9_odkif")]
+remove_when_activated = true
 react_to_global_signal = true
 linked_quest = ExtResource("10_mfto6")
 settings_summary = "UPDATE QUEST:
@@ -102,104 +104,92 @@ Checking if player has quest"
 [node name="DialogText" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
 text = "Oh? Kamu..."
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("7_psujb")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText2" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
 text = "Pak Sofyan?"
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("13_mfto6")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText3" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
 text = "Wah, kamu sudah besar ternyata."
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("7_psujb")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText4" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
 text = "Kebetulan sekali kamu datang."
-can_fast_forward = null
-read_time_delay = null
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("7_psujb")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText5" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
 text = "Memangnya kenapa, Pak?"
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("13_mfto6")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText6" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
-text = "Komputer sekolah saya rusak lagi."
-can_fast_forward = null
-read_time_delay = null
+text = "[c]Komputer sekolah[/] saya rusak lagi."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("7_psujb")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText7" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
-text = "Padahal ada banyak data penting di dalamnya."
-can_fast_forward = null
-read_time_delay = null
+text = "Padahal ada banyak [c]data penting[/] di dalamnya."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("7_psujb")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText8" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
 text = "Sudah dicoba diperbaiki?"
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("13_mfto6")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText9" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
 text = "Sudah... tapi makin aneh."
-can_fast_forward = null
-read_time_delay = null
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("7_psujb")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText10" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
 text = "Kadang layar berkedip sendiri."
-can_fast_forward = null
-read_time_delay = null
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("7_psujb")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText11" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
 text = "Kadang muncul simbol-simbol aneh."
-can_fast_forward = null
-read_time_delay = null
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("7_psujb")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText12" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
 text = "Boleh saya lihat?"
-can_fast_forward = null
-read_time_delay = null
 npc_info = ExtResource("13_mfto6")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText13" type="Node" parent="Entities/Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("12_h5h4s")
-text = "Tentu."
-can_fast_forward = null
-read_time_delay = null
+text = "Tentu. Password nya [c]TBR54[/]."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("7_psujb")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -214,10 +204,32 @@ Step: 1 - mencari pak sofyan
 Complete: false"
 metadata/_custom_type_script = "uid://cfspk0ixjj2av"
 
+[node name="QuestActivatedSwitch2" type="Node2D" parent="Entities/Npc"]
+script = ExtResource("16_0lvhi")
+check_type = 1
+react_to_global_signal = true
+linked_quest = ExtResource("10_mfto6")
+quest_step = 1
+settings_summary = "UPDATE QUEST:
+Quest: Mencari Pak Sofyan
+Checking if player has completed step: mencari pak sofyan"
+metadata/_custom_type_script = "uid://d2epo0ultih7o"
+
+[node name="DialogInteraction" parent="Entities/Npc/QuestActivatedSwitch2" instance=ExtResource("11_0l0so")]
+
+[node name="DialogText13" type="Node" parent="Entities/Npc/QuestActivatedSwitch2/DialogInteraction"]
+script = ExtResource("12_h5h4s")
+text = "Password nya [c]TBR54[/]."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("7_psujb")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
 [node name="Meja Komputer" parent="." instance=ExtResource("15_0l0so")]
 z_index = 1
 position = Vector2(-101, -74)
 target_level = "uid://b8nk1ftascnps"
+correct_passcode = "TBR54"
 
 [node name="LevelTransition" parent="." instance=ExtResource("3_m4eb7")]
 position = Vector2(0, 80)

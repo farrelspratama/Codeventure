@@ -8,4 +8,5 @@ script = ExtResource("2_uw7wd")
 title = "Aturan Stack"
 description = "Memahami aturan dasar stack seperti push, pop, dan top untuk menstabilkan sistem penyimpanan."
 steps = Array[String](["Bicara dengan Pak Sofyan"])
+reward_score = 100
 metadata/_custom_type_script = "uid://df0jn0tbhct03"

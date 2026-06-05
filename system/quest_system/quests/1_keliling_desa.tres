@@ -8,4 +8,5 @@ script = ExtResource("2_0v3tj")
 title = "Keliling Desa"
 description = "Berkeliling desa dan temui orang-orang yang dikenal"
 steps = Array[String](["Pak Tatang", "Zidan", "Kak Seno"])
+reward_score = 50
 metadata/_custom_type_script = "uid://df0jn0tbhct03"

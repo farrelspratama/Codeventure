@@ -113,14 +113,14 @@ func _on_submit_pressed():
 			wrong_slots.append(slot_data)
 			
 	if all_correct:
-		print("Jawaban benar semua! Menunggu 1 detik...")
+		print("Jawaban benar! Menunggu 1 detik...")
 		await get_tree().create_timer(1.0, true).timeout 
 		
 		submit.disabled = false
-		minigame_finished.emit()
 		hide_minigame() 
+		minigame_finished.emit()
 	else:
-		print("Ada jawaban yang salah! Menunggu 1.5 detik...")
+		print("Jawaban salah! Menunggu 1.5 detik...")
 		await get_tree().create_timer(1.5, true).timeout 
 		
 		# Reset HANYA kolom yang salah
@@ -131,5 +131,5 @@ func _on_submit_pressed():
 		submit.disabled = false
 
 func _on_close_pressed() -> void:
-	minigame_cancelled.emit() # Beritahu peti bahwa kuis dibatalkan
 	hide_minigame()
+	minigame_cancelled.emit()

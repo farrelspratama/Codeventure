@@ -1,7 +1,10 @@
 extends Node
 
+signal finished
+
 @export var nama_quest: String = "Misi Ruang Arsip" # Sesuaikan dengan judul Quest Anda
 @export var step_final: String = "semua_lemari_selesai"
+@export var completed: bool = false
 
 var total_lemari_selesai: int = 0
 
@@ -20,4 +23,5 @@ func _on_lemari_selesai() -> void:
 	# Jika kelima lemari sudah selesai semua, baru kita naikkan progress quest-nya!
 	if total_lemari_selesai >= 5:
 		print("Semua lemari selesai! Mengirim sinyal ke Quest Manager...")
-		QuestManager.update_quest(nama_quest, step_final, false)
+		QuestManager.update_quest(nama_quest, step_final, completed)
+		finished.emit()

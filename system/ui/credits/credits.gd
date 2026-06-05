@@ -14,10 +14,18 @@ func _ready() -> void:
 	
 	close_button.pressed.connect(_on_back_pressed)
 	
-	# Sembunyikan scrollbar bawaan RichTextLabel agar terlihat seperti film
+	# Sembunyikan scrollbar bawaan
 	credits_text.scroll_active = false
 	
-	# Pindahkan posisi Y dari teks tepat di bawah batas layar
+	# --- PERBAIKAN PENTING: Buka Gembok Ukuran Kotak ---
+	credits_text.fit_content = true # Paksa kotak memanjang ke bawah sesuai isi teks!
+	credits_text.clip_contents = false # Jangan potong teks yang keluar dari batas kotak
+	
+	# Tunggu 1 frame agar Godot selesai menghitung panjang teks Anda yang baru
+	await get_tree().process_frame 
+	# ----------------------------------------------------
+	
+	# Sekarang, letakkan teks tepat di bawah layar
 	credits_text.position.y = get_viewport().get_visible_rect().size.y
 	
 	# Beri jeda 1 detik sebelum teks mulai naik (efek sinematik)

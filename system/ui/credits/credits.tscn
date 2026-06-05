@@ -44,11 +44,13 @@ color = Color(0, 0, 0, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 140.0
+offset_right = -140.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/bold_font = ExtResource("1_hc1vv")
 theme_override_font_sizes/normal_font_size = 32
-theme_override_font_sizes/bold_font_size = 32
+theme_override_font_sizes/bold_font_size = 48
 bbcode_enabled = true
 text = "[center]
 [b]CODEVENTURE[/b]
@@ -61,22 +63,53 @@ Farrel Setia Pratama
 
 [b]Aset Visual (Karakter & Lingkungan)[/b]
 Citampi Stories by Ikan Asin Production
+https://www.ikanasinproduction.com/citampi-assets
 Ninja Adventure by Pixel Boy
+https://pixel-boy.itch.io/ninja-adventure-asset-pack
 2D Action & Adventure RPG by Michael Games
+https://michaelgames.itch.io/2d-action-adventure-rpg-assets
 
 [b]Musik & Efek Suara[/b]
-Kevin MacLeod
-Freesound.org
+Nature Theme Sketch by remaxim
+https://opengameart.org/content/nature-theme-sketch
+Stepping Stones by Matthew Pablo
+https://opengameart.org/content/stepping-stones
+Town Theme RPG by cynicmusic
+https://opengameart.org/content/stepping-stones
 
 [b]Sistem UI & Plugin[/b]
 Virtual Joystick by Marco Fazio
+Mini Map by Sumri
+https://godotengine.org/asset-library/asset
 
 [b]Materi[/b]
 Buku Panduan Siswa Dasar-Dasar Pengembangan Perangkat Lunak dan Gim untuk SMK/MAK Kelas X
 Buku Panduan Guru Dasar-Dasar Pengembangan Perangkat Lunak dan Gim untuk SMK/MAK Kelas X
+Marwondo & Rini Melati (2023)
+
+[b]Capaian Pembelajaran[/b]
+Menerapkan prinsip-prinsip pemrograman terstruktur dalam proyek sederhana pengembangan perangkat lunak dan gim serta menganalisis dan memecahkan masalah terkait logika program untuk menghasilkan solusi yang efektif dan efisien.
+
+[b]Tujuan Pembelajaran[/b]
+1. Peserta didik mampu menjelaskan konsep stack.
+2. Peserta didik mampu menjelaskan konsep LIFO (Last In First Out).
+3. Peserta didik mampu menerapkan konsep stack pada permasalahan dalam kehidupan sehari-hari.
+4. Peserta didik mampu mengidentifikasi struktur stack.
+5. Peserta didik mampu menjelaskan fungsi top pada stack.
+6. Peserta didik mampu menjelaskan cara kerja stack berdasarkan urutan data.
+7. Peserta didik mampu menentukan perubahan elemen stack saat data ditambahkan atau diambil.
+8. Peserta didik mampu menerapkan operasi push untuk menambahkan data ke stack.
+9. Peserta didik mampu menerapkan operasi pop untuk mengambil data dari stack.
+10. Peserta didik mampu menggunakan operasi peek/top untuk melihat data teratas.
+11. Peserta didik mampu menganalisis hasil operasi stack berdasarkan prinsip LIFO.
+12. Peserta didik mampu mengidentifikasi kondisi stack kosong dan penuh.
+13. Peserta didik mampu menjelaskan kondisi overflow dan underflow.
+14. Peserta didik mampu menggunakan operasi isEmpty dan isFull.
+15. Peserta didik mampu menganalisis kondisi stack untuk menentukan operasi yang sesuai dalam penyelesaian masalah sederhana.
 
 [b]Terima Kasih Khusus[/b]
-Siswa SMK yang sudah memainkan game ini!"
+Siswa SMK yang sudah memainkan game ini!
+[/center]"
 
 [node name="CloseButton" type="Button" parent="."]
 offset_left = 1207.0

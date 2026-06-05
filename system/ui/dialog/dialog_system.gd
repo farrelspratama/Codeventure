@@ -91,6 +91,7 @@ func show_dialog( _items : Array[ DialogItem ] ) -> void:
 		PlayerManager.player.direction = Vector2.ZERO
 		PlayerManager.player.velocity = Vector2.ZERO
 		PlayerManager.player.handle_animation()
+		PlayerManager.player.process_mode = Node.PROCESS_MODE_DISABLED
 	
 	# 4. Kunci dunia game
 	get_tree().paused = true
@@ -108,6 +109,9 @@ func hide_dialog(is_canceled: bool = false) -> void:
 	dialog_ui.visible = false
 	dialog_ui.process_mode = Node.PROCESS_MODE_DISABLED
 	get_tree().paused = false
+	
+	if PlayerManager.player and is_instance_valid(PlayerManager.player):
+		PlayerManager.player.process_mode = Node.PROCESS_MODE_INHERIT
 	
 	if is_canceled:
 		canceled.emit()

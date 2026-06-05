@@ -110,14 +110,14 @@ func _on_submit_pressed():
 			wrong_slots.append(slot)
 			
 	if all_correct:
-		print("Minigame Selesai!")
+		print("Jawaban benar semua! Menunggu 1 detik...")
 		# Beri jeda 1 detik agar pemain puas melihat ceklis hijaunya sebelum ditutup
 		await get_tree().create_timer(1.0).timeout 
 		submit.disabled = false
-		minigame_finished.emit()
 		hide_minigame() 
+		minigame_finished.emit()
 	else:
-		print("Ada jawaban yang salah!")
+		print("Ada jawaban yang salah! Menunggu 1.5 detik...")
 		# Beri jeda 1.5 detik agar pemain bisa melihat mana yang salah
 		await get_tree().create_timer(1.5).timeout 
 		
@@ -128,5 +128,5 @@ func _on_submit_pressed():
 		submit.disabled = false
 
 func _on_close_pressed() -> void:
-	minigame_cancelled.emit() # Beritahu peti bahwa kuis dibatalkan
 	hide_minigame()
+	minigame_cancelled.emit()

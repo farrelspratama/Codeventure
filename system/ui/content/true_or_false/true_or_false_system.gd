@@ -68,14 +68,14 @@ func _on_answer_selected(player_answer: String):
 	
 	if player_answer == correct_answer:
 		result_icon.text = "✅"
-		
+		print("Jawaban benar! Menunggu 1 detik...")
 		# Beri jeda 1 detik sebelum menutup minigame
-		await get_tree().create_timer(1.0, true).timeout 
-		minigame_finished.emit()
+		await get_tree().create_timer(1.0, true).timeout
 		hide_minigame()
+		minigame_finished.emit()
 	else:
 		result_icon.text = "❌"
-		
+		print("Jawaban salah! Menunggu 1.5 detik...")
 		# Beri jeda 1.5 detik agar pemain melihat tanda silang
 		await get_tree().create_timer(1.5, true).timeout 
 		
@@ -85,5 +85,5 @@ func _on_answer_selected(player_answer: String):
 		button_false.disabled = false
 
 func _on_close_pressed() -> void:
-	minigame_cancelled.emit() # Beritahu peti bahwa kuis dibatalkan
 	hide_minigame()
+	minigame_cancelled.emit()

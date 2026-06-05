@@ -244,7 +244,9 @@ metadata/_custom_type_script = "uid://d2epo0ultih7o"
 
 [node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("10_omn7h")
-text = "Kalau terus seperti ini, semua data bisa hilang..."
+text = "Kalau terus seperti ini, semua [c]data[/] bisa hilang..."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -268,13 +270,17 @@ metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText5" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("10_omn7h")
-text = "Saya hanya bertugas mengatur data di partisi penyimpanan ini."
+text = "Saya hanya bertugas mengatur data di [c]partisi penyimpanan[/] ini."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText6" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("10_omn7h")
-text = "Tapi akhir-akhir ini banyak data hilang karena tersimpan di posisi yang salah."
+text = "Tapi akhir-akhir ini banyak [c]data hilang[/] karena tersimpan di posisi yang salah."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -287,66 +293,104 @@ metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 [node name="DialogText8" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("10_omn7h")
 text = "Yang saya tahu hanya satu."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText9" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("10_omn7h")
 text = "Setiap data memiliki posisi masing-masing"
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText10" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("10_omn7h")
 text = "dan data tersebut harus tersimpan secara berurutan."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText12" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("10_omn7h")
 text = "Kalau tidak, seluruh sistem penyimpanan bisa runtuh."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText13" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("10_omn7h")
-text = "Karena data di tempat ini bekerja menggunakan sistem tumpukan."
+text = "Karena data di tempat ini bekerja menggunakan [c]sistem tumpukan[/]."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText14" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("10_omn7h")
 text = "Data terakhir yang masuk seharusnya menjadi data pertama yang keluar."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText15" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("10_omn7h")
 text = "Jadi urutannya penting?"
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("12_2qm6h")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText16" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("10_omn7h")
 text = "Sangat penting."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText17" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("10_omn7h")
-text = "Sekarang beberapa partisi sudah rusak."
+text = "Sekarang beberapa [c]partisi[/] sudah rusak."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText18" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("10_omn7h")
 text = "Kalau begitu... kita harus menyusunnya kembali."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("12_2qm6h")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText19" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("10_omn7h")
-text = "Betul. Sekarang buka peti di sebelah."
+text = "Betul. Sekarang buka [c]peti di sebelah[/]."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText20" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
+script = ExtResource("10_omn7h")
+text = "Di dalamnya ada catatan tentang cara kerja [c]sistem tumpukan[/]."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText21" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
+script = ExtResource("10_omn7h")
+text = "Pelajari dulu sebelum kita memperbaiki partisi yang rusak."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -388,7 +432,9 @@ metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
 script = ExtResource("10_omn7h")
-text = "Jadi bagaimana cara kerja stack?"
+text = "Jadi bagaimana cara kerja [c]stack[/]?"
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -404,6 +450,8 @@ metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 [node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("10_omn7h")
 text = "Salah. Coba kamu pahami kembali."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -426,12 +474,16 @@ metadata/_custom_type_script = "uid://cfspk0ixjj2av"
 [node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("10_omn7h")
 text = "Benar. Tapi memahami definisi saja belum cukup."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("10_omn7h")
-text = "Kamu harus melihat bagaimana data bergerak di dalam stack."
+text = "Kamu harus melihat bagaimana [c]data bergerak[/] di dalam stack."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -454,7 +506,9 @@ File_A
 File_B
 File_C
 Data dimasukkan secara berurutan dari atas ke bawah.
-Menurutmu data mana yang akan keluar terlebih dahulu?"
+Menurutmu data mana yang akan [c]keluar terlebih dahulu[/]?"
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -470,18 +524,24 @@ metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 [node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
 script = ExtResource("10_omn7h")
 text = "Sepertinya kamu masih ragu."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
 script = ExtResource("10_omn7h")
 text = "Mari kita lihat contoh lain."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
 script = ExtResource("10_omn7h")
 text = "Coba bayangkan tumpukan piring."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -491,6 +551,8 @@ text = "Piring Merah
 Piring Biru
 Piring Hijau
 Piring mana yang paling mudah diambil?"
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -503,10 +565,26 @@ script = ExtResource("17_4qfoa")
 text = "Piring Merah"
 metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Salah. Coba kamu pahami kembali."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
 [node name="DialogBranch2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice"]
 script = ExtResource("17_4qfoa")
 text = "Piring Biru"
 metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("10_omn7h")
+text = "Salah. Coba kamu pahami kembali."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogBranch3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice"]
 script = ExtResource("17_4qfoa")
@@ -516,36 +594,64 @@ metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 [node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
 text = "Nah, stack bekerja dengan cara yang sama."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
-text = "Sekarang kamu sudah memahami cara kerja stack."
+text = "Sekarang kamu sudah memahami cara kerja [c]stack[/]."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText8" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Jadi urutan masuk data menentukan urutan keluarnya?"
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("12_2qm6h")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText9" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Benar. Prinsip itu disebut [c]Last In First Out[/] atau [c]LIFO[/]."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
 text = "Namun hati hati."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText4" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
 text = "Jika kamu salah kamu akan merusak seluruh sistem."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText5" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
 text = "Selanjutnya kamu harus menyelesaikan masalah yang dimiliki seluruh partisi."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText6" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
-text = "Berikut kunci untuk ke partisi selanjutnya: FXX-K"
+text = "Berikut kunci untuk ke partisi selanjutnya: [c]FXX-K[/]"
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -569,18 +675,24 @@ metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 [node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
 script = ExtResource("10_omn7h")
 text = "Sepertinya kamu masih ragu."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
 script = ExtResource("10_omn7h")
 text = "Mari kita lihat contoh lain."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
 script = ExtResource("10_omn7h")
 text = "Coba bayangkan tumpukan piring."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -590,6 +702,8 @@ text = "Piring Merah
 Piring Biru
 Piring Hijau
 Piring mana yang paling mudah diambil?"
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -602,10 +716,26 @@ script = ExtResource("17_4qfoa")
 text = "Piring Merah"
 metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Salah. Coba kamu pahami kembali."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
 [node name="DialogBranch2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("17_4qfoa")
 text = "Piring Biru"
 metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("10_omn7h")
+text = "Salah. Coba kamu pahami kembali."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogBranch3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("17_4qfoa")
@@ -615,36 +745,64 @@ metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 [node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
 text = "Nah, stack bekerja dengan cara yang sama."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
-text = "Sekarang kamu sudah memahami cara kerja stack."
+text = "Sekarang kamu sudah memahami cara kerja [c]stack[/]."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText8" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Jadi urutan masuk data menentukan urutan keluarnya?"
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("12_2qm6h")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText9" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Benar. Prinsip itu disebut [c]Last In First Out[/] atau [c]LIFO[/]."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
 text = "Namun hati hati."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText4" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
 text = "Jika kamu salah kamu akan merusak seluruh sistem."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText5" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
 text = "Selanjutnya kamu harus menyelesaikan masalah yang dimiliki seluruh partisi."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText6" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
-text = "Berikut kunci untuk ke partisi selanjutnya: FXX-K"
+text = "Berikut kunci untuk ke partisi selanjutnya: [c]FXX-K[/]"
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -668,12 +826,16 @@ metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 [node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
 text = "Tepat."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
-text = "Tapi. Menurutmu mengapa File_C keluar lebih dulu?"
+text = "Tapi menurutmu mengapa [c]File_C[/] keluar lebih dulu?"
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -688,31 +850,65 @@ metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 
 [node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
 script = ExtResource("10_omn7h")
-text = "Sekarang kamu sudah memahami cara kerja stack."
+text = "Tepat. Karena [c]File_C[/] masuk terakhir."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText7" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Dan data yang masuk terakhir akan keluar lebih dahulu."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText8" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Jadi urutan masuk data menentukan urutan keluarnya?"
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("12_2qm6h")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText9" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Benar. Prinsip itu disebut [c]Last In First Out[/] atau [c]LIFO[/]."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
 script = ExtResource("10_omn7h")
 text = "Namun hati hati."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText4" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
 script = ExtResource("10_omn7h")
 text = "Jika kamu salah kamu akan merusak seluruh sistem."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText5" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
 script = ExtResource("10_omn7h")
 text = "Selanjutnya kamu harus menyelesaikan masalah yang dimiliki seluruh partisi."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText6" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
 script = ExtResource("10_omn7h")
-text = "Berikut kunci untuk ke partisi selanjutnya: FXX-K"
+text = "Berikut kunci untuk ke partisi selanjutnya: [c]FXX-K[/]"
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -736,6 +932,24 @@ metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 [node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch2"]
 script = ExtResource("10_omn7h")
 text = "Coba lihat kembali posisi File_C."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch2"]
+script = ExtResource("10_omn7h")
+text = "File_C justru berada di bagian paling atas."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch2"]
+script = ExtResource("10_omn7h")
+text = "Pikirkan lagi alasan yang paling tepat."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -759,7 +973,9 @@ File_A
 File_B
 File_C
 Data dimasukkan secara berurutan dari atas ke bawah.
-Menurutmu data mana yang akan keluar terlebih dahulu?"
+Menurutmu data mana yang akan [c]keluar terlebih dahulu[/]?"
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -775,18 +991,24 @@ metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 [node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("10_omn7h")
 text = "Sepertinya kamu masih ragu."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("10_omn7h")
 text = "Mari kita lihat contoh lain."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch"]
 script = ExtResource("10_omn7h")
 text = "Coba bayangkan tumpukan piring."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -796,6 +1018,8 @@ text = "Piring Merah
 Piring Biru
 Piring Hijau
 Piring mana yang paling mudah diambil?"
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -808,10 +1032,26 @@ script = ExtResource("17_4qfoa")
 text = "Piring Merah"
 metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Salah. Coba kamu pahami kembali."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
 [node name="DialogBranch2" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice"]
 script = ExtResource("17_4qfoa")
 text = "Piring Biru"
 metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch2"]
+script = ExtResource("10_omn7h")
+text = "Salah. Coba kamu pahami kembali."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogBranch3" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice"]
 script = ExtResource("17_4qfoa")
@@ -820,37 +1060,65 @@ metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 
 [node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
-text = "Tepat! stack bekerja dengan cara yang sama."
+text = "Nah, stack bekerja dengan cara yang sama."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
-text = "Sekarang kamu sudah memahami cara kerja stack."
+text = "Sekarang kamu sudah memahami cara kerja [c]stack[/]."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText8" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Jadi urutan masuk data menentukan urutan keluarnya?"
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("12_2qm6h")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText9" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Benar. Prinsip itu disebut [c]Last In First Out[/] atau [c]LIFO[/]."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
 text = "Namun hati hati."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText4" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
 text = "Jika kamu salah kamu akan merusak seluruh sistem."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText5" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
 text = "Selanjutnya kamu harus menyelesaikan masalah yang dimiliki seluruh partisi."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText6" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
-text = "Berikut kunci untuk ke partisi selanjutnya: FXX-K"
+text = "Berikut kunci untuk ke partisi selanjutnya: [c]FXX-K[/]"
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -874,18 +1142,24 @@ metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 [node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("10_omn7h")
 text = "Sepertinya kamu masih ragu."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("10_omn7h")
 text = "Mari kita lihat contoh lain."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("10_omn7h")
 text = "Coba bayangkan tumpukan piring."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -895,6 +1169,8 @@ text = "Piring Merah
 Piring Biru
 Piring Hijau
 Piring mana yang paling mudah diambil?"
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -907,10 +1183,26 @@ script = ExtResource("17_4qfoa")
 text = "Piring Merah"
 metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Salah. Coba kamu pahami kembali."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
 [node name="DialogBranch2" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("17_4qfoa")
 text = "Piring Biru"
 metadata/_custom_type_script = "uid://cn7unf8c1h61s"
+
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2"]
+script = ExtResource("10_omn7h")
+text = "Salah. Coba kamu pahami kembali."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogBranch3" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice"]
 script = ExtResource("17_4qfoa")
@@ -919,37 +1211,65 @@ metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 
 [node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
-text = "Tepat! stack bekerja dengan cara yang sama."
+text = "Nah, stack bekerja dengan cara yang sama."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
-text = "Sekarang kamu sudah memahami cara kerja stack."
+text = "Sekarang kamu sudah memahami cara kerja [c]stack[/]."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText8" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Jadi urutan masuk data menentukan urutan keluarnya?"
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("12_2qm6h")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText9" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Benar. Prinsip itu disebut [c]Last In First Out[/] atau [c]LIFO[/]."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
 text = "Namun hati hati."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText4" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
 text = "Jika kamu salah kamu akan merusak seluruh sistem."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText5" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
 text = "Selanjutnya kamu harus menyelesaikan masalah yang dimiliki seluruh partisi."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText6" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
-text = "Berikut kunci untuk ke partisi selanjutnya: FXX-K"
+text = "Berikut kunci untuk ke partisi selanjutnya: [c]FXX-K[/]"
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -973,12 +1293,16 @@ metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 [node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
 text = "Tepat."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
-text = "Tapi. Menurutmu mengapa File_C keluar lebih dulu?"
+text = "Tapi menurutmu mengapa [c]File_C[/] keluar lebih dulu?"
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -991,39 +1315,67 @@ script = ExtResource("17_4qfoa")
 text = "Karena masuk terakhir."
 metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 
-[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
 script = ExtResource("10_omn7h")
-text = "Tepat sekali."
+text = "Tepat. Karena [c]File_C[/] masuk terakhir."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
-[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+[node name="DialogText7" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
 script = ExtResource("10_omn7h")
-text = "Sekarang kamu sudah memahami cara kerja stack."
+text = "Dan data yang masuk terakhir akan keluar lebih dahulu."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText8" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Jadi urutan masuk data menentukan urutan keluarnya?"
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("12_2qm6h")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText9" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Benar. Prinsip itu disebut [c]Last In First Out[/] atau [c]LIFO[/]."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
 script = ExtResource("10_omn7h")
 text = "Namun hati hati."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText4" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
 script = ExtResource("10_omn7h")
 text = "Jika kamu salah kamu akan merusak seluruh sistem."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText5" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
 script = ExtResource("10_omn7h")
 text = "Selanjutnya kamu harus menyelesaikan masalah yang dimiliki seluruh partisi."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText6" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
 script = ExtResource("10_omn7h")
-text = "Berikut kunci untuk ke partisi selanjutnya: FXX-K"
+text = "Berikut kunci untuk ke partisi selanjutnya: [c]FXX-K[/]"
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -1046,7 +1398,25 @@ metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 
 [node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch2"]
 script = ExtResource("10_omn7h")
-text = "Coba cek dan lihat kembali posisi File_C."
+text = "Coba lihat kembali posisi File_C."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch2"]
+script = ExtResource("10_omn7h")
+text = "File_C justru berada di bagian paling atas."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch2"]
+script = ExtResource("10_omn7h")
+text = "Pikirkan lagi alasan yang paling tepat."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 

@@ -14,6 +14,6 @@ script = ExtResource("3_biw8x")
 title = "Mencari Pak Sofyan"
 description = "Mencari dan membantu memeriksa komputer lamanya yang tiba-tiba mengalami kerusakan."
 steps = Array[String](["Mencari Pak Sofyan", "Memperbaiki Komputer"])
-reward_score = 100
+reward_score = 250
 reward_items = Array[ExtResource("1_qnbca")]([SubResource("Resource_b3m0x")])
 metadata/_custom_type_script = "uid://df0jn0tbhct03"

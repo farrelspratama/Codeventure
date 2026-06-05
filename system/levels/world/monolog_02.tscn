@@ -48,6 +48,8 @@ metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText6" type="Node" parent="DialogInteraction"]
 script = ExtResource("3_bxiiw")
-text = "Baiklah, coba keliling desa dan bicara dengan warga sekitar."
+text = "Baiklah, coba [c]keliling desa[/] dan [c]bicara dengan warga sekitar[/]."
+can_fast_forward = false
+read_time_delay = 1.0
 npc_info = ExtResource("4_yx4am")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"

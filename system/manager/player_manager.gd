@@ -15,8 +15,8 @@ func _ready() -> void:
 
 func add_player_instance() -> void:
 	player = PLAYER.instantiate()
+	player.process_mode = Node.PROCESS_MODE_PAUSABLE
 	add_child(player)
-	
 	player.visible = true
 	player_spawned = true
 

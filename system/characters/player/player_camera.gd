@@ -6,7 +6,6 @@ class_name PlayerCamera extends Camera2D
 var shake_trauma : float = 0.0
 
 func _ready() -> void:
-	process_mode = Node.PROCESS_MODE_ALWAYS
 	LevelManager.tilemap_bounds_changed.connect( _update_limits )
 	_update_limits( LevelManager.current_tilemap_bounds )
 	PlayerManager.camera_shook.connect( add_camera_shake )
@@ -15,6 +14,8 @@ func _physics_process(delta: float) -> void:
 	if shake_trauma > 0:
 		shake_trauma = max( shake_trauma - shake_decay * delta, 0 )
 		shake()
+	else:
+		offset = Vector2.ZERO
 
 func add_camera_shake( val : float ) -> void:
 	shake_trauma = val

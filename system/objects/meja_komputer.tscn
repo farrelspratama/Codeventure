@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://b5215letiwrkt"]
 
-[ext_resource type="Script" uid="uid://c61wrr3dbpby5" path="res://system/levels/interior/meja_komputer.gd" id="1_kcv5p"]
+[ext_resource type="Script" uid="uid://ba4nck2cs7y60" path="res://system/levels/dungeon/pintu.gd" id="1_kcv5p"]
 [ext_resource type="Texture2D" uid="uid://7qaeay1h50oh" path="res://assets/objects/meja pc.png" id="2_0oa0f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kcv5p"]
