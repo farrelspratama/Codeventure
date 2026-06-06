@@ -767,6 +767,35 @@ Step: 1 - bicara dengan pak sofyan
 Complete: true"
 metadata/_custom_type_script = "uid://cfspk0ixjj2av"
 
+[node name="QuestActivatedSwitch3" type="Node2D" parent="Npc"]
+script = ExtResource("11_0pcr4")
+check_type = 2
+react_to_global_signal = true
+linked_quest = ExtResource("9_3jrwl")
+quest_step = 1
+settings_summary = "UPDATE QUEST:
+Quest: Urutan Data Rusak
+Check if player is on step: selesaikan semua masalah"
+metadata/_custom_type_script = "uid://d2epo0ultih7o"
+
+[node name="DialogInteraction" parent="Npc/QuestActivatedSwitch3" instance=ExtResource("9_c70kq")]
+
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction"]
+script = ExtResource("10_1d11u")
+text = "Selesaikan semua masalah pada lemari."
+can_fast_forward = false
+read_time_delay = 0.5
+npc_info = ExtResource("11_edu8q")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction"]
+script = ExtResource("10_1d11u")
+text = "dan perhatikan baik-baik bagaimana data masuk dan keluar dari [c]tumpukan[/]."
+can_fast_forward = false
+read_time_delay = 0.5
+npc_info = ExtResource("11_edu8q")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
 [node name="Items" type="Node2D" parent="."]
 z_index = 1
 y_sort_enabled = true

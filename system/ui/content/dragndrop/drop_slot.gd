@@ -4,7 +4,10 @@ var current_button_source: Button = null
 
 # Referensi ke Label di dalam Panel ini untuk menampilkan teks jawaban
 @onready var answer_label: Label = $Label
-@onready var result_icon: Label = $ResultIcon
+@onready var result_icon: TextureRect = $ResultIcon
+
+var icon_benar = preload("res://assets/ui/yes.png")
+var icon_salah = preload("res://assets/ui/no.png")
 
 func _ready():
 	answer_label.text = "" # Kosongkan saat awal
@@ -33,9 +36,9 @@ func _drop_data(at_position, data):
 func show_validation(is_correct: bool):
 	result_icon.show()
 	if is_correct:
-		result_icon.text = "✅" # Anda bisa ganti dengan TextureRect jika punya gambar
+		result_icon.texture = icon_benar
 	else:
-		result_icon.text = "❌"
+		result_icon.texture = icon_salah
 
 # Fungsi bantuan untuk mereset slot
 func clear_slot():

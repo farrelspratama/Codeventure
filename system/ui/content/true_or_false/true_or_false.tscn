@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://b46hf82bk7u5c"]
+[gd_scene load_steps=12 format=3 uid="uid://b46hf82bk7u5c"]
 
 [ext_resource type="Texture2D" uid="uid://duh8hxa7jmwo1" path="res://assets/ui/menu/nine_path_panel_3.png" id="1_3k2jb"]
 [ext_resource type="Script" uid="uid://0qdt3v77fagc" path="res://system/ui/content/true_or_false/true_or_false_system.gd" id="1_75sjs"]
+[ext_resource type="Texture2D" uid="uid://c5awsexhje8f4" path="res://assets/ui/yes.png" id="3_7oq01"]
 [ext_resource type="Texture2D" uid="uid://djiqdt3kmrprq" path="res://assets/ui/menu/button_normal.png" id="3_lf4mt"]
 [ext_resource type="Texture2D" uid="uid://8uglib0r7bed" path="res://assets/ui/menu/button_pressed.png" id="4_7oq01"]
 [ext_resource type="Texture2D" uid="uid://cj48vypqfgbpl" path="res://assets/ui/menu/button_hover.png" id="5_vay8i"]
@@ -109,8 +110,12 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Salah"
 
-[node name="ResultIcon" type="Label" parent="Control/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="ResultIcon" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(35, 35)
 layout_mode = 2
+texture = ExtResource("3_7oq01")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="CloseButton" type="Button" parent="Control"]
 layout_mode = 0

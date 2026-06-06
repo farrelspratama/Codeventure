@@ -9,6 +9,7 @@ var text_in_progress : bool = false
 var waiting_for_choice : bool = false
 var watching_cutscene : bool = false
 var minigame_in_progress : bool = false
+var video_in_progress : bool = false
 var current_can_fast_forward: bool = true
 var is_reading_time: bool = false
 
@@ -39,7 +40,7 @@ func _ready() -> void:
 	hide_dialog()
 
 func _unhandled_input(event: InputEvent) -> void:
-	if is_active == false or minigame_in_progress == true or watching_cutscene == true: 
+	if is_active == false or minigame_in_progress == true or watching_cutscene == true or video_in_progress == true: 
 		return
 	if (event.is_action_pressed("interact")):
 		if text_in_progress == true:
@@ -138,6 +139,8 @@ func start_dialog() -> void:
 		start_dialog_cutscene( _d as DialogCutscene )
 	elif _d is DialogMinigame:
 		set_dialog_minigame( _d as DialogMinigame )
+	elif _d is DialogVideo:
+		set_dialog_video( _d as DialogVideo )
 
 func set_dialog_text( _d : DialogItem ) -> void:
 	if _d is DialogText:
@@ -206,6 +209,8 @@ func start_dialog_cutscene( _d : DialogCutscene ) -> void:
 	_d.play()
 	dialog_ui.visible = false
 	await _d.finished
+	if PlayerManager.player and is_instance_valid(PlayerManager.player):
+		PlayerManager.player.process_mode = Node.PROCESS_MODE_DISABLED
 	watching_cutscene = false
 	dialog_ui.visible = true
 	advance_dialog()
@@ -298,3 +303,19 @@ func _start_read_delay() -> void:
 		# Kunci pemain selama X detik sesuai angka di Inspector
 		await get_tree().create_timer(current_item.read_time_delay).timeout
 		is_reading_time = false # Gembok terbuka! Pemain sekarang bisa klik Lanjut.
+
+func set_dialog_video(_d: DialogVideo) -> void:
+	# Sembunyikan UI Dialog
+	dialog_ui.visible = false 
+	video_in_progress = true
+	
+	# Panggil fungsi dari Autoload
+	VideoPlayer.show_video(_d.video_stream)
+	
+	# Tunggu sampai Autoload memancarkan sinyal selesai!
+	await VideoPlayer.video_finished
+	
+	# Munculkan kembali UI dialog dan lanjut ke materi berikutnya
+	video_in_progress = false
+	dialog_ui.visible = true 
+	advance_dialog()

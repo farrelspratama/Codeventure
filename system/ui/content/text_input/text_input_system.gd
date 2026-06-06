@@ -15,6 +15,9 @@ var current_question: QuestionData
 var spawned_inputs: Array[LineEdit] = [] # Menyimpan referensi kotak teks
 var spawned_slots: Array[Dictionary] = []
 
+var icon_benar = preload("res://assets/ui/yes.png")
+var icon_salah = preload("res://assets/ui/no.png")
+
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	control.visible = false
@@ -63,12 +66,18 @@ func load_question(q_data: QuestionData) -> void:
 				# 1. BUAT KOLOM INPUT
 				var input_field = LineEdit.new()
 				input_field.add_theme_font_size_override("font_size", 48)
-				input_field.custom_minimum_size = Vector2(100, 30)
+				input_field.custom_minimum_size = Vector2(150, 30)
 				input_field.placeholder_text = "ketik..."
+				input_field.max_length = 15
+				input_field.expand_to_text_length = true
+				input_field.clear_button_enabled = true
 				line_container.add_child(input_field)
 				
 				# 2. BUAT IKON VALIDASI (Tepat di sebelah input)
-				var result_icon = Label.new()
+				var result_icon = TextureRect.new()
+				result_icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+				result_icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+				result_icon.custom_minimum_size = Vector2(35, 35)
 				result_icon.hide() # Sembunyikan saat awal
 				line_container.add_child(result_icon)
 				
@@ -105,10 +114,10 @@ func _on_submit_pressed():
 		result_icon.show()
 		
 		if player_answer == correct_answer:
-			result_icon.text = "✅"
+			result_icon.texture = icon_benar
 			input_field.editable = false # Kunci ketikan agar tidak bisa diubah lagi jika sudah benar
 		else:
-			result_icon.text = "❌"
+			result_icon.texture = icon_salah
 			all_correct = false
 			wrong_slots.append(slot_data)
 			

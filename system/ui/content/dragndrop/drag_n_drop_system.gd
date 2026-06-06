@@ -105,7 +105,6 @@ func _on_submit_pressed():
 			slot.show_validation(true) # Tampilkan Ceklis
 		else:
 			slot.show_validation(false) # Tampilkan Silang
-			PlayerManager.shake_camera()
 			all_correct = false
 			wrong_slots.append(slot)
 			

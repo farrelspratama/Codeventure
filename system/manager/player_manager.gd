@@ -13,6 +13,20 @@ var player_spawned : bool = false
 func _ready() -> void:
 	player_spawned = false
 
+func _unhandled_input(event: InputEvent) -> void:
+	# Cek apakah game dijalankan dari Editor (Debug). 
+	# Jika diekspor (Release), tombol ini tidak akan berfungsi sehingga aman dari siswa!
+	if OS.is_debug_build():
+		# Tekan tombol Page Up untuk Mode Ngebut (3x Lipat)
+		if Input.is_physical_key_pressed(KEY_PAGEUP):
+			Engine.time_scale = 3.0
+			print("DEBUG: Waktu Dipercepat 3X!")
+			
+		# Tekan tombol Page Down untuk kembali Normal
+		elif Input.is_physical_key_pressed(KEY_PAGEDOWN):
+			Engine.time_scale = 1.0
+			print("DEBUG: Waktu Normal.")
+
 func add_player_instance() -> void:
 	player = PLAYER.instantiate()
 	player.process_mode = Node.PROCESS_MODE_PAUSABLE

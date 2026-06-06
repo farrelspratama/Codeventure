@@ -68,7 +68,10 @@ func calculate_distance_to_target() -> float:
 
 
 func _on_tween_finished() -> void:
-	object_to_move.process_mode = Node.PROCESS_MODE_INHERIT
+	if PlayerManager.player and object_to_move == PlayerManager.player:
+		object_to_move.process_mode = Node.PROCESS_MODE_DISABLED
+	else:
+		object_to_move.process_mode = Node.PROCESS_MODE_INHERIT
 	
 	if object_to_move.name == "Mobil4":
 		# Cari root node (world_01_intro) dan panggil fungsi turun mobil
@@ -85,6 +88,7 @@ func _on_tween_finished() -> void:
 		npc.update_animation()
 		npc.process_mode = Node.PROCESS_MODE_INHERIT
 	
+	await get_tree().process_frame
 	finished.emit()
 	pass
 

@@ -1,10 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://bkiue41ycgdqq"]
+[gd_scene load_steps=29 format=3 uid="uid://bkiue41ycgdqq"]
 
 [ext_resource type="Script" uid="uid://dxpqq0fy4vutb" path="res://system/levels/level.gd" id="1_q14ut"]
 [ext_resource type="PackedScene" uid="uid://nld40rw12c0e" path="res://system/levels/world/desa_environtment.tscn" id="2_lp7ko"]
 [ext_resource type="PackedScene" uid="uid://cxqcha3ibg8r2" path="res://system/characters/player/player_spawn.tscn" id="6_72rcc"]
 [ext_resource type="PackedScene" uid="uid://drg863i16hbqj" path="res://system/characters/npc/npc.tscn" id="8_3ojl6"]
-[ext_resource type="PackedScene" uid="uid://b2lmwyq5ghxtm" path="res://system/characters/npc/npc_behavior_wander.tscn" id="10_qcmtv"]
 [ext_resource type="Resource" uid="uid://bw4gmqvkresnc" path="res://system/quest_system/quests/2_mencari_pak_sofyan.tres" id="12_rw8rx"]
 [ext_resource type="PackedScene" uid="uid://dclafa87ojaa3" path="res://system/ui/dialog/dialog_interaction.tscn" id="13_08tpw"]
 [ext_resource type="Script" uid="uid://b2gbmxj3vikwc" path="res://system/ui/dialog/dialog_text.gd" id="14_xijt8"]
@@ -19,8 +18,10 @@
 [ext_resource type="PackedScene" uid="uid://dvtgjuby6ab1f" path="res://system/characters/npc/npc_behavior_patrol.tscn" id="23_f7m6f"]
 [ext_resource type="Resource" uid="uid://c3jxtxb1jtc4t" path="res://system/characters/npc/resource/temen.tres" id="24_7g0gs"]
 [ext_resource type="Resource" uid="uid://byykgcx2ehstl" path="res://system/characters/npc/resource/oyen.tres" id="24_dckkc"]
+[ext_resource type="Script" uid="uid://bkk1ctwe6tv6l" path="res://system/ui/dialog/dialog_video.gd" id="24_e6nvv"]
 [ext_resource type="PackedScene" uid="uid://ch1mjraonqe7a" path="res://system/characters/npc/patrol_location.tscn" id="24_k6ykw"]
 [ext_resource type="Resource" uid="uid://dypkbtyntpix7" path="res://system/characters/npc/resource/pak_tatang.tres" id="25_7g0gs"]
+[ext_resource type="VideoStream" uid="uid://wdlcmplhoero" path="res://assets/Stack Filling Simulation 202606062203.ogv" id="25_dckkc"]
 [ext_resource type="Script" uid="uid://0xq2liivqarr" path="res://addons/minimap/minimap_node.gd" id="26_kxqi3"]
 [ext_resource type="Resource" uid="uid://b2fmd63nntcuv" path="res://system/quest_system/quests/1_keliling_desa.tres" id="26_lp7ko"]
 [ext_resource type="Script" uid="uid://c5m6454bkinwe" path="res://system/ui/dialog/dialog_minigame.gd" id="27_k2ssb"]
@@ -396,10 +397,22 @@ npc_info = ExtResource("22_4c50y")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="Oyen" parent="Entities" instance=ExtResource("8_3ojl6")]
-position = Vector2(100, -455)
+position = Vector2(490, -350)
 npc_resource = ExtResource("24_dckkc")
 
-[node name="NpcBehaviorWander" parent="Entities/Oyen" instance=ExtResource("10_qcmtv")]
+[node name="DialogInteraction" parent="Entities/Oyen" instance=ExtResource("13_08tpw")]
+
+[node name="DialogVideo" type="Node" parent="Entities/Oyen/DialogInteraction"]
+script = ExtResource("24_e6nvv")
+video_stream = ExtResource("25_dckkc")
+npc_info = ExtResource("24_dckkc")
+metadata/_custom_type_script = "uid://bkk1ctwe6tv6l"
+
+[node name="DialogText" type="Node" parent="Entities/Oyen/DialogInteraction"]
+script = ExtResource("14_xijt8")
+text = "Halooo"
+npc_info = ExtResource("15_umk0s")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="LevelTransition" parent="." instance=ExtResource("32_hfnwl")]
 z_index = 1

@@ -7,12 +7,14 @@ var is_active: bool = false
 var should_unpause: bool = false
 var current_question: QuestionData
 
+var icon_benar = preload("res://assets/ui/yes.png")
+var icon_salah = preload("res://assets/ui/no.png")
+
 @onready var control: Control = $Control
-# Sesuaikan path ini dengan nama node Anda di Scene Tree!
 @onready var question_label: Label = $Control/PanelContainer/VBoxContainer/VBoxContainer/QuestionLabel
 @onready var button_true: Button = $Control/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/ButtonTrue
 @onready var button_false: Button = $Control/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/ButtonFalse
-@onready var result_icon: Label = $Control/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/ResultIcon
+@onready var result_icon: TextureRect = $Control/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer/ResultIcon
 @onready var close_button: Button = $Control/CloseButton
 
 func _ready() -> void:
@@ -67,14 +69,14 @@ func _on_answer_selected(player_answer: String):
 	result_icon.show()
 	
 	if player_answer == correct_answer:
-		result_icon.text = "✅"
+		result_icon.texture = icon_benar
 		print("Jawaban benar! Menunggu 1 detik...")
 		# Beri jeda 1 detik sebelum menutup minigame
 		await get_tree().create_timer(1.0, true).timeout
 		hide_minigame()
 		minigame_finished.emit()
 	else:
-		result_icon.text = "❌"
+		result_icon.texture = icon_salah
 		print("Jawaban salah! Menunggu 1.5 detik...")
 		# Beri jeda 1.5 detik agar pemain melihat tanda silang
 		await get_tree().create_timer(1.5, true).timeout 

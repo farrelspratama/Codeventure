@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dyinvwefx3vrj"]
+[gd_scene load_steps=12 format=3 uid="uid://dyinvwefx3vrj"]
 
 [ext_resource type="Script" uid="uid://cnbcltcj4dgxf" path="res://system/ui/content/text_input/text_input_system.gd" id="1_qm8do"]
 [ext_resource type="Texture2D" uid="uid://duh8hxa7jmwo1" path="res://assets/ui/menu/nine_path_panel_3.png" id="1_y722u"]
 [ext_resource type="Texture2D" uid="uid://djiqdt3kmrprq" path="res://assets/ui/menu/button_normal.png" id="3_4ogg4"]
+[ext_resource type="Texture2D" uid="uid://c5awsexhje8f4" path="res://assets/ui/yes.png" id="3_k8dsg"]
 [ext_resource type="Texture2D" uid="uid://8uglib0r7bed" path="res://assets/ui/menu/button_pressed.png" id="4_k8dsg"]
 [ext_resource type="Texture2D" uid="uid://cj48vypqfgbpl" path="res://assets/ui/menu/button_hover.png" id="5_0tark"]
 [ext_resource type="Texture2D" uid="uid://chhvpgnqif5eh" path="res://assets/ui/menu/cancel.png" id="6_cj1yy"]
@@ -108,14 +109,25 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
 text = "Tes"
 
-[node name="LineEdit" type="LineEdit" parent="Control/PanelContainer/VBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="Control/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(350, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 48
 placeholder_text = "Test"
+expand_to_text_length = true
 clear_button_enabled = true
+
+[node name="ResultIcon" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(35, 35)
+layout_mode = 2
+texture = ExtResource("3_k8dsg")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 20)

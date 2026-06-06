@@ -92,12 +92,13 @@ npc_resource = ExtResource("7_psujb")
 [node name="NpcBehaviorWander" parent="Entities/Npc" instance=ExtResource("8_psujb")]
 
 [node name="QuestActivatedSwitch" parent="Entities/Npc" instance=ExtResource("9_odkif")]
-remove_when_activated = true
+check_type = 2
 react_to_global_signal = true
 linked_quest = ExtResource("10_mfto6")
+quest_step = 1
 settings_summary = "UPDATE QUEST:
 Quest: Mencari Pak Sofyan
-Checking if player has quest"
+Check if player is on step: mencari pak sofyan"
 
 [node name="DialogInteraction" parent="Entities/Npc/QuestActivatedSwitch" instance=ExtResource("11_0l0so")]
 
