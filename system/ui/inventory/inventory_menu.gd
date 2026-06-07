@@ -63,7 +63,7 @@ func _on_any_slot_pressed(slot_node):
 		item_description_label.text = selected_item_data.description
 		
 		# Nyalakan tombol Use jika item ini adalah buku materi
-		if selected_item_data.materi_scene != null:
+		if selected_item_data.materi_scene != null or selected_item_data.video_stream != null:
 			use_button.disabled = false 
 		else:
 			use_button.disabled = true
@@ -76,17 +76,25 @@ func _on_any_slot_pressed(slot_node):
 
 # --- FUNGSI BARU SAAT TOMBOL USE DITEKAN ---
 func _on_use_button_pressed():
-	if selected_item_data != null and selected_item_data.materi_scene != null:
+	if selected_item_data != null:
 		# 1. Simpan data ke variabel lokal terlebih dahulu
 		var judul_materi = selected_item_data.name
 		var scene_materi = selected_item_data.materi_scene
+		var stream_video = selected_item_data.video_stream # Ambil juga data videonya
 		
 		# 2. Tutup menu inventory 
-		# (Ini akan memicu hide_menu() dan mengubah selected_item_data menjadi null)
 		UIManager.close_current_ui()
 		
-		# 3. Panggil Autoload Materi menggunakan variabel lokal yang sudah kita amankan
-		MateriUI.show_materi(judul_materi, scene_materi)
+		# 3. PERCABANGAN: Panggil UI yang sesuai dengan isi item
+		if stream_video != null:
+			print("Memutar Video Materi: ", judul_materi)
+			# Panggil Autoload VideoPlayer (pastikan nama Autoload-nya sesuai)
+			VideoPlayer.show_video(stream_video, true)
+			
+		elif scene_materi != null:
+			print("Membuka Buku Materi: ", judul_materi)
+			# Panggil Autoload Materi
+			MateriUI.show_materi(judul_materi, scene_materi)
 
 func _on_exit_button_pressed():
 	UIManager.close_current_ui()

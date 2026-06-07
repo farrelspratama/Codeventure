@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://brd082txkduf2"]
+[gd_scene load_steps=30 format=4 uid="uid://brd082txkduf2"]
 
 [ext_resource type="Script" uid="uid://dxpqq0fy4vutb" path="res://system/levels/level.gd" id="1_1718x"]
 [ext_resource type="Texture2D" uid="uid://cc2fqqq73ci4i" path="res://assets/environment/tilesets/Interior.png" id="2_px22b"]
@@ -20,6 +20,8 @@
 [ext_resource type="Resource" uid="uid://bk12rwi3hrxw3" path="res://system/inventory/items/buku.tres" id="15_px22b"]
 [ext_resource type="Script" uid="uid://dicew2gcami5a" path="res://system/ui/dialog/dialog_choice.gd" id="16_v35b1"]
 [ext_resource type="Script" uid="uid://cn7unf8c1h61s" path="res://system/ui/dialog/dialog_branch.gd" id="17_4qfoa"]
+[ext_resource type="Script" uid="uid://bkk1ctwe6tv6l" path="res://system/ui/dialog/dialog_video.gd" id="18_ywrxy"]
+[ext_resource type="VideoStream" uid="uid://c1hnwv6pq04qt" path="res://assets/LIFO.ogv" id="19_haitv"]
 [ext_resource type="Resource" uid="uid://drhive1h4xj4w" path="res://system/ui/content/soal/stack/password_01.tres" id="21_4qfoa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4stml"]
@@ -395,6 +397,14 @@ read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
+[node name="DialogText22" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
+script = ExtResource("10_omn7h")
+text = "Tekan tombol [c]E[/] atau klik ikon [c]Inventory[/] di pojok kanan atas untuk melihatnya."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
 [node name="QuestAdvanceTrigger" type="Node2D" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("13_px22b")
 signal_name = "finished"
@@ -494,9 +504,23 @@ text = "Maksudnya?"
 npc_info = ExtResource("12_2qm6h")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
+[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("10_omn7h")
+text = "Coba perhatikan pergerakan nya dalam video berikut."
+can_fast_forward = false
+read_time_delay = 0.2
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogVideo" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("18_ywrxy")
+video_stream = ExtResource("19_haitv")
+metadata/_custom_type_script = "uid://bkk1ctwe6tv6l"
+
 [node name="DialogText5" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("10_omn7h")
-text = "Mari kita coba menyelesaikan permasalahan sederhana."
+text = "Sekarang mari kita coba menyelesaikan permasalahan sederhana."
+can_fast_forward = false
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -509,7 +533,6 @@ File_C
 Data dimasukkan secara berurutan dari atas ke bawah.
 Menurutmu data mana yang akan [c]keluar terlebih dahulu[/]?"
 can_fast_forward = false
-read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -635,6 +658,38 @@ metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 [node name="DialogText4" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
 text = "Jika kamu salah kamu akan merusak seluruh sistem."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText10" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Karena itu kamu harus memahami setiap langkah dengan baik."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText11" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Ini adalah [c]Flashdisk Pelatihan LIFO[/]."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText12" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Di dalamnya terdapat video yang menjelaskan kembali cara kerja [c]LIFO[/] pada stack."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText13" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Jika kamu ingin mengingat kembali materi yang sudah dipelajari, kamu bisa membukanya melalui [c]Inventory[/]."
 can_fast_forward = false
 read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
@@ -791,6 +846,38 @@ read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
+[node name="DialogText10" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Karena itu kamu harus memahami setiap langkah dengan baik."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText11" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Ini adalah [c]Flashdisk Pelatihan LIFO[/]."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText12" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Di dalamnya terdapat video yang menjelaskan kembali cara kerja [c]LIFO[/] pada stack."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText13" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Jika kamu ingin mengingat kembali materi yang sudah dipelajari, kamu bisa membukanya melalui [c]Inventory[/]."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
 [node name="DialogText5" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
 text = "Selanjutnya kamu harus menyelesaikan masalah yang dimiliki seluruh partisi."
@@ -897,6 +984,38 @@ read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
+[node name="DialogText10" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Karena itu kamu harus memahami setiap langkah dengan baik."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText11" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Ini adalah [c]Flashdisk Pelatihan LIFO[/]."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText12" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Di dalamnya terdapat video yang menjelaskan kembali cara kerja [c]LIFO[/] pada stack."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText13" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Jika kamu ingin mengingat kembali materi yang sudah dipelajari, kamu bisa membukanya melalui [c]Inventory[/]."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
 [node name="DialogText5" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
 script = ExtResource("10_omn7h")
 text = "Selanjutnya kamu harus menyelesaikan masalah yang dimiliki seluruh partisi."
@@ -967,6 +1086,27 @@ metadata/_custom_type_script = "uid://d2epo0ultih7o"
 
 [node name="DialogInteraction" parent="Npc/QuestActivatedSwitch3" instance=ExtResource("9_haitv")]
 
+[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction"]
+script = ExtResource("10_omn7h")
+text = "Coba perhatikan pergerakan nya dalam video berikut."
+can_fast_forward = false
+read_time_delay = 0.2
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogVideo" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction"]
+script = ExtResource("18_ywrxy")
+video_stream = ExtResource("19_haitv")
+metadata/_custom_type_script = "uid://bkk1ctwe6tv6l"
+
+[node name="DialogText5" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction"]
+script = ExtResource("10_omn7h")
+text = "Sekarang mari kita coba menyelesaikan permasalahan sederhana."
+can_fast_forward = false
+read_time_delay = 0.2
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
 [node name="DialogText6" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction"]
 script = ExtResource("10_omn7h")
 text = "Perhatikan data berikut.
@@ -976,7 +1116,6 @@ File_C
 Data dimasukkan secara berurutan dari atas ke bawah.
 Menurutmu data mana yang akan [c]keluar terlebih dahulu[/]?"
 can_fast_forward = false
-read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -1102,6 +1241,38 @@ metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 [node name="DialogText4" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
 text = "Jika kamu salah kamu akan merusak seluruh sistem."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText10" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Karena itu kamu harus memahami setiap langkah dengan baik."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText11" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Ini adalah [c]Flashdisk Pelatihan LIFO[/]."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText12" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Di dalamnya terdapat video yang menjelaskan kembali cara kerja [c]LIFO[/] pada stack."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText13" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Jika kamu ingin mengingat kembali materi yang sudah dipelajari, kamu bisa membukanya melalui [c]Inventory[/]."
 can_fast_forward = false
 read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
@@ -1258,6 +1429,38 @@ read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
+[node name="DialogText10" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Karena itu kamu harus memahami setiap langkah dengan baik."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText11" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Ini adalah [c]Flashdisk Pelatihan LIFO[/]."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText12" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Di dalamnya terdapat video yang menjelaskan kembali cara kerja [c]LIFO[/] pada stack."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText13" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
+script = ExtResource("10_omn7h")
+text = "Jika kamu ingin mengingat kembali materi yang sudah dipelajari, kamu bisa membukanya melalui [c]Inventory[/]."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
 [node name="DialogText5" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch2/DialogChoice/DialogBranch3"]
 script = ExtResource("10_omn7h")
 text = "Selanjutnya kamu harus menyelesaikan masalah yang dimiliki seluruh partisi."
@@ -1364,6 +1567,38 @@ read_time_delay = 1.0
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
+[node name="DialogText10" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Karena itu kamu harus memahami setiap langkah dengan baik."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText11" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Ini adalah [c]Flashdisk Pelatihan LIFO[/]."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText12" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Di dalamnya terdapat video yang menjelaskan kembali cara kerja [c]LIFO[/] pada stack."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText13" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
+script = ExtResource("10_omn7h")
+text = "Jika kamu ingin mengingat kembali materi yang sudah dipelajari, kamu bisa membukanya melalui [c]Inventory[/]."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
 [node name="DialogText5" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction/DialogChoice/DialogBranch3/DialogChoice/DialogBranch"]
 script = ExtResource("10_omn7h")
 text = "Selanjutnya kamu harus menyelesaikan masalah yang dimiliki seluruh partisi."
@@ -1442,6 +1677,14 @@ read_time_delay = 0.2
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
+[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch4/DialogInteraction"]
+script = ExtResource("10_omn7h")
+text = "Tekan tombol [c]E[/] atau klik ikon [c]Inventory[/] di pojok kanan atas untuk melihatnya."
+can_fast_forward = false
+read_time_delay = 0.2
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
 [node name="QuestActivatedSwitch5" type="Node2D" parent="Npc"]
 script = ExtResource("15_b4117")
 check_type = 3
@@ -1459,6 +1702,14 @@ metadata/_custom_type_script = "uid://d2epo0ultih7o"
 [node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch5/DialogInteraction"]
 script = ExtResource("10_omn7h")
 text = "Kunci untuk ke partisi selanjutnya adalah: [c]FXX-K[/]"
+can_fast_forward = false
+read_time_delay = 0.2
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch5/DialogInteraction"]
+script = ExtResource("10_omn7h")
+text = "Tekan tombol [c]E[/] atau klik ikon [c]Inventory[/] di pojok kanan atas untuk melihatnya."
 can_fast_forward = false
 read_time_delay = 0.2
 npc_info = ExtResource("11_ob2nk")

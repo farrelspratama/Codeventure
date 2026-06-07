@@ -3,11 +3,11 @@
 [ext_resource type="FontFile" uid="uid://bctx62yq874s8" path="res://assets/ui/font/m6x11.ttf" id="1_d4bm0"]
 
 [node name="TabContainer" type="TabContainer"]
-visible = false
-current_tab = 0
+current_tab = 1
 metadata/_tab_index = 5
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -39,7 +39,6 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 

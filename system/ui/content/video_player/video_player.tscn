@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://bu6vwoc7qasfj"]
+[gd_scene load_steps=13 format=3 uid="uid://bu6vwoc7qasfj"]
 
 [ext_resource type="Texture2D" uid="uid://duh8hxa7jmwo1" path="res://assets/ui/menu/nine_path_panel_3.png" id="1_4i43v"]
-[ext_resource type="VideoStream" uid="uid://wdlcmplhoero" path="res://assets/Stack Filling Simulation 202606062203.ogv" id="1_5pgit"]
 [ext_resource type="Script" uid="uid://cn817f73owhy7" path="res://system/ui/content/video_player/video_player.gd" id="1_6wjih"]
+[ext_resource type="Theme" uid="uid://c4gpybm58jvxd" path="res://system/ui/dialog/dialog_choice_theme.tres" id="2_up6mf"]
 [ext_resource type="Texture2D" uid="uid://chhvpgnqif5eh" path="res://assets/ui/menu/cancel.png" id="3_ub282"]
+[ext_resource type="VideoStream" uid="uid://c1hnwv6pq04qt" path="res://assets/LIFO.ogv" id="4_up6mf"]
+[ext_resource type="Texture2D" uid="uid://djiqdt3kmrprq" path="res://assets/ui/menu/button_normal.png" id="5_263nu"]
+[ext_resource type="Texture2D" uid="uid://8uglib0r7bed" path="res://assets/ui/menu/button_pressed.png" id="6_bet57"]
+[ext_resource type="Texture2D" uid="uid://cj48vypqfgbpl" path="res://assets/ui/menu/button_hover.png" id="7_i0xw1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ub282"]
 texture = ExtResource("1_4i43v")
@@ -12,8 +16,30 @@ texture_margin_top = 7.0
 texture_margin_right = 6.0
 texture_margin_bottom = 6.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4u2xs"]
+texture = ExtResource("5_263nu")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8tj10"]
+content_margin_bottom = 0.0
+texture = ExtResource("6_bet57")
+texture_margin_left = 5.0
+texture_margin_top = 4.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_te62h"]
+texture = ExtResource("7_i0xw1")
+texture_margin_left = 5.0
+texture_margin_top = 3.0
+texture_margin_right = 5.0
+texture_margin_bottom = 3.0
+
 [node name="VideoPlayer" type="CanvasLayer"]
-layer = 2
+layer = 3
 script = ExtResource("1_6wjih")
 
 [node name="Control" type="Control" parent="."]
@@ -47,6 +73,8 @@ offset_right = 350.0
 offset_bottom = 250.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_up6mf")
 theme_override_styles/panel = SubResource("StyleBoxTexture_ub282")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Control/Panel"]
@@ -62,8 +90,24 @@ offset_right = 427.0
 offset_bottom = 240.0
 grow_horizontal = 2
 grow_vertical = 2
-stream = ExtResource("1_5pgit")
+mouse_filter = 2
+stream = ExtResource("4_up6mf")
 expand = true
+
+[node name="BlackScreen" type="ColorRect" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -427.0
+offset_top = -240.0
+offset_right = 427.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="PlayButton" type="Button" parent="Control/Panel"]
 layout_mode = 1
@@ -72,14 +116,31 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -40.0
+offset_left = -96.0
 offset_top = -55.0
-offset_right = 40.0
+offset_right = -4.0
 offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 48
 text = "Play"
+
+[node name="PauseButton" type="Button" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -55.0
+offset_right = 114.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 48
+text = "Pause
+"
 
 [node name="CloseButton" type="Button" parent="Control"]
 layout_mode = 0
@@ -88,4 +149,7 @@ offset_top = 10.0
 offset_right = 1232.0
 offset_bottom = 29.0
 scale = Vector2(3, 3)
+theme_override_styles/normal = SubResource("StyleBoxTexture_4u2xs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8tj10")
+theme_override_styles/hover = SubResource("StyleBoxTexture_te62h")
 icon = ExtResource("3_ub282")

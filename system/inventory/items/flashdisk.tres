@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cggsbxsyb5ilf"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://cggsbxsyb5ilf"]
 
 [ext_resource type="Script" uid="uid://j6vyfgfggbp6" path="res://system/inventory/items/item_data.gd" id="1_5gpwg"]
 [ext_resource type="Texture2D" uid="uid://ba6oeycytomol" path="res://assets/inventory/Flashdisk.png" id="2_2682v"]
+[ext_resource type="VideoStream" uid="uid://c1hnwv6pq04qt" path="res://assets/LIFO.ogv" id="3_7d830"]
 
 [resource]
 script = ExtResource("1_5gpwg")
 name = "Flashdisk"
-description = "Flashdisk berisi file penting"
+description = "Flashdisk berisi video cara kerja LIFO."
 texture = ExtResource("2_2682v")
+video_stream = ExtResource("3_7d830")
 metadata/_custom_type_script = "uid://j6vyfgfggbp6"

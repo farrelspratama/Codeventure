@@ -1,7 +1,13 @@
-[gd_resource type="Resource" script_class="Quest" load_steps=3 format=3 uid="uid://dg8rji5awnamb"]
+[gd_resource type="Resource" script_class="Quest" load_steps=5 format=3 uid="uid://dg8rji5awnamb"]
 
 [ext_resource type="Script" uid="uid://6osa3re2n1f1" path="res://system/quest_system/quest_reward_item.gd" id="1_3276e"]
 [ext_resource type="Script" uid="uid://df0jn0tbhct03" path="res://system/quest_system/quest_resource.gd" id="2_2podw"]
+[ext_resource type="Resource" uid="uid://cggsbxsyb5ilf" path="res://system/inventory/items/flashdisk.tres" id="2_x6bjp"]
+
+[sub_resource type="Resource" id="Resource_iegsf"]
+script = ExtResource("1_3276e")
+item = ExtResource("2_x6bjp")
+metadata/_custom_type_script = "uid://6osa3re2n1f1"
 
 [resource]
 script = ExtResource("2_2podw")
@@ -9,4 +15,5 @@ title = "Storage Bermasalah"
 description = "Sistem penyimpanan komputer rusak dan data-data di dalamnya tersusun secara tidak teratur."
 steps = Array[String](["Bertemu Pak Sofyan", "Cari Catatan Sistem", "Memahami Definisi Stack", "Memahami Cara Kerja Stack"])
 reward_score = 100
+reward_items = Array[ExtResource("1_3276e")]([SubResource("Resource_iegsf")])
 metadata/_custom_type_script = "uid://df0jn0tbhct03"

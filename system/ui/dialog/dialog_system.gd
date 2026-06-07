@@ -310,7 +310,7 @@ func set_dialog_video(_d: DialogVideo) -> void:
 	video_in_progress = true
 	
 	# Panggil fungsi dari Autoload
-	VideoPlayer.show_video(_d.video_stream)
+	VideoPlayer.show_video(_d.video_stream, true)
 	
 	# Tunggu sampai Autoload memancarkan sinyal selesai!
 	await VideoPlayer.video_finished
