@@ -43,8 +43,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	if is_active == false or minigame_in_progress == true or watching_cutscene == true or video_in_progress == true: 
 		return
 	if (event.is_action_pressed("interact")):
+		var is_debug_skip = OS.is_debug_build() and Input.is_physical_key_pressed(KEY_SHIFT)
 		if text_in_progress == true:
-			if current_can_fast_forward == false:
+			if current_can_fast_forward == false and not is_debug_skip:
 				return
 			content.visible_characters = text_length
 			timer.stop()
@@ -299,6 +300,9 @@ func start_timer() -> void:
 func _start_read_delay() -> void:
 	var current_item = dialog_items[dialog_items_index]
 	if current_item is DialogText and current_item.read_time_delay > 0.0:
+		if OS.is_debug_build() and Input.is_physical_key_pressed(KEY_SHIFT):
+			is_reading_time = false
+			return
 		is_reading_time = true
 		# Kunci pemain selama X detik sesuai angka di Inspector
 		await get_tree().create_timer(current_item.read_time_delay).timeout

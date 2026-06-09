@@ -28,9 +28,6 @@ func handle_movement():
 	# get_vector sudah otomatis membatasi panjang maksimal vektor menjadi 1
 	direction = Input.get_vector("left", "right", "up", "down")
 	
-	if OS.is_debug_build() and Input.is_physical_key_pressed(KEY_SHIFT):
-		MOVE_SPEED * 4.0 # Kecepatan meroket 4x lipat!
-	
 	velocity = direction * MOVE_SPEED
 	move_and_slide()
 

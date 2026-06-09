@@ -504,11 +504,18 @@ text = "Maksudnya?"
 npc_info = ExtResource("12_2qm6h")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
+[node name="DialogText7" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2"]
+script = ExtResource("10_omn7h")
+text = "Sistem stack itu bekerja menggunakan konsep [c]LIFO (Last In First Out)[/], artinya data yang [c]terakhir masuk[/] adalah yang [c]pertama kali keluar[/]."
+can_fast_forward = false
+read_time_delay = 1.0
+npc_info = ExtResource("11_ob2nk")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
 [node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("10_omn7h")
 text = "Coba perhatikan pergerakan nya dalam video berikut."
 can_fast_forward = false
-read_time_delay = 0.2
 npc_info = ExtResource("11_ob2nk")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -526,11 +533,10 @@ metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText6" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction/DialogChoice/DialogBranch2"]
 script = ExtResource("10_omn7h")
-text = "Perhatikan data berikut.
+text = "Jika data dimasukkan secara berurutan dari [c]atas ke bawah[/] dengan urutan sebagai berikut:
 File_A
 File_B
 File_C
-Data dimasukkan secara berurutan dari atas ke bawah.
 Menurutmu data mana yang akan [c]keluar terlebih dahulu[/]?"
 can_fast_forward = false
 npc_info = ExtResource("11_ob2nk")
