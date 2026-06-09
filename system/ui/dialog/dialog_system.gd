@@ -28,6 +28,7 @@ var active_branch: DialogBranch = null
 @onready var timer: Timer = $DialogUI/Timer
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $DialogUI/AudioStreamPlayer2D
 @onready var choice_options: VBoxContainer = $DialogUI/VBoxContainer
+@onready var image_soal: TextureRect = $DialogUI/ImageSoal
 
 func _ready() -> void:
 	if Engine.is_editor_hint():
@@ -108,6 +109,7 @@ func show_dialog( _items : Array[ DialogItem ] ) -> void:
 func hide_dialog(is_canceled: bool = false) -> void:
 	is_active = false
 	choice_options.visible = false
+	image_soal.hide()
 	dialog_ui.visible = false
 	dialog_ui.process_mode = Node.PROCESS_MODE_DISABLED
 	get_tree().paused = false
@@ -154,6 +156,12 @@ func set_dialog_text( _d : DialogItem ) -> void:
 		current_can_fast_forward = _d.can_fast_forward
 		is_reading_time = false
 		
+		if "image" in _d and _d.image != null:
+			image_soal.texture = _d.image
+			image_soal.show()
+		else:
+			image_soal.hide()
+		
 	# --- LOGIKA PENENTUAN NAMA ---
 	var speaker_name = _d.npc_info.npc_name
 	
@@ -185,6 +193,11 @@ func set_dialog_choice( _d : DialogChoice ) -> void:
 	waiting_for_choice = true
 	for c in choice_options.get_children():
 		c.queue_free()
+	
+	if image_soal.visible == true:
+		choice_options.position = Vector2(880, 175) 
+	else:
+		choice_options.position = Vector2(510, 300)
 	
 	for i in _d.dialog_branches.size():
 		var _new_choice : Button = Button.new()

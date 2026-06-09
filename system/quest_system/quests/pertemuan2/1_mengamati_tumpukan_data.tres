@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=3 format=3 uid="uid://vw8w81j1fm1m"]
+
+[ext_resource type="Script" uid="uid://6osa3re2n1f1" path="res://system/quest_system/quest_reward_item.gd" id="1_f40yx"]
+[ext_resource type="Script" uid="uid://df0jn0tbhct03" path="res://system/quest_system/quest_resource.gd" id="2_uk43h"]
+
+[resource]
+script = ExtResource("2_uk43h")
+title = "Mengamati Tumpukan Data"
+description = "Pak Sofyan meminta bantuan untuk mengamati bagaimana data disusun di dalam sistem penyimpanan."
+steps = Array[String](["Amati Ilustrasi Penyimpanan Data", "Identifikasi Struktur Stack"])
+reward_score = 100
+metadata/_custom_type_script = "uid://df0jn0tbhct03"

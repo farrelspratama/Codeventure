@@ -11,7 +11,7 @@
 [ext_resource type="Resource" uid="uid://c25o5yhdygaui" path="res://system/characters/npc/resource/pak_nopandi.tres" id="7_psujb"]
 [ext_resource type="PackedScene" uid="uid://b2lmwyq5ghxtm" path="res://system/characters/npc/npc_behavior_wander.tscn" id="8_psujb"]
 [ext_resource type="PackedScene" uid="uid://ct0hqkac5axdu" path="res://system/quest_system/quest_activated_switch.tscn" id="9_odkif"]
-[ext_resource type="Resource" uid="uid://bw4gmqvkresnc" path="res://system/quest_system/quests/2_mencari_pak_sofyan.tres" id="10_mfto6"]
+[ext_resource type="Resource" uid="uid://bw4gmqvkresnc" path="res://system/quest_system/quests/pertemuan1/2_mencari_pak_sofyan.tres" id="10_mfto6"]
 [ext_resource type="PackedScene" uid="uid://dclafa87ojaa3" path="res://system/ui/dialog/dialog_interaction.tscn" id="11_0l0so"]
 [ext_resource type="Script" uid="uid://b2gbmxj3vikwc" path="res://system/ui/dialog/dialog_text.gd" id="12_h5h4s"]
 [ext_resource type="Resource" uid="uid://c68j4aibkx563" path="res://system/characters/npc/resource/player.tres" id="13_mfto6"]

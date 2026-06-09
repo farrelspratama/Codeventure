@@ -38,26 +38,25 @@ func play() -> void:
 		
 		# 2. Atur arah dan putar animasi Walk secara manual ke AnimationTree
 		player.direction = move_direction
-		player.set_direction() # Memperbarui cardinal_direction
-		player.move_state_machine.travel("Walk")
-		player.animation_tree.set("parameters/MoveStateMachine/Walk/blend_position", player.cardinal_direction)
+		player.set_direction()
+		player.handle_animation()
 		
 		# 3. Gerakkan pemain menggunakan Tween
 		var tween : Tween = create_tween()
 		tween.set_ease(easing_method)
 		tween.set_trans(transition_type)
 		tween.tween_property(player, "global_position", target_location, move_duration)
-		tween.tween_callback(_on_tween_finished.bind(player))
+		tween.tween_callback(_on_tween_finished)
 	else:
 		finished.emit()
 	pass
 
 # Gunakan argumen bind untuk membawa referensi player ke fungsi ini
-func _on_tween_finished(player: Node2D) -> void:
+func _on_tween_finished() -> void:
+	var player = PlayerManager.player
 	# 4. Kembalikan animasi ke posisi diam (Idle)
 	player.direction = Vector2.ZERO
-	player.move_state_machine.travel("Idle")
-	player.animation_tree.set("parameters/MoveStateMachine/Idle/blend_position", player.cardinal_direction)
+	player.handle_animation()
 	
 	# 5. Nyalakan kembali kontrol fisika pemain
 	player.set_physics_process(true)
