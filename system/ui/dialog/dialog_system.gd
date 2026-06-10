@@ -28,6 +28,7 @@ var active_branch: DialogBranch = null
 @onready var timer: Timer = $DialogUI/Timer
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $DialogUI/AudioStreamPlayer2D
 @onready var choice_options: VBoxContainer = $DialogUI/VBoxContainer
+@onready var choice_options_2: VBoxContainer = $DialogUI/VBoxContainer2
 @onready var image_soal: TextureRect = $DialogUI/ImageSoal
 
 func _ready() -> void:
@@ -109,6 +110,7 @@ func show_dialog( _items : Array[ DialogItem ] ) -> void:
 func hide_dialog(is_canceled: bool = false) -> void:
 	is_active = false
 	choice_options.visible = false
+	choice_options_2.visible = false
 	image_soal.hide()
 	dialog_ui.visible = false
 	dialog_ui.process_mode = Node.PROCESS_MODE_DISABLED
@@ -189,30 +191,39 @@ func set_dialog_text( _d : DialogItem ) -> void:
 	pass
 
 func set_dialog_choice( _d : DialogChoice ) -> void:
-	choice_options.visible = true
 	waiting_for_choice = true
-	for c in choice_options.get_children():
-		c.queue_free()
+	var active_container: VBoxContainer
 	
 	if image_soal.visible == true:
-		choice_options.position = Vector2(880, 175) 
+		# Mode Soal: Pakai VBoxContainer2, sembunyikan yang pertama
+		active_container = choice_options_2
+		choice_options.visible = false
+		choice_options_2.visible = true
 	else:
-		choice_options.position = Vector2(510, 250)
+		# Mode Obrolan Normal: Pakai VBoxContainer pertama, sembunyikan yang kedua
+		active_container = choice_options
+		choice_options.visible = true
+		choice_options_2.visible = false
+	
+	for c in active_container.get_children():
+		c.queue_free()
 	
 	for i in _d.dialog_branches.size():
 		var _new_choice : Button = Button.new()
 		_new_choice.text = _d.dialog_branches[ i ].text
 		_new_choice.pressed.connect( _dialog_choice_selected.bind( _d.dialog_branches[ i ] ) )
-		choice_options.add_child( _new_choice )
+		active_container.add_child( _new_choice )
 	
 	if Engine.is_editor_hint():
 		return
 	await get_tree().process_frame
 	await get_tree().process_frame
-	choice_options.get_child( 0 )
+	if active_container.get_child_count() > 0:
+		active_container.get_child( 0 ).grab_focus()
 
 func _dialog_choice_selected( _d : DialogBranch ) -> void:
 	choice_options.visible = false
+	choice_options_2.visible = false
 	_d.selected.emit()
 	active_branch = _d
 	show_dialog( _d.dialog_items )

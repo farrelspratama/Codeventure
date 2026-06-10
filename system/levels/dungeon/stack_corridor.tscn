@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://d2iq8m41e2hjk"]
+[gd_scene load_steps=29 format=4 uid="uid://d2iq8m41e2hjk"]
 
 [ext_resource type="Script" uid="uid://dxpqq0fy4vutb" path="res://system/levels/level.gd" id="1_6nmm7"]
 [ext_resource type="Texture2D" uid="uid://cc2fqqq73ci4i" path="res://assets/environment/tilesets/Interior.png" id="2_nnet2"]
@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d224s6di1knyv" path="res://assets/environment/tilesets/Lantai Kayu.png" id="6_7njlf"]
 [ext_resource type="PackedScene" uid="uid://cxqcha3ibg8r2" path="res://system/characters/player/player_spawn.tscn" id="7_uwml2"]
 [ext_resource type="PackedScene" uid="uid://drg863i16hbqj" path="res://system/characters/npc/npc.tscn" id="8_cd5ea"]
-[ext_resource type="Resource" uid="uid://vw8w81j1fm1m" path="res://system/quest_system/quests/pertemuan2/1_mengamati_tumpukan_data.tres" id="10_dvibs"]
+[ext_resource type="Resource" uid="uid://vw8w81j1fm1m" path="res://system/quest_system/quests/4_mengamati_tumpukan_data.tres" id="10_dvibs"]
 [ext_resource type="PackedScene" uid="uid://cxy3msd1w07a2" path="res://system/general_nodes/area_trigger/area_trigger.tscn" id="11_dkdjy"]
 [ext_resource type="PackedScene" uid="uid://dclafa87ojaa3" path="res://system/ui/dialog/dialog_interaction.tscn" id="11_p84wy"]
 [ext_resource type="Script" uid="uid://b2gbmxj3vikwc" path="res://system/ui/dialog/dialog_text.gd" id="12_hfj8o"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://cfspk0ixjj2av" path="res://system/quest_system/quest_advance_trigger.gd" id="15_bioj5"]
 [ext_resource type="Script" uid="uid://dicew2gcami5a" path="res://system/ui/dialog/dialog_choice.gd" id="16_oilqg"]
 [ext_resource type="Script" uid="uid://cn7unf8c1h61s" path="res://system/ui/dialog/dialog_branch.gd" id="17_vq51k"]
+[ext_resource type="Resource" uid="uid://c68j4aibkx563" path="res://system/characters/npc/resource/player.tres" id="18_6c332"]
 [ext_resource type="PackedScene" uid="uid://cntwhq2250rlx" path="res://system/levels/dungeon/pintu.tscn" id="20_6c332"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4stml"]
@@ -365,7 +366,7 @@ metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 [node name="DialogText3" type="Node" parent="AreaTrigger/DialogInteraction/IdentifikasiTop1/Top/FungsiTop1/Menunjukkan"]
 script = ExtResource("12_hfj8o")
 text = "Jadi TOP berfungsi sebagai penanda posisi teratas pada stack?"
-npc_info = ExtResource("13_u71a5")
+npc_info = ExtResource("18_6c332")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText4" type="Node" parent="AreaTrigger/DialogInteraction/IdentifikasiTop1/Top/FungsiTop1/Menunjukkan"]
@@ -424,7 +425,7 @@ metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 [node name="DialogText5" type="Node" parent="AreaTrigger/DialogInteraction/IdentifikasiTop1/Top/FungsiTop1/Menghapus"]
 script = ExtResource("12_hfj8o")
 text = "Jadi TOP berfungsi sebagai penanda posisi teratas pada stack?"
-npc_info = ExtResource("13_u71a5")
+npc_info = ExtResource("18_6c332")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText6" type="Node" parent="AreaTrigger/DialogInteraction/IdentifikasiTop1/Top/FungsiTop1/Menghapus"]

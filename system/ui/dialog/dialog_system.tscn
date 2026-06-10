@@ -292,9 +292,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -130.0
-offset_top = -60.0
+offset_top = -270.0
 offset_right = 130.0
-offset_bottom = 60.0
+offset_bottom = 39.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_7wdoq")
@@ -302,15 +302,92 @@ alignment = 1
 
 [node name="Button" type="Button" parent="DialogUI/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 5
 theme_override_font_sizes/font_size = 64
 text = "Pilihan..."
 
 [node name="Button2" type="Button" parent="DialogUI/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 5
+theme_override_font_sizes/font_size = 64
+text = "Pilihan..."
+
+[node name="Button3" type="Button" parent="DialogUI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 5
+theme_override_font_sizes/font_size = 64
+text = "Pilihan..."
+
+[node name="Button4" type="Button" parent="DialogUI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 5
+theme_override_font_sizes/font_size = 64
+text = "Pilihan..."
+
+[node name="Button5" type="Button" parent="DialogUI/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 5
+theme_override_font_sizes/font_size = 64
+text = "Pilihan..."
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="DialogUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 210.0
+offset_top = -270.0
+offset_right = 470.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_7wdoq")
+alignment = 1
+
+[node name="Button" type="Button" parent="DialogUI/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 5
+theme_override_font_sizes/font_size = 64
+text = "Pilihan..."
+
+[node name="Button2" type="Button" parent="DialogUI/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 5
+theme_override_font_sizes/font_size = 64
+text = "Pilihan..."
+
+[node name="Button3" type="Button" parent="DialogUI/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 5
+theme_override_font_sizes/font_size = 64
+text = "Pilihan..."
+
+[node name="Button4" type="Button" parent="DialogUI/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 5
+theme_override_font_sizes/font_size = 64
+text = "Pilihan..."
+
+[node name="Button5" type="Button" parent="DialogUI/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 5
+size_flags_vertical = 5
 theme_override_font_sizes/font_size = 64
 text = "Pilihan..."
 
 [node name="ImageSoal" type="TextureRect" parent="DialogUI"]
+visible = false
 layout_mode = 0
 offset_left = 10.0
 offset_top = 35.0

@@ -14,7 +14,7 @@
 [ext_resource type="Resource" uid="uid://c68j4aibkx563" path="res://system/characters/npc/resource/player.tres" id="12_2qm6h"]
 [ext_resource type="PackedScene" uid="uid://cntwhq2250rlx" path="res://system/levels/dungeon/pintu.tscn" id="13_nmmah"]
 [ext_resource type="Script" uid="uid://cfspk0ixjj2av" path="res://system/quest_system/quest_advance_trigger.gd" id="13_px22b"]
-[ext_resource type="Resource" uid="uid://dg8rji5awnamb" path="res://system/quest_system/quests/pertemuan1/3_storage_bermasalah.tres" id="14_5ow2c"]
+[ext_resource type="Resource" uid="uid://dg8rji5awnamb" path="res://system/quest_system/quests/3_storage_bermasalah.tres" id="14_5ow2c"]
 [ext_resource type="PackedScene" uid="uid://dv0tn3ypx7ppw" path="res://system/objects/treasure_chest/treasure_chest.tscn" id="14_pwb0k"]
 [ext_resource type="Script" uid="uid://d2epo0ultih7o" path="res://system/quest_system/quest_activated_switch.gd" id="15_b4117"]
 [ext_resource type="Resource" uid="uid://bk12rwi3hrxw3" path="res://system/inventory/items/buku.tres" id="15_px22b"]
