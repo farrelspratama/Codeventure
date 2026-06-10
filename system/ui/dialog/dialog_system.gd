@@ -197,7 +197,7 @@ func set_dialog_choice( _d : DialogChoice ) -> void:
 	if image_soal.visible == true:
 		choice_options.position = Vector2(880, 175) 
 	else:
-		choice_options.position = Vector2(510, 300)
+		choice_options.position = Vector2(510, 250)
 	
 	for i in _d.dialog_branches.size():
 		var _new_choice : Button = Button.new()

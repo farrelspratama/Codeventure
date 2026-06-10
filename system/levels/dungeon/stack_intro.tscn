@@ -1727,7 +1727,7 @@ y_sort_enabled = true
 
 [node name="Pintu" parent="Items" instance=ExtResource("13_nmmah")]
 position = Vector2(324, 32)
-target_level = "uid://dshxax8ljja78"
+target_level = "uid://d2iq8m41e2hjk"
 correct_passcode = "FXX-K"
 
 [node name="QuestAdvanceTrigger" type="Node2D" parent="Items/Pintu"]
