@@ -5,7 +5,7 @@ const START_LEVEL_PATH = "res://system/ui/form/form_info.tscn"
 
 @onready var new_game_button: Button = $Control/VBoxContainer/NewGameButton
 @onready var continue_button: Button = $Control/VBoxContainer/ContinueButton
-@onready var settings_button: Button = $Control/VBoxContainer/SettingsButton
+@onready var information_button: Button = $Control/VBoxContainer/InformationButton
 @onready var credit_button: Button = $Control/VBoxContainer/CreditButton
 @onready var exit_button: Button = $Control/VBoxContainer/ExitButton
 
@@ -17,7 +17,7 @@ func _ready() -> void:
 	
 	new_game_button.pressed.connect(_on_new_game_pressed)
 	continue_button.pressed.connect(_on_continue_pressed)
-	settings_button.pressed.connect(_on_settings_pressed)
+	information_button.pressed.connect(_on_information_pressed)
 	credit_button.pressed.connect(_on_credit_pressed)
 	exit_button.pressed.connect(_on_exit_pressed)
 	
@@ -67,8 +67,8 @@ func _on_continue_pressed() -> void:
 	
 	SaveManager.load_game()
 
-func _on_settings_pressed() -> void:
-	print("Membuka Pengaturan...")
+func _on_information_pressed() -> void:
+	SceneTransition.change_scene("res://system/ui/information/information.tscn")
 
 func _on_credit_pressed() -> void:
 	SceneTransition.change_scene("res://system/ui/credits/credits.tscn")

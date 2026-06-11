@@ -62,9 +62,9 @@ text = "New Game"
 layout_mode = 2
 text = "Continue"
 
-[node name="SettingsButton" type="Button" parent="Control/VBoxContainer"]
+[node name="InformationButton" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
-text = "Settings"
+text = "Information"
 
 [node name="CreditButton" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
