@@ -1,7 +1,6 @@
 extends CanvasLayer
 
 @export var scroll_speed: float = 60.0 # Kecepatan teks bergulir
-@export_file("*.tscn") var next_scene: String = "res://system/title_scene/title_scene.tscn"
 
 @onready var credits_text: RichTextLabel = $CreditsText
 @onready var close_button: Button = $CloseButton
@@ -49,7 +48,4 @@ func _on_back_pressed() -> void:
 func _finish_credits() -> void:
 	# Hentikan guliran dan kembali ke Main Menu
 	is_scrolling = false
-	if next_scene != "":
-		SceneTransition.change_scene(next_scene)
-	else:
-		print("Target scene kembali belum diatur!")
+	SceneTransition.change_scene("res://system/title_scene/title_scene.tscn")

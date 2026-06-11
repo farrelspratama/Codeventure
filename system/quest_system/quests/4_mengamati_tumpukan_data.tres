@@ -7,6 +7,6 @@
 script = ExtResource("2_uk43h")
 title = "Mengamati Tumpukan Data"
 description = "Pak Sofyan meminta bantuan untuk mengamati bagaimana data disusun di dalam sistem penyimpanan."
-steps = Array[String](["Amati Ilustrasi Penyimpanan Data", "Identifikasi Struktur Stack"])
+steps = Array[String](["Identifikasi TOP", "Fungsi TOP"])
 reward_score = 100
 metadata/_custom_type_script = "uid://df0jn0tbhct03"
