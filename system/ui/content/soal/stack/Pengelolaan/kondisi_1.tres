@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://du6ye8exf5pta"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_8g2ou"]
+
+[resource]
+script = ExtResource("1_8g2ou")
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"
