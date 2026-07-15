@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://b46ulmsgqw2ai"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_urn6w"]
+
+[resource]
+script = ExtResource("1_urn6w")
+question_text = "Operasi apa yang digunakan untuk memastikan stack kosong?
+[SLOT]"
+options = Array[String](["isEmpty()", "isFull()"])
+correct_answers = Array[String](["isEmpty()"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"

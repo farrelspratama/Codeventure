@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://c2hegul2hx8im"]
+[gd_scene load_steps=34 format=4 uid="uid://c2hegul2hx8im"]
 
 [ext_resource type="Script" uid="uid://dxpqq0fy4vutb" path="res://system/levels/level.gd" id="1_bjq26"]
 [ext_resource type="Texture2D" uid="uid://cc2fqqq73ci4i" path="res://assets/environment/tilesets/Interior.png" id="2_42pdu"]
@@ -14,12 +14,18 @@
 [ext_resource type="PackedScene" uid="uid://cxy3msd1w07a2" path="res://system/general_nodes/area_trigger/area_trigger.tscn" id="12_ywbvw"]
 [ext_resource type="Script" uid="uid://cdx54srqhmplq" path="res://system/ui/dialog/dialog_cutscene.gd" id="13_1dtkr"]
 [ext_resource type="Script" uid="uid://bnb2lbg2ro1g0" path="res://system/ui/dialog/cutscene_action_player_move.gd" id="14_n6l3g"]
-[ext_resource type="Texture2D" uid="uid://ciajsa8ws1fkj" path="res://assets/WhatsApp Image 2026-06-08 at 15.36.20.jpeg" id="15_o5h3w"]
+[ext_resource type="Texture2D" uid="uid://crcywhan08m7a" path="res://assets/Kondisi Stack.png" id="16_u16bm"]
+[ext_resource type="Texture2D" uid="uid://ckcfeayaufg75" path="res://assets/overflow underflow.png" id="17_bjq26"]
+[ext_resource type="Texture2D" uid="uid://bisof1juiurqe" path="res://assets/overflow.png" id="18_42pdu"]
 [ext_resource type="Script" uid="uid://cfspk0ixjj2av" path="res://system/quest_system/quest_advance_trigger.gd" id="18_rbi6l"]
 [ext_resource type="Resource" uid="uid://vw8w81j1fm1m" path="res://system/quest_system/quests/4_mengamati_tumpukan_data.tres" id="19_5fjdh"]
+[ext_resource type="Texture2D" uid="uid://buqqtk8lkye5i" path="res://assets/underflow.png" id="19_42pdu"]
 [ext_resource type="Resource" uid="uid://c68j4aibkx563" path="res://system/characters/npc/resource/player.tres" id="20_rxorh"]
 [ext_resource type="PackedScene" uid="uid://cntwhq2250rlx" path="res://system/levels/dungeon/pintu.tscn" id="21_vjxxs"]
 [ext_resource type="PackedScene" uid="uid://7v240hsolfg5" path="res://system/objects/lemari.tscn" id="22_lhmbl"]
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="24_8ed4l"]
+[ext_resource type="Resource" uid="uid://du6ye8exf5pta" path="res://system/ui/content/soal/stack/Pengelolaan/kondisi_1.tres" id="25_nd5as"]
+[ext_resource type="Resource" uid="uid://b46ulmsgqw2ai" path="res://system/ui/content/soal/stack/Pengelolaan/kondisi_2.tres" id="25_rodrl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4stml"]
 texture = ExtResource("2_42pdu")
@@ -236,25 +242,14 @@ position = Vector2(549, 311)
 
 [node name="DialogText" type="Node" parent="Npc/DialogInteraction"]
 script = ExtResource("10_pq7b4")
-text = "Ingat, TOP merupakan penanda posisi data yang berada paling atas dalam stack."
+text = "Agar kesalahan seperti itu tidak terjadi, sistem biasanya memeriksa kondisi stack terlebih dahulu menggunakan operasi [c]isEmpty()[/] dan [c]isFull()[/]."
+can_fast_forward = false
 npc_info = ExtResource("11_ve18a")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText2" type="Node" parent="Npc/DialogInteraction"]
 script = ExtResource("10_pq7b4")
-text = "Dengan melihat TOP, kita dapat mengetahui data mana yang berada di urutan teratas."
-npc_info = ExtResource("11_ve18a")
-metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
-
-[node name="DialogText3" type="Node" parent="Npc/DialogInteraction"]
-script = ExtResource("10_pq7b4")
-text = "Selanjutnya kamu perlu memahami bagaimana susunan data dapat berubah ketika sistem bekerja."
-npc_info = ExtResource("11_ve18a")
-metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
-
-[node name="DialogText4" type="Node" parent="Npc/DialogInteraction"]
-script = ExtResource("10_pq7b4")
-text = "Gunakan [c]ANH10[/] untuk membuka pintu di ujung koridor."
+text = "Sekarang coba selesaikan permasalahan pada penyimpanan di rak sebelah"
 npc_info = ExtResource("11_ve18a")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -300,7 +295,6 @@ metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 script = ExtResource("10_pq7b4")
 text = "Beberapa stack di area ini memiliki kapasitas terbatas."
 can_fast_forward = false
-image = ExtResource("15_o5h3w")
 npc_info = ExtResource("11_ve18a")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -308,21 +302,157 @@ metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 script = ExtResource("10_pq7b4")
 text = "Jika sistem tidak memperhatikan kapasitas tersebut, proses penyimpanan dapat gagal."
 can_fast_forward = false
-image = ExtResource("15_o5h3w")
 npc_info = ExtResource("11_ve18a")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText6" type="Node" parent="AreaTrigger/DialogInteraction"]
 script = ExtResource("10_pq7b4")
-text = "Coba selesaikan permasalahan pada penyimpanan data di sebelah."
+text = "Sebelum sistem menambah atau mengambil data, sistem harus mengenali kondisi penyimpanannya terlebih dahulu."
 can_fast_forward = false
-image = ExtResource("15_o5h3w")
+npc_info = ExtResource("11_ve18a")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText7" type="Node" parent="AreaTrigger/DialogInteraction"]
+script = ExtResource("10_pq7b4")
+text = "Sekarang coba kamu identifikasi kondisi beberapa rak berikut."
+can_fast_forward = false
+image = ExtResource("16_u16bm")
+npc_info = ExtResource("11_ve18a")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText8" type="Node" parent="AreaTrigger/DialogInteraction"]
+script = ExtResource("10_pq7b4")
+text = "Sekarang perhatikan dua keadaan berikut."
+can_fast_forward = false
+image = ExtResource("17_bjq26")
+npc_info = ExtResource("11_ve18a")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText9" type="Node" parent="AreaTrigger/DialogInteraction"]
+script = ExtResource("10_pq7b4")
+text = "Rak sudah penuh, kemudian sebuah data baru akan dimasukkan."
+can_fast_forward = false
+image = ExtResource("18_42pdu")
+npc_info = ExtResource("11_ve18a")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText10" type="Node" parent="AreaTrigger/DialogInteraction"]
+script = ExtResource("10_pq7b4")
+text = "Menurutmu, apa yang akan terjadi jika sistem tetap memaksa menambahkan buku ke rak tersebut?"
+can_fast_forward = false
+image = ExtResource("18_42pdu")
+npc_info = ExtResource("11_ve18a")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText11" type="Node" parent="AreaTrigger/DialogInteraction"]
+script = ExtResource("10_pq7b4")
+text = "Karena tidak ada lagi ruang yang tersedia, buku tersebut tidak dapat disimpan."
+can_fast_forward = false
+image = ExtResource("18_42pdu")
+npc_info = ExtResource("11_ve18a")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText12" type="Node" parent="AreaTrigger/DialogInteraction"]
+script = ExtResource("10_pq7b4")
+text = "Keadaan ketika sistem mencoba menambahkan data ke stack yang sudah penuh disebut [c]Overflow[/]."
+can_fast_forward = false
+image = ExtResource("18_42pdu")
+npc_info = ExtResource("11_ve18a")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText13" type="Node" parent="AreaTrigger/DialogInteraction"]
+script = ExtResource("10_pq7b4")
+text = "Sekarang perhatikan keadaan berikutnya."
+can_fast_forward = false
+image = ExtResource("19_42pdu")
+npc_info = ExtResource("11_ve18a")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText14" type="Node" parent="AreaTrigger/DialogInteraction"]
+script = ExtResource("10_pq7b4")
+text = "Rak kosong, kemudian sistem mencoba mengambil sebuah data."
+can_fast_forward = false
+image = ExtResource("19_42pdu")
+npc_info = ExtResource("11_ve18a")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText15" type="Node" parent="AreaTrigger/DialogInteraction"]
+script = ExtResource("10_pq7b4")
+text = "Bagaimana menurutmu? Apakah sistem dapat mengambil buku dari rak tersebut"
+can_fast_forward = false
+image = ExtResource("19_42pdu")
+npc_info = ExtResource("11_ve18a")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText16" type="Node" parent="AreaTrigger/DialogInteraction"]
+script = ExtResource("10_pq7b4")
+text = "Tentu tidak."
+can_fast_forward = false
+image = ExtResource("19_42pdu")
+npc_info = ExtResource("11_ve18a")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText17" type="Node" parent="AreaTrigger/DialogInteraction"]
+script = ExtResource("10_pq7b4")
+text = "Karena tidak ada data yang dapat diambil."
+can_fast_forward = false
+image = ExtResource("19_42pdu")
+npc_info = ExtResource("11_ve18a")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText18" type="Node" parent="AreaTrigger/DialogInteraction"]
+script = ExtResource("10_pq7b4")
+text = "Keadaan ketika sistem mencoba mengambil data dari stack yang kosong disebut [c]Underflow[/]."
+can_fast_forward = false
+image = ExtResource("19_42pdu")
+npc_info = ExtResource("11_ve18a")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText19" type="Node" parent="AreaTrigger/DialogInteraction"]
+script = ExtResource("10_pq7b4")
+text = "Jadi sebelum menyimpan atau mengambil data..."
+can_fast_forward = false
+npc_info = ExtResource("20_rxorh")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText20" type="Node" parent="AreaTrigger/DialogInteraction"]
+script = ExtResource("10_pq7b4")
+text = "Sistem harus mengetahui terlebih dahulu apakah rak masih memiliki ruang atau justru sudah kosong?"
+can_fast_forward = false
+npc_info = ExtResource("20_rxorh")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText21" type="Node" parent="AreaTrigger/DialogInteraction"]
+script = ExtResource("10_pq7b4")
+text = "Tepat sekali. Itulah sebabnya kondisi stack harus selalu diperiksa sebelum suatu operasi dilakukan."
+can_fast_forward = false
+npc_info = ExtResource("11_ve18a")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText22" type="Node" parent="AreaTrigger/DialogInteraction"]
+script = ExtResource("10_pq7b4")
+text = "Tepat sekali. Itulah sebabnya kondisi stack harus selalu diperiksa sebelum suatu operasi dilakukan."
+can_fast_forward = false
+npc_info = ExtResource("11_ve18a")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText23" type="Node" parent="AreaTrigger/DialogInteraction"]
+script = ExtResource("10_pq7b4")
+text = "Agar kesalahan seperti itu tidak terjadi, sistem biasanya memeriksa kondisi stack terlebih dahulu menggunakan operasi [c]isEmpty()[/] dan [c]isFull()[/]."
+can_fast_forward = false
+npc_info = ExtResource("11_ve18a")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText24" type="Node" parent="AreaTrigger/DialogInteraction"]
+script = ExtResource("10_pq7b4")
+text = "Sekarang coba selesaikan permasalahan pada penyimpanan di rak sebelah"
+can_fast_forward = false
 npc_info = ExtResource("11_ve18a")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTrigger"]
 z_index = 1
-position = Vector2(550, 479)
+position = Vector2(549, 515)
 shape = SubResource("RectangleShape2D_6c332")
 
 [node name="QuestAdvanceTrigger" type="Node2D" parent="AreaTrigger"]
@@ -346,9 +476,11 @@ correct_passcode = "ANH10"
 
 [node name="Lemari" parent="Items" instance=ExtResource("22_lhmbl")]
 position = Vector2(499, 301)
+questions = Array[ExtResource("24_8ed4l")]([ExtResource("25_rodrl")])
 
 [node name="Lemari2" parent="Items" instance=ExtResource("22_lhmbl")]
 position = Vector2(600, 302)
+questions = Array[ExtResource("24_8ed4l")]([ExtResource("25_nd5as")])
 
 [node name="QuestAdvanceTrigger" type="Node2D" parent="."]
 script = ExtResource("18_rbi6l")
