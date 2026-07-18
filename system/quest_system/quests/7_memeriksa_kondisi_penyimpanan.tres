@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Quest" load_steps=3 format=3 uid="uid://dgn7kpvtu4i8e"]
+
+[ext_resource type="Script" uid="uid://6osa3re2n1f1" path="res://system/quest_system/quest_reward_item.gd" id="1_06isr"]
+[ext_resource type="Script" uid="uid://df0jn0tbhct03" path="res://system/quest_system/quest_resource.gd" id="2_5hlyu"]
+
+[resource]
+script = ExtResource("2_5hlyu")
+title = "Memeriksa Kondisi Penyimpanan"
+description = "Identifikasi kondisi setiap rak penyimpanan agar sistem dapat menentukan operasi yang tepat."
+steps = Array[String](["Mengenali kondisi penyimpanan", "Selesaikan permasalahan pada rak"])
+metadata/_custom_type_script = "uid://df0jn0tbhct03"

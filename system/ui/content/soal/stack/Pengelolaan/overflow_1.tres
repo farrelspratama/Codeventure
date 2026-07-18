@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_8g2ou")
-question_text = "Operasi apa yang digunakan untuk memastikan stack penuh?
-[SLOT]"
+game_type = 3
+question_text = "Operasi apa yang digunakan untuk memastikan stack penuh?"
 options = Array[String](["isEmpty()", "isFull()"])
 correct_answers = Array[String](["isFull()"])
 metadata/_custom_type_script = "uid://bg8k6b86gev0i"

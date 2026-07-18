@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://cgdtb8abj15re"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_hyk63"]
+
+[resource]
+script = ExtResource("1_hyk63")
+game_type = 3
+question_text = "if (!isEmpty()) {
+    pop();
+}
+Apa tujuan program tersebut?"
+options = Array[String](["Menambah data", "Menghapus data jika stack tidak kosong", "Menghapus semua data", "Menampilkan TOP"])
+correct_answers = Array[String](["Menghapus data jika stack tidak kosong"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"

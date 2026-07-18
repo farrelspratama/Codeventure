@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://dfui317wbw1un"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_2m2wt"]
+
+[resource]
+script = ExtResource("1_2m2wt")
+game_type = 3
+question_text = "push(10);
+push(20);
+push(30);
+
+if (isFull()) {
+    cout << \"Penuh\";
+}
+Jika kapasitas stack adalah 3, apa yang akan ditampilkan?"
+options = Array[String](["Kosong", "Penuh", "Error", "Tidak ada output"])
+correct_answers = Array[String](["Penuh"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"

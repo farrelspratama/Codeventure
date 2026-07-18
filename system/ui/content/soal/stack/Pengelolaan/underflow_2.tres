@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://dtytnm1eqjtkh"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_1sasw"]
+
+[resource]
+script = ExtResource("1_1sasw")
+game_type = 2
+question_text = "if (isEmpty()) {
+    cout << \"Stack kosong\";
+}
+Program di atas akan menampilkan \"Stack kosong\" jika tidak ada data di dalam stack."
+correct_answers = Array[String](["true"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"

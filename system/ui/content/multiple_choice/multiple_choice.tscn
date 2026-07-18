@@ -1,26 +1,25 @@
-[gd_scene load_steps=12 format=3 uid="uid://b46hf82bk7u5c"]
+[gd_scene load_steps=11 format=3 uid="uid://bwul35i3ixttp"]
 
-[ext_resource type="Texture2D" uid="uid://duh8hxa7jmwo1" path="res://assets/ui/menu/nine_path_panel_3.png" id="1_3k2jb"]
-[ext_resource type="Script" uid="uid://0qdt3v77fagc" path="res://system/ui/content/true_or_false/true_or_false_system.gd" id="1_75sjs"]
-[ext_resource type="Texture2D" uid="uid://c5awsexhje8f4" path="res://assets/ui/yes.png" id="3_7oq01"]
-[ext_resource type="Texture2D" uid="uid://djiqdt3kmrprq" path="res://assets/ui/menu/button_normal.png" id="3_lf4mt"]
-[ext_resource type="Texture2D" uid="uid://8uglib0r7bed" path="res://assets/ui/menu/button_pressed.png" id="4_7oq01"]
-[ext_resource type="Texture2D" uid="uid://cj48vypqfgbpl" path="res://assets/ui/menu/button_hover.png" id="5_vay8i"]
-[ext_resource type="Texture2D" uid="uid://chhvpgnqif5eh" path="res://assets/ui/menu/cancel.png" id="6_kpfej"]
+[ext_resource type="Script" uid="uid://brejk1w4flre3" path="res://system/ui/content/multiple_choice/multiple_choice.gd" id="1_n7r0o"]
+[ext_resource type="Texture2D" uid="uid://duh8hxa7jmwo1" path="res://assets/ui/menu/nine_path_panel_3.png" id="2_ufjc5"]
+[ext_resource type="Texture2D" uid="uid://djiqdt3kmrprq" path="res://assets/ui/menu/button_normal.png" id="4_71sqn"]
+[ext_resource type="Texture2D" uid="uid://8uglib0r7bed" path="res://assets/ui/menu/button_pressed.png" id="5_vt751"]
+[ext_resource type="Texture2D" uid="uid://cj48vypqfgbpl" path="res://assets/ui/menu/button_hover.png" id="6_k178b"]
+[ext_resource type="Texture2D" uid="uid://chhvpgnqif5eh" path="res://assets/ui/menu/cancel.png" id="7_xr5f1"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_75sjs"]
 content_margin_left = 20.0
 content_margin_top = 15.0
 content_margin_right = 20.0
 content_margin_bottom = 20.0
-texture = ExtResource("1_3k2jb")
+texture = ExtResource("2_ufjc5")
 texture_margin_left = 7.0
 texture_margin_top = 7.0
 texture_margin_right = 6.0
 texture_margin_bottom = 6.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1hdhu"]
-texture = ExtResource("3_lf4mt")
+texture = ExtResource("4_71sqn")
 texture_margin_left = 5.0
 texture_margin_top = 3.0
 texture_margin_right = 5.0
@@ -28,23 +27,23 @@ texture_margin_bottom = 3.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pgo1m"]
 content_margin_bottom = 0.0
-texture = ExtResource("4_7oq01")
+texture = ExtResource("5_vt751")
 texture_margin_left = 5.0
 texture_margin_top = 3.0
 texture_margin_right = 5.0
 texture_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oll55"]
-texture = ExtResource("5_vay8i")
+texture = ExtResource("6_k178b")
 texture_margin_left = 5.0
 texture_margin_top = 3.0
 texture_margin_right = 5.0
 texture_margin_bottom = 3.0
 
-[node name="TrueOrFalse" type="CanvasLayer"]
+[node name="MultipleChoice" type="CanvasLayer"]
 process_mode = 3
 layer = 2
-script = ExtResource("1_75sjs")
+script = ExtResource("1_n7r0o")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -88,37 +87,13 @@ theme_override_font_sizes/font_size = 48
 text = "Stack"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="QuestionLabel" type="Label" parent="Control/PanelContainer/VBoxContainer/VBoxContainer"]
+[node name="QuestionLabel" type="Label" parent="Control/PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(810, 0)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
 text = "jumlah_data = 0 "
 autowrap_mode = 3
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/PanelContainer/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="ButtonTrue" type="Button" parent="Control/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 48
-text = "Benar"
-
-[node name="ButtonFalse" type="Button" parent="Control/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 48
-text = "Salah"
-
-[node name="ResultIcon" type="TextureRect" parent="Control/PanelContainer/VBoxContainer/VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(35, 35)
-layout_mode = 2
-texture = ExtResource("3_7oq01")
-expand_mode = 1
-stretch_mode = 5
 
 [node name="CloseButton" type="Button" parent="Control"]
 layout_mode = 0
@@ -130,4 +105,4 @@ scale = Vector2(3, 3)
 theme_override_styles/normal = SubResource("StyleBoxTexture_1hdhu")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_pgo1m")
 theme_override_styles/hover = SubResource("StyleBoxTexture_oll55")
-icon = ExtResource("6_kpfej")
+icon = ExtResource("7_xr5f1")

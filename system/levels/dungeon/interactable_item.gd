@@ -53,6 +53,8 @@ func player_interact() -> void:
 			target_minigame = TextInput
 		elif current_question.game_type == QuestionData.GameType.TRUE_FALSE:
 			target_minigame = TrueOrFalse
+		elif current_question.game_type == QuestionData.GameType.MULTIPLE_CHOICE:
+			target_minigame = MultipleChoice
 		
 		# Jalankan fungsi koneksi aman
 		if target_minigame != null:
@@ -101,7 +103,7 @@ func _on_minigame_cancelled() -> void:
 
 
 func _disconnect_all_signals() -> void:
-	var list = [DragNDrop, TextInput, TrueOrFalse]
+	var list = [DragNDrop, TextInput, TrueOrFalse, MultipleChoice]
 	for m in list:
 		if m.minigame_finished.is_connected(_on_minigame_finished):
 			m.minigame_finished.disconnect(_on_minigame_finished)

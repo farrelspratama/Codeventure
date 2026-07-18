@@ -265,6 +265,10 @@ func set_dialog_minigame(_d: DialogMinigame) -> void:
 	elif q_data.game_type == QuestionData.GameType.TRUE_FALSE:
 		_connect_minigame_signals(TrueOrFalse)
 		TrueOrFalse.show_minigame(q_data, true)
+		
+	elif q_data.game_type == QuestionData.GameType.MULTIPLE_CHOICE:
+		_connect_minigame_signals(MultipleChoice) # Pastikan nama Autoload-nya sesuai
+		MultipleChoice.show_minigame(q_data, true)
 
 func _connect_minigame_signals(minigame_node: Node) -> void:
 	if not minigame_node.minigame_finished.is_connected(_on_minigame_finished):
@@ -274,7 +278,7 @@ func _connect_minigame_signals(minigame_node: Node) -> void:
 		minigame_node.minigame_cancelled.connect(_on_minigame_cancelled)
 
 func _disconnect_all_minigame_signals() -> void:
-	var minigames = [DragNDrop, TextInput, TrueOrFalse]
+	var minigames = [DragNDrop, TextInput, TrueOrFalse, MultipleChoice]
 	for m in minigames:
 		if m.minigame_finished.is_connected(_on_minigame_finished):
 			m.minigame_finished.disconnect(_on_minigame_finished)

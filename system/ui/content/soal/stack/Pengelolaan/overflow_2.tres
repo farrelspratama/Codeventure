@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://b5lgshl2ffvl1"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_v2vuu"]
+
+[resource]
+script = ExtResource("1_v2vuu")
+game_type = 2
+question_text = "Program berikut akan menampilkan stack penuh
+if (isFull()) {
+    cout << \"Stack penuh\";
+}"
+correct_answers = Array[String](["true"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"

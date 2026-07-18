@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://c2hegul2hx8im"]
+[gd_scene load_steps=45 format=4 uid="uid://c2hegul2hx8im"]
 
 [ext_resource type="Script" uid="uid://dxpqq0fy4vutb" path="res://system/levels/level.gd" id="1_bjq26"]
 [ext_resource type="Texture2D" uid="uid://cc2fqqq73ci4i" path="res://assets/environment/tilesets/Interior.png" id="2_42pdu"]
@@ -18,14 +18,25 @@
 [ext_resource type="Texture2D" uid="uid://ckcfeayaufg75" path="res://assets/overflow underflow.png" id="17_bjq26"]
 [ext_resource type="Texture2D" uid="uid://bisof1juiurqe" path="res://assets/overflow.png" id="18_42pdu"]
 [ext_resource type="Script" uid="uid://cfspk0ixjj2av" path="res://system/quest_system/quest_advance_trigger.gd" id="18_rbi6l"]
-[ext_resource type="Resource" uid="uid://vw8w81j1fm1m" path="res://system/quest_system/quests/4_mengamati_tumpukan_data.tres" id="19_5fjdh"]
 [ext_resource type="Texture2D" uid="uid://buqqtk8lkye5i" path="res://assets/underflow.png" id="19_42pdu"]
 [ext_resource type="Resource" uid="uid://c68j4aibkx563" path="res://system/characters/npc/resource/player.tres" id="20_rxorh"]
 [ext_resource type="PackedScene" uid="uid://cntwhq2250rlx" path="res://system/levels/dungeon/pintu.tscn" id="21_vjxxs"]
 [ext_resource type="PackedScene" uid="uid://7v240hsolfg5" path="res://system/objects/lemari.tscn" id="22_lhmbl"]
 [ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="24_8ed4l"]
-[ext_resource type="Resource" uid="uid://du6ye8exf5pta" path="res://system/ui/content/soal/stack/Pengelolaan/kondisi_1.tres" id="25_nd5as"]
-[ext_resource type="Resource" uid="uid://b46ulmsgqw2ai" path="res://system/ui/content/soal/stack/Pengelolaan/kondisi_2.tres" id="25_rodrl"]
+[ext_resource type="Resource" uid="uid://du6ye8exf5pta" path="res://system/ui/content/soal/stack/Pengelolaan/overflow_1.tres" id="25_nd5as"]
+[ext_resource type="Resource" uid="uid://b46ulmsgqw2ai" path="res://system/ui/content/soal/stack/Pengelolaan/underflow_1.tres" id="25_rodrl"]
+[ext_resource type="Resource" uid="uid://b5lgshl2ffvl1" path="res://system/ui/content/soal/stack/Pengelolaan/overflow_2.tres" id="26_72mcf"]
+[ext_resource type="Resource" uid="uid://0x8pyr74d4dx" path="res://system/ui/content/soal/stack/Pengelolaan/overflow_3.tres" id="27_pq7b4"]
+[ext_resource type="Resource" uid="uid://dvg5ek4t3j1hq" path="res://system/ui/content/soal/stack/Pengelolaan/overflow_4.tres" id="28_ve18a"]
+[ext_resource type="Resource" uid="uid://ouu463m7awcc" path="res://system/ui/content/soal/stack/Pengelolaan/overflow_5.tres" id="29_ywbvw"]
+[ext_resource type="Resource" uid="uid://dfui317wbw1un" path="res://system/ui/content/soal/stack/Pengelolaan/overflow_6.tres" id="30_1dtkr"]
+[ext_resource type="Resource" uid="uid://dtytnm1eqjtkh" path="res://system/ui/content/soal/stack/Pengelolaan/underflow_2.tres" id="32_o5h3w"]
+[ext_resource type="Resource" uid="uid://cbol8qlnvchm3" path="res://system/ui/content/soal/stack/Pengelolaan/underflow_3.tres" id="33_66hdv"]
+[ext_resource type="Resource" uid="uid://cgdtb8abj15re" path="res://system/ui/content/soal/stack/Pengelolaan/underflow_4.tres" id="34_rdbr6"]
+[ext_resource type="Resource" uid="uid://bcfdkdp1m1w6" path="res://system/ui/content/soal/stack/Pengelolaan/underflow_5.tres" id="35_rbi6l"]
+[ext_resource type="Resource" uid="uid://bg0xof2wssua" path="res://system/ui/content/soal/stack/Pengelolaan/underflow_6.tres" id="36_5fjdh"]
+[ext_resource type="Script" uid="uid://rh7fbyuivlgf" path="res://system/manager/item_quest_manager.gd" id="37_66hdv"]
+[ext_resource type="Resource" uid="uid://dgn7kpvtu4i8e" path="res://system/quest_system/quests/7_memeriksa_kondisi_penyimpanan.tres" id="37_rdbr6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4stml"]
 texture = ExtResource("2_42pdu")
@@ -236,7 +247,7 @@ position = Vector2(550, 480)
 [node name="Npc" parent="." instance=ExtResource("8_kqxfb")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(549, 311)
+position = Vector2(549, 310)
 
 [node name="DialogInteraction" parent="Npc" instance=ExtResource("9_72mcf")]
 
@@ -256,7 +267,7 @@ metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 [node name="AreaTrigger" parent="." instance=ExtResource("12_ywbvw")]
 
 [node name="DialogInteraction" parent="AreaTrigger" instance=ExtResource("9_72mcf")]
-position = Vector2(549, 311)
+position = Vector2(549, 310)
 
 [node name="DialogCutscene" type="Node" parent="AreaTrigger/DialogInteraction"]
 script = ExtResource("13_1dtkr")
@@ -264,7 +275,7 @@ metadata/_custom_type_script = "uid://cdx54srqhmplq"
 
 [node name="CutsceneActionPlayerMove" type="Node2D" parent="AreaTrigger/DialogInteraction/DialogCutscene"]
 z_index = 1
-position = Vector2(550, 325)
+position = Vector2(550, 324)
 script = ExtResource("14_n6l3g")
 timing_method = 1
 move_speed = 80.0
@@ -452,16 +463,17 @@ metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTrigger"]
 z_index = 1
-position = Vector2(549, 515)
+position = Vector2(550, 503)
 shape = SubResource("RectangleShape2D_6c332")
 
 [node name="QuestAdvanceTrigger" type="Node2D" parent="AreaTrigger"]
 script = ExtResource("18_rbi6l")
 signal_name = "player_entered"
-linked_quest = ExtResource("19_5fjdh")
+linked_quest = ExtResource("37_rdbr6")
+quest_step = 1
 settings_summary = "UPDATE QUEST:
-Quest: Mengamati Tumpukan Data
-Step: 0 - N/A
+Quest: Memeriksa Kondisi Penyimpanan
+Step: 1 - mengenali kondisi penyimpanan
 Complete: false"
 metadata/_custom_type_script = "uid://cfspk0ixjj2av"
 
@@ -474,20 +486,27 @@ position = Vector2(549, 132)
 target_level = "uid://dshxax8ljja78"
 correct_passcode = "ANH10"
 
-[node name="Lemari" parent="Items" instance=ExtResource("22_lhmbl")]
+[node name="Lemari" parent="Items" groups=["lemari_quest"] instance=ExtResource("22_lhmbl")]
 position = Vector2(499, 301)
-questions = Array[ExtResource("24_8ed4l")]([ExtResource("25_rodrl")])
+questions = Array[ExtResource("24_8ed4l")]([ExtResource("25_nd5as"), ExtResource("26_72mcf"), ExtResource("27_pq7b4"), ExtResource("28_ve18a"), ExtResource("29_ywbvw"), ExtResource("30_1dtkr")])
 
-[node name="Lemari2" parent="Items" instance=ExtResource("22_lhmbl")]
+[node name="Lemari2" parent="Items" groups=["lemari_quest"] instance=ExtResource("22_lhmbl")]
 position = Vector2(600, 302)
-questions = Array[ExtResource("24_8ed4l")]([ExtResource("25_nd5as")])
+questions = Array[ExtResource("24_8ed4l")]([ExtResource("25_rodrl"), ExtResource("32_o5h3w"), ExtResource("33_66hdv"), ExtResource("34_rdbr6"), ExtResource("35_rbi6l"), ExtResource("36_5fjdh")])
 
-[node name="QuestAdvanceTrigger" type="Node2D" parent="."]
+[node name="ItemQuestManager" type="Node" parent="."]
+script = ExtResource("37_66hdv")
+nama_quest = "Memeriksa Kondisi Penyimpanan"
+step_final = "Selesaikan permasalahan pada rak"
+completed = true
+
+[node name="QuestAdvanceTrigger" type="Node2D" parent="ItemQuestManager"]
 script = ExtResource("18_rbi6l")
-signal_name = "spawned"
-linked_quest = ExtResource("19_5fjdh")
+signal_name = "finished"
+linked_quest = ExtResource("37_rdbr6")
+quest_step = 2
 settings_summary = "UPDATE QUEST:
-Quest: Mengamati Tumpukan Data
-Step: 0 - N/A
+Quest: Memeriksa Kondisi Penyimpanan
+Step: 2 - selesaikan permasalahan pada rak
 Complete: false"
 metadata/_custom_type_script = "uid://cfspk0ixjj2av"

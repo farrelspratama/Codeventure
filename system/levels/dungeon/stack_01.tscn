@@ -755,6 +755,20 @@ read_time_delay = 1.0
 npc_info = ExtResource("11_edu8q")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
+[node name="DialogText35" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
+script = ExtResource("10_1d11u")
+text = "Selanjutnya kamu harus menyelesaikan tahap terakhir yaitu pengecekan."
+can_fast_forward = false
+npc_info = ExtResource("11_edu8q")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText36" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
+script = ExtResource("10_1d11u")
+text = "Kunci untuk ke partisi selanjutnya adalah: [c]fkx25[/]"
+can_fast_forward = false
+npc_info = ExtResource("11_edu8q")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
 [node name="QuestAdvanceTrigger" type="Node2D" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
 script = ExtResource("8_rmuhj")
 signal_name = "finished"
@@ -791,6 +805,35 @@ metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 [node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch3/DialogInteraction"]
 script = ExtResource("10_1d11u")
 text = "dan perhatikan baik-baik bagaimana data masuk dan keluar dari [c]tumpukan[/]."
+can_fast_forward = false
+read_time_delay = 0.5
+npc_info = ExtResource("11_edu8q")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="QuestActivatedSwitch4" type="Node2D" parent="Npc"]
+script = ExtResource("11_0pcr4")
+check_type = 3
+react_to_global_signal = true
+linked_quest = ExtResource("30_ff6cx")
+quest_complete = true
+settings_summary = "UPDATE QUEST:
+Quest: Aturan Stack
+Checking if quest is complete"
+metadata/_custom_type_script = "uid://d2epo0ultih7o"
+
+[node name="DialogInteraction" parent="Npc/QuestActivatedSwitch4" instance=ExtResource("9_c70kq")]
+
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch4/DialogInteraction"]
+script = ExtResource("10_1d11u")
+text = "Selanjutnya kamu harus menyelesaikan tahap terakhir yaitu pengecekan."
+can_fast_forward = false
+read_time_delay = 0.5
+npc_info = ExtResource("11_edu8q")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch4/DialogInteraction"]
+script = ExtResource("10_1d11u")
+text = "Kunci untuk ke partisi selanjutnya adalah: [c]fkx25[/]"
 can_fast_forward = false
 read_time_delay = 0.5
 npc_info = ExtResource("11_edu8q")

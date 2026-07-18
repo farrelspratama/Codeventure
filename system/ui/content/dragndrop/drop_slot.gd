@@ -4,20 +4,18 @@ var current_button_source: Button = null
 
 # Referensi ke Label di dalam Panel ini untuk menampilkan teks jawaban
 @onready var answer_label: Label = $Label
-@onready var result_icon: TextureRect = $ResultIcon
 
-var icon_benar = preload("res://assets/ui/yes.png")
-var icon_salah = preload("res://assets/ui/no.png")
+var warna_benar = Color("#4caf50")
+var warna_salah = Color("#f14c4c")
 
 func _ready():
-	answer_label.text = "" # Kosongkan saat awal
-	result_icon.hide()
+	answer_label.text = ""
 
-func _can_drop_data(at_position, data):
+func _can_drop_data(_at_position, data):
 	# Pastikan data valid
 	return typeof(data) == TYPE_DICTIONARY and data.has("text") and data.has("source")
 
-func _drop_data(at_position, data):
+func _drop_data(_at_position, data):
 	# Jika SEBELUMNYA sudah ada jawaban, munculkan kembali tombol aslinya di opsi bawah
 	if current_button_source != null:
 		current_button_source.show()
@@ -31,14 +29,14 @@ func _drop_data(at_position, data):
 	# Tampilkan teksnya di slot jawaban
 	answer_label.text = data["text"]
 	
-	result_icon.hide()
+	# Reset warna teks kembali ke normal (default Inspector) saat jawaban baru masuk!
+	answer_label.remove_theme_color_override("font_color")
 
 func show_validation(is_correct: bool):
-	result_icon.show()
 	if is_correct:
-		result_icon.texture = icon_benar
+		answer_label.add_theme_color_override("font_color", warna_benar)
 	else:
-		result_icon.texture = icon_salah
+		answer_label.add_theme_color_override("font_color", warna_salah)
 
 # Fungsi bantuan untuk mereset slot
 func clear_slot():
@@ -46,6 +44,7 @@ func clear_slot():
 		current_button_source.show()
 	current_button_source = null
 	answer_label.text = ""
+	answer_label.remove_theme_color_override("font_color")
 
 # Fungsi untuk mengambil jawaban saat ini
 func get_current_answer() -> String:

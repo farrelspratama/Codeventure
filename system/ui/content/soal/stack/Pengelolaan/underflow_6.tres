@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://bg0xof2wssua"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_u0hvp"]
+
+[resource]
+script = ExtResource("1_u0hvp")
+game_type = 3
+question_text = "if (isEmpty()) {
+    cout << \"Tidak ada data\";
+}
+else {
+    pop();
+}
+Jika stack berisi beberapa data, apa yang akan dilakukan program?"
+options = Array[String](["Menampilkan \"Tidak ada data\"", "Menambah data", "Menghapus data paling atas", "Menghapus seluruh data"])
+correct_answers = Array[String](["Menghapus data paling atas"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"

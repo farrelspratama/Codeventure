@@ -2,7 +2,7 @@ extends Resource
 class_name QuestionData
 
 # Tambahkan TRUE_FALSE ke dalam opsi
-enum GameType { DRAG_AND_DROP, TEXT_INPUT, TRUE_FALSE }
+enum GameType { DRAG_AND_DROP, TEXT_INPUT, TRUE_FALSE, MULTIPLE_CHOICE }
 
 @export var game_type: GameType = GameType.DRAG_AND_DROP
 

@@ -232,7 +232,7 @@ position = Vector2(550, 480)
 [node name="Npc" parent="." instance=ExtResource("8_cd5ea")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(549, 311)
+position = Vector2(549, 310)
 
 [node name="DialogInteraction" parent="Npc" instance=ExtResource("11_p84wy")]
 
@@ -263,7 +263,7 @@ metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 [node name="AreaTrigger" parent="." instance=ExtResource("11_dkdjy")]
 
 [node name="DialogInteraction" parent="AreaTrigger" instance=ExtResource("11_p84wy")]
-position = Vector2(549, 311)
+position = Vector2(549, 310)
 
 [node name="DialogCutscene" type="Node" parent="AreaTrigger/DialogInteraction"]
 script = ExtResource("12_imkas")
@@ -271,7 +271,7 @@ metadata/_custom_type_script = "uid://cdx54srqhmplq"
 
 [node name="CutsceneActionPlayerMove" type="Node2D" parent="AreaTrigger/DialogInteraction/DialogCutscene"]
 z_index = 1
-position = Vector2(550, 325)
+position = Vector2(550, 324)
 script = ExtResource("13_dkdjy")
 timing_method = 1
 move_speed = 80.0
@@ -4956,7 +4956,7 @@ metadata/_custom_type_script = "uid://cfspk0ixjj2av"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTrigger"]
 z_index = 1
-position = Vector2(550, 439)
+position = Vector2(550, 479)
 shape = SubResource("RectangleShape2D_6c332")
 
 [node name="QuestAdvanceTrigger" type="Node2D" parent="AreaTrigger"]

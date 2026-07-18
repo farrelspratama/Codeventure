@@ -5,23 +5,41 @@ signal finished
 @export var nama_quest: String = "Misi Ruang Arsip" # Sesuaikan dengan judul Quest Anda
 @export var step_final: String = "semua_lemari_selesai"
 @export var completed: bool = false
+@export var grup_lemari: String = "lemari_quest"
 
 var total_lemari_selesai: int = 0
+var target_lemari: int = 0
 
 func _ready() -> void:
-	# Ganti $Lemari1, $Lemari2 dst dengan path node lemari Anda yang sebenarnya di scene
-	$"../Items/Lemari".all_minigames_completed.connect(_on_lemari_selesai)
-	$"../Items/Lemari2".all_minigames_completed.connect(_on_lemari_selesai)
-	$"../Items/Lemari3".all_minigames_completed.connect(_on_lemari_selesai)
-	$"../Items/Lemari4".all_minigames_completed.connect(_on_lemari_selesai)
-	$"../Items/Lemari5".all_minigames_completed.connect(_on_lemari_selesai)
+	# Beri jeda 1 frame agar seluruh node lemari di scene selesai dimuat
+	await get_tree().process_frame
+	
+	# Ambil semua node yang masuk ke dalam grup
+	var daftar_lemari = get_tree().get_nodes_in_group(grup_lemari)
+	
+	# Target otomatis menyesuaikan dengan jumlah lemari yang ditemukan!
+	target_lemari = daftar_lemari.size()
+	
+	if target_lemari == 0:
+		print("PERINGATAN: Tidak ada lemari yang ditemukan di dalam grup '", grup_lemari, "'!")
+		return
+		
+	print("Misi dimulai! Total target lemari di scene ini: ", target_lemari)
+	
+	# Hubungkan sinyal secara otomatis lewat perulangan (loop)
+	for lemari in daftar_lemari:
+		# Pastikan node tersebut benar-benar punya sinyal yang dimaksud agar tidak eror
+		if lemari.has_signal("all_minigames_completed"):
+			lemari.all_minigames_completed.connect(_on_lemari_selesai)
+		else:
+			print("ERROR: Node ", lemari.name, " tidak memiliki sinyal 'all_minigames_completed'!")
 
 func _on_lemari_selesai() -> void:
 	total_lemari_selesai += 1
 	print("Lemari diselesaikan: ", total_lemari_selesai, "/5")
 	
-	# Jika kelima lemari sudah selesai semua, baru kita naikkan progress quest-nya!
-	if total_lemari_selesai >= 5:
-		print("Semua lemari selesai! Mengirim sinyal ke Quest Manager...")
+	# Cek apakah progress sudah mencapai target dinamis
+	if total_lemari_selesai >= target_lemari:
+		print("Semua lemari di scene ini selesai! Mengirim sinyal ke Quest Manager...")
 		QuestManager.update_quest(nama_quest, step_final, completed)
 		finished.emit()

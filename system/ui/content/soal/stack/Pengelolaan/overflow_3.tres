@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://0x8pyr74d4dx"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_1j0fh"]
+
+[resource]
+script = ExtResource("1_1j0fh")
+question_text = "Lengkapi kode berikut.
+if ([SLOT]) {
+    cout << \"Tidak bisa menambah data\";
+}"
+options = Array[String](["isEmpty()", "pop()", "isFull()", "peek()"])
+correct_answers = Array[String](["isFull()"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"

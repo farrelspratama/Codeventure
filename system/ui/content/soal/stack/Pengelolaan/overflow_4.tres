@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="QuestionData" load_steps=2 format=3 uid="uid://dvg5ek4t3j1hq"]
+
+[ext_resource type="Script" uid="uid://bg8k6b86gev0i" path="res://system/ui/content/soal/question_data.gd" id="1_wwh1s"]
+
+[resource]
+script = ExtResource("1_wwh1s")
+game_type = 3
+question_text = "if (!isFull()) {
+    push(25);
+}
+Apa yang dilakukan program tersebut?"
+options = Array[String](["Menambah data jika stack kosong", "Menambah data jika stack belum penuh", "Menghapus data", "Menampilkan data teratas"])
+correct_answers = Array[String](["Menambah data jika stack belum penuh"])
+metadata/_custom_type_script = "uid://bg8k6b86gev0i"
