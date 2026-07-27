@@ -52,7 +52,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			content.visible_characters = text_length
 			timer.stop()
 			text_in_progress = false
-			_start_read_delay()
 			return
 		elif waiting_for_choice == true:
 			return
@@ -312,7 +311,6 @@ func _on_timer_timeout() -> void:
 		start_timer()
 	else:
 		text_in_progress = false
-		_start_read_delay()
 
 func start_timer() -> void:
 	timer.wait_time = text_speed
@@ -323,18 +321,6 @@ func start_timer() -> void:
 	elif ', '.contains( _char ):
 		timer.wait_time *= 3
 	timer.start()
-
-# --- FUNGSI JEDA WAJIB BACA ---
-func _start_read_delay() -> void:
-	var current_item = dialog_items[dialog_items_index]
-	if current_item is DialogText and current_item.read_time_delay > 0.0:
-		if OS.is_debug_build() and Input.is_physical_key_pressed(KEY_SHIFT):
-			is_reading_time = false
-			return
-		is_reading_time = true
-		# Kunci pemain selama X detik sesuai angka di Inspector
-		await get_tree().create_timer(current_item.read_time_delay).timeout
-		is_reading_time = false # Gembok terbuka! Pemain sekarang bisa klik Lanjut.
 
 func set_dialog_video(_d: DialogVideo) -> void:
 	# Sembunyikan UI Dialog

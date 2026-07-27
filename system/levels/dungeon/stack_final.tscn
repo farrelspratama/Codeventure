@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://c2hegul2hx8im"]
+[gd_scene load_steps=46 format=4 uid="uid://c2hegul2hx8im"]
 
 [ext_resource type="Script" uid="uid://dxpqq0fy4vutb" path="res://system/levels/level.gd" id="1_bjq26"]
 [ext_resource type="Texture2D" uid="uid://cc2fqqq73ci4i" path="res://assets/environment/tilesets/Interior.png" id="2_42pdu"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dclafa87ojaa3" path="res://system/ui/dialog/dialog_interaction.tscn" id="9_72mcf"]
 [ext_resource type="Script" uid="uid://b2gbmxj3vikwc" path="res://system/ui/dialog/dialog_text.gd" id="10_pq7b4"]
 [ext_resource type="Resource" uid="uid://c25o5yhdygaui" path="res://system/characters/npc/resource/pak_nopandi.tres" id="11_ve18a"]
+[ext_resource type="Script" uid="uid://d2epo0ultih7o" path="res://system/quest_system/quest_activated_switch.gd" id="12_rdbr6"]
 [ext_resource type="PackedScene" uid="uid://cxy3msd1w07a2" path="res://system/general_nodes/area_trigger/area_trigger.tscn" id="12_ywbvw"]
 [ext_resource type="Script" uid="uid://cdx54srqhmplq" path="res://system/ui/dialog/dialog_cutscene.gd" id="13_1dtkr"]
 [ext_resource type="Script" uid="uid://bnb2lbg2ro1g0" path="res://system/ui/dialog/cutscene_action_player_move.gd" id="14_n6l3g"]
@@ -249,18 +250,77 @@ z_index = 1
 y_sort_enabled = true
 position = Vector2(549, 310)
 
-[node name="DialogInteraction" parent="Npc" instance=ExtResource("9_72mcf")]
+[node name="QuestActivatedSwitch" type="Node2D" parent="Npc"]
+script = ExtResource("12_rdbr6")
+check_type = 2
+react_to_global_signal = true
+linked_quest = ExtResource("37_rdbr6")
+quest_step = 2
+settings_summary = "UPDATE QUEST:
+Quest: Memeriksa Kondisi Penyimpanan
+Check if player is on step: selesaikan permasalahan pada rak"
+metadata/_custom_type_script = "uid://d2epo0ultih7o"
 
-[node name="DialogText" type="Node" parent="Npc/DialogInteraction"]
+[node name="DialogInteraction" parent="Npc/QuestActivatedSwitch" instance=ExtResource("9_72mcf")]
+
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("10_pq7b4")
 text = "Agar kesalahan seperti itu tidak terjadi, sistem biasanya memeriksa kondisi stack terlebih dahulu menggunakan operasi [c]isEmpty()[/] dan [c]isFull()[/]."
 can_fast_forward = false
 npc_info = ExtResource("11_ve18a")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
-[node name="DialogText2" type="Node" parent="Npc/DialogInteraction"]
+[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch/DialogInteraction"]
 script = ExtResource("10_pq7b4")
 text = "Sekarang coba selesaikan permasalahan pada penyimpanan di rak sebelah"
+npc_info = ExtResource("11_ve18a")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="QuestActivatedSwitch2" type="Node2D" parent="Npc"]
+script = ExtResource("12_rdbr6")
+check_type = 3
+react_to_global_signal = true
+linked_quest = ExtResource("37_rdbr6")
+quest_step = 2
+settings_summary = "UPDATE QUEST:
+Quest: Memeriksa Kondisi Penyimpanan
+Checking if quest is complete"
+metadata/_custom_type_script = "uid://d2epo0ultih7o"
+
+[node name="DialogInteraction" parent="Npc/QuestActivatedSwitch2" instance=ExtResource("9_72mcf")]
+
+[node name="DialogText" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
+script = ExtResource("10_pq7b4")
+text = "Selamat kamu sudah menyelesaikan seluruh permasalahannya."
+can_fast_forward = false
+npc_info = ExtResource("11_ve18a")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText2" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
+script = ExtResource("10_pq7b4")
+text = "Jadi sebelum melakukan operasi kita perlu mengecek kondisi nya terlebih dahulu?"
+can_fast_forward = false
+npc_info = ExtResource("20_rxorh")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText3" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
+script = ExtResource("10_pq7b4")
+text = "Benar, dengan mengetahui kondisi nya kamu akan melakukan operasi dengan efisien."
+can_fast_forward = false
+npc_info = ExtResource("11_ve18a")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText4" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
+script = ExtResource("10_pq7b4")
+text = "Sehingga kamu tidak akan melakukan operasi yang berlebih."
+can_fast_forward = false
+npc_info = ExtResource("11_ve18a")
+metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
+
+[node name="DialogText5" type="Node" parent="Npc/QuestActivatedSwitch2/DialogInteraction"]
+script = ExtResource("10_pq7b4")
+text = "Selanjutkan [c]keluar[/] dari dunia ini berikut kunci pintu nya: [c]NCP92[/]"
+can_fast_forward = false
 npc_info = ExtResource("11_ve18a")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
@@ -275,7 +335,7 @@ metadata/_custom_type_script = "uid://cdx54srqhmplq"
 
 [node name="CutsceneActionPlayerMove" type="Node2D" parent="AreaTrigger/DialogInteraction/DialogCutscene"]
 z_index = 1
-position = Vector2(550, 324)
+position = Vector2(550, 323)
 script = ExtResource("14_n6l3g")
 timing_method = 1
 move_speed = 80.0
@@ -461,11 +521,6 @@ can_fast_forward = false
 npc_info = ExtResource("11_ve18a")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTrigger"]
-z_index = 1
-position = Vector2(550, 503)
-shape = SubResource("RectangleShape2D_6c332")
-
 [node name="QuestAdvanceTrigger" type="Node2D" parent="AreaTrigger"]
 script = ExtResource("18_rbi6l")
 signal_name = "player_entered"
@@ -477,14 +532,19 @@ Step: 1 - mengenali kondisi penyimpanan
 Complete: false"
 metadata/_custom_type_script = "uid://cfspk0ixjj2av"
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTrigger"]
+z_index = 1
+position = Vector2(550, 480)
+shape = SubResource("RectangleShape2D_6c332")
+
 [node name="Items" type="Node2D" parent="."]
 z_index = 1
 y_sort_enabled = true
 
 [node name="Pintu" parent="Items" instance=ExtResource("21_vjxxs")]
 position = Vector2(549, 132)
-target_level = "uid://dshxax8ljja78"
-correct_passcode = "ANH10"
+target_level = "uid://dtbi0jyebeslh"
+correct_passcode = "NCP92"
 
 [node name="Lemari" parent="Items" groups=["lemari_quest"] instance=ExtResource("22_lhmbl")]
 position = Vector2(499, 301)
@@ -499,14 +559,3 @@ script = ExtResource("37_66hdv")
 nama_quest = "Memeriksa Kondisi Penyimpanan"
 step_final = "Selesaikan permasalahan pada rak"
 completed = true
-
-[node name="QuestAdvanceTrigger" type="Node2D" parent="ItemQuestManager"]
-script = ExtResource("18_rbi6l")
-signal_name = "finished"
-linked_quest = ExtResource("37_rdbr6")
-quest_step = 2
-settings_summary = "UPDATE QUEST:
-Quest: Memeriksa Kondisi Penyimpanan
-Step: 2 - selesaikan permasalahan pada rak
-Complete: false"
-metadata/_custom_type_script = "uid://cfspk0ixjj2av"

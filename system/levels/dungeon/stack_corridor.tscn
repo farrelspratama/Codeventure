@@ -3545,18 +3545,21 @@ metadata/_custom_type_script = "uid://cn7unf8c1h61s"
 script = ExtResource("12_hfj8o")
 text = "Belum tepat."
 can_fast_forward = false
+npc_info = ExtResource("13_u71a5")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText2" type="Node" parent="AreaTrigger/DialogInteraction/IdentifikasiTop1/Pop"]
 script = ExtResource("12_hfj8o")
 text = "POP bukan bagian yang menunjukkan posisi data."
 can_fast_forward = false
+npc_info = ExtResource("13_u71a5")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText3" type="Node" parent="AreaTrigger/DialogInteraction/IdentifikasiTop1/Pop"]
 script = ExtResource("12_hfj8o")
 text = "POP merupakan operasi yang digunakan untuk mengambil data dari stack."
 can_fast_forward = false
+npc_info = ExtResource("13_u71a5")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="DialogText4" type="Node" parent="AreaTrigger/DialogInteraction/IdentifikasiTop1/Pop"]
@@ -3688,6 +3691,7 @@ npc_info = ExtResource("13_u71a5")
 metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 
 [node name="QuestAdvanceTrigger" type="Node2D" parent="AreaTrigger/DialogInteraction/IdentifikasiTop1/Pop/IdentifikasiTop2/Top/FungsiTop1/Menunjukkan"]
+position = Vector2(0, 2)
 script = ExtResource("15_bioj5")
 signal_name = "finished"
 linked_quest = ExtResource("10_dvibs")

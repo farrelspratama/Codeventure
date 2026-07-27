@@ -244,7 +244,7 @@ tile_set = SubResource("TileSet_bhf5t")
 
 [node name="PlayerSpawn" parent="." instance=ExtResource("7_rntri")]
 z_index = 1
-position = Vector2(551, 483)
+position = Vector2(550, 446)
 
 [node name="Npc" parent="." instance=ExtResource("8_vj2hy")]
 z_index = 1
@@ -843,23 +843,23 @@ metadata/_custom_type_script = "uid://b2gbmxj3vikwc"
 z_index = 1
 y_sort_enabled = true
 
-[node name="Lemari" parent="Items" instance=ExtResource("13_d6hk5")]
+[node name="Lemari" parent="Items" groups=["lemari_quest"] instance=ExtResource("13_d6hk5")]
 position = Vector2(859, 144)
 questions = Array[ExtResource("15_wuvok")]([ExtResource("16_rmuhj")])
 
-[node name="Lemari2" parent="Items" instance=ExtResource("13_d6hk5")]
+[node name="Lemari2" parent="Items" groups=["lemari_quest"] instance=ExtResource("13_d6hk5")]
 position = Vector2(952, 185)
 questions = Array[ExtResource("15_wuvok")]([ExtResource("17_3jrwl"), ExtResource("18_0pcr4")])
 
-[node name="Lemari3" parent="Items" instance=ExtResource("13_d6hk5")]
+[node name="Lemari3" parent="Items" groups=["lemari_quest"] instance=ExtResource("13_d6hk5")]
 position = Vector2(898, 261)
 questions = Array[ExtResource("15_wuvok")]([ExtResource("18_m3a27"), ExtResource("19_410yv")])
 
-[node name="Lemari4" parent="Items" instance=ExtResource("13_d6hk5")]
+[node name="Lemari4" parent="Items" groups=["lemari_quest"] instance=ExtResource("13_d6hk5")]
 position = Vector2(175, 423)
 questions = Array[ExtResource("15_wuvok")]([ExtResource("20_rntri")])
 
-[node name="Lemari5" parent="Items" instance=ExtResource("13_d6hk5")]
+[node name="Lemari5" parent="Items" groups=["lemari_quest"] instance=ExtResource("13_d6hk5")]
 position = Vector2(273, 467)
 questions = Array[ExtResource("15_wuvok")]([ExtResource("21_vj2hy"), ExtResource("22_c70kq")])
 

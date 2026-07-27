@@ -55,6 +55,7 @@ func update_quest( _title : String, _completed_step : String = "", _is_complete 
 		
 		# Display a notification that quests was added
 		Hud.queue_notification("Misi Dimulai!", _title)
+		SaveManager.save_game()
 		pass
 	else:
 		# Quest was found, update it
@@ -70,8 +71,10 @@ func update_quest( _title : String, _completed_step : String = "", _is_complete 
 		if q.is_complete == true:
 			Hud.queue_notification("Misi Selesai!", _title)
 			disperse_quest_rewards( find_quest_by_title( _title ) )
+			SaveManager.save_game()
 		else:
 			Hud.queue_notification("Misi Diperbarui!", _title + ": " + _completed_step.capitalize())
+			SaveManager.save_game()
 
 func disperse_quest_rewards( _q : Quest ) -> void:
 	var _message : String = "Score: " + str(_q.reward_score)
